@@ -5,38 +5,48 @@ import toucan from '../../assets/18b51d99adf971345c6d3e2da4ff6e2c.svg';
 import capybara from '../../assets/64e6db346ad8c01e777f7cf3f3a36383.svg';
 import ipe from '../../assets/77b83da13ccc31cb0f862276cf552fac.svg';
 
-const freedoms = [
+const motivations = [
   {
-    id: 'usar',
-    title: 'Usar',
-    lead: 'A ferramenta serve à sua vida. Não o contrário.',
-    body: 'Software livre permite usar um programa para qualquer finalidade, inclusive no trabalho e em atividades comerciais. Sua liberdade não depende de pedir uma nova autorização a cada uso.',
-    example: 'Um coletivo cultural pode usar a mesma ferramenta que um pequeno negócio. A finalidade muda; a liberdade permanece.',
-    question: 'Você pode escolher para que usar essa ferramenta?',
+    id: 'vida-em-comum',
+    title: 'Vida em comum',
+    lead: 'Ferramentas que ajudem a viver, não só a consumir.',
+    problem: 'Uma sala de aula, um coletivo cultural ou um pequeno negócio tem necessidades que nem sempre cabem nas ferramentas disponíveis. Produzir mais um aplicativo, sem ouvir essas pessoas, não resolve isso.',
+    goal: 'Queremos aproximar quem conhece o problema de quem pode compartilhar conhecimento e construir junto. Aprender, criar e se organizar nas diferentes realidades do Brasil é o que dá sentido ao software.',
   },
   {
-    id: 'estudar',
-    title: 'Estudar',
-    lead: 'Entender também é uma forma de escolher.',
-    body: 'Ter acesso ao código-fonte permite estudar como um programa funciona. Documentação e conhecimento compartilhado ajudam mais pessoas a compreender suas escolhas, seus limites e suas dependências.',
-    example: 'Quem conhece o código pode investigar o que acontece com uma informação. Quem não programa pode aprender com uma explicação ou buscar ajuda de alguém de confiança.',
-    question: 'É possível entender o que acontece por trás da tela?',
+    id: 'autonomia',
+    title: 'Autonomia',
+    lead: 'Mudar de ferramenta sem perder o que foi construído.',
+    problem: 'Um bloqueio, uma mudança de regra ou o fim de um serviço pode interromper um projeto. Quando os dados e o conhecimento ficam presos ali, continuar vira uma decisão de outra pessoa.',
+    goal: 'Queremos caminhos para recuperar dados, adaptar ferramentas e mudar de serviço. Colaborar e usar recursos externos pode fazer parte da escolha, sem abrir mão de compreender as dependências e planejar a continuidade.',
   },
   {
-    id: 'modificar',
-    title: 'Modificar',
-    lead: 'Sua realidade não precisa caber numa ferramenta fechada.',
-    body: 'Software livre permite adaptar o programa às suas necessidades. O acesso ao código-fonte é necessário para isso. Você pode fazer uma mudança ou contar com quem tenha o conhecimento para realizá-la.',
-    example: 'Uma adaptação pode melhorar a navegação por teclado, uma tradução ou uma rotina de trabalho. São possibilidades, não funcionalidades já entregues pela Embraso.',
-    question: 'O que precisaria mudar para funcionar melhor no seu contexto?',
+    id: 'conhecimento',
+    title: 'Conhecimento',
+    lead: 'Mais gente capaz de compreender, adaptar e compartilhar.',
+    problem: 'Quando só podemos usar uma ferramenta, sem entender ou alterar seu funcionamento, criar uma solução fica restrito a quem controla o programa. Conhecimento concentrado limita os caminhos de quem vem depois.',
+    goal: 'Defendemos software livre e conhecimento compartilhado para que mais pessoas possam usar, estudar, modificar e redistribuir o que construímos, inclusive em atividades comerciais. Acesso ao código precisa vir acompanhado dessas permissões.',
   },
   {
-    id: 'compartilhar',
-    title: 'Compartilhar',
-    lead: 'Uma melhoria pode continuar nas mãos de outras pessoas.',
-    body: 'Software livre permite redistribuir cópias do programa e compartilhar versões modificadas, conforme sua licença. Assim, conhecimento e melhorias podem circular e encontrar outros caminhos de continuidade.',
-    example: 'Uma solução adaptada por um grupo pode ajudar outro a não começar do zero. Compartilhar não elimina os custos de documentar, corrigir e manter.',
-    question: 'Outras pessoas podem receber, adaptar e continuar o que foi feito?',
+    id: 'atencao',
+    title: 'Atenção',
+    lead: 'Mais troca e descoberta. Menos tempo preso à tela.',
+    problem: 'Consumir conteúdo sem parar não é o mesmo que conversar. Quando não entendemos por que algo aparece nem podemos mudar as recomendações, fica mais difícil escolher o que acompanhar.',
+    goal: 'Queremos ferramentas que favoreçam encontros, pensamento crítico e descoberta. Defendemos escolher fontes e pessoas, entender os critérios, ajustar ou desligar recomendações e questionar decisões automatizadas.',
+  },
+  {
+    id: 'privacidade',
+    title: 'Privacidade',
+    lead: 'Participar da vida digital sem abrir mão do cuidado.',
+    problem: 'Coletar dados além do necessário e usá-los sem clareza expõe pessoas a vigilância, fraudes e perda de privacidade. Esse risco não desaparece só porque o código está aberto.',
+    goal: 'Queremos cuidar dos dados desde o início: coletar apenas o necessário, explicar o uso e proteger de acordo com os riscos. Manutenção, correções e limites claros fazem parte desse compromisso.',
+  },
+  {
+    id: 'continuidade',
+    title: 'Continuidade',
+    lead: 'Boas ideias precisam de condições para durar.',
+    problem: 'Custos que não cabem no orçamento, complexidade excessiva e conhecimento nas mãos de uma só pessoa podem inviabilizar uma ferramenta útil. Exigir a tecnologia ideal antes de começar também pode impedir o primeiro passo.',
+    goal: 'Queremos começar com os recursos disponíveis e fazer escolhas que possam ser compreendidas e mantidas. Software livre não significa trabalho gratuito: documentação, cuidado e remuneração justa precisam entrar na conta.',
   },
 ];
 const contributions = [
@@ -74,7 +84,7 @@ const contributions = [
   <section id="proposta" class="proposal page-wrap" aria-labelledby="proposal-title">
     <h2 id="proposal-title">Mais do que código.<br /><span>Gente com quem construir.</span></h2>
     <div class="proposal-reading">
-      <p class="large-reading">Queremos uma tecnologia que ajude a viver, não que ocupe a vida inteira. Para aprender, criar, trabalhar e organizar o que importa por aqui.</p>
+      <div><p class="large-reading">Queremos dedicar o que sabemos a algo que faça diferença na vida das pessoas. Não apenas consumir conteúdo, mas trocar, descobrir e fazer coisas juntos.</p><p class="proposal-opportunity">Ferramentas de desenvolvimento podem aproximar uma ideia de algo que funciona. Há gente no Brasil e fora dele com conhecimento para compartilhar. Queremos conectar essa possibilidade a quem conhece os problemas.</p></div>
       <div class="two-fronts">
         <article><h3>Comunidade.</h3><p>Aproximar quem conhece um problema de quem pode compartilhar um conhecimento. Escutar, aprender e construir com as pessoas envolvidas.</p></article>
         <article><h3>Autonomia.</h3><p>Compreender as ferramentas, poder adaptá-las e levar seus dados para outro lugar. Ter escolhas sem precisar fazer tudo por conta própria.</p></article>
@@ -82,26 +92,26 @@ const contributions = [
     </div>
   </section>
 
-  <section class="freedoms" aria-labelledby="freedoms-title" data-freedom-reader>
+  <section class="motivations" aria-labelledby="motivations-title" data-motivation-reader>
     <div class="page-wrap">
-      <div class="freedoms-heading"><h2 id="freedoms-title">Livre para quê?</h2><p>Quatro liberdades que mudam nossa relação com o software. Entenda o que cada uma permite na vida de quem usa.</p></div>
-      <fieldset class="freedom-controls" data-freedom-controls hidden>
-        <legend>Escolha uma liberdade para ler</legend>
-        <div class="freedom-options">
-          {freedoms.map((freedom, index) => <label for={`freedom-choice-${freedom.id}`}><input id={`freedom-choice-${freedom.id}`} type="radio" name="freedom" value={freedom.id} checked={index === 0} aria-controls={`freedom-reading-${freedom.id}`} /><span>{freedom.title}</span></label>)}
+      <div class="motivations-heading"><h2 id="motivations-title">Por que a<br />Embraso existe?</h2><p>Há dificuldades que queremos enfrentar juntos. Conheça o que nos move e o que queremos mudar.</p></div>
+      <fieldset class="motivation-controls" data-motivation-controls hidden>
+        <legend>Escolha um tema para ler</legend>
+        <div class="motivation-options">
+          {motivations.map((motivation, index) => <label for={`motivation-choice-${motivation.id}`}><input id={`motivation-choice-${motivation.id}`} type="radio" name="motivation" value={motivation.id} checked={index === 0} aria-controls={`motivation-reading-${motivation.id}`} /><span>{motivation.title}</span></label>)}
         </div>
       </fieldset>
-      <p class="freedom-status" role="status" aria-live="polite" aria-atomic="true" data-freedom-status hidden></p>
-      <div class="freedom-pages">
-        {freedoms.map((freedom) => (
-          <article class="freedom-page" id={`freedom-reading-${freedom.id}`} data-freedom-page={freedom.id} aria-labelledby={`freedom-heading-${freedom.id}`}>
-            <div class="freedom-title"><h3 id={`freedom-heading-${freedom.id}`}>{freedom.title}</h3><p>{freedom.lead}</p></div>
-            <div class="freedom-reading"><p>{freedom.body}</p><p>{freedom.example}</p><p class="freedom-question">{freedom.question}</p></div>
+      <p class="motivation-status" role="status" aria-live="polite" aria-atomic="true" data-motivation-status hidden></p>
+      <div class="motivation-pages">
+        {motivations.map((motivation) => (
+          <article class="motivation-page" id={`motivation-reading-${motivation.id}`} data-motivation-page={motivation.id} aria-labelledby={`motivation-heading-${motivation.id}`}>
+            <div class="motivation-title"><h3 id={`motivation-heading-${motivation.id}`}>{motivation.title}</h3><p>{motivation.lead}</p></div>
+            <div class="motivation-reading"><p><strong>O que queremos enfrentar</strong>{motivation.problem}</p><p><strong>O que queremos construir</strong>{motivation.goal}</p></div>
           </article>
         ))}
       </div>
-      <p class="freedom-footnote"><strong>Livre não é o mesmo que gratuito.</strong> Essas liberdades podem conviver com atividade comercial. Cuidar delas exige recursos, manutenção e trabalho reconhecido.</p>
-      <noscript><p class="no-script-note">As quatro leituras estão abertas acima. Você pode ler todas, sem ativar JavaScript.</p></noscript>
+      <p class="motivation-footnote">Essas são as mudanças que buscamos, não uma lista de ferramentas já disponíveis. Os seis princípios do manifesto orientam como queremos construir esse caminho.</p>
+      <noscript><p class="no-script-note">As seis leituras estão abertas acima. Você pode ler todas, sem ativar JavaScript.</p></noscript>
     </div>
   </section>
 
@@ -171,30 +181,31 @@ const contributions = [
   .proposal h2 span { font-size: .78em; }
   .proposal-reading { display: grid; grid-template-columns: 1fr 1.2fr; gap: 8%; }
   .large-reading { font-size: clamp(1.3rem, 2.2vw, 1.9rem); line-height: 1.4; max-width: 27ch; }
+  .proposal-opportunity { margin-top: 24px !important; max-width: 48ch; }
   .two-fronts { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
   .two-fronts h3 { font-size: 1.7rem; font-stretch: 75%; line-height: 1.15; margin-bottom: 16px; }
   .two-fronts p { line-height: 1.6; }
-  .freedoms { background: var(--green); color: var(--cream); padding-block: 82px 54px; }
-  .freedoms-heading { display: flex; align-items: end; gap: 40px; justify-content: space-between; margin-bottom: 42px; }
-  .freedoms-heading p { max-width: 36ch; font-size: 17px; line-height: 1.55; }
-  .freedom-controls { border: 0; padding: 0; margin: 0; min-width: 0; }
-  .freedom-controls legend { font-size: 14px; margin-bottom: 14px; }
-  .freedom-options { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--cream); }
-  .freedom-options label { cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 76px; padding: 12px; font-size: clamp(1.25rem, 2.6vw, 2.1rem); font-stretch: 75%; font-weight: 750; line-height: 1.2; }
-  .freedom-options label + label { border-left: 1px solid color-mix(in srgb, var(--cream) 40%, transparent); }
-  .freedom-options label:has(input:checked) { background: var(--yellow); color: var(--dark); }
-  .freedom-options label:hover { background: color-mix(in srgb, var(--cream) 12%, transparent); }
-  .freedom-options label:has(input:checked):hover { background: var(--yellow); }
-  .freedom-options input { accent-color: var(--green); width: 18px; height: 18px; margin: 0; flex: 0 0 auto; }
-  .freedom-options label:focus-within { outline: 3px solid var(--yellow); outline-offset: 5px; position: relative; z-index: 1; }
-  .freedom-options input:focus-visible { outline-color: var(--dark); outline-offset: 3px; }
-  .freedom-status { padding-top: 18px; font-size: 13px; color: var(--yellow); }
-  .freedom-page { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; padding-block: 40px 44px; border-bottom: 1px solid color-mix(in srgb, var(--cream) 35%, transparent); }
-  .freedom-title h3 { font-stretch: 62%; font-size: clamp(3.4rem, 7.3vw, 6rem); font-weight: 850; letter-spacing: -.03em; line-height: 1; overflow-wrap: anywhere; }
-  .freedom-title p { margin-top: 23px; font-size: clamp(1.3rem, 2vw, 1.8rem); line-height: 1.35; max-width: 27ch; color: var(--yellow); }
-  .freedom-reading p + p { margin-top: 18px; }
-  .freedom-question { font-size: 1.15rem; font-weight: 650; line-height: 1.45; padding-top: 20px; }
-  .freedom-footnote { max-width: 83ch; margin-top: 26px !important; font-size: 14px; }
+  .motivations { background: var(--green); color: var(--cream); padding-block: 82px 54px; }
+  .motivations-heading { display: flex; align-items: end; gap: 40px; justify-content: space-between; margin-bottom: 42px; }
+  .motivations-heading p { max-width: 36ch; font-size: 17px; line-height: 1.55; }
+  .motivation-controls { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .motivation-controls legend { font-size: 14px; margin-bottom: 14px; }
+  .motivation-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--cream); }
+  .motivation-options label { cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 76px; padding: 12px; font-size: clamp(1.25rem, 2.6vw, 2.1rem); font-stretch: 75%; font-weight: 750; line-height: 1.2; border-bottom: 1px solid color-mix(in srgb, var(--cream) 40%, transparent); }
+  .motivation-options label:not(:nth-child(3n + 1)) { border-left: 1px solid color-mix(in srgb, var(--cream) 40%, transparent); }
+  .motivation-options label:has(input:checked) { background: var(--yellow); color: var(--dark); }
+  .motivation-options label:hover { background: color-mix(in srgb, var(--cream) 12%, transparent); }
+  .motivation-options label:has(input:checked):hover { background: var(--yellow); }
+  .motivation-options input { accent-color: var(--green); width: 18px; height: 18px; margin: 0; flex: 0 0 auto; }
+  .motivation-options label:focus-within { outline: 3px solid var(--yellow); outline-offset: 5px; position: relative; z-index: 1; }
+  .motivation-options input:focus-visible { outline-color: var(--dark); outline-offset: 3px; }
+  .motivation-status { padding-top: 18px; font-size: 13px; color: var(--yellow); }
+  .motivation-page { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; padding-block: 40px 44px; border-bottom: 1px solid color-mix(in srgb, var(--cream) 35%, transparent); }
+  .motivation-title h3 { font-stretch: 62%; font-size: clamp(3.4rem, 7.3vw, 6rem); font-weight: 850; letter-spacing: -.03em; line-height: 1; overflow-wrap: anywhere; }
+  .motivation-title p { margin-top: 23px; font-size: clamp(1.3rem, 2vw, 1.8rem); line-height: 1.35; max-width: 27ch; color: var(--yellow); }
+  .motivation-reading p + p { margin-top: 24px; }
+  .motivation-reading strong { display: block; margin-bottom: 8px; }
+  .motivation-footnote { max-width: 83ch; margin-top: 26px !important; font-size: 14px; }
   .no-script-note { margin-top: 16px !important; font-size: 14px; }
   .manifesto { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8%; padding-block: 110px; }
   .manifesto-opening h2 { font-size: clamp(3.6rem, 5.8vw, 5.8rem); }
@@ -268,18 +279,18 @@ const contributions = [
     .two-fronts { gap: 26px; }
     .two-fronts h3 { font-size: 1.6rem; }
     .two-fronts p { font-size: 15px; }
-    .freedoms { padding-block: 54px 38px; }
-    .freedoms-heading { display: block; margin-bottom: 28px; }
-    .freedoms-heading p { margin-top: 24px; max-width: 43ch; font-size: 16px; }
-    .freedom-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .freedom-options label { min-height: 65px; font-size: clamp(1.25rem, 5vw, 1.8rem); justify-content: start; gap: 9px; padding-inline: 12px; }
-    .freedom-options label:nth-child(3) { border-left: 0; }
-    .freedom-options label:nth-child(n + 3) { border-top: 1px solid color-mix(in srgb, var(--cream) 40%, transparent); }
-    .freedom-page { display: block; padding-block: 28px; }
-    .freedom-title h3 { font-size: clamp(3rem, 12vw, 5.2rem); }
-    .freedom-title p { font-size: 24px; margin-top: 14px; max-width: 30ch; }
-    .freedom-reading { margin-top: 24px; }
-    .freedom-footnote { font-size: 14px; }
+    .motivations { padding-block: 54px 38px; }
+    .motivations-heading { display: block; margin-bottom: 28px; }
+    .motivations-heading p { margin-top: 24px; max-width: 43ch; font-size: 16px; }
+    .motivation-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .motivation-options label { min-height: 65px; font-size: clamp(1.25rem, 5vw, 1.8rem); justify-content: start; gap: 9px; padding-inline: 12px; }
+    .motivation-options label:nth-child(n) { border-left: 0; }
+    .motivation-options label:nth-child(even) { border-left: 1px solid color-mix(in srgb, var(--cream) 40%, transparent); }
+    .motivation-page { display: block; padding-block: 28px; }
+    .motivation-title h3 { font-size: clamp(3rem, 12vw, 5.2rem); }
+    .motivation-title p { font-size: 24px; margin-top: 14px; max-width: 30ch; }
+    .motivation-reading { margin-top: 24px; }
+    .motivation-footnote { font-size: 14px; }
     .manifesto { display: block; padding-block: 64px; }
     .manifesto-opening p { max-width: 45ch; margin-block: 26px 20px; font-size: 17px; }
     .principles { margin-top: 40px; }
@@ -302,15 +313,15 @@ const contributions = [
     .two-fronts { grid-template-columns: 1fr; }
     .print-scene { height: 240px; }
     .opening-actions .button, .closing-reading .button { width: 100%; }
-    .freedom-options label { padding-inline: 8px; gap: 7px; }
-    .freedom-options input { width: 15px; height: 15px; }
+    .motivation-options label { padding-inline: 8px; gap: 7px; }
+    .motivation-options input { width: 15px; height: 15px; }
     .principle summary h3 { font-size: 1.6rem; }
   }
   @media print {
-    .freedom-controls, .freedom-status, .scene-caption { display: none; }
-    .folheto .freedom-page[hidden] { display: grid !important; }
-    .freedoms, .participation { background: transparent; color: black; }
-    .freedom-title p, .freedom-status { color: black; }
+    .motivation-controls, .motivation-status, .scene-caption { display: none; }
+    .folheto .motivation-page[hidden] { display: grid !important; }
+    .motivations, .participation { background: transparent; color: black; }
+    .motivation-title p, .motivation-status { color: black; }
     .print-scene { display: none; }
     .opening-copy { width: 100%; }
   }

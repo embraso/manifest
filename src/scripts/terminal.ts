@@ -157,7 +157,7 @@ if (terminal && !terminal.dataset.initialized) {
         paragraphs = [
           'Autonomia digital não é fazer tudo sozinho. É compreender o que usamos, conhecer dependências e preservar caminhos para recuperar dados, adaptar ferramentas, migrar e continuar.',
           principles[1].body,
-          principles[3].body,
+          principles[5].body,
           'Isso passa por formatos compreensíveis, padrões abertos, documentação e conhecimento compartilhado. A possibilidade de sair precisa fazer parte da decisão de chegar.',
           'Comunidade e autonomia se sustentam: queremos que mais pessoas possam entender as escolhas, participar delas e cuidar do que for construído.',
         ];
