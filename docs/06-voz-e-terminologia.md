@@ -183,6 +183,14 @@ Começar pela ideia principal. Uma frase pode ser curta sem soar como anúncio; 
 
 Explicar uma sigla na primeira ocorrência quando ela for necessária. Para público amplo, “inteligência artificial” costuma bastar; “LLM” só entra quando essa distinção importa. “Código”, “dados” e “infraestrutura” também podem precisar de um exemplo. Não usar inglês como atalho para prestígio.
 
+**Vocabulário dev sem tradução forçada**
+
+Na versão para devs e em conversas técnicas, cabem estrangeirismos, expressões e maneirismos reconhecíveis desse meio quando tornam a leitura mais natural ou precisa. Escrever em português brasileiro não exige traduzir cada termo: **stack** pode funcionar melhor que “pilha” ao falar do conjunto de tecnologias de um projeto. Não usar inglês como sinal de prestígio, enfeitar toda frase com jargão ou transformar esse repertório em teste de pertencimento.
+
+**Exemplo aplicado em `/devs/`:** “Antes de escolher a stack, entender a vida.” No mesmo contexto, “Uma direção, não uma stack pronta.” Para público amplo, preferir “conjunto de tecnologias” ou explicar o termo se essa distinção for necessária; não transportar automaticamente o vocabulário técnico para todas as superfícies.
+
+**Origem da orientação:** em 22 de outubro de 2026, o responsável pela iniciativa pediu a troca de “pilha” por “stack” e o registro da abertura a estrangeirismos e maneirismos que façam sentido para devs. É uma escolha de registro por público, não uma mudança do idioma editorial nem da motivação humana compartilhada pelas duas versões.
+
 Os seis nomes e sua ordem, aprovados pelo responsável pela iniciativa, são: **1. Tecnologia para o bem comum; 2. Autonomia para escolher; 3. Software livre e conhecimento compartilhado; 4. Clareza e escolha no que acompanhamos; 5. Privacidade e segurança desde o início; 6. Simplicidade para construir e manter.** Um título criativo não deve substituí-los quando o texto estiver apresentando os princípios. Esta regra substitui a nomenclatura e a ordem anteriores; títulos de fontes históricas e citações literais permanecem como foram escritos. A [memória editorial](08-fontes-e-decisoes-editoriais.md#nomes-e-ordem-aprovados-para-a-revisão-acolhedora) registra a correspondência.
 
 Antes de publicar, distinguir:

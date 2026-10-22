@@ -7,30 +7,30 @@ related_targets: ["src/pages/devs/index.astro","src/components/FolhetoHome.astro
 
 # Embraso homepages
 
-Mode: Persuade. Public entry `/`; developer entry `/devs/`. User selected Folheto first with a visible audience switch. Both are complete static Astro pages using the same canonical manifesto data. No live contact, membership, project inventory, license, CTO, or repository has been confirmed; do not fabricate these.
+Mode: Persuade. Official public entry `/`; developer entry `/devs/`; shared public reading `/manifesto/`. The owner selected “Liberdade se constrói junto.” and the Folheto/Terminal visual worlds, then made this animated implementation the sole official site. Keep current editorial data and owner changes intact.
 
 ## Direction contract
 
-THESIS: One initiative, two reading registers. Everyday software freedom on Folheto; maintainability and meaningful technical choices on Terminal. Refuse a generic startup product grid and simulated operational proof.
+THESIS: Freedom becomes tangible through shared knowledge. Folheto explains it through a living print composition and four-freedom reader; Terminal lets people explore the actual proposal through local commands. Refuse fabricated activity or a decorative fake shell.
 
-OWN-WORLD: Preserve the inspected Claude artboards A and B. Folheto: cream paper, forest-green condensed Archivo display, amber marker emphasis, large supplied toucan flame, bunting and print rules. Terminal: deep forest ground, cream Martian Mono, amber commands, pixel fauna, file headings and terminal-style reading panels; no neon glow.
+OWN-WORLD: Paper, forest and amber; condensed Archivo for public display, Martian Mono for technical display; supplied vector and pixel fauna. Flat ruled reading surfaces, not neon product cards. OMP and Tern inform visual confidence and interaction, never Embraso's product claims.
 
-STORY: Understand Embraso's intent; connect community with autonomy; read the six principles; explore ways different knowledge can matter. Primary action reads the actual manifesto; secondary actions navigate to real on-page content.
+STORY: Understand the initiative and inseparable community/autonomy fronts, read the six canonical principles, and discover the value of technical and nontechnical knowledge. Read the real manifesto or explore local content; no unconfirmed intake or membership action.
 
-FIRST VIEWPORT: Shared logo/header and visible audience links, slim bunting. Folheto: oversized left headline and manifesto action, right green printed emblem, generous cream space. Terminal: left concise technical headline and action, right truthful editorial terminal with supplied mark and pixel toucan. Mobile stacks the composition without suppressing either action or audience choice.
+FIRST VIEWPORT: Public: selected signature at left, manifesto action, supplied fauna at right; the flame remains completely static and unmasked while toucan/capybara/ipê move. Developer: larger signature, real supplied-emblem particles with continuous flame-only flicker, a prominent route into the substantial command reader. Mobile puts reading and commands before decorative art. Audience and motion controls stay visible in the header.
 
-FORM: User-pinned A · Folheto and B · Terminal from the rendered reference; both directions are already selected, so this is an expansion of supplied visual authority, not a new-world lottery. Code-led implementation using supplied SVGs; the Persuade mode guidance was loaded directly under the pinned-direction path in new-work.md.
+FORM: Code-led expansion of the owner-selected Folheto and Terminal worlds. The owner explicitly requested richer animal motion, local command exploration, prompt-connected autocomplete, high-contrast amber-surface text selection, and removal of comparison routes/labels. No new visual-world lottery or generated raster.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
-## Implementation boundary
+## Motion and behavior
 
-Parent owns Astro installation/configuration, `src/layouts/SiteLayout.astro`, shared header/footer and global CSS, `src/data/manifesto.ts`, routes `/`, `/devs/`, `/manifesto/`, common assets and self-hosted fonts. Agents each own their homepage component and its scoped CSS; never edit parent or other variant files.
+Folheto runs two bounded coordinated fauna circuits; its flame is static, with no clip or transform animation and no decorative illustration rules. Freedom radio choices change substantive readings; all readings remain visible without JavaScript.
 
-Components render main only (no html/head/body or header/footer). Public: `src/components/FolhetoHome.astro`. Developer: `src/components/TerminalHome.astro`. Each imports `{ principles }` from `../data/manifesto`; data shape `{ title: string, lead: string, body: string }[]` in canonical order. Each main has `id="conteudo"`, sections `id="proposta"`, `id="manifesto"`, `id="participacao"`. Primary CTA `/manifesto/`; secondary CTA `#participacao`. On-page manifesto can use native details/summary with full data. No fake submission controls or disabled CTAs. Clearly distinguish possibilities from launched projects; omit invented portfolio. Include initiative-stage context naturally, without a disclaimer wall.
+Developer particles sample the supplied SVG. Finite assembly gives way to warm-flame rise/curl/flicker; the recognizable toucan is retained. Maximum 1,400 desktop/600 mobile particles, DPR 1.5, one RAF. Pause, live reduced motion, document visibility and intersection state stop nonessential work; the complete SVG is the static fallback. No cross-document view transitions.
 
-Global fonts: `--font-body` and `--font-display`: `'Archivo Variable', 'Archivo', sans-serif` (variable wdth 62–125, wght 100–900); `--font-mono`: `'Martian Mono Variable', 'Martian Mono', monospace`. Global colors: `--paper:#f4eedf`, `--green:#13522f`, `--yellow:#fdb112`, `--orange:#f56d1d`, `--blue:#086797`, `--dark:#0b1d13`, `--cream:#fbf7ec`, `--mint:#80b99a`. Body 16px/1.65. Main max-width 1200px, with 40px desktop / 20px mobile gutters. Helpers `.container`, `.button`, `.button-secondary`, `.text-link` provided. Light has body[data-audience="public"], dark body[data-audience="devs"]. Shared header around 146px including switch and bunting.
+The local terminal supports ajuda, manifesto, principio 1–6, comunidade, autonomia and limpar. Prompt-connected combobox/listbox provides descriptions, arrows/Enter, partial-command Tab completion without a trap, Escape dismissal and closed-menu history. Output/history are bounded; user input is text, never HTML, code execution or network submission. Native disclosures and actual reading links remain available without scripts.
 
-Assets imported from `../../assets/<hash>.svg` and used as `asset.src` in img elements (Astro Vite imports). Relevant hashes: colored horizontal logo `e6712f9ec67bfc5e5e1536d9b4377830.svg`; cream horizontal logo `58fa12401e77dc41cc7e67952d136fdf.svg`; flame/toucan emblem only `b084774a04a4acde15a270ee03518180.svg`; flying toucan `18b51d99adf971345c6d3e2da4ff6e2c.svg`; capybara `64e6db346ad8c01e777f7cf3f3a36383.svg`; ipe tree `77b83da13ccc31cb0f862276cf552fac.svg`; pixel capybara `aa3df8c60c0205b36b599de7c17c2d7b.svg`; pixel toucan `458818d47ccc166fc7808f7bacf54160.svg`. Sources remain untouched. No external font services in shipped code.
+## Implementation
 
-Both reference artboards were rendered and inspected at full-window scale during implementation. Review captures are development-only evidence, not shipping assets or public copy. Preserve the chosen visual traits without importing the reference's placeholder content or unconfirmed operational claims.
+`src/layouts/SiteLayout.astro` and `src/styles/global.css` own the shared shell. `src/components/FolhetoHome.astro`, `src/components/TerminalHome.astro` and `src/scripts/{motion,folheto,terminal,particles}.ts` own progressive enhancements. `src/data/manifesto.ts` is shared public content and follows the approved titles, order and copy in `docs/01-manifesto-publico.md`, beginning with “Tecnologia para o bem comum”. Supplied SVGs stay under `assets/`; font notices ship under `public/licenses/`. Internal editorial notes and source archives are not automatically published.

@@ -5,925 +5,313 @@ import toucan from '../../assets/18b51d99adf971345c6d3e2da4ff6e2c.svg';
 import capybara from '../../assets/64e6db346ad8c01e777f7cf3f3a36383.svg';
 import ipe from '../../assets/77b83da13ccc31cb0f862276cf552fac.svg';
 
-const contributions = [
+const freedoms = [
   {
-    title: 'Conhecer o problema',
-    body: 'Contar como uma dificuldade aparece no cotidiano, compartilhar uma pesquisa ou apresentar uma iniciativa que já encontrou um caminho. Escutar vem antes de propor uma ferramenta.',
+    id: 'usar',
+    title: 'Usar',
+    lead: 'A ferramenta serve à sua vida. Não o contrário.',
+    body: 'Software livre permite usar um programa para qualquer finalidade, inclusive no trabalho e em atividades comerciais. Sua liberdade não depende de pedir uma nova autorização a cada uso.',
+    example: 'Um coletivo cultural pode usar a mesma ferramenta que um pequeno negócio. A finalidade muda; a liberdade permanece.',
+    question: 'Você pode escolher para que usar essa ferramenta?',
   },
   {
-    title: 'Explicar e ensinar',
-    body: 'Escrever, traduzir, ensinar e apontar o que ficou confuso. Uma explicação compreensível pode abrir tantas portas quanto uma nova função.',
+    id: 'estudar',
+    title: 'Estudar',
+    lead: 'Entender também é uma forma de escolher.',
+    body: 'Ter acesso ao código-fonte permite estudar como um programa funciona. Documentação e conhecimento compartilhado ajudam mais pessoas a compreender suas escolhas, seus limites e suas dependências.',
+    example: 'Quem conhece o código pode investigar o que acontece com uma informação. Quem não programa pode aprender com uma explicação ou buscar ajuda de alguém de confiança.',
+    question: 'É possível entender o que acontece por trás da tela?',
   },
   {
-    title: 'Desenhar e experimentar',
-    body: 'Pensar em acessibilidade, observar como as pessoas usam uma ideia e descobrir o que ajuda de verdade — inclusive em aparelhos e conexões diferentes.',
+    id: 'modificar',
+    title: 'Modificar',
+    lead: 'Sua realidade não precisa caber numa ferramenta fechada.',
+    body: 'Software livre permite adaptar o programa às suas necessidades. O acesso ao código-fonte é necessário para isso. Você pode fazer uma mudança ou contar com quem tenha o conhecimento para realizá-la.',
+    example: 'Uma adaptação pode melhorar a navegação por teclado, uma tradução ou uma rotina de trabalho. São possibilidades, não funcionalidades já entregues pela Embraso.',
+    question: 'O que precisaria mudar para funcionar melhor no seu contexto?',
   },
   {
-    title: 'Programar e cuidar',
-    body: 'Construir, documentar, corrigir e manter. O trabalho não termina quando uma ferramenta fica pronta: cuidar da continuidade também merece reconhecimento e condições justas.',
+    id: 'compartilhar',
+    title: 'Compartilhar',
+    lead: 'Uma melhoria pode continuar nas mãos de outras pessoas.',
+    body: 'Software livre permite redistribuir cópias do programa e compartilhar versões modificadas, conforme sua licença. Assim, conhecimento e melhorias podem circular e encontrar outros caminhos de continuidade.',
+    example: 'Uma solução adaptada por um grupo pode ajudar outro a não começar do zero. Compartilhar não elimina os custos de documentar, corrigir e manter.',
+    question: 'Outras pessoas podem receber, adaptar e continuar o que foi feito?',
   },
 ];
-
-const possibilities = [
-  {
-    context: 'Um grupo de estudo',
-    question: 'Como encontrar companhia para aprender e compartilhar materiais?',
-  },
-  {
-    context: 'Um coletivo cultural',
-    question: 'Como facilitar encontros sem expor a rotina das pessoas?',
-  },
-  {
-    context: 'Um pequeno negócio',
-    question: 'Como organizar uma rotina sem ficar preso a uma única ferramenta?',
-  },
+const contributions = [
+  ['Conhecer o problema', 'Contar como uma dificuldade aparece no cotidiano e o que já foi tentado. Escutar quem vive a situação vem antes de propor uma ferramenta.'],
+  ['Explicar e aproximar', 'Escrever, traduzir, ensinar, pesquisar ou conectar iniciativas. Uma explicação compreensível também abre caminhos.'],
+  ['Desenhar e experimentar', 'Observar o uso, apontar barreiras de acessibilidade e experimentar ideias em aparelhos e conexões diferentes.'],
+  ['Programar e cuidar', 'Construir, documentar, corrigir e manter. Cuidar da continuidade é trabalho e merece reconhecimento e condições justas.'],
 ];
 ---
 
-<main id="conteudo" class="folheto">
-  <section class="hero container" aria-labelledby="folheto-title">
-    <div class="hero-copy">
-      <div class="flight" aria-hidden="true">
-        <span class="flight-trail"></span>
-        <img class="flying-toucan" src={toucan.src} alt="" width="472" height="208" fetchpriority="high" />
-      </div>
-      <h1 id="folheto-title">
-        <span>Liberdade</span>
-        <span>se constrói</span>
-        <span><mark>junto.</mark></span>
-      </h1>
-      <p class="hero-intro">A Embraso é uma iniciativa para reunir pessoas e construir software útil e livre para a vida no Brasil. Queremos transformar conhecimento em mais encontros, criação e autonomia — não em mais tempo consumindo conteúdo.</p>
-      <div class="hero-actions">
-        <a class="button" href="/manifesto/">Ler o manifesto <span class="action-arrow" aria-hidden="true"></span></a>
-        <a class="text-link" href="#participacao">Como fazer parte dessa ideia</a>
+<main id="conteudo" class="folheto" data-folheto>
+  <section class="opening page-wrap" aria-labelledby="folheto-title" data-print-scene>
+    <div class="opening-copy">
+      <h1 id="folheto-title"><span>Liberdade</span><span>se constrói</span><span class="together"><mark>junto.</mark></span></h1>
+      <p class="opening-intro">A Embraso é uma iniciativa para reunir pessoas e criar <strong>software útil e livre</strong>, pensado para as diferentes realidades do Brasil.</p>
+      <div class="opening-actions">
+        <a class="button" href="/manifesto/">Ler o manifesto <span class="reading-arrow" aria-hidden="true"></span></a>
+        <a class="text-link" href="#participacao">Como participar dessa construção</a>
       </div>
     </div>
-
-    <figure class="print-plate">
-      <span class="plate-corner corner-top" aria-hidden="true"></span>
-      <span class="plate-edition">Embraso · Folheto</span>
-      <img class="hero-emblem" src={emblem.src} alt="Símbolo da Embraso: um tucano integrado a uma chama amarela, laranja, verde e azul." width="462" height="654" fetchpriority="high" />
-      <figcaption>Software livre.<br />Para as realidades do Brasil.</figcaption>
-      <span class="plate-corner corner-bottom" aria-hidden="true"></span>
-    </figure>
+    <div class="print-scene" aria-hidden="true">
+      <svg class="scene-wind" viewBox="0 0 472 208" fill="none" aria-hidden="true">
+        <path data-print-wind="0" d="M16 64 C58 48 92 74 142 56" />
+        <path data-print-wind="1" d="M4 112 C58 92 110 126 178 104" />
+        <path data-print-wind="2" d="M48 156 C84 142 116 164 150 150" />
+      </svg>
+      <img class="scene-toucan" data-print-toucan src={toucan.src} alt="" width="472" height="208" fetchpriority="high" />
+      <div class="scene-emblem"><img src={emblem.src} alt="" width="462" height="654" fetchpriority="high" /></div>
+      <img class="scene-ipe" data-print-ipe src={ipe.src} alt="" width="196" height="212" />
+      <img class="scene-capybara" data-print-capybara src={capybara.src} alt="" width="352" height="192" />
+      <span class="scene-caption">Conhecimento que circula.<br />Liberdade que continua.</span>
+    </div>
   </section>
 
-  <div class="freedom-strip" aria-label="Liberdades do software livre">
-    <div class="container strip-content">
-      <span>Usar</span><i aria-hidden="true"></i>
-      <span>Estudar</span><i aria-hidden="true"></i>
-      <span>Modificar</span><i aria-hidden="true"></i>
-      <span>Compartilhar</span>
-    </div>
-  </div>
-
-  <section id="proposta" class="proposal container" aria-labelledby="proposal-title">
-    <div class="proposal-opening">
-      <h2 id="proposal-title">A tecnologia pode<br /><em>aproximar de novo.</em></h2>
-      <div class="proposal-intro">
-        <p>Passar horas vendo conteúdo não é o mesmo que trocar com alguém. Queremos espaço para uma conversa, uma descoberta inesperada, um grupo de estudo ou um encontro que continue fora da tela.</p>
-        <p><strong>Por que começar agora?</strong> Ferramentas de desenvolvimento podem facilitar o começo. A oportunidade é aproximar quem sabe construir de quem conhece uma necessidade — no Brasil e entre quem está fora e quer contribuir para a vida por aqui.</p>
-        <p>Não basta colocar mais um aplicativo no mundo. Queremos dedicar o que sabemos a algo que importe para outras pessoas, construindo comunidade e autonomia ao mesmo tempo.</p>
+  <section id="proposta" class="proposal page-wrap" aria-labelledby="proposal-title">
+    <h2 id="proposal-title">Mais do que código.<br /><span>Gente com quem construir.</span></h2>
+    <div class="proposal-reading">
+      <p class="large-reading">Queremos uma tecnologia que ajude a viver, não que ocupe a vida inteira. Para aprender, criar, trabalhar e organizar o que importa por aqui.</p>
+      <div class="two-fronts">
+        <article><h3>Comunidade.</h3><p>Aproximar quem conhece um problema de quem pode compartilhar um conhecimento. Escutar, aprender e construir com as pessoas envolvidas.</p></article>
+        <article><h3>Autonomia.</h3><p>Compreender as ferramentas, poder adaptá-las e levar seus dados para outro lugar. Ter escolhas sem precisar fazer tudo por conta própria.</p></article>
       </div>
     </div>
-    <div class="two-fronts">
-      <article>
-        <h3>Construir comunidade.</h3>
-        <p>Reunir pessoas para aprender, trocar e criar juntas. Aproximar quem conhece um problema de quem pode ajudar a resolvê-lo, sem reduzir a comunidade a uma lista de usuários ou de tarefas.</p>
-      </article>
-      <article>
-        <h3>Ampliar a autonomia.</h3>
-        <p>Entender as ferramentas que usamos, poder adaptá-las e levar nossos dados para outro lugar. Ter escolhas sem precisar fazer tudo por conta própria.</p>
-      </article>
-    </div>
-    <p class="freedom-note"><strong>Livre não é o mesmo que gratuito.</strong> É ter liberdade para usar, estudar, modificar e compartilhar. Manter essa liberdade também exige cuidado, recursos e trabalho reconhecido.</p>
   </section>
 
-  <section id="manifesto" class="manifesto-section" aria-labelledby="manifesto-title">
-    <div class="container manifesto-layout">
-      <div class="manifesto-intro">
-        <h2 id="manifesto-title">Uma direção.<br /><em>Seis princípios.</em></h2>
-        <p>O encontro e a vontade de construir explicam por que começar. Os seis princípios orientam como: o que abrir, o que proteger, de quem depender e quem ouvir.</p>
-        <p>Um manifesto não substitui uma comunidade. Precisamos de relações e de condições para cuidar do que criamos.</p>
-        <a class="manifesto-link" href="/manifesto/">Ler o manifesto completo <span class="action-arrow" aria-hidden="true"></span></a>
-        <img class="ipe" src={ipe.src} alt="" width="196" height="212" loading="lazy" />
-      </div>
-      <div class="principles">
-        <p class="reading-hint">Abra cada princípio para ler.</p>
-        {principles.map((principle, index) => (
-          <details class="principle" open={index === 0}>
-            <summary>
-              <span class="principle-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-              <h3>{principle.title}</h3>
-              <span class="expand-mark" aria-hidden="true"></span>
-            </summary>
-            <div class="principle-body">
-              <p class="principle-lead">{principle.lead}</p>
-              <p>{principle.body}</p>
-            </div>
-          </details>
+  <section class="freedoms" aria-labelledby="freedoms-title" data-freedom-reader>
+    <div class="page-wrap">
+      <div class="freedoms-heading"><h2 id="freedoms-title">Livre para quê?</h2><p>Quatro liberdades que mudam nossa relação com o software. Entenda o que cada uma permite na vida de quem usa.</p></div>
+      <fieldset class="freedom-controls" data-freedom-controls hidden>
+        <legend>Escolha uma liberdade para ler</legend>
+        <div class="freedom-options">
+          {freedoms.map((freedom, index) => <label for={`freedom-choice-${freedom.id}`}><input id={`freedom-choice-${freedom.id}`} type="radio" name="freedom" value={freedom.id} checked={index === 0} aria-controls={`freedom-reading-${freedom.id}`} /><span>{freedom.title}</span></label>)}
+        </div>
+      </fieldset>
+      <p class="freedom-status" role="status" aria-live="polite" aria-atomic="true" data-freedom-status hidden></p>
+      <div class="freedom-pages">
+        {freedoms.map((freedom) => (
+          <article class="freedom-page" id={`freedom-reading-${freedom.id}`} data-freedom-page={freedom.id} aria-labelledby={`freedom-heading-${freedom.id}`}>
+            <div class="freedom-title"><h3 id={`freedom-heading-${freedom.id}`}>{freedom.title}</h3><p>{freedom.lead}</p></div>
+            <div class="freedom-reading"><p>{freedom.body}</p><p>{freedom.example}</p><p class="freedom-question">{freedom.question}</p></div>
+          </article>
         ))}
       </div>
+      <p class="freedom-footnote"><strong>Livre não é o mesmo que gratuito.</strong> Essas liberdades podem conviver com atividade comercial. Cuidar delas exige recursos, manutenção e trabalho reconhecido.</p>
+      <noscript><p class="no-script-note">As quatro leituras estão abertas acima. Você pode ler todas, sem ativar JavaScript.</p></noscript>
     </div>
   </section>
 
-  <section id="participacao" class="participation container" aria-labelledby="participation-title">
-    <div class="participation-opening">
-      <div>
-        <h2 id="participation-title">Não precisa saber<br /><em>programar.</em></h2>
-        <p>Uma comunidade começa na troca, não numa lista de habilidades. Queremos aproximar quem conhece uma necessidade de quem quer aprender e ajudar — de quem escreve e ensina a quem desenha, organiza ou ainda está descobrindo por onde começar.</p>
-      </div>
-      <img class="capybara" src={capybara.src} alt="" width="352" height="192" loading="lazy" />
-    </div>
-    <p class="contributions-intro">Há muitos conhecimentos que podem entrar nessa construção:</p>
-    <dl class="contributions">
-      {contributions.map((contribution) => (
-        <div class="contribution">
-          <dt>{contribution.title}</dt>
-          <dd>{contribution.body}</dd>
-        </div>
-      ))}
-    </dl>
-    <div class="participation-note">
-      <p><strong>Interesse não é uma obrigação.</strong> Você não precisa saber tudo, ter tempo toda semana ou transformar uma contribuição em compromisso permanente.</p>
-      <p>As formas concretas de colaboração ainda estão sendo construídas. Por enquanto, o manifesto é o ponto de partida disponível para conhecer a proposta.</p>
+  <section id="manifesto" class="manifesto page-wrap" aria-labelledby="manifesto-title">
+    <div class="manifesto-opening"><h2 id="manifesto-title">Uma direção.<br />Seis princípios.</h2><p>O que abrir. O que proteger. De quem depender. Quem ouvir. O manifesto orienta as escolhas difíceis — não é a obra pronta.</p><a class="text-link" href="/manifesto/">Ler o manifesto completo <span class="reading-arrow" aria-hidden="true"></span></a></div>
+    <div class="principles"><p class="reading-hint">Abra os princípios para ler.</p>{principles.map((principle, index) => (
+      <details class="principle" open={index === 0}>
+        <summary><span class="principle-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><h3>{principle.title}</h3><span class="disclosure-sign" aria-hidden="true"></span></summary>
+        <div class="principle-reading"><p class="principle-lead">{principle.lead}</p><p>{principle.body}</p></div>
+      </details>
+    ))}</div>
+  </section>
+
+  <section id="participacao" class="participation" aria-labelledby="participation-title">
+    <div class="page-wrap">
+      <div class="participation-opening"><h2 id="participation-title">Não precisa saber<br /><span>programar.</span></h2><div><p>Quem conhece uma necessidade de perto tem algo que o código, sozinho, não sabe. Queremos reunir experiências diferentes — inclusive de quem ainda está aprendendo.</p><p>Estar no Brasil não é um requisito para se interessar. Importa ouvir quem vive cada contexto e respeitar seu tempo, seus recursos e seus caminhos.</p></div></div>
+      <dl class="contributions">{contributions.map(([title, body]) => <div><dt>{title}</dt><dd>{body}</dd></div>)}</dl>
+      <div class="participation-note"><strong>Interesse não é obrigação.</strong><p>Você não precisa saber tudo nem ter tempo toda semana. Colaboração não pressupõe trabalho gratuito ou disponibilidade permanente. As formas concretas de participação ainda estão sendo construídas; por enquanto, conhecer o manifesto é o caminho disponível.</p></div>
     </div>
   </section>
 
-  <section class="possibilities container" aria-labelledby="possibilities-title">
-    <div class="possibilities-heading">
-      <h2 id="possibilities-title">O que poderia<br /><em>nascer daqui?</em></h2>
-      <p>São exemplos de possibilidades, não projetos lançados nem uma lista de entregas. A conversa começa pela vida de quem usaria a ferramenta.</p>
-    </div>
-    <dl class="possibility-list">
-      {possibilities.map((possibility) => (
-        <div>
-          <dt>{possibility.context}</dt>
-          <dd>{possibility.question}</dd>
-        </div>
-      ))}
-    </dl>
-    <p class="possibility-end">Às vezes, o melhor caminho será melhorar o que já existe — ou descobrir que um novo aplicativo não é necessário.</p>
-  </section>
-
-  <section class="closing" aria-labelledby="closing-title">
-    <div class="container closing-layout">
-      <h2 id="closing-title">Uma boa pergunta<br />já é um <em>começo.</em></h2>
-      <div class="closing-copy">
-        <p>Que problema você conhece por dentro? Que conhecimento gostaria de trocar? Não é preciso chegar com uma solução pronta.</p>
-        <p>O que faria diferença na sua vida ou na de uma comunidade que você conhece? É dessa conversa que queremos partir, com princípios para orientar o caminho.</p>
-        <a class="button" href="/manifesto/">Comece pelo manifesto <span class="action-arrow" aria-hidden="true"></span></a>
-      </div>
-    </div>
+  <section class="closing page-wrap" aria-labelledby="closing-title">
+    <img src={capybara.src} alt="" width="352" height="192" loading="lazy" />
+    <div class="closing-heading"><h2 id="closing-title">Que problema<br />você conhece<br /><span>por dentro?</span></h2></div>
+    <div class="closing-reading"><p>Uma boa pergunta já é um começo. Antes de propor mais um aplicativo, queremos entender o que já funciona, o que falta e o que vale construir junto.</p><p>Conheça os princípios que orientam essa iniciativa.</p><a class="button" href="/manifesto/">Comece pelo manifesto <span class="reading-arrow" aria-hidden="true"></span></a></div>
   </section>
 </main>
 
+<script>
+  import '../scripts/folheto';
+</script>
+
 <style>
-  .folheto {
-    color: var(--green);
-    background: var(--paper);
-    overflow-wrap: break-word;
-  }
-
-  .folheto :is(h1, h2, h3, p, figure, dl, dd) {
-    margin: 0;
-  }
-
-  .folheto :is(h1, h2, h3, dt) {
-    font-family: var(--font-display);
-  }
-
-  .folheto :is(h1, h2) {
-    font-stretch: 62%;
-    font-weight: 850;
-    letter-spacing: -0.035em;
-    text-transform: uppercase;
-  }
-
-  .folheto h2 {
-    font-size: clamp(2.75rem, 4.6vw, 4.5rem);
-    line-height: 0.99;
-    text-wrap: balance;
-  }
-
-  .folheto h2 em {
-    font-style: normal;
-  }
-
-  .folheto a {
-    text-underline-offset: 0.22em;
-    text-decoration-thickness: 1px;
-  }
-
-  .folheto :is(a, summary):focus-visible {
-    outline: 3px solid var(--green);
-    outline-offset: 5px;
-  }
-
-  .hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
-    gap: clamp(2rem, 5vw, 5rem);
-    align-items: center;
-    padding-block: 3.25rem 4.5rem;
-  }
-
-  .hero-copy {
-    min-width: 0;
-  }
-
-  .flight {
-    display: flex;
-    align-items: center;
-    height: 3.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .flight-trail {
-    flex: 1;
-    height: 1.5rem;
-    border-top: 1px dashed var(--green);
-    border-radius: 50%;
-    transform: rotate(-5deg);
-  }
-
-  .flying-toucan {
-    width: 10rem;
-    height: auto;
-    flex: none;
-    transform: rotate(-5deg);
-  }
-
-  .hero h1 {
-    font-size: clamp(4.5rem, 8.2vw, 6rem);
-    line-height: 0.9;
-  }
-
-  .hero h1 > span {
-    display: block;
-  }
-
-  .hero h1 mark {
-    background: var(--yellow);
-    color: inherit;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-    padding-inline: 0.04em;
-  }
-
-  .hero-intro {
-    max-width: 47ch;
-    margin-top: 1.75rem !important;
-    font-size: 1.125rem;
-    line-height: 1.55;
-  }
-
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1rem 1.5rem;
-    margin-top: 1.75rem;
-  }
-
-  .hero-actions .text-link {
-    font-size: 0.9375rem;
-    font-weight: 600;
-  }
-
-  .action-arrow {
-    position: relative;
-    display: inline-block;
-    width: 0.65em;
-    height: 0.65em;
-    margin-left: 0.75em;
-    border-top: 1.5px solid currentColor;
-    border-right: 1.5px solid currentColor;
-  }
-
-  .action-arrow::after {
-    content: '';
-    position: absolute;
-    top: -1px;
-    right: -1px;
-    width: 0.85em;
-    height: 1.5px;
-    background: currentColor;
-    transform: rotate(-45deg);
-    transform-origin: right center;
-  }
-
-  .print-plate {
-    position: relative;
-    display: flex;
-    min-height: 31rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem;
-    background: var(--green);
-    color: var(--cream);
-  }
-
-  .plate-edition,
-  .print-plate figcaption {
-    align-self: flex-start;
-    font-family: var(--font-mono);
-    font-size: 0.625rem;
-    line-height: 1.7;
-    letter-spacing: 0.035em;
-    text-transform: uppercase;
-  }
-
-  .hero-emblem {
-    width: 65%;
-    max-width: 15.5rem;
-    height: auto;
-    margin-block: 2rem;
-  }
-
-  .plate-corner {
-    position: absolute;
-    width: 1.25rem;
-    height: 1.25rem;
-    color: var(--green);
-  }
-
-  .corner-top {
-    top: -0.625rem;
-    left: -0.625rem;
-    border-top: 1px solid;
-    border-left: 1px solid;
-  }
-
-  .corner-bottom {
-    right: -0.625rem;
-    bottom: -0.625rem;
-    border-bottom: 1px solid;
-    border-right: 1px solid;
-  }
-
-  .freedom-strip {
-    background: var(--green);
-    color: var(--paper);
-    padding-block: 0.9rem;
-  }
-
-  .strip-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    font-family: var(--font-display);
-    font-stretch: 62%;
-    font-size: clamp(1.25rem, 2.6vw, 2rem);
-    font-weight: 800;
-    line-height: 1.1;
-    text-transform: uppercase;
-  }
-
-  .strip-content i {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background: var(--yellow);
-    flex: none;
-  }
-
-  .proposal,
-  .participation {
-    padding-block: 6rem;
-  }
-
-  .proposal-opening {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 3.5rem;
-  }
-
-  .proposal-intro p + p {
-    margin-top: 1rem;
-  }
-
-  .two-fronts {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    margin-top: 3.5rem;
-    border-block: 1px solid var(--green);
-  }
-
-  .two-fronts article {
-    padding: 2rem 2.5rem 2rem 0;
-  }
-
-  .two-fronts article + article {
-    padding-left: 2.5rem;
-    padding-right: 0;
-    border-left: 1px solid var(--green);
-  }
-
-  .two-fronts h3 {
-    margin-bottom: 0.75rem;
-    font-stretch: 75%;
-    font-size: clamp(1.625rem, 2.5vw, 2rem);
-    font-weight: 750;
-    line-height: 1.15;
-  }
-
-  .two-fronts p {
-    max-width: 52ch;
-  }
-
-  .freedom-note {
-    max-width: 84ch;
-    margin-top: 1.75rem !important;
-    font-size: 0.9375rem;
-  }
-
-  .manifesto-section {
-    padding-block: 5.5rem 6rem;
-    background: var(--green);
-    color: var(--cream);
-  }
-
-  .manifesto-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
-    gap: clamp(2rem, 5vw, 5rem);
-  }
-
-  .manifesto-intro h2 em {
-    color: var(--yellow);
-  }
-
-  .manifesto-intro > p {
-    max-width: 36ch;
-    margin-top: 1.5rem;
-  }
-
-  .manifesto-intro > p + p {
-    margin-top: 1rem;
-  }
-
-  .manifesto-link {
-    display: inline-block;
-    margin-top: 1.75rem;
-    color: var(--cream);
-    font-weight: 650;
-  }
-
-  .manifesto-link:hover {
-    color: var(--yellow);
-  }
-
-  .manifesto-section :is(a, summary):focus-visible {
-    outline-color: var(--yellow);
-  }
-
-  .ipe {
-    display: block;
-    width: 8.5rem;
-    height: auto;
-    margin-top: 2.5rem;
-  }
-
-  .reading-hint {
-    margin-bottom: 1rem !important;
-    font-size: 0.875rem;
-  }
-
-  .principle {
-    border-top: 1px solid rgb(251 247 236 / 45%);
-  }
-
-  .principle:last-child {
-    border-bottom: 1px solid rgb(251 247 236 / 45%);
-  }
-
-  .principle summary {
-    display: grid;
-    grid-template-columns: 1.75rem minmax(0, 1fr) 1rem;
-    align-items: baseline;
-    gap: 0.75rem;
-    padding-block: 1.4rem;
-    cursor: pointer;
-    list-style: none;
-  }
-
-  .principle summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .principle summary:hover h3 {
-    color: var(--yellow);
-  }
-
-  .principle-number {
-    color: var(--yellow);
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .principle h3 {
-    font-stretch: 75%;
-    font-size: clamp(1.375rem, 2.2vw, 1.875rem);
-    line-height: 1.15;
-    font-weight: 650;
-    letter-spacing: -0.015em;
-  }
-
-  .expand-mark {
-    position: relative;
-    align-self: center;
-    width: 0.875rem;
-    height: 0.875rem;
-  }
-
-  .expand-mark::before,
-  .expand-mark::after {
-    content: '';
-    position: absolute;
-    background: var(--yellow);
-  }
-
-  .expand-mark::before {
-    top: calc(50% - 1px);
-    left: 0;
-    width: 100%;
-    height: 2px;
-  }
-
-  .expand-mark::after {
-    top: 0;
-    left: calc(50% - 1px);
-    width: 2px;
-    height: 100%;
-  }
-
-  .principle[open] .expand-mark::after {
-    display: none;
-  }
-
-  .principle-body {
-    padding: 0 1.75rem 1.75rem 2.5rem;
-    font-size: 0.9375rem;
-    line-height: 1.7;
-  }
-
-  .principle-lead {
-    margin-bottom: 0.75rem !important;
-    color: var(--yellow);
-    font-weight: 650;
-  }
-
-  .participation-opening {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 15rem;
-    align-items: end;
-    gap: 3rem;
-  }
-
-  .participation-opening p {
-    max-width: 65ch;
-    margin-top: 1.75rem;
-    font-size: 1.125rem;
-  }
-
-  .capybara {
-    width: 100%;
-    height: auto;
-    margin-bottom: 0.25rem;
-  }
-
-  .contributions-intro {
-    margin-top: 3rem !important;
-    margin-bottom: 1rem !important;
-  }
-
-  .contribution {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
-    gap: 2rem;
-    border-top: 1px solid var(--green);
-    padding-block: 1.75rem;
-  }
-
-  .contribution:last-child {
-    border-bottom: 1px solid var(--green);
-  }
-
-  .contribution dt {
-    font-size: clamp(1.5rem, 2.7vw, 2rem);
-    font-stretch: 75%;
-    font-weight: 750;
-    line-height: 1.2;
-  }
-
-  .contribution dd {
-    max-width: 65ch;
-  }
-
-  .participation-note {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 2rem;
-    margin-top: 1.75rem;
-    font-size: 0.9375rem;
-  }
-
-  .possibilities {
-    padding-bottom: 6rem;
-  }
-
-  .possibilities-heading {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 3.5rem;
-    align-items: end;
-    margin-bottom: 2rem;
-  }
-
-  .possibilities-heading p {
-    max-width: 55ch;
-  }
-
-  .possibility-list {
-    border-block: 1px solid var(--green);
-  }
-
-  .possibility-list > div {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
-    gap: 2rem;
-    padding: 1.5rem 1.25rem;
-  }
-
-  .possibility-list > div + div {
-    border-top: 1px solid rgb(19 82 47 / 35%);
-  }
-
-  .possibility-list > div:nth-child(2) {
-    background: rgb(253 177 18 / 12%);
-  }
-
-  .possibility-list dt {
-    font-weight: 700;
-  }
-
-  .possibility-end {
-    max-width: 85ch;
-    margin-top: 1.5rem !important;
-    font-size: 0.9375rem;
-  }
-
-  .closing {
-    padding-block: 4.5rem;
-    background: var(--yellow);
-    border-top: 1px solid var(--green);
-  }
-
-  .closing-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .closing h2 {
-    font-size: clamp(3rem, 5.5vw, 5rem);
-  }
-
-  .closing-copy p {
-    max-width: 46ch;
-  }
-
-  .closing-copy p + p {
-    margin-top: 0.75rem;
-  }
-
-  .closing-copy .button {
-    margin-top: 1.5rem;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .flying-toucan {
-      animation: toucan-arrival 1.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-  }
-
-  @keyframes toucan-arrival {
-    from {
-      transform: translate(-1.75rem, 0.75rem) rotate(-10deg);
-      filter: saturate(0.75);
-    }
-    to {
-      transform: translate(0, 0) rotate(-5deg);
-      filter: saturate(1);
-    }
-  }
-
-  @media (max-width: 900px) {
-    .hero {
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.85fr);
-      gap: 2rem;
-      padding-block: 2.5rem 3.5rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(3.75rem, 8.8vw, 5.5rem);
-    }
-
-    .print-plate {
-      min-height: 26rem;
-      padding: 1rem;
-    }
-
-    .hero-emblem {
-      width: 80%;
-    }
-
-    .proposal-opening,
-    .possibilities-heading {
-      gap: 2rem;
-    }
-
-    .manifesto-layout {
-      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-      gap: 2rem;
-    }
-
-    .participation-opening {
-      grid-template-columns: minmax(0, 1fr) 10rem;
-      gap: 2rem;
-    }
-
-    .closing-layout {
-      gap: 2rem;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .hero {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 2.75rem;
-      padding-block: 1.75rem 3rem;
-    }
-
-    .flight {
-      height: 2.5rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .flying-toucan {
-      width: 7.5rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(3.5rem, 14vw, 5.5rem);
-    }
-
-    .hero-intro {
-      margin-top: 1.5rem !important;
-      font-size: 1rem;
-    }
-
-    .hero-actions {
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-    }
-
-    .print-plate {
-      min-height: auto;
-      width: 100%;
-      max-width: 25rem;
-      justify-self: center;
-      padding: 1.25rem;
-    }
-
-    .hero-emblem {
-      width: 58%;
-      max-width: 12rem;
-      margin-block: 1.75rem;
-    }
-
-    .strip-content {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 0.65rem 1.5rem;
-      font-size: 1.5rem;
-    }
-
-    .strip-content i {
-      display: none;
-    }
-
-    .proposal,
-    .participation {
-      padding-block: 3.5rem;
-    }
-
-    .proposal-opening,
-    .two-fronts,
-    .manifesto-layout,
-    .participation-opening,
-    .participation-note,
-    .possibilities-heading,
-    .closing-layout {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 1.75rem;
-    }
-
-    .folheto h2 {
-      font-size: clamp(2.6rem, 10vw, 3.5rem);
-    }
-
-    .two-fronts {
-      gap: 0;
-      margin-top: 2rem;
-    }
-
-    .two-fronts article,
-    .two-fronts article + article {
-      padding: 1.5rem 0;
-      border-left: 0;
-    }
-
-    .two-fronts article + article {
-      border-top: 1px solid var(--green);
-    }
-
-    .manifesto-section {
-      padding-block: 3.5rem;
-    }
-
-    .manifesto-intro {
-      position: relative;
-    }
-
-    .manifesto-intro > p {
-      max-width: 48ch;
-    }
-
-    .ipe {
-      width: 5rem;
-      margin-top: 1.5rem;
-    }
-
-    .principle summary {
-      grid-template-columns: 1.5rem minmax(0, 1fr) 0.875rem;
-      gap: 0.5rem;
-      padding-block: 1.25rem;
-    }
-
-    .principle h3 {
-      font-size: 1.5rem;
-    }
-
-    .principle-body {
-      padding-left: 2rem;
-      padding-right: 0;
-    }
-
-    .participation-opening p {
-      margin-top: 1.5rem;
-      font-size: 1rem;
-    }
-
-    .capybara {
-      width: 9rem;
-      justify-self: end;
-    }
-
-    .contributions-intro {
-      margin-top: 1.75rem !important;
-    }
-
-    .contribution,
-    .possibility-list > div {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 0.75rem;
-      padding-block: 1.5rem;
-    }
-
-    .participation-note {
-      gap: 1rem;
-    }
-
-    .possibilities {
-      padding-bottom: 3.5rem;
-    }
-
-    .possibility-list > div {
-      padding-inline: 0.75rem;
-    }
-
-    .closing {
-      padding-block: 3rem;
-    }
-
-    .closing h2 {
-      font-size: clamp(2.8rem, 11vw, 4rem);
-    }
+  .folheto { color: var(--green); background: var(--paper); overflow: clip; overflow-wrap: break-word; }
+  .page-wrap { width: min(1320px, calc(100% - 80px)); margin-inline: auto; }
+  .folheto :is(h1, h2, h3, p, dl, dd) { margin: 0; }
+  .folheto :is(h1, h2) { font-family: var(--font-display); font-stretch: 62%; font-weight: 850; text-transform: uppercase; letter-spacing: -.035em; line-height: .92; }
+  .folheto h2 { font-size: clamp(3.2rem, 6.3vw, 6rem); }
+  .folheto h2 span { color: inherit; }
+  .folheto a { text-underline-offset: .25em; }
+  .reading-arrow { display: inline-block; position: relative; width: 16px; height: 13px; margin-left: 4px; vertical-align: middle; flex: 0 0 auto; }
+  .reading-arrow::before { content: ''; position: absolute; width: 15px; height: 1px; background: currentColor; left: 0; top: 6px; }
+  .reading-arrow::after { content: ''; position: absolute; width: 8px; height: 8px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; transform: rotate(45deg); right: 1px; top: 2px; }
+  .folheto :is(a, summary, input):focus-visible { outline: 3px solid var(--blue); outline-offset: 6px; }
+  .folheto [hidden] { display: none !important; }
+  .opening { position: relative; min-height: 650px; padding-block: clamp(36px, 4vw, 64px) 68px; }
+  .opening-copy { position: relative; z-index: 1; width: 62%; }
+  .opening h1 { font-size: clamp(5rem, 8.2vw, 6rem); line-height: .88; }
+  .opening h1 > span { display: block; }
+  .together { margin-block: .04em .17em; }
+  .opening mark { position: relative; isolation: isolate; color: var(--green); background: none; padding-inline: .035em .12em; margin-left: -.035em; }
+  .opening mark::before { content: ''; position: absolute; z-index: -1; inset: 13% 0 -5%; background: var(--yellow); transform: rotate(-2deg); transform-origin: left center; }
+  .opening-intro { font-size: clamp(1.125rem, 1.6vw, 1.4rem); line-height: 1.5; max-width: 39ch; margin-top: 28px !important; }
+  .opening-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 26px; margin-top: 26px; }
+  .opening-actions .text-link { font-size: 14px; }
+  .print-scene { position: absolute; width: 35%; top: 9%; bottom: 65px; right: 0; }
+  .scene-toucan { position: absolute; z-index: 3; width: 94%; top: -3%; left: -12%; transform-origin: 58% 50%; }
+  .scene-wind { position: absolute; z-index: 2; width: 94%; top: -3%; left: -12%; overflow: visible; pointer-events: none; stroke: var(--green); stroke-width: 1.5; stroke-linecap: round; }
+  .scene-wind path { opacity: 0; }
+  .scene-emblem { position: absolute; top: 11%; right: 4%; width: 67%; }
+  .scene-emblem img { width: 100%; }
+  .scene-capybara { position: absolute; z-index: 2; bottom: 40px; width: 68%; left: -10%; transform-origin: 50% 85%; }
+  .scene-ipe { position: absolute; width: 36%; bottom: 45px; right: -2%; transform-origin: 50% 100%; }
+  .scene-caption { position: absolute; bottom: -7px; right: 0; text-align: right; font-size: 12px; line-height: 1.45; }
+  .proposal { padding-block: 76px 100px; border-top: 2px solid var(--green); }
+  .proposal h2 { max-width: 1000px; margin-bottom: 46px; }
+  .proposal h2 span { font-size: .78em; }
+  .proposal-reading { display: grid; grid-template-columns: 1fr 1.2fr; gap: 8%; }
+  .large-reading { font-size: clamp(1.3rem, 2.2vw, 1.9rem); line-height: 1.4; max-width: 27ch; }
+  .two-fronts { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .two-fronts h3 { font-size: 1.7rem; font-stretch: 75%; line-height: 1.15; margin-bottom: 16px; }
+  .two-fronts p { line-height: 1.6; }
+  .freedoms { background: var(--green); color: var(--cream); padding-block: 82px 54px; }
+  .freedoms-heading { display: flex; align-items: end; gap: 40px; justify-content: space-between; margin-bottom: 42px; }
+  .freedoms-heading p { max-width: 36ch; font-size: 17px; line-height: 1.55; }
+  .freedom-controls { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .freedom-controls legend { font-size: 14px; margin-bottom: 14px; }
+  .freedom-options { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--cream); }
+  .freedom-options label { cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 76px; padding: 12px; font-size: clamp(1.25rem, 2.6vw, 2.1rem); font-stretch: 75%; font-weight: 750; line-height: 1.2; }
+  .freedom-options label + label { border-left: 1px solid color-mix(in srgb, var(--cream) 40%, transparent); }
+  .freedom-options label:has(input:checked) { background: var(--yellow); color: var(--dark); }
+  .freedom-options label:hover { background: color-mix(in srgb, var(--cream) 12%, transparent); }
+  .freedom-options label:has(input:checked):hover { background: var(--yellow); }
+  .freedom-options input { accent-color: var(--green); width: 18px; height: 18px; margin: 0; flex: 0 0 auto; }
+  .freedom-options label:focus-within { outline: 3px solid var(--yellow); outline-offset: 5px; position: relative; z-index: 1; }
+  .freedom-options input:focus-visible { outline-color: var(--dark); outline-offset: 3px; }
+  .freedom-status { padding-top: 18px; font-size: 13px; color: var(--yellow); }
+  .freedom-page { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; padding-block: 40px 44px; border-bottom: 1px solid color-mix(in srgb, var(--cream) 35%, transparent); }
+  .freedom-title h3 { font-stretch: 62%; font-size: clamp(3.4rem, 7.3vw, 6rem); font-weight: 850; letter-spacing: -.03em; line-height: 1; overflow-wrap: anywhere; }
+  .freedom-title p { margin-top: 23px; font-size: clamp(1.3rem, 2vw, 1.8rem); line-height: 1.35; max-width: 27ch; color: var(--yellow); }
+  .freedom-reading p + p { margin-top: 18px; }
+  .freedom-question { font-size: 1.15rem; font-weight: 650; line-height: 1.45; padding-top: 20px; }
+  .freedom-footnote { max-width: 83ch; margin-top: 26px !important; font-size: 14px; }
+  .no-script-note { margin-top: 16px !important; font-size: 14px; }
+  .manifesto { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8%; padding-block: 110px; }
+  .manifesto-opening h2 { font-size: clamp(3.6rem, 5.8vw, 5.8rem); }
+  .manifesto-opening p { margin-block: 30px 25px; max-width: 33ch; font-size: 18px; line-height: 1.6; }
+  .manifesto-opening a { font-size: 15px; }
+  .reading-hint { font-size: 13px; padding-bottom: 16px; }
+  .principle { border-top: 1px solid var(--green); }
+  .principle:last-child { border-bottom: 1px solid var(--green); }
+  .principle summary { list-style: none; display: grid; grid-template-columns: 28px 1fr 22px; align-items: start; gap: 16px; padding-block: 22px; }
+  .principle summary::-webkit-details-marker { display: none; }
+  .principle-number { font-family: var(--font-mono); font-size: 11px; padding-top: 6px; }
+  .principle summary h3 { font-size: clamp(1.6rem, 2.5vw, 2.15rem); font-stretch: 70%; font-weight: 750; line-height: 1.08; }
+  .principle summary:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+  .disclosure-sign { width: 18px; height: 18px; position: relative; margin-top: 5px; }
+  .disclosure-sign::before, .disclosure-sign::after { content: ''; position: absolute; background: currentColor; top: 8px; left: 1px; width: 16px; height: 2px; }
+  .disclosure-sign::after { transform: rotate(90deg); }
+  .principle[open] .disclosure-sign::after { display: none; }
+  .principle-reading { padding: 0 38px 28px 44px; font-size: 16px; line-height: 1.65; }
+  .principle-lead { font-size: 18px; line-height: 1.45; font-weight: 650; margin-bottom: 15px !important; }
+  .participation { background: var(--yellow); padding-block: 85px 70px; color: var(--dark); }
+  .participation ::selection { background: var(--dark); color: var(--cream); }
+  .participation-opening { display: grid; grid-template-columns: 1fr .8fr; gap: 8%; align-items: end; margin-bottom: 56px; }
+  .participation-opening h2 { font-size: clamp(3.7rem, 7vw, 6rem); }
+  .participation-opening p + p { margin-top: 18px; }
+  .contributions { border-top: 1px solid var(--dark); }
+  .contributions > div { display: grid; grid-template-columns: 1fr 1.4fr; gap: 8%; border-bottom: 1px solid color-mix(in srgb, var(--dark) 45%, transparent); padding-block: 25px; align-items: baseline; }
+  .contributions dt { font-size: clamp(1.6rem, 2.7vw, 2.4rem); font-stretch: 70%; font-weight: 750; line-height: 1.15; }
+  .contributions dd { max-width: 62ch; }
+  .participation-note { display: grid; grid-template-columns: 1fr 1.4fr; gap: 8%; margin-top: 40px; font-size: 14px; }
+  .participation-note strong { font-size: 18px; line-height: 1.5; }
+  .closing { display: grid; grid-template-columns: 1fr .8fr; align-items: end; position: relative; gap: 8%; padding-block: 138px 100px; }
+  .closing > img { position: absolute; width: clamp(130px, 14vw, 200px); top: 45px; right: 0; }
+  .closing h2 { font-size: clamp(4.2rem, 8.2vw, 6rem); }
+  .closing h2 span { text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: .12em; text-underline-offset: .02em; }
+  .closing-reading { max-width: 40ch; }
+  .closing-reading p + p { margin-top: 20px; }
+  .closing-reading .button { margin-top: 28px; }
+  @media (max-width: 1000px) {
+    .page-wrap { width: calc(100% - 48px); }
+    .opening h1 { font-size: clamp(4.4rem, 12.7vw, 6rem); }
+    .print-scene { top: 10%; bottom: 76px; }
+    .scene-emblem { top: 19%; width: 77%; }
+    .scene-capybara { bottom: 38px; width: 80%; left: -16%; }
+    .proposal-reading { grid-template-columns: 1fr; gap: 34px; }
+    .large-reading { max-width: 42ch; }
+    .two-fronts { max-width: 800px; }
+    .manifesto { gap: 5%; grid-template-columns: .8fr 1.2fr; }
+    .principle summary { gap: 10px; grid-template-columns: 22px 1fr 18px; }
+    .principle-reading { padding-inline: 32px 12px; }
+    .participation-opening { align-items: start; gap: 5%; }
+  }
+  @media (max-width: 700px) {
+    .page-wrap { width: calc(100% - 40px); }
+    .opening { min-height: 0; padding-block: 32px 40px; }
+    .opening-copy { width: 100%; }
+    .opening h1 { font-size: clamp(4.4rem, 18.5vw, 6rem); }
+    .opening-intro { max-width: 43ch; margin-top: 27px !important; font-size: 18px; }
+    .opening-actions { align-items: start; flex-direction: column; gap: 18px; margin-top: 23px; }
+    .print-scene { position: relative; inset: auto; height: 270px; width: min(100%, 430px); margin: 26px auto 0; }
+    .scene-toucan { width: 60%; top: 0; left: -1%; }
+    .scene-wind { width: 60%; top: 0; left: -1%; }
+    .scene-emblem { top: 1%; right: 12%; width: 36%; }
+    .scene-capybara { left: 2%; width: 51%; bottom: 36px; }
+    .scene-ipe { width: 28%; right: 0; bottom: 39px; }
+    .scene-caption { bottom: -5px; font-size: 11px; }
+    .proposal { padding-block: 50px 60px; }
+    .folheto h2 { font-size: clamp(3rem, 10vw, 4.7rem); }
+    .proposal h2 { margin-bottom: 28px; }
+    .proposal h2 span { font-size: .88em; }
+    .large-reading { font-size: 23px; }
+    .two-fronts { gap: 26px; }
+    .two-fronts h3 { font-size: 1.6rem; }
+    .two-fronts p { font-size: 15px; }
+    .freedoms { padding-block: 54px 38px; }
+    .freedoms-heading { display: block; margin-bottom: 28px; }
+    .freedoms-heading p { margin-top: 24px; max-width: 43ch; font-size: 16px; }
+    .freedom-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .freedom-options label { min-height: 65px; font-size: clamp(1.25rem, 5vw, 1.8rem); justify-content: start; gap: 9px; padding-inline: 12px; }
+    .freedom-options label:nth-child(3) { border-left: 0; }
+    .freedom-options label:nth-child(n + 3) { border-top: 1px solid color-mix(in srgb, var(--cream) 40%, transparent); }
+    .freedom-page { display: block; padding-block: 28px; }
+    .freedom-title h3 { font-size: clamp(3rem, 12vw, 5.2rem); }
+    .freedom-title p { font-size: 24px; margin-top: 14px; max-width: 30ch; }
+    .freedom-reading { margin-top: 24px; }
+    .freedom-footnote { font-size: 14px; }
+    .manifesto { display: block; padding-block: 64px; }
+    .manifesto-opening p { max-width: 45ch; margin-block: 26px 20px; font-size: 17px; }
+    .principles { margin-top: 40px; }
+    .principle summary { padding-block: 20px; gap: 10px; }
+    .principle summary h3 { font-size: 1.8rem; }
+    .principle-reading { padding-left: 0; padding-right: 0; }
+    .participation { padding-block: 56px 42px; }
+    .participation-opening { display: block; margin-bottom: 34px; }
+    .participation-opening h2 { margin-bottom: 28px; }
+    .contributions > div { grid-template-columns: 1fr; gap: 14px; padding-block: 22px; }
+    .contributions dt { font-size: 1.9rem; }
+    .participation-note { display: block; margin-top: 30px; }
+    .participation-note p { margin-top: 14px; }
+    .closing { grid-template-columns: 1fr; gap: 32px; padding-block: 110px 64px; }
+    .closing > img { width: 140px; top: 24px; }
+    .closing h2 { font-size: clamp(3.8rem, 15vw, 6rem); }
+    .closing-reading { max-width: 47ch; }
+  }
+  @media (max-width: 380px) {
+    .two-fronts { grid-template-columns: 1fr; }
+    .print-scene { height: 240px; }
+    .opening-actions .button, .closing-reading .button { width: 100%; }
+    .freedom-options label { padding-inline: 8px; gap: 7px; }
+    .freedom-options input { width: 15px; height: 15px; }
+    .principle summary h3 { font-size: 1.6rem; }
+  }
+  @media print {
+    .freedom-controls, .freedom-status, .scene-caption { display: none; }
+    .folheto .freedom-page[hidden] { display: grid !important; }
+    .freedoms, .participation { background: transparent; color: black; }
+    .freedom-title p, .freedom-status { color: black; }
+    .print-scene { display: none; }
+    .opening-copy { width: 100%; }
   }
 </style>

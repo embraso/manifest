@@ -35,11 +35,19 @@ const description = 'Uma iniciativa para reunir pessoas, construir software úti
     <header class="site-header">
       <div class="utility-bar">
         <div class="container utility-inner">
-          <span class="utility-note">{technical ? 'software livre · construção coletiva' : 'Software livre · construção coletiva'}</span>
-          <nav class="audience-switch" aria-label="Versão do site">
+          <nav class="audience-switch" aria-label="Público da leitura">
             <a href="/" aria-current={!technical && !isManifesto ? 'page' : undefined} data-selected={!technical}>Público geral</a>
             <a href="/devs/" aria-current={technical ? 'page' : undefined} data-selected={technical}><span aria-hidden="true">&gt;_ </span>Devs</a>
           </nav>
+          {!isManifesto && (
+            <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false" hidden>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path class="pause-icon" d="M4 3h3v10H4zm5 0h3v10H9z" />
+                <path class="play-icon" d="m5 3 8 5-8 5z" />
+              </svg>
+              <span data-motion-label>Pausar movimento</span>
+            </button>
+          )}
         </div>
       </div>
       <div class="container navigation-row">
@@ -52,7 +60,7 @@ const description = 'Uma iniciativa para reunir pessoas, construir software úti
           <a href={`${home}#participacao`}>{technical ? './construir' : 'Construir junto'}</a>
         </nav>
       </div>
-      <div class="bunting" aria-hidden="true">
+      <div class="bunting" aria-hidden="true" hidden={technical}>
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="22"><defs><pattern id="bandeirinhas" width="184" height="22" patternUnits="userSpaceOnUse"><path d="M2 1h18v20l-9-5-9 5z" fill="#fdb112"/><path d="M25 1h18v20l-9-5-9 5z" fill="#f56d1d"/><path d="M48 1h18v20l-9-5-9 5z" fill="#086797"/><path d="M71 1h18v20l-9-5-9 5z" fill="#13522f"/><path d="M94 1h18v20l-9-5-9 5z" fill="#80b99a"/><path d="M117 1h18v20l-9-5-9 5z" fill="#fdb112"/><path d="M140 1h18v20l-9-5-9 5z" fill="#086797"/><path d="M163 1h18v20l-9-5-9 5z" fill="#f56d1d"/><path d="M0 .5h184" stroke="currentColor" fill="none"/></pattern></defs><rect width="100%" height="22" fill="url(#bandeirinhas)"/></svg>
       </div>
     </header>
@@ -70,7 +78,7 @@ const description = 'Uma iniciativa para reunir pessoas, construir software úti
       </div>
       <div class="container footer-bottom">
         <span>Embraso · uma iniciativa em construção</span>
-        <a href={technical ? '/' : '/devs/'}>{technical ? 'Ver a versão para o público geral' : 'Prefere uma leitura mais técnica? Versão devs'} <span aria-hidden="true">→</span></a>
+        <a href={technical ? '/' : '/devs/'}>{technical ? 'Ver a leitura para o público geral' : 'Prefere uma leitura mais técnica? Para devs'} <span aria-hidden="true">→</span></a>
       </div>
     </footer>
   </body>
