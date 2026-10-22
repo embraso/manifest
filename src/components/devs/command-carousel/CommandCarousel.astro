@@ -16,7 +16,7 @@ const topics = [
 
 <section id="leitura-local" class="command-carousel" data-command-carousel data-state-sequence={copy.sequence} data-state-reduced={copy.reducedMotion} data-state-paced={copy.paced} data-state-pause={copy.pause} data-state-resume={copy.resume} data-announcement-template={copy.announcement} aria-labelledby="carousel-title" aria-roledescription={copy.roleDescription}>
   <div class="carousel-guide">
-    <h2 id="carousel-title">{copy.heading.map((part) => part.type === 'break' ? <br /> : part.type === 'emphasis' || part.type === 'accent' ? <span>{part.text}</span> : part.type === 'strong' ? <strong>{part.text}</strong> : part.type === 'mark' ? <span>{part.text}</span> : part.text)}</h2>
+    <h2 id="carousel-title">{copy.heading.map((part) => part.type === 'break' ? <><br />{' '}</> : part.type === 'emphasis' || part.type === 'accent' ? <span>{part.text}</span> : part.type === 'strong' ? <strong>{part.text}</strong> : part.type === 'mark' ? <span>{part.text}</span> : part.text)}</h2>
     <p>{copy.intro}</p>
     <nav class="topic-navigation" aria-label={copy.navigation}>
       {topics.map((topic, index) => (

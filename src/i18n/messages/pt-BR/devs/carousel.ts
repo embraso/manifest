@@ -21,10 +21,10 @@ export const carousel = {
   principlesLink: 'Ler no manifesto',
   roleDescription: 'carrossel',
   heading: [
-    { type: 'text', text: 'Por trás de' },
+    { type: 'text', text: 'Manifesto,' },
     { type: 'break' },
-    { type: 'text', text: 'cada ' },
-    { type: 'emphasis', text: 'linha.' },
+    { type: 'text', text: 'objetivos e ' },
+    { type: 'emphasis', text: 'princípios' },
   ],
   intro: 'Software começa com gente. Os comandos percorrem a proposta e os princípios que queremos levar para o código.',
   navigation: 'Tópicos de leitura',

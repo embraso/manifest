@@ -239,7 +239,9 @@ The switch reads “Público geral” and “Devs”; `data-selected` selects th
 
 ### Typed-topic carousel
 
-“Por trás de cada linha.” introduces nine local readings: `manifesto`, `comunidade`, `autonomia`, then `principio 1` through `principio 6` in canonical order. The topic index uses native anchors, `aria-controls` and `aria-current`. Selected text and the prompt are amber on a deep-green surface; no input, autocomplete, command history or simulated execution remains. The command line uses a mint prompt and a block caret; output pairs quieter mono headings with proportional reading text.
+“Manifesto, objetivos e princípios” introduces nine local readings: `manifesto`, `comunidade`, `autonomia`, then `principio 1` through `principio 6` in canonical order. The topic index uses native anchors, `aria-controls` and `aria-current`. Selected text and the prompt are amber on a deep-green surface; no input, autocomplete, command history or simulated execution remains. The command line uses a mint prompt and a block caret; output pairs quieter mono headings with proportional reading text.
+
+Responsive rich-text line breaks retain a whitespace fallback when the mobile layout hides the `<br>` element, so adjacent translated words do not run together.
 
 While visible and motion is allowed, commands type at (65ms) per character. A (280ms) output transition accompanies topic changes; the text itself stays available throughout typing. Reading dwell is (9000ms + 35ms per word), capped at (18000ms); an amber progress rule measures that dwell. Autoplay is on by default. Topic selection and previous/next wrap through all nine topics without changing playback mode. Pointer movement, hover, keyboard focus and touch do not pause or restart the sequence. Only the reader's explicit pause/resume control changes its local playback choice. Selecting a topic while explicitly paused retains that choice.
 
