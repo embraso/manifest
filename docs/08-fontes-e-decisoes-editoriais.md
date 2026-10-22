@@ -14,8 +14,8 @@ Foram lidos integralmente os dois manifestos disponibilizados em `C:/dev/embraso
 
 | Fonte | Cópia de consulta | Papel na síntese |
 | --- | --- | --- |
-| `Manifesto.md`, título “Manifesto por uma Tecnologia Livre, Soberana e Acessível” | [Manifesto original](fontes/manifesto-original.md) | Estrutura dos seis princípios; direitos, continuidade, segurança, custos, contextos brasileiros e transparência |
-| `Manifesto - Thiago.md`, título “Nunca houve momento tão oportuno para desenvolvermos software brasileiro” | [Manifesto do Thiago](fontes/manifesto-thiago-original.md) | Motivação humana, crítica ao consumo sem troca, descoberta, comunidade, duas frentes e convite à contribuição |
+| `Manifesto.md`, título “Manifesto por uma Tecnologia Livre, Soberana e Acessível” | [Manifesto original](fontes/manifesto-original.md) | Nomes e ordem dos seis princípios; critérios de liberdade, direitos, continuidade, segurança, custos, contextos brasileiros e transparência que respondem a como construir |
+| `Manifesto - Thiago.md`, título “Nunca houve momento tão oportuno para desenvolvermos software brasileiro” | [Manifesto do Thiago](fontes/manifesto-thiago-original.md) | Argumento organizador da abertura: por que dedicar capacidade a isso, troca e descoberta versus consumo, oportunidade de aproximar ferramentas e pessoas, comunidade como propósito e duas frentes antes dos princípios |
 
 As cópias são registros históricos, não instruções de linguagem nem fatos automaticamente válidos. O [banco de frases](07-banco-de-frases.md) diferencia transcrição literal, adaptação e criação editorial.
 
@@ -30,7 +30,19 @@ Fontes auxiliares locais: `notes.txt` traz ideias preliminares de projetos, iden
 - Pessoas e comunidades importam além do retorno econômico; continuidade também exige recursos e trabalho.
 - Relações reais e participação têm mais valor que permanência artificial em plataformas.
 
-Decisão central: conservar os seis princípios como arquitetura pública e usar as duas frentes — comunidade e autonomia — como fio narrativo. Não transformar as duas frentes em dois princípios adicionais.
+Decisão central: manter intactos os seis princípios como critérios públicos de como construir, precedidos pelo argumento de por que construir, por que começar agora e por que comunidade e autonomia são inseparáveis. As duas frentes não são princípios adicionais.
+
+### Reequilíbrio solicitado pelo usuário
+
+A estrutura anterior era dominada pelo primeiro manifesto: os seis pontos definiam a leitura, enquanto várias contribuições do Thiago apareciam como complemento, sobretudo no ponto 6 e nos convites. A pedido do usuário, esta revisão dá ao argumento do Thiago um papel visível na organização da abertura, sem substituir os compromissos do primeiro texto nem atribuir consenso aos autores.
+
+A sequência passa a ser: dedicar o que sabemos a algo que faça diferença; distinguir consumo de troca e descoberta; explicar a oportunidade de aproximar ferramentas disponíveis, talento e conhecimento dos problemas; construir comunidade como finalidade; caminhar para a autonomia digital gradual; apresentar os princípios como resposta a como fazer isso. Essa sequência orienta o manifesto curto, a leitura estendida, as apresentações públicas e técnicas e a ordem editorial das páginas.
+
+Os quatro parágrafos iniciais de `01-manifesto-publico.md` são a abertura canônica compartilhada com a página do manifesto. São redação de síntese, não transcrição literal de nenhum dos originais. A pergunta motivadora, a oportunidade e a comunidade vêm especialmente do Thiago; liberdades, continuidade, cuidado e viabilidade mantêm a contribuição do primeiro texto. O pedido autoriza o reequilíbrio editorial, não comprova aprovação formal dos dois autores.
+
+Universidades e brasileiros fora do país entram como pessoas e conhecimentos que queremos aproximar, não como parceiros confirmados nem prova de superioridade nacional. A experiência pessoal do Thiago sobre profissionais brasileiros não vira diagnóstico universal. A oportunidade técnica é uma possibilidade concreta de começar, sem superlativos históricos, métricas promocionais ou garantias de custo. Os limites factuais permanecem nas notas e nos critérios pertinentes, sem ocupar o lugar da motivação pública.
+
+Nesta revisão, os nomes, a ordem e o conteúdo dos seis princípios e a assinatura existente são preservados. O desenvolvimento do ponto 6 registrado abaixo pertence à síntese anterior; não foi reescrito neste reequilíbrio.
 
 ## Revisão editorial de 22 de outubro de 2026
 
@@ -47,6 +59,7 @@ O título **Transparência e liberdade algorítmica** e a ordem dos seis princí
 
 | Destino canônico | Contribuição do primeiro manifesto | Contribuição do Thiago | Tratamento |
 | --- | --- | --- | --- |
+| Abertura e percurso antes dos princípios | Motivação para ampliar autonomia e capacidade de agir; construção gradual e sustentável | Pergunta “por quê?”, consumo versus troca, descoberta, oportunidade técnica e humana, comunidade antes do produto, duas frentes | Organizar a leitura pelo argumento do Thiago em síntese com os critérios do primeiro texto; manter os princípios como o como, não como toda a motivação |
 | 1. Liberdade por padrão | Uso, estudo, auditoria, adaptação, compartilhamento, manutenção | Software útil, gratuito e aberto; crítica à apropriação | Preservar liberdades e sustentabilidade; separar livre de gratuito e registrar a questão de licença em aberto |
 | 2. Soberania por escolha | Dados, código, infraestrutura, cópias e continuidade | Perguntas sobre servidores e login; independência dos canais de organização | Autonomia como capacidade e caminho gradual, não promessa de hospedagem inteiramente própria |
 | 3. Segurança por princípio | Coleta mínima, criptografia, acesso, backups, LGPD, limites | Rejeição à exploração dos dados e da atenção | Proteção desde a concepção, sem garantia absoluta nem selo de conformidade |

@@ -20,6 +20,24 @@ A Embraso quer aproximar pessoas para construir software útil e ampliar a auton
 
 São formulações editoriais novas, não citações dos manifestos nem afirmações de que já existe uma comunidade em operação. A assinatura foi escolhida pelo responsável pela iniciativa em 22 de outubro de 2026 e liga liberdade à construção coletiva. O descritor continua proposto; a apresentação deve explicar o foco em software útil e livre e deixar claro o estágio da iniciativa. Não usar nenhum dos dois como selo de licença ou de funcionalidade entregue.
 
+### O argumento vem antes do inventário
+
+Ao apresentar a iniciativa, preservar duas contribuições distintas: o manifesto de Thiago dá impulso ao **por que construir, com quem e por que agora**; o manifesto original oferece os critérios de **como construir e sustentar**. É uma arquitetura editorial proposta a partir das fontes, não consenso atribuído aos autores.
+
+A abertura de uma página, apresentação ou convite precisa conduzir este raciocínio antes de enumerar princípios ou habilidades:
+
+1. **Motivo:** dedicar conhecimento e esforço a algo útil para a vida, não apenas ao trabalho ou ao consumo.
+2. **Contraste vivido:** consumir conteúdo não equivale a conversar, trocar, descobrir o inesperado e fazer algo junto. Não condenar quem usa redes nem idealizar um passado igual para todos.
+3. **Oportunidade:** ferramentas disponíveis podem ajudar a transformar ideias em algo que funciona; conhecimento e vontade de contribuir, no Brasil e fora dele, precisam encontrar quem conhece os problemas. Não prometer facilidade automática, custo quase zero ou superioridade nacional.
+4. **Caminho:** construir comunidade tem valor em si — relações, aprendizado e encontro — e anda junto com ampliar a autonomia digital aos poucos. Não é apenas obter mão de obra para software.
+5. **Critérios:** os seis princípios respondem a como fazer e continuar essa construção. Não substituem sua motivação.
+
+Em uma peça curta, condensar essa sequência e apontar para a apresentação ou o manifesto que a desenvolve; não tentar encaixar cinco slogans. Uma legenda ou um microtexto pode tratar de apenas um ponto quando seu contexto já oferece o argumento. Nas duas versões do site, adaptar o vocabulário, não retirar o motivo humano da versão técnica.
+
+**ADAPTADA — exemplo de abertura curta:** Queremos dedicar o que sabemos a ferramentas que ajudem a aprender, descobrir e encontrar outras pessoas, não só consumir conteúdo. Podemos aproximar ferramentas de desenvolvimento e conhecimento de quem vive os problemas. Por isso, construir comunidade e ampliar nossa autonomia digital são partes do mesmo caminho; os princípios orientam como percorrê-lo.
+
+**Base e tratamento:** adaptação editorial da abertura, de “As redes sociais no Brasil perderam o seu propósito social”, “Por que este momento é tão oportuno?” e “As duas frentes que precisam orientar a Embraso”, no [texto de Thiago](fontes/manifesto-thiago-original.md), com a motivação e os critérios do [manifesto original](fontes/manifesto-original.md). Não é citação literal nem substitui a introdução canônica do [manifesto público](01-manifesto-publico.md). Para outras composições, consultar as adaptações do [banco de frases](07-banco-de-frases.md).
+
 ## 2. Como nos dirigimos às pessoas
 
 | Forma | Quando usar | Cuidado |
@@ -119,6 +137,8 @@ Nuvem, ferramentas proprietárias e inteligência artificial podem ter usos cons
 
 **Comunidade** é relação entre pessoas, não uma lista de contatos, um funil de aquisição ou um recurso gratuito. Enquanto a organização concreta não estiver estabelecida, escrever “queremos reunir”, “buscamos aproximar” e “estamos construindo”.
 
+Mostrar o que aproxima essas pessoas: uma pergunta compartilhada, o aprendizado com outra experiência, a descoberta de uma iniciativa ou uma decisão sobre o que merece ser feito. Uma relação pode ter valor sem terminar em tarefa ou em software novo. Não reduzir “comunidade” à enumeração de profissões ou ao destino de um botão.
+
 Participar não deve depender de programar, doar dinheiro, dedicar noites ou concordar com tudo. Tampouco toda contribuição deve ser presumida voluntária. Trabalho de desenvolvimento, cuidado, organização e manutenção merece reconhecimento e pode precisar de remuneração.
 
 **Preferir:** “Queremos aproximar pessoas com experiências diferentes para compartilhar conhecimento e construir juntas.”
@@ -152,6 +172,7 @@ Os textos da coluna “antes” são exemplos inventados de problemas editoriais
 | “Doe seu tempo e faça a sua parte.” | “Sua experiência pode ajudar a entender por onde começar.” | Reconhece valor sem dívida moral ou promessa de oportunidade aberta. |
 | “Nossos algoritmos devolvem o controle a você.” | “Defendemos poder escolher o que acompanhar, entender por que um conteúdo aparece e desligar recomendações.” | Troca uma funcionalidade inventada por escolhas concretas defendidas como direção. |
 | “Qualquer pessoa pode usar, sem dificuldade.” | “Queremos reduzir barreiras de acesso e aprender com as dificuldades de quem usa.” | Não confunde boa intenção com acessibilidade demonstrada. |
+| “Conheça nossos seis princípios e venha contribuir com código.” | “Queremos usar o que sabemos para aproximar pessoas e cuidar de problemas que conhecemos de perto. Ferramentas disponíveis podem ajudar, mas a construção começa pela troca; os princípios orientam como seguir.” | Explica motivo e oportunidade antes dos critérios, sem reduzir comunidade a recrutamento técnico. |
 | “O proprietário é sempre inimigo da liberdade.” | “Uma ferramenta pode ajudar agora e criar dependências depois. Precisamos olhar para as duas coisas.” | Faz a distinção necessária sem abandonar o princípio. |
 
 ## 7. Ritmo, vocabulário e limites de publicação

@@ -2,17 +2,21 @@
 
 Uso: proposta de texto público de referência. Desenvolve o [manifesto de seis pontos](01-manifesto-publico.md); não acrescenta um sétimo princípio nem declara uma estrutura jurídica, produtos ou processos já em funcionamento. As práticas abaixo expressam a direção que defendemos.
 
-## A tecnologia deve nos devolver possibilidades
+## Por que dedicar o que sabemos a essa construção?
+
+Poderíamos dedicar nossas habilidades a muitos outros caminhos. Por que reunir gente para construir software útil para a vida no Brasil? Porque queremos que o que sabemos ajude pessoas a aprender, criar, se organizar e encontrar companhia para fazer algo que importa. Trabalho e renda têm lugar nisso, mas não esgotam o que vale a pena construir.
 
 Um grupo de estudo que consegue se encontrar. Um coletivo que organiza suas atividades sem perder a memória do que fez. Uma pessoa que entende uma informação pública antes de tomar uma decisão. Um pequeno negócio que encontra uma ferramenta que cabe no seu orçamento. Uma conversa que continua depois que a tela se apaga.
 
-São coisas simples de dizer. Nem sempre são simples de fazer.
+Não queremos apenas colocar mais software no mundo. Queremos dedicar esforço a essas possibilidades, com quem conhece de perto as necessidades e vai conviver com as escolhas que fizermos.
 
-A tecnologia participa de quase tudo isso. Mas nem sempre podemos entender como ela funciona, adaptar o que não serve ou sair quando uma plataforma muda as regras. Dependemos de serviços que podem alterar preços, restringir acessos ou decidir o que merece aparecer. E muitas experiências digitais são organizadas para prolongar o consumo, não para ajudar a fazer o que nos levou até ali.
+### Estar conectado não é o mesmo que trocar
 
-Não precisamos aceitar essa relação como a única possível.
+Passar horas consumindo conteúdo não é o mesmo que conversar com alguém. Compartilhar um vídeo pode iniciar uma troca, mas também pode terminar no envio. Queremos experiências em que seja possível encontrar outras pessoas, desenvolver uma ideia e descobrir algo que não estava previsto — não apenas continuar diante da próxima recomendação.
 
-Queremos software que nos ajude a viver, em vez de disputar cada intervalo da nossa atenção. Que torne o conhecimento mais fácil de compartilhar. Que aproxime pessoas de outras pessoas e dê às comunidades mais capacidade de decidir sobre o que usam e constroem.
+O inesperado tem valor: uma leitura que não escolheríamos, uma atividade que não conhecíamos, uma conversa que muda uma pergunta. Não precisamos idealizar as redes do passado para defender esse espaço no presente.
+
+A tecnologia também participa da nossa capacidade de escolher. Nem sempre podemos entender como uma ferramenta funciona, adaptar o que não serve ou sair quando uma plataforma muda as regras. Queremos uma relação diferente: software que ajude a viver e comunidades que possam compreender, transformar e continuar o que usam.
 
 **Liberdade se constrói junto.**
 
@@ -32,21 +36,27 @@ Ter o Brasil como ponto de partida não significa fechar as portas para o mundo.
 
 Ferramentas de desenvolvimento, bibliotecas e infraestrutura compartilhada podem encurtar o caminho entre uma ideia e algo que funciona. A inteligência artificial também pode ajudar em partes desse trabalho. Mas produzir código mais depressa não resolve, por si só, um problema importante. Ainda é preciso ouvir, projetar, verificar, proteger, documentar e manter.
 
-Não defendemos uma corrida para colocar mais coisas no mundo. Defendemos usar a capacidade disponível para construir coisas que façam sentido.
+A oportunidade também está nas pessoas que podemos aproximar. Queremos criar pontes entre quem aprende e pesquisa nas universidades, quem desenvolve em comunidades e no trabalho, brasileiros que estão fora do país e quem conhece uma necessidade na própria vida. Essas experiências podem se complementar; não presumimos que o conhecimento técnico saiba sozinho o que deve ser feito.
 
-Também não confundimos custo inicial baixo com continuidade garantida. Um crédito de nuvem acaba. Uma ferramenta muda de preço. Uma integração deixa de funcionar. Uma comunidade pode perder o acesso ao lugar onde guardou sua própria história. Aproveitar oportunidades exige entender essas condições, não ignorá-las.
+Construir essa aproximação é parte do trabalho, não uma etapa resolvida pela disponibilidade de ferramentas. Uma boa pergunta trazida por quem vive o problema pode mudar mais o rumo de uma solução do que acelerar a escrita do código. Queremos que conhecimento circule entre essas pessoas e possa voltar às comunidades que ajudaram a formá-lo.
+
+É por isso que vale começar agora: podemos combinar ferramentas disponíveis com essa disposição para aprender e construir juntos. Não defendemos uma corrida por mais lançamentos, nem precisamos afirmar que este é o melhor momento da história. A oportunidade é dar propósito à capacidade que temos.
+
+Créditos de nuvem, serviços externos e ferramentas de inteligência artificial podem ajudar a começar, mas não garantem continuidade. Precisamos considerar custos, mudanças de condições e caminhos de saída. Esse cuidado serve à construção, não é uma exigência de ter tudo resolvido antes de dar o primeiro passo.
 
 **Começar com o que temos. Preservar o poder de escolher o que vem depois.**
 
 ## Duas frentes, uma mesma construção
 
-A primeira frente é a comunidade. Queremos reunir pessoas dispostas a compartilhar conhecimento, conhecer problemas e cuidar de soluções em conjunto. Gente que desenvolve, desenha, escreve, pesquisa, ensina, organiza, testa ou traz a experiência de quem vai usar. Gente no Brasil e gente brasileira que está fora e quer continuar perto dessa construção.
+A primeira frente é construir comunidade. Queremos aproximar pessoas que possam conversar, compartilhar conhecimento, descobrir interesses e cuidar de algo em conjunto. Essa relação tem valor por si mesma: não é um funil para obter contribuições a um repositório nem apenas um meio de encontrar quem use um produto.
 
-A segunda frente é a autonomia digital. Queremos reduzir dependências que deixam pessoas e projetos sem alternativa: sobre os próprios dados, sobre o código, sobre a infraestrutura e sobre os caminhos de comunicação.
+Gente que desenvolve, desenha, escreve, pesquisa, ensina, organiza, testa ou traz a experiência de quem vai usar pode mudar o que decidimos construir. Queremos relações entre quem usa e quem contribui, sem reduzir ninguém a uma dessas posições. Aprender com uma comunidade também pode mostrar que a resposta não é criar mais uma ferramenta.
+
+A segunda frente é ampliar a autonomia digital, de maneira gradual. Queremos reduzir dependências que deixam pessoas e projetos sem alternativa: sobre os próprios dados, sobre o código, sobre a infraestrutura e sobre os caminhos de comunicação. Podemos aproveitar serviços existentes enquanto desenvolvemos capacidade de recuperar, migrar e continuar.
 
 Uma frente não substitui a outra. Servidores sob nosso controle não criam, sozinhos, relações de confiança. Uma comunidade inteira organizada em um único serviço continua sujeita às decisões desse serviço. Software livre abandonado não resolve a necessidade de quem depende dele.
 
-Precisamos de ferramentas que possam continuar e de pessoas com condições de cuidar delas.
+Publicar software não basta. Precisamos de ferramentas que possam continuar e de pessoas com condições de cuidar delas. Os seis princípios a seguir respondem a como queremos fazer essa construção: são critérios para as escolhas, não substitutos para o propósito que nos reúne.
 
 ## 1. Liberdade por padrão
 
