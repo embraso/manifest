@@ -42,11 +42,12 @@
 - Consumes: existing `npm run build`, `package-lock.json`, and Astro's `dist/` output.
 - Produces: a Pages artifact from `dist/`, deployed using `withastro/action@v6` and `actions/deploy-pages@v5`, with GitHub Pages configured to use Actions.
 
-- [ ] Add `site: 'https://embraso.com.br'` to `astro.config.mjs`; do not add a base path or alter static/trailing-slash settings.
-- [ ] Add `public/CNAME` containing only `embraso.com.br`.
-- [ ] Add `.github/workflows/deploy.yml`: trigger only on `push` to `main`; use Node 24 (the Astro action's default); grant only the permissions required for Pages artifact deployment; use `withastro/action@v6` to install/build and `actions/deploy-pages@v5` to deploy through the `github-pages` environment. Do not add Jekyll, a manual trigger, or another deploy path.
-- [ ] Update the hosting and deployment facts in `PRODUCT.md` to GitHub Pages at `https://embraso.com.br`; retain existing stack and product facts.
-- [ ] Update the hosting statement in the English technical-context paragraph of `docs/README.md` so it identifies GitHub Pages at `https://embraso.com.br` as the chosen deployment and leaves unrelated intake/project facts unchanged.
-- [ ] Run `npm ci` then `npm run build`; expect a successful Astro build and `dist/CNAME` containing `embraso.com.br`, with built pages at `dist/index.html`, `dist/devs/index.html`, and `dist/manifesto/index.html`.
+- [x] Add `site: 'https://embraso.com.br'` to `astro.config.mjs`; do not add a base path or alter static/trailing-slash settings.
+- [x] Add `public/CNAME` containing only `embraso.com.br`.
+- [x] Add `.github/workflows/deploy.yml`: trigger only on `push` to `main`; use Node 24 (the Astro action's default); grant only the permissions required for Pages artifact deployment; use `withastro/action@v6` to install/build and `actions/deploy-pages@v5` to deploy through the `github-pages` environment. Do not add Jekyll, a manual trigger, or another deploy path.
+- [x] Update the hosting and deployment facts in `PRODUCT.md` to GitHub Pages at `https://embraso.com.br`; retain existing stack and product facts.
+- [x] Update the hosting statement in the English technical-context paragraph of `docs/README.md` so it identifies GitHub Pages at `https://embraso.com.br` as the chosen deployment and leaves unrelated intake and project facts unchanged.
+- [x] Run `npm ci` then `npm run build`; the Astro build produced `dist/CNAME` containing `embraso.com.br`, and pages at `dist/index.html`, `dist/devs/index.html`, and `dist/manifesto/index.html`.
+- [x] Configure repository Pages source as GitHub Actions and set the custom domain `embraso.com.br` with HTTPS enforcement.
 - [ ] Push the integrated change to `main`; inspect the Actions run and require successful workflow completion and Pages deployment.
 - [ ] Verify the live site over HTTPS: `/`, `/devs/`, and `/manifesto/` return their corresponding pages at exactly those paths; `/#participacao` resolves to the existing destination; `CNAME` identifies `embraso.com.br`; internal navigation and root-relative assets load; existing content, locale, and behavior are unchanged. Confirm Pages reports the custom domain and HTTPS enabled.
