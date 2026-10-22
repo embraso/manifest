@@ -1,4 +1,4 @@
-import { motionAllowed, onMotionChange } from './motion';
+import { motionAllowed, onMotionChange } from '../../scripts/motion';
 
 type FaunaParticle = {
   x: number;

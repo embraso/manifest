@@ -1,8 +1,7 @@
 ---
-import { principles } from '../data/manifesto';
-import emblem from '../../assets/b084774a04a4acde15a270ee03518180.svg';
-import pixelCapybara from '../../assets/aa3df8c60c0205b36b599de7c17c2d7b.svg';
-import CommandCarousel from './CommandCarousel.astro';
+import { principles } from '../../data/manifesto';
+import FaunaField from './FaunaField.astro';
+import pixelCapybara from '../../../assets/aa3df8c60c0205b36b599de7c17c2d7b.svg';
 
 const decisions = [
   { question: 'O software resolve o problema de quem?', title: 'Utilidade antes de mais código.', body: 'Uma solução que ignora aparelhos, conexões e rotinas pode criar mais uma barreira. Queremos definir o problema e experimentar caminhos com quem vai usar, antes de escolher a stack.' },
@@ -25,13 +24,9 @@ const decisions = [
       </div>
     </div>
 
-    <div class="fauna-field" data-fauna-field aria-hidden="true">
-      <img data-fauna-source src={emblem.src} alt="" width="462" height="654" fetchpriority="high" />
-      <canvas data-fauna-canvas></canvas>
-      <span class="field-caption">Partes que formam um todo.</span>
-    </div>
+    <FaunaField />
 
-    <CommandCarousel />
+    <slot name="reader" />
   </section>
 
   <section id="proposta" class="proposal-section" aria-labelledby="proposal-title">
@@ -105,10 +100,6 @@ const decisions = [
   </section>
 </main>
 
-<script>
-  import '../scripts/particles';
-</script>
-
 <style>
   .terminal-home { --rule: #365542; --muted: #b9c9bb; color: var(--cream); background: var(--dark); overflow-wrap: break-word; font-size: 1.0625rem; letter-spacing: .005em; }
   .page-width { width: min(1440px, calc(100% - 96px)); margin-inline: auto; }
@@ -128,12 +119,6 @@ const decisions = [
   .terminal-action:hover { background: var(--cream); }
   .terminal-reading-link { display: inline-flex; align-items: center; gap: 14px; font-family: var(--font-mono); font-size: 12px; text-decoration-thickness: 1px; padding-block: 12px; }
   .terminal-reading-link:hover { color: var(--yellow); }
-  .fauna-field { position: relative; align-self: stretch; min-height: 610px; isolation: isolate; }
-  .fauna-field img { position: absolute; width: 86%; height: 89%; top: 2%; left: 7%; object-fit: contain; }
-  .fauna-field canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; }
-  .fauna-field[data-particles='running'] canvas { opacity: 1; }
-  .fauna-field[data-particles='running'] img { opacity: 0; }
-  .field-caption { position: absolute; bottom: 16px; left: 0; right: 0; text-align: center; color: var(--muted); font: 10px/1.6 var(--font-mono); }
   .proposal-section { padding-block: 106px; background: var(--yellow); color: var(--dark); }
   .proposal-section::selection, .proposal-section :global(::selection) { background: var(--dark); color: var(--cream); }
   .proposal-layout { display: grid; grid-template-columns: 1fr 1.05fr; gap: 7vw; }
@@ -190,7 +175,6 @@ const decisions = [
   @media (max-width: 1100px) {
     .page-width { width: calc(100% - 64px); }
     h1 { font-size: clamp(3.4rem, 7vw, 5.8rem); }
-    .fauna-field { min-height: 550px; }
     .opening-actions { gap: 14px; }
     .proposal-layout { gap: 40px; }
     .two-fronts { grid-template-columns: 1fr; gap: 24px; }
@@ -203,8 +187,6 @@ const decisions = [
     h1 { font-size: clamp(1.75rem, calc(8.8vw + .25rem), 4.5rem); line-height: 1.2; margin-bottom: 28px; }
     .opening-introduction { font-size: 17px; max-width: 52ch; }
     .opening-actions { gap: 16px 24px; margin-top: 24px; }
-    .fauna-field { grid-row: 3; min-height: 0; height: 410px; margin-top: 38px; }
-    .fauna-field img { width: 74%; left: 13%; height: 88%; }
     .proposal-section, .decisions-section { padding-block: 64px; }
     .proposal-layout, .section-heading { grid-template-columns: minmax(0, 1fr); gap: 36px; }
     .proposal-layout h2 { font-size: clamp(2rem, 6.8vw, 3.3rem); }
@@ -227,11 +209,8 @@ const decisions = [
     .page-width { width: calc(100% - 32px); }
     .opening-actions { align-items: stretch; flex-direction: column; }
     .opening-actions .terminal-reading-link { justify-content: space-between; }
-    .fauna-field { height: 340px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .fauna-field canvas { display: none; }
-    .fauna-field[data-particles='running'] img { opacity: 1; }
     .disclosure-mark::after { transition: none; }
   }
 </style>

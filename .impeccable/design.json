@@ -292,7 +292,7 @@
     {
       "name": "Typed-topic reader",
       "kind": "custom",
-      "description": "Nine real readings with automatically typed commands, reading dwell, manual topic navigation and pause. Complete static content remains available without scripts.",
+      "description": "Developer-only reader with automatically typed commands, reading dwell, topic navigation and its own explicit pause. Pointer, focus, touch and topic changes retain playback mode; shared artwork motion does not control it. Complete static content remains available without scripts.",
       "html": "<div class=\"ds-reader\"><nav aria-label=\"Tópicos de leitura\"><a href=\"#ds-reading\" aria-current=\"true\">Por que construir</a></nav><div class=\"ds-command\" aria-hidden=\"true\">&gt; manifesto</div><article id=\"ds-reading\"><h3>Conhecimento que encontra propósito.</h3><p>Queremos dedicar o que sabemos a algo que faça diferença na vida das pessoas.</p><a href=\"/manifesto/\">Ler o manifesto completo</a></article></div>",
       "css": ".ds-reader{padding:28px;border:1px solid #365542;background:#09190f;color:var(--cream,#fbf7ec);font-family:var(--font-body,'Archivo Variable','Archivo',sans-serif)}.ds-reader nav{border-bottom:1px solid #365542;padding-bottom:18px}.ds-reader nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--yellow,#fdb112)}.ds-command{padding-block:28px;color:var(--yellow,#fdb112);font:500 24px/1.5 var(--font-mono,'Martian Mono Variable','Martian Mono',monospace)}.ds-reader h3{font:500 18px/1.6 var(--font-mono,'Martian Mono Variable','Martian Mono',monospace)}.ds-reader p{color:#b9c9bb;line-height:1.7}.ds-reader a:focus-visible{outline:3px solid var(--yellow,#fdb112);outline-offset:5px}"
     },
