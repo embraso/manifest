@@ -2,7 +2,7 @@
 version: 1
 slug: "src-pages-index-astro"
 primary_target: "src/pages/index.astro"
-related_targets: ["src/pages/devs/index.astro","src/components/FolhetoHome.astro","src/components/TerminalHome.astro"]
+related_targets: ["src/pages/devs/index.astro","src/components/folheto/FolhetoHome.astro","src/components/folheto/Scene.astro","src/components/devs/TerminalHome.astro","src/components/devs/FaunaField.astro","src/components/devs/command-carousel/CommandCarousel.astro"]
 ---
 
 # Embraso homepages
@@ -25,7 +25,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Motion and behavior
 
-Folheto runs two bounded coordinated fauna circuits; its flame is static, with no clip or transform animation and no decorative illustration rules. Freedom radio choices change substantive readings; all readings remain visible without JavaScript.
+Folheto's isolated Scene runs bounded foreground fauna motion for (28s), including a short repeating capybara gait over slow drift. A large, low-opacity supplied emblem forms the static background; it has no clip or transform animation. Scene visibility controls only scene motion. The separate freedom reader controls its own selection wipe and visibility; all readings remain visible without JavaScript.
 
 Developer particles sample the supplied SVG. Finite assembly gives way to warm-flame rise/curl/flicker; the recognizable toucan is retained. Maximum 1,400 desktop/600 mobile particles, DPR 1.5, one RAF. Pause, live reduced motion, document visibility and intersection state stop nonessential work; the complete SVG is the static fallback. No cross-document view transitions.
 
@@ -33,4 +33,4 @@ The local reader autoplays manifesto, comunidade, autonomia and principio 1–6.
 
 ## Implementation
 
-`src/layouts/SiteLayout.astro` and `src/styles/global.css` own the shared shell. `src/components/FolhetoHome.astro`, `src/components/TerminalHome.astro` and `src/scripts/{motion,folheto,particles}.ts` own their page bodies and artwork enhancements. The isolated `src/components/devs/command-carousel/` directory contains `CommandCarousel.astro` (markup and scoped styles) and `controller.ts` (local playback). Only `src/pages/devs/index.astro` imports the reader, placing it in the developer body through its named slot. `src/data/manifesto.ts` is shared public content and follows the approved titles, order and copy in `docs/01-manifesto-publico.md`, beginning with “Tecnologia para o bem comum”. Supplied SVGs stay under `assets/`; font notices ship under `public/licenses/`. Internal editorial notes and source archives are not automatically published.
+`src/layouts/SiteLayout.astro` and `src/styles/global.css` own the shared shell. `src/components/folheto/` owns FolhetoHome, the Scene component and local scene/reader controllers; `src/components/devs/` owns TerminalHome, FaunaField, particles and the nested command-carousel component/controller. Only `src/pages/devs/index.astro` imports the reader, placing it in the developer body through its named slot. Only `src/scripts/motion.ts` is shared motion infrastructure; the carousel's playback state remains local. `src/data/manifesto.ts` is shared public content and follows the approved titles, order and copy in `docs/01-manifesto-publico.md`, beginning with “Tecnologia para o bem comum”. Supplied SVGs stay under `assets/`; font notices ship under `public/licenses/`. Internal editorial notes and source archives are not automatically published.

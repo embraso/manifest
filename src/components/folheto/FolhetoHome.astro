@@ -1,9 +1,7 @@
 ---
-import { principles } from '../data/manifesto';
-import emblem from '../../assets/b084774a04a4acde15a270ee03518180.svg';
-import toucan from '../../assets/18b51d99adf971345c6d3e2da4ff6e2c.svg';
-import capybara from '../../assets/64e6db346ad8c01e777f7cf3f3a36383.svg';
-import ipe from '../../assets/77b83da13ccc31cb0f862276cf552fac.svg';
+import { principles } from '../../data/manifesto';
+import capybara from '../../../assets/64e6db346ad8c01e777f7cf3f3a36383.svg';
+import Scene from './Scene.astro';
 
 const freedoms = [
   {
@@ -48,7 +46,7 @@ const contributions = [
 ---
 
 <main id="conteudo" class="folheto" data-folheto>
-  <section class="opening page-wrap" aria-labelledby="folheto-title" data-print-scene>
+  <section class="opening page-wrap" aria-labelledby="folheto-title">
     <div class="opening-copy">
       <h1 id="folheto-title"><span>Liberdade</span><span>se constrói</span><span class="together"><mark>junto.</mark></span></h1>
       <p class="opening-intro">A Embraso é uma iniciativa para reunir pessoas e criar <strong>software útil e livre</strong>, pensado para as diferentes realidades do Brasil.</p>
@@ -57,18 +55,7 @@ const contributions = [
         <a class="text-link" href="#participacao">Como participar dessa construção</a>
       </div>
     </div>
-    <div class="print-scene" aria-hidden="true">
-      <svg class="scene-wind" viewBox="0 0 240 100" fill="none" aria-hidden="true">
-        <path data-print-wind="0" d="M24 18 C72 4 112 30 172 16" />
-        <path data-print-wind="1" d="M12 48 C78 30 128 66 222 44" />
-        <path data-print-wind="2" d="M48 78 C92 64 124 88 176 74" />
-      </svg>
-      <img class="scene-toucan" data-print-toucan src={toucan.src} alt="" width="472" height="208" fetchpriority="high" />
-      <div class="scene-emblem"><img src={emblem.src} alt="" width="462" height="654" fetchpriority="high" /></div>
-      <img class="scene-ipe" data-print-ipe src={ipe.src} alt="" width="196" height="212" />
-      <img class="scene-capybara" data-print-capybara src={capybara.src} alt="" width="352" height="192" />
-      <span class="scene-caption">Conhecimento que circula.<br />Liberdade que continua.</span>
-    </div>
+    <Scene />
   </section>
 
   <section id="proposta" class="proposal page-wrap" aria-labelledby="proposal-title">
@@ -131,7 +118,7 @@ const contributions = [
 </main>
 
 <script>
-  import '../scripts/folheto';
+  import './freedom-reader';
 </script>
 
 <style>
@@ -157,15 +144,6 @@ const contributions = [
   .opening-intro { font-size: clamp(1.125rem, 1.6vw, 1.4rem); line-height: 1.65; max-width: 42ch; margin-top: 32px !important; }
   .opening-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 32px; margin-top: 32px; }
   .opening-actions .text-link { font-size: 1rem; }
-  .print-scene { position: absolute; width: 40%; aspect-ratio: 4 / 5; top: 48px; right: 0; }
-  .scene-toucan { position: absolute; z-index: 3; width: 76%; top: 0; left: 0; transform-origin: 58% 50%; }
-  .scene-wind { position: absolute; width: 48%; top: 29%; left: 0; overflow: visible; pointer-events: none; stroke: var(--green); stroke-width: 2; stroke-linecap: round; }
-  .scene-wind path { opacity: 0; vector-effect: non-scaling-stroke; }
-  .scene-emblem { position: absolute; top: 31%; right: 7%; width: 40%; }
-  .scene-emblem img { width: 100%; }
-  .scene-capybara { position: absolute; z-index: 2; bottom: 0; width: 48%; left: 0; transform-origin: 50% 85%; }
-  .scene-ipe { position: absolute; width: 24%; bottom: 0; right: 0; transform-origin: 50% 100%; }
-  .scene-caption { position: absolute; bottom: -48px; right: 0; text-align: right; font-size: 12px; line-height: 1.45; }
   .proposal { padding-block: 76px 100px; border-top: 2px solid var(--green); }
   .proposal h2 { max-width: 1000px; margin-bottom: 46px; }
   .proposal h2 span { font-size: .78em; }
@@ -250,8 +228,6 @@ const contributions = [
     .opening h1 { font-size: clamp(2.75rem, 15.5vw, 6rem); }
     .opening-intro { max-width: 43ch; margin-top: 32px !important; font-size: 1.125rem; }
     .opening-actions { align-items: start; flex-direction: column; gap: 24px; margin-top: 32px; }
-    .print-scene { position: relative; inset: auto; width: min(100%, 430px); margin: 48px auto 64px; }
-    .scene-caption { font-size: 11px; }
     .proposal { padding-block: 50px 60px; }
     .folheto h2 { font-size: clamp(3rem, 10vw, 4.7rem); }
     .proposal h2 { margin-bottom: 28px; }
@@ -295,11 +271,10 @@ const contributions = [
     .principle summary h3 { font-size: 1.6rem; }
   }
   @media print {
-    .freedom-controls, .freedom-status, .scene-caption { display: none; }
+    .freedom-controls, .freedom-status { display: none; }
     .folheto .freedom-page[hidden] { display: grid !important; }
     .freedoms, .participation { background: transparent; color: black; }
     .freedom-title p, .freedom-status { color: black; }
-    .print-scene { display: none; }
     .opening-copy { width: 100%; }
   }
 </style>
