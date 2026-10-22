@@ -87,6 +87,8 @@ The integration owner runs the focused browser scenario against the completed `/
 
 With JavaScript disabled, confirm all nine full readings and usable native navigation links are visible/available and links reach the corresponding readings. Restore scripts; verify keyboard-only locator, previous/next, pause and resume with visible focus and usable targets; explicit pause survives manual selection; autoplay progresses after its configured dwell and remains paused until explicit resume. Under `prefers-reduced-motion: reduce`, confirm complete commands and usable manual selection without authored movement. Confirm hidden-document/offscreen/pagehide suspension and re-entry do not alter playback choice or leave background timer/animation active. Inspect at wide desktop and narrow mobile dimensions: no horizontal page overflow, readable summary/title/controls, grouped locator still usable, selected state perceivable, and section stays within `/devs/`'s single main landmark. Do not create permanent test infrastructure or assert private implementation details.
 
+Validation limitation: the managed Chrome session did not expose a native hidden-document state (`document.hidden` stayed `false` after tab activation; visibility emulation was unavailable). Offscreen and pagehide/BFCache suspension and resumption passed; hidden-tab suspension remains unverified, not a pass.
+
 ### Task 2: Integrate B as the sole production option and remove comparison scaffolding
 
 **Files:**
@@ -141,7 +143,7 @@ Use the running feature-worktree dev server on port 4371 for independent browser
 
 Confirm PRODUCT.md and DESIGN.md describe the implemented B structure, summaries, controls, playback timings, lifecycle, reduced-motion and fallback behavior; confirm comparison route/prototype references are absent from production docs/config/imports.
 
-- [ ] **Step 4: Merge and push after validated production preview.**
+- [x] **Step 4: Merge and push after validated production preview.**
 
 Use a separate integration worktree for `main`; do not modify the dirty source checkout. Merge the reviewed feature branch, run `npm run build`, serve the merged static output with `npm run preview -- --port 4372`, and smoke-check `/devs/` plus no-scroll selection on that production output. Push the validated `main` result to `origin`. Preserve the feature worktree and branch.
 
