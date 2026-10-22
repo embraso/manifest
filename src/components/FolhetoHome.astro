@@ -273,10 +273,9 @@ const contributions = [
     .motivations { padding-block: 54px 38px; }
     .motivations-heading { display: block; margin-bottom: 28px; }
     .motivations-heading p { margin-top: 24px; max-width: 43ch; }
-    .motivation-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .motivation-options { grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); }
     .motivation-options label { min-height: 65px; font-size: clamp(1.25rem, 5vw, 1.8rem); justify-content: start; gap: 9px; padding-inline: 12px; }
     .motivation-options label:nth-child(n) { border-left: 0; }
-    .motivation-options label:nth-child(even) { border-left: 1px solid color-mix(in srgb, var(--cream) 40%, transparent); }
     .motivation-page { display: block; padding-block: 32px; }
     .motivation-title h3 { font-size: clamp(3rem, 12vw, 5.2rem); }
     .motivation-title p { font-size: 1.5rem; margin-top: 20px; max-width: 30ch; }
