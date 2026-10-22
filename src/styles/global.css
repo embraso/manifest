@@ -35,7 +35,7 @@ summary { cursor: pointer; }
 .skip-link:focus { transform: none; }
 .utility-bar { border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
 .utility-inner { min-height: 46px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.audience-switch { display: flex; align-items: center; gap: 3px; padding-block: 4px; font-size: 11px; line-height: 1.4; }
+.audience-switch { display: flex; align-items: center; gap: 3px; padding-block: 4px; font-size: 12px; line-height: 1.4; }
 .audience-switch a { display: inline-flex; align-items: center; min-height: 36px; text-decoration: none; padding: 6px 12px; border-radius: 3px; }
 .audience-switch a[data-selected='true'] { background: var(--green); color: var(--cream); }
 .audience-switch a:hover { background: color-mix(in srgb, var(--green) 12%, transparent); }
@@ -45,13 +45,13 @@ body[data-audience='devs'] .audience-switch a:not([data-selected='true']):hover 
 .navigation-row { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
 .brand { flex-shrink: 0; }
 .brand img { width: 150px; }
-.main-navigation { display: flex; align-items: center; gap: 32px; font-size: 13px; font-weight: 600; }
+.main-navigation { display: flex; align-items: center; gap: 32px; font-size: 14px; font-weight: 600; }
 .main-navigation a { text-decoration: none; padding-block: 12px; }
 .main-navigation a:hover { text-decoration: underline; }
-body[data-audience='devs'] .main-navigation { font-family: var(--font-mono); font-size: 11px; font-weight: 400; }
+body[data-audience='devs'] .main-navigation { font-family: var(--font-mono); font-size: 12px; font-weight: 400; }
 .bunting { height: 22px; overflow: hidden; }
 .bunting svg { display: block; }
-.motion-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 36px; padding: 7px 10px; border: 1px solid color-mix(in srgb, currentColor 40%, transparent); border-radius: 3px; background: transparent; color: inherit; font-family: var(--font-body); font-size: 11px; font-weight: 500; line-height: 1.4; cursor: pointer; }
+.motion-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 36px; padding: 7px 10px; border: 1px solid color-mix(in srgb, currentColor 40%, transparent); border-radius: 3px; background: transparent; color: inherit; font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.4; cursor: pointer; }
 .motion-toggle:hover:not(:disabled) { background: color-mix(in srgb, currentColor 8%, transparent); }
 .motion-toggle:disabled { cursor: default; border-style: dashed; }
 .motion-toggle svg { flex: 0 0 14px; }
@@ -62,7 +62,7 @@ body[data-motion='paused'] main *,
 body[data-motion='paused'] main *::before,
 body[data-motion='paused'] main *::after { animation-play-state: paused !important; }
 html:has(body[data-motion='paused']) { scroll-behavior: auto; }
-.button { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 48px; padding: 13px 22px; background: var(--green); color: var(--cream); border: 1px solid transparent; font-size: 14px; font-weight: 700; line-height: 1.4; text-decoration: none; transition: background-color 180ms, color 180ms; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 48px; padding: 13px 22px; background: var(--green); color: var(--cream); border: 1px solid transparent; font-size: 1rem; font-weight: 700; line-height: 1.4; text-decoration: none; transition: background-color 180ms, color 180ms; }
 .button:hover { background: #0c3d21; }
 .text-link { font-weight: 600; text-decoration-thickness: 1px; }
 .text-link:hover { text-decoration-thickness: 2px; }
@@ -81,13 +81,13 @@ body[data-audience='devs'] .footer-message p { font-family: var(--font-mono); fo
 @media (max-width: 700px) {
   .container { width: calc(100% - 40px); }
   .utility-inner { gap: 7px; }
-  .audience-switch { font-size: 10px; flex-shrink: 0; }
+  .audience-switch { font-size: 11px; flex-shrink: 0; }
   .audience-switch a { padding: 7px; }
-  .motion-toggle { padding: 7px; font-size: 10px; gap: 5px; }
+  .motion-toggle { padding: 7px; font-size: 11px; gap: 5px; }
   .navigation-row { min-height: 100px; flex-wrap: wrap; justify-content: center; gap: 6px; padding-block: 12px 8px; }
   .brand img { width: 130px; }
-  .main-navigation { width: 100%; justify-content: center; gap: 22px; font-size: 12px; }
-  body[data-audience='devs'] .main-navigation { gap: 18px; font-size: 10px; }
+  .main-navigation { width: 100%; justify-content: center; gap: 22px; font-size: 13px; }
+  body[data-audience='devs'] .main-navigation { gap: 18px; font-size: 11px; }
   .footer-main { padding-block: 44px; align-items: flex-start; flex-direction: column; gap: 32px; }
   .footer-message p { font-size: 20px; }
   .footer-bottom { flex-direction: column; gap: 12px; }

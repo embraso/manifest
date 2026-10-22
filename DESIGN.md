@@ -17,41 +17,41 @@ typography:
   display-public:
     fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
     fontSize: "clamp(5rem, 8.2vw, 6rem)"
-    fontWeight: 850
-    lineHeight: 0.88
-    letterSpacing: "-0.035em"
-    fontVariation: "'wdth' 62"
+    fontWeight: 800
+    lineHeight: 1.02
+    letterSpacing: "-0.015em"
+    fontVariation: "'wdth' 72"
   headline-public:
     fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
     fontSize: "clamp(3.2rem, 6.3vw, 6rem)"
-    fontWeight: 850
-    lineHeight: 0.92
-    letterSpacing: "-0.035em"
-    fontVariation: "'wdth' 62"
+    fontWeight: 800
+    lineHeight: 1.05
+    letterSpacing: "-0.015em"
+    fontVariation: "'wdth' 72"
   title-public:
     fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
     fontSize: "clamp(1.6rem, 2.5vw, 2.15rem)"
-    fontWeight: 750
-    lineHeight: 1.08
-    fontVariation: "'wdth' 70"
+    fontWeight: 700
+    lineHeight: 1.25
+    fontVariation: "'wdth' 85"
   display-terminal:
     fontFamily: "'Martian Mono Variable', 'Martian Mono', monospace"
     fontSize: "clamp(3.4rem, 6.6vw, 6rem)"
     fontWeight: 700
-    lineHeight: 1.06
-    letterSpacing: "-0.04em"
+    lineHeight: 1.15
+    letterSpacing: "-0.02em"
   headline-terminal:
     fontFamily: "'Martian Mono Variable', 'Martian Mono', monospace"
     fontSize: "clamp(2rem, 3.5vw, 3.6rem)"
     fontWeight: 600
-    lineHeight: 1.15
-    letterSpacing: "-0.04em"
+    lineHeight: 1.25
+    letterSpacing: "-0.02em"
   title-terminal:
     fontFamily: "'Martian Mono Variable', 'Martian Mono', monospace"
     fontSize: "clamp(1.05rem, 2.1vw, 1.85rem)"
     fontWeight: 600
-    lineHeight: 1.4
-    letterSpacing: "-0.03em"
+    lineHeight: 1.5
+    letterSpacing: "-0.015em"
   body:
     fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
     fontSize: "16px"
@@ -61,6 +61,20 @@ typography:
     fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
     fontSize: "17px"
     lineHeight: 1.65
+  body-home:
+    fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
+    fontSize: "1.0625rem"
+    fontWeight: 400
+    lineHeight: 1.75
+  body-terminal:
+    fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
+    fontSize: "1.0625rem"
+    lineHeight: 1.8
+    letterSpacing: "0.005em"
+  body-command-reader:
+    fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
+    fontSize: "1rem"
+    lineHeight: 1.8
   command:
     fontFamily: "'Martian Mono Variable', 'Martian Mono', monospace"
     fontSize: "12px"
@@ -160,13 +174,13 @@ Native text selection is dark on amber by default. On amber public participation
 **Display and body font:** Archivo Variable, with Archivo and sans-serif fallbacks. **Technical heading and command font:** Martian Mono Variable, with Martian Mono and monospace fallbacks. Both families are self-hosted in the shared layout.
 
 ### Hierarchy
-- **Public display and headline:** uppercase, heavy, tightly tracked Archivo using its width axis, not a horizontal transform. The hero has three lines and an upright amber marker behind the closing word.
-- **Public title:** moderately condensed disclosure titles. Freedom-reading titles use a larger condensed role with a ceiling of (6rem); local section and editorial-row sizes remain contextual rather than separate normative scale steps.
-- **Technical display and headline:** bold mixed-case mono, with selective amber emphasis. The display ceiling is (6rem), as it is for public display; section headlines have their own smaller role.
-- **Technical title:** principle headings; command-output headings use a quieter mono treatment rather than display sizing.
-- **Body:** Archivo at the base role, with fluid introductory and large-reading treatments. Long technical paragraphs stay proportional, commonly within (48–68ch).
-- **Reading body:** the manifesto uses the reading role, returning to (16px) below (700px). Its title caps at (6rem); article headings remain Archivo, not the homepage's compressed uppercase treatment.
-- **Command and label:** mono distinguishes editable commands, suggestions and actual utility metadata. Do not promote every incidental local text size into a system token.
+- **Public display and headline:** uppercase, heavy Archivo at (72%) width, weight (800), and (-0.015em) tracking. Leading is (1.02) in the hero and (1.05) in sections: condensed, but no longer stacked edge-to-edge. The three-line hero uses a smaller responsive scale below (1000px) and (700px) to preserve complete phrases with the wider lettering.
+- **Public title:** disclosure titles use (85%) width, weight (700), and (1.25) leading; contribution labels use the same width/weight with (1.3) leading. Freedom-reading titles retain the larger condensed role with (1.1) leading and a ceiling of (6rem).
+- **Technical display and headline:** bold mixed-case mono with selective amber emphasis, (-0.02em) tracking, and (1.15)/(1.25) leading. The mobile hero uses one continuous rem-plus-viewport scale, with (1.2) leading and no abrupt size drop at (380px).
+- **Technical title:** principle headings use (-0.015em) tracking and (1.5) leading; mobile titles use (1.125rem)/(1.6). Command-output headings use a quieter (1rem) mono treatment rather than display sizing.
+- **Body:** homepage prose uses proportional Archivo at (1.0625rem), with (1.75) leading on paper and (1.8) on Terminal. Technical prose has slight (0.005em) tracking. Introductory and large-reading roles retain their contextual fluid scales. Reading measures are typically (48–72ch) when space permits; narrow screens use the available column rather than forcing desktop measures.
+- **Reading body:** the manifesto keeps its separate (17px)/(1.65) role, returning to (16px) below (700px). Its title caps at (6rem); article headings remain Archivo, not the homepage's compressed uppercase treatment.
+- **Command and label:** mono distinguishes commands and utility metadata. Reader prose and autocomplete descriptions use (1rem), keyboard guidance uses (.875rem), and the editable prompt stays at (1rem) even on narrow phones. Terse command labels remain compact. Shared navigation and audience/motion utilities are one pixel larger than the initial implementation; public primary actions use (1rem).
 
 **The Two Registers Rule.** Use narrow Archivo for Folheto display and Martian Mono for Terminal headings; do not turn technical body prose into a wall of monospace.
 
@@ -174,9 +188,9 @@ Native text selection is dark on amber by default. On amber public participation
 
 The shared shell caps its container at (1200px), with (40px) desktop and (20px) mobile side gutters. A slim audience/utility row precedes the logo and always-visible navigation. Below (700px), navigation wraps beneath the logo instead of becoming a scripted menu; the footer stacks.
 
-Folheto content caps at (1320px), with (40px) desktop gutters, (24px) below (1000px), and (20px) below (700px). Oversized editorial headings alternate with paired reading columns and full-bleed forest/amber bands. Mobile stacks major grids, places the complete illustration below the hero copy and turns four freedom choices into a two-column grid. Semantic contribution rows stack label above reading. The public illustration has no framing or registration lines.
+Folheto content caps at (1320px), with (40px) desktop gutters, (24px) below (1000px), and (20px) below (700px). Oversized editorial headings alternate with paired reading columns and full-bleed forest/amber bands. The manifesto introduction and disclosures stack below (1000px); community/autonomy prose stacks below (700px) instead of remaining in narrow nested columns. Mobile places the complete illustration below the hero copy and turns four freedom choices into a two-column grid. Semantic contribution rows stack label above reading. Explanatory paragraphs use (24px) separation; disclosures and contribution rows have larger reading insets. The public illustration has no framing or registration lines.
 
-Terminal content caps at (1440px), with (48px) desktop gutters, (32px) below (1100px), and (20px) below (760px). The desktop hero pairs copy and fauna above a full-width local reader. Below (760px), the local reader follows the copy and the fauna follows the reader; reader guide and workspace stack. The output remains internally scrollable (330px desktop, 300px mobile). Additional narrow-screen adjustments occur at (380px), including (16px) gutters; very wide hero proportions adjust at (1700px).
+Terminal content caps at (1440px), with (48px) desktop gutters, (32px) below (1100px), and (20px) below (760px). The desktop hero pairs copy and fauna above a full-width local reader. Nested community/autonomy readings stack below (1100px). Below (760px), the local reader follows the copy and the fauna follows the reader; reader guide and workspace stack. Mobile grids allow tracks to shrink so enlarged text wraps instead of widening the page. Expanded principle prose uses the full mobile measure. The output remains internally scrollable (380px desktop, 360px mobile) to accommodate larger reading text and paragraph gaps. Additional narrow-screen adjustments occur at (380px), including (16px) gutters; very wide hero proportions adjust at (1700px).
 
 The manifesto page caps at (1000px), with an article measure of (740px). Its six principles are expanded reading sections, not disclosures. Section padding follows editorial scale rather than a single universal section token.
 
