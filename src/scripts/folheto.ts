@@ -65,8 +65,9 @@ function enhanceFolheto(root: HTMLElement) {
       animatePart(`[data-print-wind="${index}"]`, [
         { transform: 'translateX(16px)', opacity: 0, offset: 0 },
         { opacity: 0, offset: .05 + index * .12 },
-        { opacity: .28, offset: .2 + index * .12 },
-        { opacity: 0, offset: .55 + index * .12 },
+        { opacity: .65, offset: .16 + index * .1 },
+        { opacity: .65, offset: .35 + index * .1 },
+        { opacity: 0, offset: .65 + index * .1 },
         { transform: 'translateX(-36px)', opacity: 0, offset: 1 },
       ], { duration: 3500, iterations: 8 });
     }

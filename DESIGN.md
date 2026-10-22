@@ -17,41 +17,41 @@ typography:
   display-public:
     fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
     fontSize: "clamp(5rem, 8.2vw, 6rem)"
-    fontWeight: 850
-    lineHeight: 0.88
-    letterSpacing: "-0.035em"
-    fontVariation: "'wdth' 62"
+    fontWeight: 800
+    lineHeight: 1.02
+    letterSpacing: "-0.015em"
+    fontVariation: "'wdth' 72"
   headline-public:
     fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
     fontSize: "clamp(3.2rem, 6.3vw, 6rem)"
-    fontWeight: 850
-    lineHeight: 0.92
-    letterSpacing: "-0.035em"
-    fontVariation: "'wdth' 62"
+    fontWeight: 800
+    lineHeight: 1.05
+    letterSpacing: "-0.015em"
+    fontVariation: "'wdth' 72"
   title-public:
     fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
     fontSize: "clamp(1.6rem, 2.5vw, 2.15rem)"
-    fontWeight: 750
-    lineHeight: 1.08
-    fontVariation: "'wdth' 70"
+    fontWeight: 700
+    lineHeight: 1.25
+    fontVariation: "'wdth' 85"
   display-terminal:
     fontFamily: "'Martian Mono Variable', 'Martian Mono', monospace"
     fontSize: "clamp(3.4rem, 6.6vw, 6rem)"
     fontWeight: 700
-    lineHeight: 1.06
-    letterSpacing: "-0.04em"
+    lineHeight: 1.15
+    letterSpacing: "-0.02em"
   headline-terminal:
     fontFamily: "'Martian Mono Variable', 'Martian Mono', monospace"
     fontSize: "clamp(2rem, 3.5vw, 3.6rem)"
     fontWeight: 600
-    lineHeight: 1.15
-    letterSpacing: "-0.04em"
+    lineHeight: 1.25
+    letterSpacing: "-0.02em"
   title-terminal:
     fontFamily: "'Martian Mono Variable', 'Martian Mono', monospace"
     fontSize: "clamp(1.05rem, 2.1vw, 1.85rem)"
     fontWeight: 600
-    lineHeight: 1.4
-    letterSpacing: "-0.03em"
+    lineHeight: 1.5
+    letterSpacing: "-0.015em"
   body:
     fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
     fontSize: "16px"
@@ -61,6 +61,20 @@ typography:
     fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
     fontSize: "17px"
     lineHeight: 1.65
+  body-home:
+    fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
+    fontSize: "1.0625rem"
+    fontWeight: 400
+    lineHeight: 1.75
+  body-terminal:
+    fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
+    fontSize: "1.0625rem"
+    lineHeight: 1.8
+    letterSpacing: "0.005em"
+  body-command-reader:
+    fontFamily: "'Archivo Variable', 'Archivo', sans-serif"
+    fontSize: "1rem"
+    lineHeight: 1.8
   command:
     fontFamily: "'Martian Mono Variable', 'Martian Mono', monospace"
     fontSize: "12px"
@@ -157,13 +171,13 @@ Native text selection is dark on amber by default. On amber public participation
 **Display and body font:** Archivo Variable, with Archivo and sans-serif fallbacks. **Technical heading and command font:** Martian Mono Variable, with Martian Mono and monospace fallbacks. Both families are self-hosted in the shared layout.
 
 ### Hierarchy
-- **Public display and headline:** uppercase, heavy, tightly tracked Archivo using its width axis, not a horizontal transform. The hero has three lines and an upright amber marker behind the closing word.
-- **Public title:** moderately condensed disclosure titles. Motivation-reading titles use a larger condensed role with a ceiling of (6rem); local section and editorial-row sizes remain contextual rather than separate normative scale steps.
-- **Technical display and headline:** bold mixed-case mono, with selective amber emphasis. The display ceiling is (6rem), as it is for public display; section headlines have their own smaller role.
-- **Technical title:** principle headings; command-output headings use a quieter mono treatment rather than display sizing.
-- **Body:** Archivo at the base role, with fluid introductory and large-reading treatments. Long technical paragraphs stay proportional, commonly within (48–68ch).
-- **Reading body:** the manifesto uses the reading role, returning to (16px) below (700px). Its title caps at (6rem); article headings remain Archivo, not the homepage's compressed uppercase treatment.
-- **Command and label:** mono distinguishes typed reading commands and actual utility metadata. Do not promote every incidental local text size into a system token.
+- **Public display and headline:** uppercase, heavy Archivo at (72%) width, weight (800), and (-0.015em) tracking. Leading is (1.02) in the hero and (1.05) in sections: condensed, but no longer stacked edge-to-edge. The three-line hero uses a smaller responsive scale below (1000px) and (700px) to preserve complete phrases with the wider lettering.
+- **Public title:** disclosure titles use (85%) width, weight (700), and (1.25) leading; contribution labels use the same width/weight with (1.3) leading. Motivation-reading titles retain the larger condensed role with (1.1) leading and a ceiling of (6rem).
+- **Technical display and headline:** bold mixed-case mono with selective amber emphasis, (-0.02em) tracking, and (1.15)/(1.25) leading. The mobile hero uses one continuous rem-plus-viewport scale, with (1.2) leading and no abrupt size drop at (380px).
+- **Technical title:** principle headings use (-0.015em) tracking and (1.5) leading; mobile titles use (1.125rem)/(1.6). Topic-reading headings use a quieter mono treatment rather than display sizing.
+- **Body:** homepage prose uses proportional Archivo at (1.0625rem), with (1.75) leading on paper and (1.8) on Terminal. Technical prose has slight (0.005em) tracking. Introductory and large-reading roles retain their contextual fluid scales. Reading measures are typically (48–72ch) when space permits; narrow screens use the available column rather than forcing desktop measures.
+- **Reading body:** the manifesto keeps its separate (17px)/(1.65) role, returning to (16px) below (700px). Its title caps at (6rem); article headings remain Archivo, not the homepage's compressed uppercase treatment.
+- **Command and label:** mono distinguishes typed reading commands and utility metadata. Topic prose uses (1rem)/(1.8), with (24px) paragraph spacing; topic navigation and reading links use (1rem). Shared navigation and audience/motion utilities are one pixel larger than the initial implementation; public primary actions use (1rem). Do not promote every incidental local text size into a system token.
 
 **The Two Registers Rule.** Use narrow Archivo for Folheto display and Martian Mono for Terminal headings; do not turn technical body prose into a wall of monospace.
 
@@ -171,9 +185,9 @@ Native text selection is dark on amber by default. On amber public participation
 
 The shared shell caps its container at (1200px), with (40px) desktop and (20px) mobile side gutters. A slim audience/utility row precedes the logo and always-visible navigation. Below (700px), navigation wraps beneath the logo instead of becoming a scripted menu; the footer stacks.
 
-Folheto content caps at (1320px), with (40px) desktop gutters, (24px) below (1000px), and (20px) below (700px). Oversized editorial headings alternate with paired reading columns and full-bleed forest/amber bands. The six motivation choices form three columns on desktop, two below (700px), and one below (380px) to keep complete labels readable. Mobile stacks major grids and places the complete illustration below the hero copy. Semantic contribution rows stack label above reading. The public illustration has no framing or registration lines.
+Folheto content caps at (1320px), with (40px) desktop gutters, (24px) below (1000px), and (20px) below (700px). Oversized editorial headings alternate with paired reading columns and full-bleed forest/amber bands. The hero reserves a separate (40%) illustration column with a (4:5) canvas: the toucan flies above the emblem, while capybara and ipê share a lower baseline without overlapping the emblem. Mobile places this proportional canvas below the copy with (48px) of separation and room beneath its caption; it does not compress the animals into a fixed-height stack. The manifesto introduction and disclosures stack below (1000px); community/autonomy prose stacks below (700px) instead of remaining in narrow nested columns. The six motivation choices form three columns on desktop, two below (700px), and one below (380px) to keep complete labels readable. Semantic contribution rows stack label above reading. Explanatory paragraphs use (24px) separation; disclosures and contribution rows have larger reading insets. The public illustration has no framing or registration lines.
 
-Terminal content caps at (1440px), with (48px) desktop gutters, (32px) below (1100px), and (20px) below (760px). The desktop hero pairs copy and fauna above a full-width typed-topic reader. Its editorial guide and nine-topic index sit beside a bordered reading workspace. Below (760px), the reader follows the copy and precedes fauna; its index becomes a horizontally scrollable strip. The output remains internally scrollable (390px desktop, 380px mobile). Additional narrow-screen adjustments occur at (380px), including (16px) gutters; very wide hero proportions adjust at (1700px).
+Terminal content caps at (1440px), with (48px) desktop gutters, (32px) below (1100px), and (20px) below (760px). The desktop hero pairs copy and fauna above a full-width typed-topic reader. Its editorial guide and nine-topic index sit beside a bordered reading workspace. Nested community/autonomy readings stack below (1100px). Below (760px), the reader follows the copy and precedes fauna; its index becomes a horizontally scrollable strip. Mobile grids allow tracks to shrink so enlarged text wraps instead of widening the page, and expanded principle prose uses the full measure. The topic output remains internally scrollable (390px desktop, 380px mobile). Additional narrow-screen adjustments occur at (380px), including (16px) gutters; very wide hero proportions adjust at (1700px).
 
 The manifesto page caps at (1000px), with an article measure of (740px). Its six principles are expanded reading sections, not disclosures. Section padding follows editorial scale rather than a single universal section token.
 
@@ -183,7 +197,7 @@ There is no box-shadow vocabulary. Depth comes from paper-to-forest reversals, s
 
 **The Flat Material Rule.** Distinguish surfaces with ink, ground and rules rather than shadows or neon glow.
 
-Motion is subordinate to complete static composition. Shared action-color transitions last (180ms). Folheto's toucan, capybara and ipê run two finite (14s) circuits, only while visible and allowed; the public emblem/flame itself is static, unclipped and untransformed. The toucan rides two smooth rise-and-settle arcs per circuit, with restrained horizontal drift and banking rather than stop-start lateral travel. Three faint forest-green wind strokes pass behind it in staggered (3.5s) pulses for the same (28s) total; they share the scene's pause/visibility/reduced-motion controls and disappear when finished or motion is reduced. The complete supplied bird remains visible without JavaScript. A user-selected motivation reading may receive a (360ms) wipe, never a scroll-triggered content gate.
+Motion is subordinate to complete static composition. Shared action-color transitions last (180ms). Folheto's toucan, capybara and ipê run two finite (14s) circuits, only while visible and allowed; the public emblem/flame itself is static, unclipped and untransformed. The toucan rides two smooth rise-and-settle arcs per circuit, with restrained horizontal drift and banking rather than stop-start lateral travel. Three forest-green wind strokes occupy open paper beneath the bird, not behind its silhouette. Their non-scaling (2px) strokes reach (0.65) opacity with a short hold, keeping them legible against the light ground. Staggered (3.5s) pulses run for the same (28s) total; they share the scene's pause/visibility/reduced-motion controls and disappear when finished or motion is reduced. The complete supplied bird remains visible without JavaScript. A user-selected motivation reading may receive a (360ms) wipe, never a scroll-triggered content gate.
 
 Terminal samples the supplied SVG into particles, gathers over (1600ms), then continuously moves only the warm upper flame islands. The beak, cream face and green/blue body do not enter the flame mask; after assembly their particle geometry stays at rest. Traveling lift/curl and subtle opacity variation keep the recognizable flame alive, rather than giving every particle a random orbit. Source bounds reserve tip headroom. The budget is a single requestAnimationFrame loop, at most (1400) particles or (600) below (760px), and device-pixel ratio capped at (1.5). These are implementation budgets, not measured frame-rate or hardware guarantees.
 

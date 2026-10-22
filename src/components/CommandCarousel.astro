@@ -56,11 +56,11 @@ const topics = [
 <style>
   .command-carousel { --rule: #365542; --muted: #b9c9bb; grid-column: 1 / -1; display: grid; grid-template-columns: minmax(270px, .8fr) minmax(0, 1.6fr); gap: clamp(32px, 5vw, 80px); margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--rule); scroll-margin-top: 32px; min-width: 0; }
   .carousel-guide { min-width: 0; }
-  h2 { font: 600 clamp(1.8rem, 3.1vw, 3rem)/1.15 var(--font-mono); letter-spacing: -.04em; margin: 0 0 20px; }
+  h2 { font: 600 clamp(1.8rem, 3.1vw, 3rem)/1.25 var(--font-mono); letter-spacing: -.02em; margin: 0 0 24px; }
   h2 span { color: var(--yellow); }
-  .carousel-guide > p { color: var(--muted); font-size: 16px; line-height: 1.65; max-width: 38ch; margin: 0 0 28px; }
+  .carousel-guide > p { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 38ch; margin: 0 0 32px; }
   .topic-navigation { display: grid; }
-  .topic-navigation a { display: grid; grid-template-columns: 24px 1fr 16px; gap: 12px; align-items: center; min-height: 44px; padding: 10px 8px; color: var(--muted); border-bottom: 1px solid var(--rule); text-decoration: none; font-size: 13px; line-height: 1.4; }
+  .topic-navigation a { display: grid; grid-template-columns: 24px minmax(0, 1fr) 16px; gap: 12px; align-items: center; min-height: 48px; padding: 12px 8px; color: var(--muted); border-bottom: 1px solid var(--rule); text-decoration: none; font-size: 1rem; line-height: 1.6; }
   .topic-navigation a:nth-child(4) { margin-top: 16px; border-top: 1px solid var(--rule); }
   .topic-marker { color: var(--mint); font: 10px/1.5 var(--font-mono); }
   .topic-arrow { opacity: 0; }
@@ -86,10 +86,10 @@ const topics = [
   .topic-reading[hidden], .carousel-controls[hidden] { display: none; }
   .reading-command { color: var(--mint); font: 12px/1.6 var(--font-mono); }
   [data-enhanced] .reading-command { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); margin: 0; }
-  h3 { font: 500 clamp(1rem, 1.5vw, 1.25rem)/1.6 var(--font-mono); letter-spacing: -.025em; margin: 0 0 24px; color: var(--cream); }
+  h3 { font: 500 clamp(1rem, 1.5vw, 1.25rem)/1.65 var(--font-mono); letter-spacing: -.015em; margin: 0 0 24px; color: var(--cream); }
   h3 span { color: var(--mint); }
-  .topic-reading > p:not(.reading-command) { color: var(--muted); font-size: 16px; line-height: 1.7; max-width: 68ch; margin: 0 0 18px; }
-  .topic-reading > a { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; color: var(--cream); font-size: 14px; text-underline-offset: 4px; }
+  .topic-reading > p:not(.reading-command) { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 68ch; margin: 0 0 24px; }
+  .topic-reading > a { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; color: var(--cream); font-size: 1rem; text-underline-offset: 4px; }
   .topic-reading > a:hover { color: var(--yellow); }
   .carousel-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px 16px 28px; border-top: 1px solid var(--rule); }
   .sequence-position { display: flex; align-items: center; gap: 9px; font: 11px/1.5 var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
@@ -111,7 +111,7 @@ const topics = [
     .sequence-state { display: none; }
   }
   @media (max-width: 760px) {
-    .command-carousel { grid-row: 2; grid-template-columns: 1fr; margin-top: 48px; padding-top: 32px; gap: 24px; }
+    .command-carousel { grid-row: 2; grid-template-columns: minmax(0, 1fr); margin-top: 48px; padding-top: 32px; gap: 32px; }
     h2 { font-size: clamp(1.8rem, 6.5vw, 2.6rem); }
     h2 br { display: none; }
     .carousel-guide > p { max-width: 52ch; margin-bottom: 20px; }
@@ -123,7 +123,6 @@ const topics = [
     .command-line { padding: 24px 20px; font-size: clamp(1.2rem, 5vw, 1.75rem); min-height: 88px; }
     .carousel-readings { padding: 0 20px 24px; }
     [data-enhanced] .carousel-readings { height: 380px; }
-    .topic-reading > p:not(.reading-command) { font-size: 16px; }
     .carousel-controls { padding: 12px 16px 12px 20px; gap: 8px; }
     .playback-controls { gap: 6px; }
   }
