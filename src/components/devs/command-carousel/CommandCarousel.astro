@@ -10,7 +10,7 @@ const topics = [
   { ...copy.topics[0], command: messages.devs.commands.manifesto, paragraphs: messages.manifesto.introduction },
   { ...copy.topics[1], command: messages.devs.commands.community, paragraphs: [messages.manifesto.invitation.introduction, messages.manifesto.invitation.body, copy.communityParagraph] },
   { ...copy.topics[2], command: messages.devs.commands.autonomy, paragraphs: copy.autonomyParagraphs },
-  ...principles.map((principle, index) => ({ command: messages.devs.commands.principles[index]!, label: principle.title, title: principle.title, summary: principle.lead, paragraphs: [principle.lead, principle.body], href: '/manifesto/', link: copy.principlesLink })),
+  ...principles.map((principle, index) => ({ command: messages.devs.commands.principles[index]!, label: principle.title, title: principle.title, summary: principle.lead, paragraphs: [principle.body], href: '/manifesto/', link: copy.principlesLink })),
 ];
 ---
 
