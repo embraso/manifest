@@ -3,7 +3,7 @@ import { introduction, invitation, principles } from '../data/manifesto';
 
 const topics = [
   { command: 'manifesto', label: 'Por que construir', title: 'Conhecimento que encontra propósito.', paragraphs: introduction, href: '/manifesto/', link: 'Ler o manifesto completo' },
-  { command: 'comunidade', label: 'Com quem construir', title: 'Gente antes da pilha.', paragraphs: [invitation.introduction, invitation.body, 'Comunidade é lugar de troca, aprendizado e relações — não uma fila de tarefas. Participar não exige saber programar nem ter tempo toda semana.'], href: '#participacao', link: 'Conhecer as formas de participação' },
+  { command: 'comunidade', label: 'Com quem construir', title: 'Gente antes da stack.', paragraphs: [invitation.introduction, invitation.body, 'Comunidade é lugar de troca, aprendizado e relações — não uma fila de tarefas. Participar não exige saber programar nem ter tempo toda semana.'], href: '#participacao', link: 'Conhecer as formas de participação' },
   { command: 'autonomia', label: 'Poder continuar', title: 'Escolher também é poder mudar.', paragraphs: ['Autonomia digital não é fazer tudo sozinho. É compreender o que usamos, conhecer dependências e preservar caminhos para recuperar dados, adaptar ferramentas, migrar e continuar.', 'Comunidade e autonomia se sustentam: queremos compartilhar conhecimento para que mais pessoas possam participar das escolhas e cuidar do que for construído.'], href: '#proposta', link: 'Ler a proposta' },
   ...principles.map((principle, index) => ({ command: `principio ${index + 1}`, label: principle.title, title: principle.title, paragraphs: [principle.lead, principle.body], href: '/manifesto/', link: 'Ler no manifesto' })),
 ];

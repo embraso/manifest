@@ -146,6 +146,14 @@ Separadamente, o export local `Logo.dc.html` identifica tipografia Baloo 2 e Fig
 
 Antes de implementar o site, inspecionar visualmente o artefato acessível ou um export fornecido. Isso não impede a definição textual atual e não autoriza inventar a interface.
 
+## Da explicação de software livre aos motivos para existir
+
+Em 22 de outubro de 2026, o responsável pela iniciativa considerou “Livre para quê?” genérico e pediu uma seção mais próxima dos problemas que a Embraso quer enfrentar e dos resultados que busca. Uma tabela de uma interação anterior foi fornecida como inspiração, sem obrigação de reproduzir todos os itens ou sua redação. Os nomes históricos nela usados não substituem os nomes e a ordem aprovados para o manifesto atual.
+
+A seção do Folheto passa a se chamar **“Por que a Embraso existe?”**. As seis leituras — Vida em comum, Autonomia, Conhecimento, Atenção, Privacidade e Continuidade — são adaptações editoriais dos compromissos do [manifesto público](01-manifesto-publico.md), não novos princípios nem citações literais. Cada uma distingue **o que queremos enfrentar** de **o que queremos construir**. A versão para devs trata das mesmas preocupações em perguntas de engenharia, sob **“O que queremos mudar com código.”**
+
+A abertura de cada proposta preserva a motivação humana, a troca e a descoberta em contraste com o consumo, a oportunidade de aproximar ferramentas e conhecimento dos problemas e as duas frentes inseparáveis. A crítica nomeia dependências, opacidade, exposição de dados e condições de continuidade; não presume inimigos únicos, práticas universais de empresas ou garantias de resultado. As leituras expressam intenções, não um catálogo de produtos ou funcionalidades entregues. As fontes históricas e o manifesto canônico permanecem intactos.
+
 ## Critério para continuar a série
 
 1. Atualizar fatos e decisões no [índice](README.md), identificando a origem e quem confirmou.

@@ -106,7 +106,7 @@ components:
     backgroundColor: "{colors.terminal-panel}"
     textColor: "{colors.cream}"
     rounded: "{rounded.rectangular}"
-  freedom-selected:
+  motivation-selected:
     backgroundColor: "{colors.yellow}"
     textColor: "{colors.dark}"
 ---
@@ -133,7 +133,7 @@ Both registers preserve supplied SVG identity, self-hosted variable fonts, expli
 The frontmatter owns the palette values; local hover mixtures are state treatments, not additional brand colors.
 
 ### Primary
-- **Forest green** (`green`): public ink, actions, freedom-reader ground and footer.
+- **Forest green** (`green`): public ink, actions, motivation-reader ground and footer.
 - **Amber** (`yellow`): public marker emphasis and participation ground; technical emphasis, actions and selected controls.
 
 ### Secondary
@@ -158,7 +158,7 @@ Native text selection is dark on amber by default. On amber public participation
 
 ### Hierarchy
 - **Public display and headline:** uppercase, heavy, tightly tracked Archivo using its width axis, not a horizontal transform. The hero has three lines and an upright amber marker behind the closing word.
-- **Public title:** moderately condensed disclosure titles. Freedom-reading titles use a larger condensed role with a ceiling of (6rem); local section and editorial-row sizes remain contextual rather than separate normative scale steps.
+- **Public title:** moderately condensed disclosure titles. Motivation-reading titles use a larger condensed role with a ceiling of (6rem); local section and editorial-row sizes remain contextual rather than separate normative scale steps.
 - **Technical display and headline:** bold mixed-case mono, with selective amber emphasis. The display ceiling is (6rem), as it is for public display; section headlines have their own smaller role.
 - **Technical title:** principle headings; command-output headings use a quieter mono treatment rather than display sizing.
 - **Body:** Archivo at the base role, with fluid introductory and large-reading treatments. Long technical paragraphs stay proportional, commonly within (48–68ch).
@@ -171,7 +171,7 @@ Native text selection is dark on amber by default. On amber public participation
 
 The shared shell caps its container at (1200px), with (40px) desktop and (20px) mobile side gutters. A slim audience/utility row precedes the logo and always-visible navigation. Below (700px), navigation wraps beneath the logo instead of becoming a scripted menu; the footer stacks.
 
-Folheto content caps at (1320px), with (40px) desktop gutters, (24px) below (1000px), and (20px) below (700px). Oversized editorial headings alternate with paired reading columns and full-bleed forest/amber bands. Mobile stacks major grids, places the complete illustration below the hero copy and turns four freedom choices into a two-column grid. Semantic contribution rows stack label above reading. The public illustration has no framing or registration lines.
+Folheto content caps at (1320px), with (40px) desktop gutters, (24px) below (1000px), and (20px) below (700px). Oversized editorial headings alternate with paired reading columns and full-bleed forest/amber bands. The six motivation choices form three columns on desktop, two below (700px), and one below (380px) to keep complete labels readable. Mobile stacks major grids and places the complete illustration below the hero copy. Semantic contribution rows stack label above reading. The public illustration has no framing or registration lines.
 
 Terminal content caps at (1440px), with (48px) desktop gutters, (32px) below (1100px), and (20px) below (760px). The desktop hero pairs copy and fauna above a full-width typed-topic reader. Its editorial guide and nine-topic index sit beside a bordered reading workspace. Below (760px), the reader follows the copy and precedes fauna; its index becomes a horizontally scrollable strip. The output remains internally scrollable (390px desktop, 380px mobile). Additional narrow-screen adjustments occur at (380px), including (16px) gutters; very wide hero proportions adjust at (1700px).
 
@@ -183,7 +183,7 @@ There is no box-shadow vocabulary. Depth comes from paper-to-forest reversals, s
 
 **The Flat Material Rule.** Distinguish surfaces with ink, ground and rules rather than shadows or neon glow.
 
-Motion is subordinate to complete static composition. Shared action-color transitions last (180ms). Folheto's toucan, capybara and ipê run two finite (14s) circuits, only while visible and allowed; the public emblem/flame itself is static, unclipped and untransformed. The toucan rides two smooth rise-and-settle arcs per circuit, with restrained horizontal drift and banking rather than stop-start lateral travel. Three faint forest-green wind strokes pass behind it in staggered (3.5s) pulses for the same (28s) total; they share the scene's pause/visibility/reduced-motion controls and disappear when finished or motion is reduced. The complete supplied bird remains visible without JavaScript. A user-selected freedom reading may receive a (360ms) wipe, never a scroll-triggered content gate.
+Motion is subordinate to complete static composition. Shared action-color transitions last (180ms). Folheto's toucan, capybara and ipê run two finite (14s) circuits, only while visible and allowed; the public emblem/flame itself is static, unclipped and untransformed. The toucan rides two smooth rise-and-settle arcs per circuit, with restrained horizontal drift and banking rather than stop-start lateral travel. Three faint forest-green wind strokes pass behind it in staggered (3.5s) pulses for the same (28s) total; they share the scene's pause/visibility/reduced-motion controls and disappear when finished or motion is reduced. The complete supplied bird remains visible without JavaScript. A user-selected motivation reading may receive a (360ms) wipe, never a scroll-triggered content gate.
 
 Terminal samples the supplied SVG into particles, gathers over (1600ms), then continuously moves only the warm upper flame islands. The beak, cream face and green/blue body do not enter the flame mask; after assembly their particle geometry stays at rest. Traveling lift/curl and subtle opacity variation keep the recognizable flame alive, rather than giving every particle a random orbit. Source bounds reserve tip headroom. The budget is a single requestAnimationFrame loop, at most (1400) particles or (600) below (760px), and device-pixel ratio capped at (1.5). These are implementation budgets, not measured frame-rate or hardware guarantees.
 
@@ -205,9 +205,9 @@ Public primary links use forest/cream, a (48px) minimum height and the frontmatt
 
 The switch reads “Público geral” and “Devs”; `data-selected` selects the visual register, while `aria-current="page"` identifies only a current page destination. Public selected state is forest/cream; technical selected state amber/deep forest. Unselected hover uses a subtle register-colored fill; selected hover retains its selected ground. Main-navigation hover underlines, with path-style mono labels in Terminal. Mobile keeps all destinations visible.
 
-### Freedom reader radios
+### Motivation reader radios
 
-A native fieldset/legend groups four radios: Usar, Estudar, Modificar and Compartilhar. Checked labels reverse to amber/deep forest; unselected hover gains a cream tint. Preserve native radio keyboard selection, (18px) radio controls, associated labels and `aria-controls`. A label focus-within has a (3px) amber ring with (5px) offset; the checked control's own focus uses deep forest. Selection displays one real article and a polite “Lendo…” status. Without JavaScript, controls stay hidden and all four readings stay visible.
+“Por que a Embraso existe?” pairs obstacles with intended changes under six themes: Vida em comum, Autonomia, Conhecimento, Atenção, Privacidade and Continuidade. These are audience-facing topics, not replacement manifesto titles. A native fieldset/legend groups six radios; checked labels reverse to amber/deep forest, and unselected hover gains a cream tint. Preserve native radio keyboard selection, (18px) controls, associated labels and `aria-controls`. A label focus-within has a (3px) amber ring with (5px) offset; the checked control's own focus uses deep forest. Selection displays one article and a polite “Lendo…” status. Without JavaScript, controls stay hidden and all six readings remain visible; print expands them too. The developer engineering rows address the same concerns through concrete questions and intended decisions, without claiming shipped products or guaranteed outcomes.
 
 ### Typed-topic carousel
 
