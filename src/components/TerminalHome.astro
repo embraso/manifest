@@ -1,395 +1,339 @@
 ---
 import { principles } from '../data/manifesto';
 import emblem from '../../assets/b084774a04a4acde15a270ee03518180.svg';
-import pixelToucan from '../../assets/458818d47ccc166fc7808f7bacf54160.svg';
 import pixelCapybara from '../../assets/aa3df8c60c0205b36b599de7c17c2d7b.svg';
 
-const consequences = [
-  {
-    name: 'Portabilidade',
-    question: 'Dá para levar os dados e continuar?',
-    body: 'Queremos formatos compreensíveis, padrões abertos e caminhos de migração. A possibilidade de sair precisa entrar na decisão de chegar.',
-  },
-  {
-    name: 'Dependências',
-    question: 'O que esta conveniência nos custa?',
-    body: 'Nuvem, ferramentas proprietárias e inteligência artificial podem fazer sentido. Importa conhecer custos, riscos e alternativas, sem exigir pureza para começar.',
-  },
-  {
-    name: 'Privacidade',
-    question: 'Precisamos mesmo coletar isso?',
-    body: 'Defendemos coleta mínima e proteção proporcional aos riscos. Código disponível para leitura não dispensa revisão, correções nem cuidado com quem usa.',
-  },
-  {
-    name: 'Manutenção',
-    question: 'Quem consegue cuidar depois?',
-    body: 'Soluções simples, documentação e conhecimento compartilhado ajudam a dar continuidade. Uma arquitetura impressionante não compensa uma ferramenta impossível de manter.',
-  },
-  {
-    name: 'Sustentação',
-    question: 'Há condições de manter esse trabalho?',
-    body: 'Software livre não significa trabalho gratuito. Desenvolver, documentar e cuidar exige recursos; defendemos remuneração justa e clareza sobre os limites de cada colaboração.',
-  },
-];
-
-const contributions = [
-  { title: 'Conhecer o problema', body: 'Trazer a experiência de uma sala de aula, um coletivo, um pequeno negócio ou de quem usa uma ferramenta todos os dias.' },
-  { title: 'Tornar compreensível', body: 'Escrever, traduzir, desenhar, pesquisar e pensar acessibilidade. Uma boa explicação também muda o que alguém consegue fazer.' },
-  { title: 'Construir e cuidar', body: 'Desenvolver, testar, documentar e manter. Compartilhar não só a solução, mas o raciocínio que permite continuá-la.' },
-  { title: 'Aproximar pessoas', body: 'Ensinar, escutar, organizar e trocar referências. Reconhecer o que já existe antes de começar outra ferramenta.' },
+const decisions = [
+  { question: 'E se precisarmos sair?', title: 'Dados que podem seguir viagem.', body: 'Defendemos formatos compreensíveis, padrões abertos e caminhos de migração. A possibilidade de sair precisa entrar na decisão de chegar.' },
+  { question: 'Precisamos coletar isso?', title: 'Menos dados. Mais cuidado.', body: 'Queremos coleta mínima e proteção proporcional aos riscos. Código aberto não dispensa revisão, correções e manutenção.' },
+  { question: 'Quem consegue continuar?', title: 'Simplicidade também é autonomia.', body: 'Documentação e conhecimento compartilhado importam tanto quanto a primeira entrega. Uma ferramenta precisa poder ser compreendida por quem vai cuidar dela.' },
+  { question: 'O que esta facilidade custa?', title: 'Dependências à vista.', body: 'Nuvem, ferramentas proprietárias e inteligência artificial podem ser escolhas conscientes. Importa conhecer custos, limites e alternativas, sem exigir pureza para começar.' },
 ];
 ---
 
 <main id="conteudo" class="terminal-home">
-  <section class="hero container" aria-labelledby="terminal-title">
-    <div class="hero-copy">
-      <h1 id="terminal-title">Código livre<br />com <span>sotaque<br />brasileiro.</span></h1>
-      <p class="hero-description">Por que dedicar o que sabemos a mais uma ferramenta? Na Embraso, queremos reunir quem programa, desenha, escreve e ensina para construir software útil e livre para a vida no Brasil — e relações que não terminem no consumo de conteúdo.</p>
-      <div class="hero-actions">
-        <a class="terminal-button primary" href="/manifesto/">
-          Ler o manifesto
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg>
-        </a>
-        <a class="terminal-button secondary" href="#participacao">Como participar</a>
+  <section class="terminal-opening page-width" aria-labelledby="terminal-home-title">
+    <div class="opening-copy">
+      <h1 id="terminal-home-title">Liberdade<br />se constrói<br /><span>junto.</span></h1>
+      <p class="opening-introduction">Queremos reunir pessoas para construir software útil e livre, compartilhar conhecimento e ampliar a autonomia digital nas diferentes realidades do Brasil.</p>
+      <div class="opening-actions">
+        <a class="terminal-action" href="/manifesto/">Ler o manifesto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a>
+        <a class="terminal-reading-link" href="#leitura-local">Explorar pelo terminal <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m-7-7 7 7 7-7" /></svg></a>
       </div>
-      <p class="hero-note">Não é preciso ter tudo pronto.<br />É preciso ter uma direção.</p>
     </div>
 
-    <div class="hero-terminal">
-      <img class="pixel-toucan" src={pixelToucan.src} alt="" width="220" height="110" fetchpriority="high" />
-      <aside class="reading-panel" aria-labelledby="direction-title">
-        <div class="file-bar">
-          <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span>DIRECAO.txt</span>
-          <span class="file-mode">leitura</span>
+    <div class="fauna-field" data-fauna-field aria-hidden="true">
+      <img data-fauna-source src={emblem.src} alt="" width="462" height="654" fetchpriority="high" />
+      <canvas data-fauna-canvas></canvas>
+      <span class="field-caption">Partes que formam um todo.</span>
+    </div>
+
+    <aside id="leitura-local" class="local-reader" data-local-terminal aria-labelledby="local-reader-title">
+      <div class="reader-heading">
+        <h2 id="local-reader-title">Embraso, em comandos.</h2>
+        <span>leitura local</span>
+      </div>
+      <div class="reader-layout">
+        <div class="reader-guide">
+          <p>Um terminal para ler a proposta. Os comandos só consultam o conteúdo desta página; não executam nada no seu sistema.</p>
+          <p class="reader-nojs">Prefere seguir por links? <a href="#manifesto">Leia os seis princípios abaixo</a> ou <a href="/manifesto/">abra o manifesto completo</a>.</p>
+          <div class="command-suggestions" data-terminal-controls hidden aria-label="Comandos de leitura">
+            <p>Escolha um comando:</p>
+            <button type="button" data-command="ajuda">ajuda</button>
+            <button type="button" data-command="manifesto">manifesto</button>
+            <button type="button" data-command="principio 1">principio 1</button>
+            <button type="button" data-command="comunidade">comunidade</button>
+            <button type="button" data-command="autonomia">autonomia</button>
+            <button type="button" data-command="limpar">limpar</button>
+          </div>
         </div>
-        <div class="direction-content">
-          <div class="direction-identity">
-            <img class="emblem" src={emblem.src} alt="Símbolo da Embraso: tucano em forma de chama" width="106" height="148" />
-            <div>
-              <h2 id="direction-title">Embraso<span>@ Brasil</span></h2>
-              <p>Software útil.<br />Liberdade para continuar.</p>
-              <div class="palette-strip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="reader-workspace">
+          <div class="reader-output" data-terminal-output tabindex="0" role="region" aria-label="Histórico de leitura do terminal">
+            <article class="reading-entry">
+              <h3>Uma direção, não uma stack pronta.</h3>
+              <p>Comunidade e autonomia digital são duas frentes inseparáveis da Embraso. Queremos construir com quem usa, com quem mantém e com quem ainda está chegando.</p>
+              <p>Com JavaScript, experimente <code>ajuda</code> para conhecer os comandos ou <code>principio 6</code> para ler sobre liberdade algorítmica.</p>
+            </article>
+          </div>
+          <form class="reader-form" data-terminal-form hidden>
+            <label for="embraso-command">Seu comando</label>
+            <div class="command-input-row">
+              <span aria-hidden="true">&gt;</span>
+              <input id="embraso-command" name="comando" type="text" placeholder="Ex.: principio 6" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="120" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-controls="command-options" aria-expanded="false" aria-describedby="command-instructions" />
+              <button type="submit">Ler</button>
             </div>
-          </div>
-          <dl class="direction-list">
-            <div><dt>momento</dt><dd>iniciativa em formação</dd></div>
-            <div><dt>proposta</dt><dd>comunidade + autonomia</dd></div>
-            <div><dt>contexto</dt><dd>diferentes realidades do Brasil</dd></div>
-            <div><dt>caminho</dt><dd>começar com propósito;<br />criar condições de continuar</dd></div>
-          </dl>
-          <p class="direction-close"><span aria-hidden="true">&gt;</span> Antes de escolher a pilha,<br /><span class="direction-indent">entender quem precisa dela.</span></p>
+            <div class="command-completions" data-command-completions hidden>
+              <ul id="command-options" role="listbox" aria-label="Comandos disponíveis" data-command-options></ul>
+              <p data-command-empty hidden>Nenhum comando corresponde. Digite ajuda para ver as opções.</p>
+            </div>
+            <p id="command-instructions">Ao focar ou digitar, veja sugestões. ↑ e ↓ escolhem; Enter lê a opção marcada ou o comando digitado. Tab completa um comando parcial; depois segue a navegação. Esc fecha as sugestões; com elas fechadas, ↑ e ↓ percorrem seu histórico. Nada é enviado.</p>
+          </form>
         </div>
-        <p class="panel-caption">Uma leitura da proposta, não um terminal interativo.</p>
-      </aside>
-    </div>
+      </div>
+      <p class="terminal-announcement" data-terminal-announcement role="status" aria-live="polite" aria-atomic="true"></p>
+    </aside>
   </section>
 
-  <section id="proposta" class="proposal section-rule" aria-labelledby="proposal-title">
-    <div class="container proposal-grid">
-      <h2 id="proposal-title">Por que construir?<br /><span>Por que agora?</span></h2>
-      <div class="proposal-copy">
-        <p class="large-copy">Produzir código ficou mais fácil. Construir algo que importe continua sendo um trabalho coletivo.</p>
-        <p>Bibliotecas, infraestrutura compartilhada e IA podem encurtar o caminho até uma ideia funcionando. Queremos usar essa oportunidade para aproximar conhecimento técnico e experiência dos problemas: nas universidades, nos coletivos e entre gente no Brasil e fora dele que quer contribuir para a vida por aqui.</p>
-        <p>Mais conteúdo não significa mais troca. Queremos ferramentas que favoreçam conversa, descoberta e organização, não que tratem a atenção como algo a capturar. Publicar um repositório não cria essas relações sozinho.</p>
-        <p>Por isso, comunidade e autonomia digital são frentes inseparáveis. Comunidade é aprender e cuidar em conjunto, não captar mão de obra. Autonomia é poder compreender, adaptar, migrar e continuar — inclusive sem depender de uma única plataforma para nos organizar.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="manifesto" class="manifesto section-rule" aria-labelledby="principles-title">
-    <div class="container manifesto-grid">
-      <div class="section-intro">
-        <h2 id="principles-title">Uma direção para as escolhas difíceis.</h2>
-        <p>A vontade de reunir pessoas e construir algo útil vem primeiro. Os seis princípios orientam como: o que abrir, o que proteger, de quem depender, como sustentar e quem ouvir.</p>
-        <a class="terminal-text-link" href="/manifesto/">Ler o manifesto completo <span aria-hidden="true">→</span></a>
-        <p class="disclosure-hint">Abra cada princípio para ler mais.</p>
-      </div>
-      <div class="manifesto-file">
-        <div class="file-bar"><span class="file-icon" aria-hidden="true"></span><span>MANIFESTO.md</span><span class="file-mode">princípios</span></div>
-        <ol class="principles">
-          {principles.map((principle, index) => (
-            <li>
-              <details open={index === 0}>
-                <summary>
-                  <span class="principle-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-                  <span class="principle-summary"><span class="principle-title">{principle.title}</span><span class="principle-lead">{principle.lead}</span></span>
-                  <span class="disclosure-sign" aria-hidden="true"></span>
-                </summary>
-                <div class="principle-body"><p>{principle.body}</p></div>
-              </details>
-            </li>
-          ))}
-        </ol>
-        <p class="file-end">// liberdade também precisa de gente para cuidar dela.</p>
+  <section id="proposta" class="proposal-section" aria-labelledby="proposal-title">
+    <div class="page-width proposal-layout">
+      <h2 id="proposal-title">Antes de escolher<br />a stack,<br /><span>entender a vida.</span></h2>
+      <div class="proposal-content">
+        <p class="large-copy">Mais uma ferramenta não é, por si só, uma resposta.</p>
+        <p>Uma sala de aula, um coletivo, um pequeno negócio: queremos começar escutando quem conhece o problema. Reconhecer o que já funciona. Descobrir onde o software pode ajudar — e quando não precisamos de outro aplicativo.</p>
+        <div class="two-fronts">
+          <div><h3>Comunidade</h3><p>Relação, troca e cuidado. Aproximar experiências diferentes, sem tratar pessoas como mão de obra disponível.</p></div>
+          <span class="fronts-plus" aria-hidden="true">+</span>
+          <div><h3>Autonomia digital</h3><p>Compreender, adaptar, migrar e continuar. Não fazer tudo sozinho, mas preservar escolhas reais.</p></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="engineering section-rule" aria-labelledby="engineering-title">
-    <div class="container">
-      <div class="engineering-heading">
-        <h2 id="engineering-title">Princípio bom muda<br />a decisão técnica.</h2>
-        <p>Não temos uma pilha pronta para apresentar. Temos perguntas que queremos levar para cada escolha de engenharia.</p>
+  <section id="manifesto" class="principles-section page-width" aria-labelledby="principles-title">
+    <div class="section-heading">
+      <h2 id="principles-title">O que não queremos<br /><span>deixar implícito.</span></h2>
+      <div><p>Seis princípios para orientar as decisões difíceis. Não são funcionalidades já entregues: são a direção da construção que queremos começar.</p><a class="terminal-reading-link" href="/manifesto/">Ler o manifesto completo <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a></div>
+    </div>
+    <ol class="principle-list">
+      {principles.map((principle, index) => (
+        <li>
+          <details open={index === 0}>
+            <summary><span class="principle-index">{String(index + 1).padStart(2, '0')}</span><h3>{principle.title}</h3><span class="disclosure-mark" aria-hidden="true"></span></summary>
+            <div class="principle-content"><p class="principle-lead">{principle.lead}</p><p>{principle.body}</p></div>
+          </details>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="decisions-section" aria-labelledby="decisions-title">
+    <div class="page-width">
+      <div class="section-heading">
+        <h2 id="decisions-title">Princípio bom<br />muda <span>a decisão.</span></h2>
+        <p>Na engenharia, os compromissos viram perguntas concretas. Queremos levá-las para a arquitetura, a documentação e o cuidado com quem usa.</p>
       </div>
-      <dl class="consequences">
-        {consequences.map((item) => (
-          <div class="consequence">
-            <dt>{item.name}</dt>
-            <dd><h3>{item.question}</h3><p>{item.body}</p></dd>
-          </div>
+      <dl class="engineering-decisions">
+        {decisions.map((decision) => (
+          <div><dt>{decision.question}</dt><dd><h3>{decision.title}</h3><p>{decision.body}</p></dd></div>
         ))}
       </dl>
+      <p class="maintenance-note">Software livre não significa trabalho gratuito. Desenvolver, documentar e manter exige recursos e condições justas.</p>
     </div>
   </section>
 
-  <section id="participacao" class="participation section-rule" aria-labelledby="participation-title">
-    <div class="container">
-      <div class="participation-heading">
-        <h2 id="participation-title">O código não responde<br /><span>tudo sozinho.</span></h2>
-        <p>Não queremos apenas distribuir tarefas: queremos criar espaço para aprender e trocar em torno de problemas reais. Você não precisa saber programar, dominar todas as ferramentas ou ter tempo toda semana para se interessar por essa construção.</p>
-      </div>
-      <div class="participation-grid">
-        <ul class="contributions">
-          {contributions.map((item) => (
-            <li><h3>{item.title}</h3><p>{item.body}</p></li>
-          ))}
-        </ul>
-        <aside class="starting-point" aria-labelledby="starting-title">
-          <img class="pixel-capybara" src={pixelCapybara.src} alt="" width="188" height="112" loading="lazy" />
-          <div class="starting-file">
-            <div class="file-bar"><span class="file-icon" aria-hidden="true"></span><span>COMECO.md</span></div>
-            <div class="starting-copy">
-              <h3 id="starting-title">Uma boa pergunta<br />já é um começo.</h3>
-              <p>Que problema você conhece por dentro? Com quem gostaria de aprender e construir? O que já existe e merece ser fortalecido?</p>
-              <p>Estamos dando forma à iniciativa. Por aqui, o primeiro passo disponível é conhecer a proposta — e pensar no que faria sentido construir.</p>
-              <a class="terminal-button primary" href="/manifesto/">Conhecer os princípios <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg></a>
-            </div>
-          </div>
-        </aside>
-      </div>
-      <p class="participation-close">Construir junto também é respeitar o tempo de cada pessoa.<br /><span>Entusiasmo não substitui condições de trabalho.</span></p>
+  <section id="participacao" class="participation-section page-width" aria-labelledby="participation-title">
+    <div class="participation-copy">
+      <h2 id="participation-title">Nem toda contribuição<br /><span>é um commit.</span></h2>
+      <p class="large-copy">Quem conhece o problema também tem o que construir.</p>
+      <p>Queremos aproximar quem programa, desenha, escreve, pesquisa, traduz, ensina, organiza e cuida. Não é preciso dominar as ferramentas, chegar com uma solução pronta ou ter tempo toda semana.</p>
+      <ul class="participation-possibilities">
+        <li>Trazer o contexto de um problema real.</li>
+        <li>Tornar uma explicação mais compreensível.</li>
+        <li>Pensar acessibilidade, testar e documentar.</li>
+        <li>Compartilhar conhecimento e cuidar da continuidade.</li>
+      </ul>
+      <p>A iniciativa está tomando forma. O primeiro passo disponível aqui é conhecer a proposta e pensar no que faria sentido construir junto.</p>
+      <a class="terminal-action" href="/manifesto/">Começar pelo manifesto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a>
     </div>
+    <aside class="participation-question">
+      <img src={pixelCapybara.src} width="376" height="224" alt="Capivara na ilustração pixelada da Embraso" loading="lazy" />
+      <p>Que problema<br />você conhece<br /><span>por dentro?</span></p>
+      <span>Uma boa pergunta já é um começo.</span>
+    </aside>
+    <p class="participation-close">Seu interesse não cria uma dívida.<br /><span>Construir junto também é respeitar o tempo de cada pessoa.</span></p>
   </section>
 </main>
 
+<script>
+  import '../scripts/terminal';
+  import '../scripts/particles';
+</script>
+
 <style>
-  .terminal-home {
-    --terminal-ground: #0b1d13;
-    --terminal-panel: #09190f;
-    --terminal-line: #365542;
-    --terminal-muted: #b9c9bb;
-    background: var(--terminal-ground);
-    color: var(--cream, #fbf7ec);
-    overflow-wrap: break-word;
+  .terminal-home { --rule: #365542; --muted: #b9c9bb; color: var(--cream); background: var(--dark); overflow-wrap: break-word; }
+  .page-width { width: min(1440px, calc(100% - 96px)); margin-inline: auto; }
+  h1, h2, h3 { font-family: var(--font-mono); font-weight: 600; letter-spacing: -.04em; }
+  h2 { font-size: clamp(2rem, 3.5vw, 3.6rem); line-height: 1.15; }
+  h2 span { color: var(--yellow); }
+  p { line-height: 1.65; }
+  a, button, input, summary { touch-action: manipulation; }
+  a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--yellow); outline-offset: 5px; }
+  .terminal-opening { display: grid; grid-template-columns: 1.3fr 1fr; column-gap: 2vw; padding-block: clamp(40px, 5vw, 80px) 108px; align-items: center; }
+  .opening-copy { position: relative; z-index: 1; }
+  h1 { font-size: clamp(3.4rem, 6.6vw, 6rem); line-height: 1.06; margin-bottom: 30px; font-weight: 700; text-wrap: initial; }
+  h1 span { color: var(--yellow); }
+  .opening-introduction { max-width: 48ch; font-size: clamp(1rem, 1.5vw, 1.25rem); color: var(--muted); }
+  .opening-actions { display: flex; flex-wrap: wrap; gap: 22px 28px; align-items: center; margin-top: 30px; }
+  .terminal-action { display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; padding: 16px 20px; background: var(--yellow); color: var(--dark); text-decoration: none; font-family: var(--font-mono); font-size: 12px; font-weight: 600; min-height: 52px; }
+  .terminal-action:hover { background: var(--cream); }
+  .terminal-reading-link { display: inline-flex; align-items: center; gap: 14px; font-family: var(--font-mono); font-size: 12px; text-decoration-thickness: 1px; padding-block: 12px; }
+  .terminal-reading-link:hover { color: var(--yellow); }
+  .fauna-field { position: relative; align-self: stretch; min-height: 610px; isolation: isolate; }
+  .fauna-field img { position: absolute; width: 86%; height: 89%; top: 2%; left: 7%; object-fit: contain; }
+  .fauna-field canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; }
+  .fauna-field[data-particles='running'] canvas { opacity: 1; }
+  .fauna-field[data-particles='running'] img { opacity: 0; }
+  .field-caption { position: absolute; bottom: 16px; left: 0; right: 0; text-align: center; color: var(--muted); font: 10px/1.6 var(--font-mono); }
+  .local-reader { grid-column: 1 / -1; margin-top: 72px; border: 1px solid var(--rule); background: #09190f; min-width: 0; scroll-margin-top: 30px; }
+  .reader-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 21px 28px; border-bottom: 1px solid var(--rule); }
+  .reader-heading h2 { font-size: clamp(1rem, 1.8vw, 1.55rem); letter-spacing: -.025em; margin: 0; }
+  .reader-heading > span { font: 10px/1.5 var(--font-mono); color: var(--mint); white-space: nowrap; }
+  .reader-layout { display: grid; grid-template-columns: minmax(230px, .7fr) minmax(0, 1.3fr); }
+  .reader-guide { padding: 28px; border-right: 1px solid var(--rule); color: var(--muted); font-size: 15px; }
+  .reader-nojs { font-size: 13px; }
+  .reader-nojs a { color: var(--cream); }
+  .command-suggestions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+  .command-suggestions[hidden], .reader-form[hidden], .command-completions[hidden], .command-completions [hidden] { display: none; }
+  .command-suggestions p { flex-basis: 100%; margin-bottom: 2px; font: 10px/1.6 var(--font-mono); }
+  .command-suggestions button { padding: 10px 11px; min-height: 40px; border: 1px solid var(--rule); background: transparent; color: var(--cream); cursor: pointer; font: 11px/1.4 var(--font-mono); }
+  .command-suggestions button:hover { border-color: var(--yellow); color: var(--yellow); background: #163322; }
+  .reader-workspace { min-width: 0; }
+  .reader-output { height: 330px; overflow: auto; overscroll-behavior: contain; scrollbar-color: var(--mint) #09190f; scrollbar-width: thin; padding: 28px; overflow-wrap: anywhere; }
+  .reader-output :global(.reading-entry) { padding-bottom: 24px; }
+  .reader-output :global(.reading-entry + .reading-entry) { border-top: 1px solid var(--rule); padding-top: 24px; }
+  .reader-output :global(h3) { color: var(--yellow); font: 500 15px/1.65 var(--font-mono); margin: 0 0 12px; }
+  .reader-output :global(p) { font-size: 15px; margin: 0 0 12px; max-width: 68ch; }
+  .reader-output :global(p:last-child) { margin-bottom: 0; }
+  .reader-output :global(.executed-command) { font: 11px/1.6 var(--font-mono); color: var(--mint); margin-bottom: 12px; }
+  .reader-output :global(.reading-error h3) { color: var(--orange); }
+  .reader-output :global(a) { color: var(--cream); }
+  code { color: var(--mint); font: 12px/1.6 var(--font-mono); }
+  .reader-form { border-top: 1px solid var(--rule); padding: 18px 28px; }
+  .reader-form label { display: block; font: 10px/1.6 var(--font-mono); color: var(--muted); margin-bottom: 8px; }
+  .command-input-row { display: flex; align-items: center; gap: 12px; font-family: var(--font-mono); }
+  .command-input-row > span { color: var(--yellow); }
+  .command-input-row input { width: 100%; min-width: 0; background: #10271a; color: var(--cream); border: 1px solid var(--rule); padding: 12px; min-height: 46px; font-size: 12px; border-radius: 0; caret-color: var(--yellow); }
+  .command-input-row input::placeholder { color: var(--muted); opacity: 1; }
+  .command-input-row button { min-height: 46px; padding: 12px 16px; background: var(--yellow); border: 1px solid var(--yellow); color: var(--dark); cursor: pointer; font-size: 11px; white-space: nowrap; }
+  .command-input-row button:hover { background: var(--cream); border-color: var(--cream); }
+  .command-completions { margin-top: 8px; border: 1px solid var(--rule); background: #10271a; }
+  .command-completions ul { list-style: none; padding: 0; margin: 0; }
+  .command-completions :global([role='option']) { display: grid; gap: 4px; padding: 12px; min-height: 48px; cursor: pointer; overflow-wrap: anywhere; }
+  .command-completions :global([role='option'] + [role='option']) { border-top: 1px solid var(--rule); }
+  .command-completions :global([role='option']:hover) { background: #163322; }
+  .command-completions :global([aria-selected='true']) { background: var(--yellow); color: var(--dark); }
+  .command-completions :global([aria-selected='true']::selection), .command-completions :global([aria-selected='true'] ::selection) { background: var(--dark); color: var(--cream); }
+  .command-completions :global([aria-selected='true']:hover) { background: var(--yellow); }
+  .command-completions :global(.command-name) { font: 500 12px/1.5 var(--font-mono); }
+  .command-completions :global(.command-description) { font-size: 13px; line-height: 1.45; }
+  .command-completions > p { padding: 12px; margin: 0; font-size: 13px; color: var(--muted); }
+  .reader-form > p { font-size: 11px; color: var(--muted); margin: 10px 0 0; }
+  .terminal-announcement { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .proposal-section { padding-block: 106px; background: var(--yellow); color: var(--dark); }
+  .proposal-section::selection, .proposal-section :global(::selection) { background: var(--dark); color: var(--cream); }
+  .proposal-layout { display: grid; grid-template-columns: 1fr 1.05fr; gap: 7vw; }
+  .proposal-layout h2 { font-size: clamp(2.2rem, 4.2vw, 4.2rem); margin-bottom: 0; }
+  .proposal-layout h2 span { color: var(--green); }
+  .large-copy { font-size: clamp(1.3rem, 2vw, 1.75rem); line-height: 1.4; }
+  .proposal-content > p { max-width: 60ch; }
+  .two-fronts { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; margin-top: 36px; padding-top: 28px; border-top: 1px solid #846316; }
+  .two-fronts h3 { font-size: 14px; line-height: 1.5; letter-spacing: -.025em; }
+  .two-fronts p { font-size: 14px; margin-bottom: 0; }
+  .fronts-plus { font: 28px/1.5 var(--font-mono); color: var(--green); }
+  .principles-section { padding-block: 120px; }
+  .section-heading { display: grid; grid-template-columns: 1.3fr 1fr; gap: 7vw; align-items: end; margin-bottom: 56px; }
+  .section-heading h2, .section-heading p { margin-bottom: 0; }
+  .section-heading p { color: var(--muted); max-width: 52ch; }
+  .section-heading .terminal-reading-link { margin-top: 16px; }
+  .principle-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
+  .principle-list li { border-bottom: 1px solid var(--rule); }
+  .principle-list summary { display: grid; grid-template-columns: 64px 1fr 24px; align-items: center; gap: 24px; padding: 29px 0; list-style: none; }
+  .principle-list summary::-webkit-details-marker { display: none; }
+  .principle-list summary:hover h3, .principle-list details[open] h3 { color: var(--yellow); }
+  .principle-index { color: var(--mint); font: 14px/1.5 var(--font-mono); font-variant-numeric: tabular-nums; }
+  .principle-list h3 { font-size: clamp(1.05rem, 2.1vw, 1.85rem); line-height: 1.4; margin: 0; letter-spacing: -.03em; }
+  .disclosure-mark { width: 16px; height: 16px; position: relative; }
+  .disclosure-mark::before, .disclosure-mark::after { content: ''; position: absolute; width: 16px; height: 1px; top: 7px; background: var(--mint); }
+  .disclosure-mark::after { transform: rotate(90deg); transition: transform 180ms ease; }
+  details[open] .disclosure-mark::after { transform: rotate(0); }
+  .principle-content { padding: 0 48px 32px 88px; max-width: 910px; }
+  .principle-content p { margin-bottom: 12px; color: var(--muted); }
+  .principle-content .principle-lead { color: var(--cream); font-size: 19px; }
+  .decisions-section { padding-block: 104px; border-block: 1px solid var(--rule); background: #09190f; }
+  .engineering-decisions { margin: 0; }
+  .engineering-decisions > div { display: grid; grid-template-columns: 1fr 1.4fr; gap: 7vw; padding-block: 30px; border-top: 1px solid var(--rule); }
+  .engineering-decisions dt { color: var(--mint); font: 13px/1.7 var(--font-mono); }
+  .engineering-decisions dd { margin: 0; }
+  .engineering-decisions h3 { font: 500 clamp(1.1rem, 2vw, 1.65rem)/1.4 var(--font-mono); margin-bottom: 12px; }
+  .engineering-decisions p { max-width: 64ch; margin-bottom: 0; color: var(--muted); }
+  .maintenance-note { margin: 32px 0 0; padding-top: 28px; border-top: 1px solid var(--rule); color: var(--mint); max-width: 80ch; }
+  .participation-section { padding-block: 118px 54px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px 6vw; }
+  .participation-copy > p { max-width: 60ch; color: var(--muted); }
+  .participation-copy .large-copy { color: var(--cream); }
+  .participation-possibilities { list-style: none; padding: 0; margin: 28px 0; }
+  .participation-possibilities li { border-bottom: 1px solid var(--rule); padding-block: 12px; }
+  .participation-possibilities li:first-child { border-top: 1px solid var(--rule); }
+  .participation-copy .terminal-action { margin-top: 15px; }
+  .participation-question { align-self: center; padding: 35px 0 30px 4vw; border-left: 1px solid var(--rule); }
+  .participation-question img { width: min(100%, 330px); margin: 0 auto 38px; image-rendering: pixelated; }
+  .participation-question > p { font: 500 clamp(1.7rem, 3.4vw, 3.3rem)/1.25 var(--font-mono); letter-spacing: -.04em; margin-bottom: 20px; }
+  .participation-question > p span { color: var(--yellow); }
+  .participation-question > span { color: var(--muted); font-size: 13px; }
+  .participation-close { grid-column: 1 / -1; font-size: 18px; padding-top: 42px; border-top: 1px solid var(--rule); margin-bottom: 0; }
+  .participation-close span { font-size: 15px; color: var(--muted); }
+  @media (min-width: 1700px) { .terminal-opening { grid-template-columns: 1.25fr 1fr; } }
+  @media (max-width: 1100px) {
+    .page-width { width: calc(100% - 64px); }
+    h1 { font-size: clamp(3.4rem, 7vw, 5.8rem); }
+    .fauna-field { min-height: 550px; }
+    .opening-actions { gap: 14px; }
+    .reader-guide, .reader-output { padding: 24px; }
+    .reader-form { padding-inline: 24px; }
+    .proposal-layout { gap: 40px; }
   }
-
-  .terminal-home ::selection { color: var(--terminal-ground); background: var(--yellow, #fdb112); }
-  .terminal-home :is(a, summary):focus-visible { outline: 2px solid var(--yellow, #fdb112); outline-offset: 6px; }
-  .terminal-home :is(h1, h2, h3, p, dl, dd, ol, ul) { margin: 0; }
-  .terminal-home :is(h1, h2, h3) { text-wrap: balance; }
-  .terminal-home h2 { font-family: var(--font-mono); font-size: clamp(1.7rem, 2.65vw, 2.35rem); font-weight: 650; line-height: 1.25; letter-spacing: -0.035em; }
-  .terminal-home p { line-height: 1.7; }
-  .terminal-home .container { width: min(100% - 80px, 1200px); margin-inline: auto; }
-  .terminal-home section[id] { scroll-margin-top: 28px; }
-  .section-rule { border-top: 1px solid var(--terminal-line); }
-
-  .hero { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 88px); align-items: center; padding-block: 102px 94px; }
-  .hero h1 { font-family: var(--font-mono); font-size: clamp(2.25rem, 3.8vw, 3.6rem); font-weight: 750; line-height: 1.16; letter-spacing: -0.04em; }
-  .hero h1 span { color: var(--yellow, #fdb112); }
-  .hero-description { max-width: 48ch; margin-top: 27px !important; font-size: 1.1rem; color: #dfE7dc; }
-  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 29px; }
-  .terminal-button { display: inline-flex; gap: 14px; align-items: center; justify-content: center; min-height: 49px; padding: 13px 17px; border: 1px solid transparent; font-family: var(--font-mono); font-size: .71rem; font-weight: 600; line-height: 1.6; text-decoration: none; }
-  .terminal-button svg { flex: 0 0 auto; }
-  .terminal-button.primary { color: var(--terminal-ground); background: var(--yellow, #fdb112); border-color: var(--yellow, #fdb112); }
-  .terminal-button.primary:hover { background: var(--cream, #fbf7ec); border-color: var(--cream, #fbf7ec); }
-  .terminal-button.secondary { color: var(--cream, #fbf7ec); border-color: #6c806d; }
-  .terminal-button.secondary:hover { color: var(--yellow, #fdb112); border-color: var(--yellow, #fdb112); }
-  .hero-note { margin-top: 28px !important; color: var(--terminal-muted); font-family: var(--font-mono); font-size: .65rem; }
-  .hero-terminal { position: relative; margin-top: 53px; min-width: 0; }
-  .pixel-toucan { position: absolute; bottom: calc(100% - 1px); right: 20px; width: 205px; height: 98px; object-fit: contain; object-position: bottom; image-rendering: pixelated; animation: toucan-arrives 800ms cubic-bezier(.16, 1, .3, 1) both; }
-  .reading-panel { background: var(--terminal-panel); border: 1px solid var(--terminal-line); }
-  .file-bar { display: flex; align-items: center; gap: 12px; min-height: 41px; padding: 10px 15px; border-bottom: 1px solid var(--terminal-line); color: var(--terminal-muted); font-family: var(--font-mono); font-size: .59rem; line-height: 1.5; }
-  .file-mode { margin-left: auto; color: #a3b6a5; }
-  .window-dots { display: flex; gap: 5px; }
-  .window-dots i { width: 7px; height: 7px; border-radius: 50%; background: #f56d1d; }
-  .window-dots i:nth-child(2) { background: var(--yellow, #fdb112); }
-  .window-dots i:nth-child(3) { background: #80b99a; }
-  .direction-content { padding: 24px 24px 22px; font-family: var(--font-mono); font-size: .66rem; }
-  .direction-identity { display: flex; gap: 22px; align-items: center; padding-block: 24px 26px; }
-  .emblem { flex: 0 0 91px; width: 91px; height: 126px; object-fit: contain; }
-  .direction-identity h2 { color: var(--yellow, #fdb112); font-size: 1.04rem; line-height: 1.65; letter-spacing: -.02em; }
-  .direction-identity h2 span { display: block; color: var(--cream, #fbf7ec); font-size: .67rem; font-weight: 400; }
-  .direction-identity p { margin-top: 10px; font-size: .63rem; }
-  .palette-strip { display: flex; width: 126px; height: 9px; margin-top: 18px; }
-  .palette-strip i { flex: 1; background: #13522f; }
-  .palette-strip i:nth-child(2) { background: #80b99a; }
-  .palette-strip i:nth-child(3) { background: #fdb112; }
-  .palette-strip i:nth-child(4) { background: #f56d1d; }
-  .palette-strip i:nth-child(5) { background: #086797; }
-  .palette-strip i:nth-child(6) { background: #fbf7ec; }
-  .direction-list { display: grid; gap: 11px; }
-  .direction-list > div { display: grid; grid-template-columns: 83px 1fr; gap: 10px; }
-  .direction-list dt { color: var(--yellow, #fdb112); }
-  .direction-list dd { line-height: 1.65; }
-  .direction-close { margin-top: 25px !important; padding-top: 19px; border-top: 1px solid var(--terminal-line); color: #dfE7dc; }
-  .direction-close > span:first-child { color: var(--yellow, #fdb112); }
-  .direction-indent { padding-left: 1.9ch; }
-  .panel-caption { border-top: 1px solid var(--terminal-line); padding: 11px 16px; color: #a3b6a5; font-family: var(--font-body); font-size: .72rem; }
-
-  .proposal { padding-block: 72px 78px; }
-  .proposal-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; }
-  .proposal h2 span { color: var(--mint, #80b99a); }
-  .proposal-copy { max-width: 63ch; }
-  .proposal-copy p + p { margin-top: 18px; color: var(--terminal-muted); }
-  .large-copy { font-size: 1.32rem; line-height: 1.5 !important; }
-
-  .manifesto { padding-block: 91px; }
-  .manifesto-grid { display: grid; grid-template-columns: .68fr 1.32fr; gap: 65px; align-items: start; }
-  .section-intro h2 { max-width: 14ch; }
-  .section-intro > p { margin-top: 23px; color: var(--terminal-muted); max-width: 36ch; }
-  .terminal-text-link { display: inline-flex; align-items: center; gap: 12px; margin-top: 26px; color: var(--yellow, #fdb112); font-family: var(--font-mono); font-size: .7rem; text-underline-offset: 5px; text-decoration-thickness: 1px; }
-  .terminal-text-link:hover { color: var(--cream, #fbf7ec); }
-  .section-intro .disclosure-hint { margin-top: 46px; font-family: var(--font-mono); font-size: .62rem; color: var(--mint, #80b99a); }
-  .manifesto-file { min-width: 0; border: 1px solid var(--terminal-line); background: var(--terminal-panel); }
-  .file-icon { display: block; position: relative; flex: 0 0 auto; width: 10px; height: 13px; border: 1px solid currentColor; }
-  .file-icon::after { content: ''; position: absolute; width: 4px; height: 4px; top: -1px; right: -1px; background: var(--terminal-panel); border-left: 1px solid currentColor; border-bottom: 1px solid currentColor; }
-  .principles { list-style: none; padding: 0; }
-  .principles li + li { border-top: 1px solid var(--terminal-line); }
-  .principles summary { display: flex; align-items: baseline; gap: 15px; padding: 24px 20px; cursor: pointer; list-style: none; }
-  .principles summary::-webkit-details-marker { display: none; }
-  .principles summary:hover .principle-title { color: var(--yellow, #fdb112); }
-  .principle-number { flex: 0 0 22px; font-family: var(--font-mono); font-size: .62rem; color: var(--mint, #80b99a); font-variant-numeric: tabular-nums; }
-  .principle-summary { flex: 1; min-width: 0; }
-  .principle-title { display: block; font-family: var(--font-mono); font-size: .85rem; font-weight: 550; line-height: 1.6; }
-  .principle-lead { display: block; margin-top: 8px; color: var(--terminal-muted); font-size: .93rem; line-height: 1.6; }
-  .disclosure-sign { flex: 0 0 11px; position: relative; width: 11px; height: 11px; margin-left: 4px; color: var(--yellow, #fdb112); }
-  .disclosure-sign::before, .disclosure-sign::after { content: ''; position: absolute; background: currentColor; }
-  .disclosure-sign::before { width: 11px; height: 1px; left: 0; top: 5px; }
-  .disclosure-sign::after { width: 1px; height: 11px; left: 5px; top: 0; }
-  details[open] .disclosure-sign::after { display: none; }
-  details[open] .principle-title { color: var(--yellow, #fdb112); }
-  .principle-body { padding: 0 47px 26px 57px; color: #dfE7dc; font-size: .98rem; }
-  .file-end { border-top: 1px solid var(--terminal-line); padding: 16px 20px; font-family: var(--font-mono); font-size: .59rem; color: var(--mint, #80b99a); }
-
-  .engineering { padding-block: 82px 91px; background: #10271a; }
-  .engineering-heading { display: flex; justify-content: space-between; align-items: end; gap: 50px; margin-bottom: 42px; }
-  .engineering-heading > p { max-width: 43ch; color: var(--terminal-muted); }
-  .consequences { border-top: 1px solid #47644e; }
-  .consequence { display: grid; grid-template-columns: .68fr 1.32fr; gap: 65px; padding-block: 27px 29px; border-bottom: 1px solid #47644e; }
-  .consequence dt { color: var(--mint, #80b99a); font-family: var(--font-mono); font-size: .8rem; padding-top: 3px; }
-  .consequence h3 { font-family: var(--font-mono); font-size: .94rem; line-height: 1.6; font-weight: 500; letter-spacing: -.025em; }
-  .consequence p { max-width: 68ch; margin-top: 9px; color: var(--terminal-muted); }
-
-  .participation { padding-block: 85px 54px; }
-  .participation-heading { display: flex; justify-content: space-between; align-items: start; gap: 65px; }
-  .participation-heading h2 { flex: 1.1; }
-  .participation-heading h2 span { color: var(--yellow, #fdb112); }
-  .participation-heading > p { flex: 1; max-width: 48ch; color: var(--terminal-muted); }
-  .participation-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 82px; align-items: end; margin-top: 68px; }
-  .contributions { list-style: none; padding: 0; }
-  .contributions li { border-top: 1px solid var(--terminal-line); padding-block: 23px; }
-  .contributions li:last-child { border-bottom: 1px solid var(--terminal-line); }
-  .contributions h3 { font-family: var(--font-mono); font-size: .88rem; font-weight: 550; line-height: 1.6; }
-  .contributions p { color: var(--terminal-muted); font-size: .98rem; margin-top: 8px; }
-  .starting-point { position: relative; min-width: 0; padding-top: 84px; }
-  .pixel-capybara { position: absolute; right: 24px; top: 0; width: 175px; height: 85px; object-fit: contain; object-position: bottom; image-rendering: pixelated; }
-  .starting-file { border: 1px solid #8a803f; background: #1a2818; }
-  .starting-file .file-bar { border-color: #8a803f; color: #f0cf82; }
-  .starting-file .file-icon::after { background: #1a2818; }
-  .starting-copy { padding: 30px; }
-  .starting-copy h3 { color: var(--yellow, #fdb112); font-family: var(--font-mono); font-size: 1.27rem; font-weight: 600; line-height: 1.5; letter-spacing: -.03em; }
-  .starting-copy p { margin-top: 20px; color: #dfE7dc; }
-  .starting-copy .terminal-button { margin-top: 27px; }
-  .participation-close { margin-top: 68px !important; padding-top: 25px; border-top: 1px solid var(--terminal-line); font-family: var(--font-mono); font-size: .65rem; color: var(--terminal-muted); }
-  .participation-close span { color: var(--mint, #80b99a); }
-
-  @keyframes toucan-arrives {
-    from { transform: translateX(14px); filter: saturate(.6); }
-    to { transform: translateX(0); filter: saturate(1); }
-  }
-
-  @media (min-width: 1440px) {
-    .hero { gap: 86px; }
-  }
-
-  @media (max-width: 1050px) {
-    .hero { gap: 35px; padding-block: 83px 77px; }
-    .hero h1 { font-size: clamp(2.1rem, 4.1vw, 3rem); }
-    .hero-description { font-size: 1rem; }
-    .hero-actions { gap: 10px; }
-    .terminal-button { padding-inline: 13px; font-size: .64rem; }
-    .direction-content { padding-inline: 18px; }
-    .direction-identity { gap: 17px; }
-    .emblem { width: 74px; height: 109px; flex-basis: 74px; }
-    .direction-list > div { grid-template-columns: 72px 1fr; gap: 8px; }
-    .direction-content { font-size: .59rem; }
-    .direction-identity h2 { font-size: .9rem; }
-    .proposal-grid, .manifesto-grid, .consequence { gap: 40px; }
-    .participation-grid { gap: 44px; }
-    .engineering-heading { align-items: start; }
-    .engineering-heading > p { max-width: 37ch; }
-    .starting-copy { padding: 24px; }
-  }
-
   @media (max-width: 760px) {
-    .terminal-home .container { width: calc(100% - 40px); }
-    .hero { grid-template-columns: 1fr; gap: 34px; padding-block: 50px 58px; }
-    .hero h1 { font-size: clamp(2.2rem, 6.6vw, 3.6rem); }
-    .hero-description { max-width: 53ch; font-size: 1.07rem; }
-    .hero-actions { gap: 12px; margin-top: 24px; }
-    .terminal-button { font-size: .7rem; padding-inline: 16px; }
-    .hero-note { font-size: .63rem; margin-top: 22px !important; }
-    .hero-terminal { width: 100%; max-width: 550px; justify-self: center; margin-top: 72px; }
-    .pixel-toucan { width: 185px; height: 90px; right: 18px; }
-    .direction-content { padding: 23px; font-size: .66rem; }
-    .direction-identity { gap: 23px; padding-block: 24px; }
-    .emblem { width: 88px; height: 120px; flex-basis: 88px; }
-    .direction-identity h2 { font-size: 1rem; }
-    .direction-list > div { grid-template-columns: 80px 1fr; gap: 12px; }
-    .proposal, .manifesto, .engineering, .participation { padding-block: 54px; }
-    .proposal-grid, .manifesto-grid { grid-template-columns: 1fr; gap: 30px; }
-    .proposal-copy { max-width: none; }
-    .large-copy { font-size: 1.2rem; }
-    .section-intro h2 { max-width: 22ch; }
-    .section-intro > p { max-width: 56ch; margin-top: 20px; }
-    .section-intro .disclosure-hint { margin-top: 24px; }
-    .manifesto-grid { gap: 25px; }
-    .engineering-heading, .participation-heading { display: block; }
-    .engineering-heading > p, .participation-heading > p { max-width: 56ch; margin-top: 22px; }
-    .engineering-heading { margin-bottom: 30px; }
-    .consequence { grid-template-columns: 1fr; gap: 12px; padding-block: 23px; }
-    .consequence h3 { font-size: .88rem; }
-    .consequence dt { font-size: .68rem; }
-    .participation-grid { grid-template-columns: 1fr; gap: 27px; margin-top: 34px; }
-    .starting-point { width: 100%; max-width: 550px; justify-self: center; }
-    .starting-copy { padding: 26px; }
-    .participation-close { margin-top: 40px !important; }
+    .page-width { width: calc(100% - 40px); }
+    .terminal-opening { grid-template-columns: 1fr; padding-block: 40px 64px; }
+    .opening-copy { grid-row: 1; }
+    h1 { font-size: clamp(2.6rem, 8.8vw, 4.5rem); line-height: 1.1; margin-bottom: 24px; }
+    .opening-introduction { font-size: 17px; max-width: 52ch; }
+    .opening-actions { gap: 16px 24px; margin-top: 24px; }
+    .local-reader { grid-row: 2; margin-top: 42px; }
+    .fauna-field { grid-row: 3; min-height: 0; height: 410px; margin-top: 38px; }
+    .fauna-field img { width: 74%; left: 13%; height: 88%; }
+    .reader-heading { padding: 18px; flex-wrap: wrap; gap: 8px 16px; }
+    .reader-layout { grid-template-columns: 1fr; }
+    .reader-guide { padding: 20px; border-right: 0; border-bottom: 1px solid var(--rule); }
+    .reader-guide > p:first-child { margin-bottom: 12px; }
+    .reader-nojs { margin-bottom: 0; }
+    .command-suggestions { margin-top: 20px; }
+    .reader-output { padding: 20px; height: 300px; }
+    .reader-form { padding: 18px 20px; }
+    .proposal-section, .decisions-section { padding-block: 64px; }
+    .proposal-layout, .section-heading { grid-template-columns: 1fr; gap: 28px; }
+    .proposal-layout h2 { font-size: clamp(2rem, 6.8vw, 3.3rem); }
+    .principles-section { padding-block: 72px; }
+    .section-heading { margin-bottom: 36px; }
+    .principle-list summary { grid-template-columns: 28px 1fr 16px; gap: 14px; padding-block: 24px; }
+    .principle-index { font-size: 11px; }
+    .principle-list h3 { font-size: 16px; line-height: 1.55; }
+    .principle-content { padding: 0 12px 24px 42px; }
+    .principle-content .principle-lead { font-size: 17px; }
+    .engineering-decisions > div { grid-template-columns: 1fr; gap: 14px; }
+    .participation-section { padding-block: 70px 42px; grid-template-columns: 1fr; gap: 42px; }
+    .participation-question { padding: 32px 0 0; border-left: 0; border-top: 1px solid var(--rule); }
+    .participation-question > p { font-size: clamp(2rem, 7vw, 3.4rem); }
+    .participation-question img { width: 230px; margin-left: auto; margin-right: 0; }
+    .participation-close { padding-top: 30px; }
   }
-
   @media (max-width: 380px) {
-    .hero h1 { font-size: 2.04rem; }
-    .hero-actions { flex-direction: column; align-items: stretch; }
-    .hero-actions .terminal-button { justify-content: space-between; }
-    .hero-actions .secondary { justify-content: center; }
-    .direction-content { padding-inline: 16px; font-size: .58rem; }
-    .direction-identity { gap: 14px; }
-    .emblem { width: 69px; height: 104px; flex-basis: 69px; }
-    .direction-identity h2 { font-size: .9rem; }
-    .direction-identity p { font-size: .57rem; }
-    .direction-list > div { grid-template-columns: 65px 1fr; gap: 8px; }
-    .file-bar { padding-inline: 12px; gap: 9px; font-size: .54rem; }
-    .panel-caption { padding-inline: 13px; }
-    .principles summary { gap: 10px; padding: 21px 13px; }
-    .principle-title { font-size: .76rem; }
-    .principle-number { flex-basis: 18px; font-size: .55rem; }
-    .principle-body { padding: 0 25px 22px 41px; }
-    .file-end { padding-inline: 14px; }
-    .starting-copy { padding: 21px; }
-    .starting-copy .terminal-button { gap: 9px; padding-inline: 11px; font-size: .61rem; }
+    .page-width { width: calc(100% - 32px); }
+    h1 { font-size: 8.4vw; }
+    .opening-actions { align-items: stretch; flex-direction: column; }
+    .opening-actions .terminal-reading-link { justify-content: space-between; }
+    .reader-heading h2 { font-size: 14px; }
+    .reader-guide, .reader-output, .reader-form { padding-inline: 15px; }
+    .command-input-row { gap: 8px; }
+    .command-input-row button { padding-inline: 10px; }
+    .command-input-row input { font-size: 10px; padding-inline: 8px; }
+    .two-fronts { grid-template-columns: 1fr; gap: 20px; }
+    .fronts-plus { line-height: 1; }
+    .fauna-field { height: 340px; }
+    .principle-content { padding-left: 0; }
   }
-
   @media (prefers-reduced-motion: reduce) {
-    .pixel-toucan { animation: none; }
+    .fauna-field canvas { display: none; }
+    .fauna-field[data-particles='running'] img { opacity: 1; }
+    .disclosure-mark::after { transition: none; }
   }
 </style>

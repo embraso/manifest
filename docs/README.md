@@ -6,7 +6,7 @@ Esta série reúne duas visões da Embraso: por que dedicar conhecimento a softw
 
 ## Technical product context
 
-[PRODUCT.md](../PRODUCT.md) records the owner's website requirements and local commands in English. The first static Astro implementation includes Folheto at `/`, Terminal at `/devs/`, and the shared public manifesto at `/manifesto/`. [DESIGN.md](../DESIGN.md) records the implemented visual system. Cloudflare deployment, lead intake, and a verified project inventory remain unresolved; no form or project catalogue is simulated. Public copy and this editorial collection remain in Brazilian Portuguese.
+[PRODUCT.md](../PRODUCT.md) records the owner's website requirements and local commands in English. The official static Astro site includes Folheto at `/`, Terminal at `/devs/`, and the shared public manifesto at `/manifesto/`. [DESIGN.md](../DESIGN.md) records the implemented visual system, supplied-fauna motion, and local command-reading controls. Cloudflare deployment, lead intake, and a verified project inventory remain unresolved; no form or project catalogue is simulated. Public copy and this editorial collection remain in Brazilian Portuguese.
 
 The existing publication constraints still apply: ideas are not shipped projects, internal notes are not page copy, and contact actions need real destinations.
 
