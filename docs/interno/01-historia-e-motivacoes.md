@@ -24,7 +24,7 @@ Atribuições abaixo registram a perspectiva do autor do arquivo, não consenso 
 
 A lembrança de Orkut, MSN, Skype e dos primeiros momentos de outras redes é usada para distinguir conversa de consumo. O argumento não precisa ser convertido em uma tese de que o passado foi melhor para todas as pessoas. O núcleo é perguntar: depois de estar conectado, com quem realmente trocamos? O que criamos, descobrimos ou levamos para a vida fora dali?
 
-A imagem da biblioteca, da livraria e da locadora guarda outra ideia importante: o direito ao inesperado. Não encontrar apenas o que já combina conosco também pode ensinar algo. Essa motivação sustenta a liberdade algorítmica, mas merece existir como história, não só como requisito de um feed.
+A imagem da biblioteca, da livraria e da locadora guarda outra ideia importante: o direito ao inesperado. Não encontrar apenas o que já combina conosco também pode ensinar algo. Essa motivação sustenta a defesa de clareza e escolha no que acompanhamos, mas merece existir como história, não só como requisito de uma sequência de conteúdos.
 
 ### Usar capacidade para algo que importa
 

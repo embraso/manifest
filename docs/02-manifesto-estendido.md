@@ -58,17 +58,64 @@ Uma frente não substitui a outra. Servidores sob nosso controle não criam, soz
 
 Publicar software não basta. Precisamos de ferramentas que possam continuar e de pessoas com condições de cuidar delas. Os seis princípios a seguir respondem a como queremos fazer essa construção: são critérios para as escolhas, não substitutos para o propósito que nos reúne.
 
-## 1. Liberdade por padrão
+## 1. Tecnologia para o bem comum
 
-### Compartilhar é ampliar o que podemos fazer juntos
+### Ferramentas que ajudam na vida de todos os dias
 
-Preferimos tecnologias livres, abertas, auditáveis e modificáveis a soluções que criam dependências desnecessárias. Quem usa uma ferramenta deve poder compreender como ela funciona, adaptá-la, compartilhar cópias e compartilhar melhorias, nos termos de uma licença que preserve essas liberdades.
+Uma ferramenta pode ter valor porque ajuda uma associação a se organizar, torna um serviço público compreensível, aproxima estudantes ou facilita um encontro cultural. Pode apoiar um pequeno negócio e a renda de quem trabalha nele. Pode ajudar uma comunidade a acompanhar decisões sobre seu território.
 
-Código disponível para leitura não é, sozinho, software livre. Liberdade envolve permissões reais de uso, estudo, modificação e redistribuição. Também não é sinônimo de gratuidade: um programa pode ser livre e ter serviços pagos, manutenção remunerada e uso comercial.
+A atividade econômica tem lugar nessa visão, ao lado da educação, da cultura, da ciência, do lazer e da organização comunitária. Queremos reconhecer essas diferentes formas de valor.
 
-Queremos que um esforço possa beneficiar mais de um projeto. Que uma correção volte a quem mantém a ferramenta. Que a documentação ajude outra pessoa a aprender. Que uma comunidade possa continuar uma solução mesmo quando sua equipe original não puder mais fazê-lo.
+Queremos software que considere as condições de quem vai usá-lo. Acessibilidade inclui pessoas com deficiência e barreiras de compreensão, navegação e interação; não é apenas uma questão de preço. Acesso também depende de idioma, aparelho, conexão e recursos disponíveis. Para reduzir essas barreiras, precisamos ouvir e verificar o que funciona em cada contexto.
 
-Isso pede cuidado com licenças, documentação e condições de manutenção. Não basta abrir um repositório e deixar todo o resto inacessível.
+**Na prática, defendemos:**
+
+- Conhecer problemas com as comunidades envolvidas e verificar se a solução realmente ajuda.
+- Considerar diferenças regionais, culturais, econômicas e de acesso desde o começo.
+- Produzir informação e documentação compreensíveis em português.
+- Apoiar usos educacionais, culturais, científicos, comunitários e econômicos, reconhecendo sua relevância mesmo quando não geram retorno financeiro.
+- Tornar dados e informações de interesse público mais compreensíveis, com fontes, métodos e limitações explícitos.
+- Respeitar privacidade, segurança e direitos também quando os dados de origem forem públicos.
+
+Podemos imaginar ferramentas para grupos de estudo, organização de coletivos, prestação de contas, clubes de leitura, atividades ao ar livre, serviços locais, acesso a direitos ou acompanhamento ambiental. A Amazônia e os demais territórios brasileiros merecem informação verificável e participação de quem vive neles. São possibilidades para escutar e investigar, não anúncios de produtos nem compromissos de entrega.
+
+Queremos descobrir com cada comunidade o que vale a pena construir e como isso pode entrar na sua rotina. Essa conversa também pode mostrar que a melhor resposta é adaptar algo existente ou não criar mais software.
+
+**Nosso compromisso de direção:** ajudar pessoas e comunidades a compreender sua realidade, exercer direitos e construir soluções adequadas às suas necessidades.
+
+## 2. Autonomia para escolher
+
+### Poder mudar de ferramenta e continuar o que importa
+
+Usar um serviço externo pode ser uma boa escolha. Para que continue sendo uma escolha, precisamos saber o que acontece se suas condições mudarem.
+
+Queremos controle efetivo e capacidade de decisão sobre dados, código e continuidade dos projetos. Esse é o sentido de soberania digital que defendemos. Não exige fazer tudo sozinhos, hospedar tudo em casa ou alcançar independência absoluta. Exige preservar alternativas para que um único fornecedor não decida o que podemos acessar ou continuar construindo.
+
+Se uma hospedagem parar, como recuperamos o projeto? Se uma plataforma bloquear o acesso, onde estão o código e os dados essenciais? Se o serviço de autenticação mudar suas condições, o que acontece com as pessoas que dependem dele? Considerar essas perguntas desde a escolha ajuda a cuidar da continuidade.
+
+Ter controle sobre dados também traz responsabilidades. Informações pessoais dizem respeito às pessoas a quem se referem; seus direitos precisam ser respeitados, inclusive ao recuperar ou migrar um projeto.
+
+**Na prática, defendemos:**
+
+- Cópias independentes de código e dados essenciais, protegidas e com responsabilidade definida.
+- Formas de exportação, recuperação e migração adequadas à importância de cada projeto.
+- Dependências externas compreensíveis: quem controla o quê, quais são os limites e quanto custa mudar.
+- Planos de continuidade proporcionais aos riscos, com recuperação verificável.
+- Construção gradual de competências locais e caminhos de comunicação que não dependam exclusivamente de uma plataforma.
+
+**Nosso compromisso de direção:** usar serviços por escolha consciente, preservando meios de recuperar, transferir e continuar o que importa.
+
+## 3. Software livre e conhecimento compartilhado
+
+### Poder aprender, adaptar e compartilhar o que construímos
+
+Preferimos software livre, padrões abertos e conhecimento compartilhado. Queremos que quem usa uma ferramenta possa compreender como ela funciona, adaptá-la, compartilhar cópias e compartilhar melhorias, nos termos de uma licença que preserve essas liberdades.
+
+Software livre envolve permissões reais de uso, estudo, modificação e redistribuição, inclusive para fins comerciais. Ter o código disponível para leitura é necessário, mas não basta. Livre também não significa necessariamente gratuito: pode haver cobrança pelo software, serviços pagos e manutenção remunerada.
+
+Uma correção pode ajudar mais de um projeto. Uma documentação bem cuidada pode ajudar outra pessoa a aprender. Uma comunidade pode continuar uma solução quando sua equipe original já não consegue fazê-lo. Compartilhar amplia essas possibilidades.
+
+Para isso, precisamos cuidar das licenças, da documentação e das condições de manutenção, além de publicar o código.
 
 **Na prática, defendemos:**
 
@@ -78,41 +125,44 @@ Isso pede cuidado com licenças, documentação e condições de manutenção. N
 - Contribuições de volta aos projetos dos quais dependemos, quando houver melhorias que possam ser compartilhadas.
 - Sustentação do trabalho de desenvolvimento, documentação, cuidado comunitário e manutenção.
 
-A abertura do código não exige publicar dados pessoais, segredos de acesso ou detalhes que exponham outras pessoas. Transparência e proteção precisam andar juntas.
+A abertura do código convive com limites importantes: dados pessoais, segredos de acesso e detalhes que exponham outras pessoas precisam de proteção.
 
-**Nosso compromisso de direção:** construir conhecimento que possa continuar útil nas mãos de outras pessoas, em vez de fazer da dependência o nosso modelo de relação.
+**Nosso compromisso de direção:** compartilhar software e conhecimento que outras pessoas possam compreender, adaptar e continuar usando.
 
-## 2. Soberania por escolha
+## 4. Clareza e escolha no que acompanhamos
 
-### Poder sair também é poder escolher ficar
+### Entender o que aparece e escolher como acompanhar
 
-Usar um serviço externo não é uma derrota. Ficar sem alternativa quando ele muda as regras é um risco que precisamos reconhecer.
+Queremos poder acompanhar uma pessoa, encontrar um assunto ou participar de uma conversa sabendo como os conteúdos chegam até nós. Quando os critérios e interesses de uma recomendação não ficam claros, é mais difícil fazer essa escolha.
 
-Soberania digital, para nós, é ter controle efetivo e capacidade de decisão sobre dados, código e continuidade. Não significa fazer tudo sozinhos, hospedar tudo em casa ou prometer independência absoluta. Significa não entregar a um único fornecedor a decisão final sobre o que podemos acessar e continuar construindo.
+Recomendações podem ajudar a encontrar algo interessante. O cuidado está em poder compreendê-las, alterar seus critérios ou desligá-las, especialmente quando são organizadas para prolongar o consumo.
 
-Se uma hospedagem parar, como recuperamos o projeto? Se uma plataforma bloquear o acesso, onde estão o código e os dados essenciais? Se o serviço de autenticação mudar suas condições, o que acontece com as pessoas que dependem dele? Perguntas assim devem aparecer nas escolhas de construção, não apenas nas emergências.
+Defendemos poder escolher quem e o que acompanhar, saber por que um conteúdo aparece e decidir se queremos receber sugestões. Desligar recomendações deve preservar o acesso às pessoas e aos assuntos que escolhemos seguir. Uma ordem cronológica ou outros critérios compreensíveis, sem personalização obrigatória, são caminhos possíveis.
 
-Controle sobre dados não é licença para tratar informações pessoais como propriedade da organização. Os direitos das pessoas a quem os dados se referem vêm antes da conveniência de quem opera o sistema.
+O inesperado também faz parte de aprender. Uma biblioteca pode oferecer a descoberta de uma leitura sem precisar conhecer tudo sobre alguém. Queremos que a tecnologia favoreça encontros com ideias, pessoas e assuntos que ainda não conhecemos.
 
 **Na prática, defendemos:**
 
-- Cópias independentes de código e dados essenciais, protegidas e sob responsabilidade conhecida.
-- Formas de exportação, recuperação e migração compatíveis com a importância de cada projeto.
-- Dependências externas visíveis: quem controla o quê, quais são os limites e quanto custa mudar.
-- Planos de continuidade proporcionais aos riscos, com recuperação verificável.
-- Construção gradual de competências locais e caminhos de comunicação que não dependam exclusivamente de uma plataforma.
+- Critérios e interesses das recomendações explicados de forma compreensível, incluindo o que é publicidade e o que orienta a ordem dos conteúdos.
+- Escolha de fontes, pessoas e assuntos a acompanhar, com formas diretas de acessá-los sem depender de sugestões personalizadas.
+- Possibilidade de alterar critérios e desligar recomendações; ordem cronológica e opções não personalizadas como alternativas, não como garantia de neutralidade.
+- Clareza sobre classificações, decisões automatizadas e participação de inteligência artificial, com formas de compreender e questionar decisões que afetem pessoas.
+- Relações e conversas que respeitem a atenção, sem depender de maximizar o tempo de uso, estimular hostilidade ou manter consumo contínuo.
+- Fontes verificáveis, diálogo respeitoso e possibilidade de discordar sem transformar pessoas em alvos.
 
-**Nosso compromisso de direção:** usar serviços por escolha consciente, preservando meios de recuperar, transferir e continuar o que importa.
+Explicar decisões técnicas de modo compreensível também é parte da transparência. Podemos fazer isso preservando dados pessoais e detalhes que facilitem abuso.
 
-## 3. Segurança por princípio
+**Nosso compromisso de direção:** ampliar a liberdade de escolher o que acompanhar, descobrir e compartilhar, com recomendações compreensíveis e opcionais.
 
-### Cuidar de dados é cuidar de pessoas
+## 5. Privacidade e segurança desde o início
 
-Privacidade e segurança não são extras reservados a organizações grandes. Um grupo pequeno também pode guardar informações sensíveis, expor pessoas a riscos ou perder algo que não consegue reconstruir.
+### Cuidar dos dados e de quem depende das ferramentas
 
-Queremos incorporar esse cuidado desde o começo. Perguntar se um dado precisa ser coletado antes de perguntar onde armazená-lo. Limitar acessos. Proteger comunicações e informações armazenadas de acordo com os riscos. Manter os sistemas e corrigir problemas.
+Um grupo pequeno também pode guardar informações sensíveis ou depender de registros que seriam difíceis de reconstruir. Por isso, privacidade e segurança precisam fazer parte das escolhas desde o começo, em projetos de qualquer tamanho.
 
-Não prometemos segurança absoluta. Código aberto pode permitir auditoria, mas não garante que alguém a tenha realizado. Infraestrutura própria não é automaticamente segura. Criptografia não resolve uma coleta desnecessária nem uma decisão ruim sobre quem pode acessar os dados.
+Queremos perguntar se um dado precisa ser coletado antes de decidir onde armazená-lo. Limitar acessos. Proteger comunicações e informações armazenadas de acordo com os riscos. Manter os sistemas e corrigir problemas.
+
+Esses cuidados reduzem riscos, mas não são garantias absolutas. Código aberto permite inspeção; é preciso saber se ela aconteceu. Infraestrutura própria também precisa de proteção e manutenção. Criptografia é uma parte do cuidado, junto de coletar apenas o necessário e decidir quem pode acessar os dados.
 
 **Na prática, defendemos:**
 
@@ -122,21 +172,21 @@ Não prometemos segurança absoluta. Código aberto pode permitir auditoria, mas
 - Explicações honestas sobre proteções e limitações, sem expor informações que ampliem o risco.
 - Tratamento e comunicação responsáveis de vulnerabilidades e incidentes.
 
-A pressa de lançar não elimina essas responsabilidades. Se não conseguimos oferecer uma proteção essencial, precisamos reduzir o escopo ou rever a solução — não esconder a limitação atrás de uma frase tranquilizadora.
+Se uma proteção essencial ainda não cabe nas condições do projeto, precisamos reduzir o escopo ou rever a solução. Explicar esse limite faz parte de cuidar de quem vai usar.
 
-**Nosso compromisso de direção:** a confiança e a privacidade das pessoas valem mais que a conveniência de coletar, explorar ou compartilhar seus dados.
+**Nosso compromisso de direção:** respeitar a privacidade e a confiança das pessoas, coletando apenas o necessário e cuidando de como seus dados são usados, protegidos e compartilhados.
 
-## 4. Pragmatismo com propósito
+## 6. Simplicidade para construir e manter
 
-### Fazer o possível sem perder a direção
+### Começar com o que temos e cuidar do que vem depois
 
-Um projeto comunitário não dispõe dos mesmos recursos de uma grande empresa. Uma ferramenta ideal pode não estar ao alcance de quem precisa começar. Exigir uma infraestrutura perfeita antes do primeiro passo também pode impedir que algo útil exista.
+Cada projeto tem recursos e condições diferentes. Queremos escolher soluções simples que ajudem a resolver o problema e que as pessoas envolvidas tenham condições de usar e manter. Uma infraestrutura ideal não precisa ser o ponto de partida para algo útil.
 
-Podemos usar nuvem, serviços gerenciados, ferramentas proprietárias e recursos de inteligência artificial quando forem adequados. O que defendemos é uma escolha explicável: o que ela viabiliza, quais dados envolve, que dependência cria, quanto custa agora e o que pode custar depois.
+Podemos usar nuvem, serviços gerenciados, ferramentas proprietárias e recursos de inteligência artificial quando forem adequados. Precisamos conseguir explicar o que essa escolha viabiliza, quais dados envolve, que dependência cria, quanto custa agora e o que pode custar depois.
 
-Pragmatismo não é licença para qualquer concessão. Não torna aceitável sacrificar a privacidade por velocidade, chamar uma dependência de liberdade ou apresentar um subsídio temporário como sustentabilidade.
+Trabalhar com os recursos disponíveis pede atenção às consequências. A velocidade precisa vir acompanhada de cuidado com a privacidade; dependências precisam ser reconhecidas; um subsídio temporário precisa de um plano para quando acabar.
 
-Também não há mérito em trocar uma solução simples e mantida por uma arquitetura que ninguém tem condições de operar. Queremos autonomia que aumente a capacidade de agir, não uma obrigação técnica que desgaste as pessoas.
+Manter uma solução conhecida pode ser melhor do que adotar uma arquitetura que ninguém tem condições de operar. Queremos ampliar a capacidade de agir, com trabalho de manutenção que caiba na vida de quem participa.
 
 **Na prática, defendemos:**
 
@@ -146,59 +196,9 @@ Também não há mérito em trocar uma solução simples e mantida por uma arqui
 - Uso de inteligência artificial sujeito ao mesmo cuidado com dados, verificação, direitos e manutenção exigido de outras ferramentas.
 - Caminhos graduais de portabilidade e redução de dependências, sem investimentos prematuros nem promessas de migração sem custo.
 
-A sustentabilidade importa porque a continuidade importa. O trabalho precisa ter condições de existir e ser justamente remunerado; benefício coletivo não é sinônimo de trabalho gratuito sem fim. Queremos discutir com clareza como manter cada iniciativa sem transformar conveniência financeira em abandono do seu propósito.
+O trabalho precisa ter condições de continuar e ser justamente remunerado. Benefício coletivo e remuneração podem caminhar juntos; colaboração voluntária também precisa de limites. Queremos discutir com clareza como sustentar cada iniciativa e preservar seu propósito.
 
-**Nosso compromisso de direção:** não deixar de construir hoje à espera de um cenário ideal, nem sacrificar as escolhas de amanhã por conveniência imediata.
-
-## 5. Tecnologia para o bem comum
-
-### O que importa nem sempre cabe numa planilha de retorno
-
-Uma ferramenta pode ter valor porque ajuda uma associação a se organizar, torna um serviço público compreensível, aproxima estudantes ou facilita um encontro cultural. Pode apoiar um pequeno negócio e a renda de quem trabalha nele. Pode ajudar uma comunidade a acompanhar decisões sobre seu território.
-
-A atividade econômica tem lugar nessa visão. Só não é a única medida de valor.
-
-Queremos software que respeite as condições de quem vai usá-lo. Acessibilidade não deve ser confundida apenas com preço. Inclui pessoas com deficiência, clareza de linguagem, modos de interação, dispositivos e conexões diferentes. Reduzir barreiras exige escuta e verificação, não uma declaração de que uma solução serve para todo mundo.
-
-**Na prática, defendemos:**
-
-- Conhecer problemas com as comunidades envolvidas e verificar se a solução realmente ajuda.
-- Considerar diferenças regionais, culturais, econômicas e de acesso desde a concepção.
-- Produzir informação e documentação compreensíveis em português.
-- Apoiar usos educacionais, culturais, científicos, comunitários e econômicos sem exigir retorno financeiro como condição de relevância.
-- Tornar dados e informações de interesse público mais compreensíveis, com fontes, métodos e limitações explícitos.
-- Respeitar privacidade, segurança e direitos também quando os dados de origem forem públicos.
-
-Podemos imaginar ferramentas para grupos de estudo, organização de coletivos, prestação de contas, clubes de leitura, atividades ao ar livre, serviços locais, acesso a direitos ou acompanhamento ambiental. A Amazônia e os demais territórios brasileiros merecem informação verificável e participação de quem vive neles. Essas são possibilidades para escutar e investigar, não anúncios de produtos nem compromissos de entrega.
-
-Não queremos chegar a uma comunidade com uma solução pronta e pedir que ela se adapte. Queremos encontrar o que vale a pena construir juntos — inclusive reconhecer quando a resposta não é mais software.
-
-**Nosso compromisso de direção:** ampliar oportunidades e a capacidade de pessoas e comunidades compreenderem sua realidade, exercerem direitos e construírem soluções adequadas a ela.
-
-## 6. Transparência e liberdade algorítmica
-
-### Escolher o que acompanhar, sem depender de recomendações obscuras
-
-Quando uma sequência de conteúdos decide o que merece aparecer sem explicar seus critérios, fica difícil distinguir nossas escolhas dos interesses de quem organiza a experiência. Não queremos depender desse caminho para encontrar pessoas, acompanhar um assunto ou participar de uma conversa.
-
-Não é a existência de algoritmos que cria o problema. É a falta de escolha diante de recomendações que não conseguimos compreender, alterar ou desligar, especialmente quando são orientadas a prolongar o consumo.
-
-Defendemos poder escolher quem e o que acompanhar, saber por que um conteúdo aparece e decidir se queremos receber sugestões. Desligar recomendações não deveria significar perder o acesso às pessoas e aos assuntos que escolhemos seguir. Uma ordem cronológica ou outros critérios compreensíveis, sem personalização obrigatória, são caminhos possíveis.
-
-O inesperado também faz parte de aprender. Uma biblioteca não precisa conhecer tudo sobre alguém para oferecer a possibilidade de uma descoberta. A tecnologia pode ajudar a ampliar esse espaço, em vez de fechá-lo em uma bolha.
-
-**Na prática, defendemos:**
-
-- Critérios e interesses das recomendações explicados de forma compreensível, inclusive o que é publicidade e o que orienta a ordem dos conteúdos.
-- Escolha de fontes, pessoas e assuntos a acompanhar, com formas diretas de acessá-los sem depender de sugestões personalizadas.
-- Possibilidade de alterar critérios e desligar recomendações; ordem cronológica e opções não personalizadas como alternativas, não como garantia de neutralidade.
-- Clareza sobre classificações, decisões automatizadas e participação de inteligência artificial, com formas de questionar decisões que afetem pessoas.
-- Relações e conversas que não dependam de maximizar permanência, estimular hostilidade ou manter consumo contínuo.
-- Fontes verificáveis, diálogo respeitoso e possibilidade de discordar sem transformar pessoas em alvos.
-
-Transparência não exige divulgar dados pessoais nem detalhes que facilitem abuso. Exige não esconder atrás da complexidade técnica as decisões que afetam uma comunidade.
-
-**Nosso compromisso de direção:** reduzir a dependência de recomendações obscuras e ampliar a liberdade de escolher o que acompanhar, descobrir e compartilhar — sem trocar uma seleção imposta por outra.
+**Nosso compromisso de direção:** construir com os recursos disponíveis hoje, cuidando da manutenção e preservando as escolhas de amanhã.
 
 ## Transparência atravessa os seis princípios
 

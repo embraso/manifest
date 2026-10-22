@@ -224,6 +224,8 @@ Supported commands are `ajuda`, `manifesto`, `principio 1` through `principio 6`
 
 Both homepages use six native details/summary controls in canonical order, with the first open. Full titles and Portuguese shared data remain authoritative; this system does not rewrite copy. Public titles underline on hover; technical titles become amber on hover or open. Drawn plus/minus strokes communicate state without JavaScript. Contribution and engineering definition lists use ruled label/reading columns, not clickable cards. The manifesto route keeps all principles expanded.
 
+Use the approved titles and order from the [public manifesto](docs/01-manifesto-publico.md), beginning with “Tecnologia para o bem comum”. Do not shorten or translate the titles; allow longer names to wrap naturally. The revised names and copy were inspected at desktop and mobile widths without changing the visual system.
+
 ### Keyboard, motion and print controls
 
 The skip link becomes visible on focus. Shared focus is a (3px) outline with (5px) offset, blue publicly and amber technically; public scoped links/summaries use (6px) offset. Context-specific radio rings remain distinct. Motion pause is a real small bordered button with inline SVG, `aria-pressed`, dynamic Portuguese label and optional session-storage persistence. It appears only after enhancement. Reduced motion disables it with a dashed border and “Movimento reduzido”; manual pause can be reversed through “Ativar movimento”. Hover adds a subtle current-color wash only when enabled. No contact, membership, backend submission or success-state primitives exist.

@@ -62,7 +62,7 @@ Os seis princípios do manifesto orientam como fazer essa construção. Eles nã
 
 Queremos dedicar conhecimento a algo que faça diferença, com mais espaço para troca e descoberta. As ferramentas disponíveis ajudam a começar; aproximar pessoas e problemas dá sentido a essa oportunidade. Por isso, comunidade e autonomia digital são duas frentes inseparáveis.
 
-Os seis princípios respondem a como construir nessa direção: o que abrir, o que proteger, de quem depender, como sustentar e quem ouvir. Ajudam a escolher quando essas decisões ficarem difíceis.
+Os seis princípios ajudam a pensar em quem uma ferramenta pode ajudar, como preservar caminhos de escolha, o que compartilhar, como acompanhar conteúdos, que dados proteger e como manter o que criamos. São cuidados para construir algo útil e dar continuidade a esse trabalho.
 
 Uso: ponte depois da motivação, da oportunidade e da comunidade; não usar os princípios como substitutos desse argumento nem reescrever os seis títulos como seis slogans diferentes.
 
