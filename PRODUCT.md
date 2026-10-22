@@ -12,9 +12,9 @@ web
 
 - **Generator: Astro**, explicitly selected by the owner during initialization.
 - **Delivery: a static website.** Generate publishable pages as static output; no server-rendered application is requested.
-- **Hosting: Cloudflare**, published under Embraso's DNS. The exact domain or subdomain and the Cloudflare deployment service are not yet specified.
+- **Hosting: GitHub Pages** at `https://embraso.com.br`, using Embraso's confirmed custom domain.
 - A static frontend does not itself receive submissions. Lead capture will need a real destination or submission service; that choice remains open.
-- The first homepage implementation uses npm and Astro static output. Run `npm ci`, `npm run dev` for local development, `npm run build` to generate `dist/`, and `npm run preview` to inspect that output. No Cloudflare deployment, DNS configuration, adapter, or submission service has been configured.
+- The first homepage implementation uses npm and Astro static output. Run `npm ci`, `npm run dev` for local development, `npm run build` to generate `dist/`, and `npm run preview` to inspect that output. GitHub Pages deployment uses the repository's GitHub Actions workflow; no server-side adapter or submission service is configured.
 
 ## Users
 
@@ -95,7 +95,7 @@ Legal status, adopted software licenses, financing, service pricing, team identi
 - [Presentation and invitations](docs/03-apresentacao-e-convites.md), [community and participation](docs/04-comunidade-e-participacao.md), and [contact microcopy](docs/05-contato-e-microtextos.md): proposed public language mixed with internal notes and conditional actions.
 - [Voice and terminology](docs/06-voz-e-terminologia.md) and [phrase bank](docs/07-banco-de-frases.md): language guidance and distinctions between quotations, adaptations, and new writing.
 - [Sources and editorial decisions](docs/08-fontes-e-decisoes-editoriais.md), with preserved [original manifesto](docs/fontes/manifesto-original.md), [Thiago's manifesto](docs/fontes/manifesto-thiago-original.md), and [original notes](docs/fontes/notas-originais.txt).
-- Owner decisions from initialization: static website, Astro, Cloudflare under Embraso DNS, project publishing, lead capture, contributor invitations, English implementation documentation, visual continuity with improvements and animation; audience priority and intake destination left open.
+- Owner decisions from initialization: static website, Astro, GitHub Pages at `https://embraso.com.br`, project publishing, lead capture, contributor invitations, English implementation documentation, visual continuity with improvements and animation; audience priority and intake destination left open.
 - Owner decisions during implementation: authorize the first homepage, develop both reference directions concurrently, adapt wording to each audience, use common assets and canonical principles, and open on Folheto with a visible switch. Intake destinations remain unresolved.
 
 These materials establish proposed language and product intent, not testimonials, partnerships, customer counts, impact metrics, shipped products, or security and accessibility certifications. Do not fabricate those forms of proof.
