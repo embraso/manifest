@@ -43,11 +43,11 @@
 
 **Interfaces:**
 - Consumes: existing `npm run build`, `package-lock.json`, and Astro's `dist/` output.
-- Produces: a Pages artifact from `dist/`, deployed using `withastro/action@v6` and `actions/deploy-pages@v5`, with GitHub Pages configured to use Actions. The build job checks out the repository before the Astro action runs.
+- Produces: a Pages artifact from `dist/`, deployed using `actions/checkout@v7`, `actions/setup-node@v7`, `actions/upload-pages-artifact@v5`, and `actions/deploy-pages@v5`, with GitHub Pages configured to use Actions.
 
 - [x] Add `site: 'https://embraso.com.br'` to `astro.config.mjs`; do not add a base path or alter static/trailing-slash settings.
 - [x] Add `public/CNAME` containing only `embraso.com.br`.
-- [x] Add `.github/workflows/deploy.yml`: trigger only on `push` to `main`; guard both jobs to the canonical repository; grant build only `contents: read` and deploy only `pages: write` plus `id-token: write`; check out the source, use `withastro/action@v6` to install/build and `actions/deploy-pages@v5` to deploy through the `github-pages` environment. Do not add Jekyll, a manual trigger, or another deploy path.
+- [x] Add `.github/workflows/deploy.yml`: trigger only on `push` to `main`; guard both jobs to the canonical repository; grant build only `contents: read` and deploy only `pages: write` plus `id-token: write`; check out the source, configure Node 24, run `npm ci` and `npm run build`, upload `dist/`, and deploy through the `github-pages` environment. Do not add Jekyll, a manual trigger, or another deploy path.
 - [x] Restrict the `github-pages` deployment environment to `main`; add CODEOWNERS for deployment controls and require reviewed PRs on `main`; disable force pushes/deletions while retaining administrator bypass.
 - [x] Update the hosting and deployment facts in `PRODUCT.md` to GitHub Pages at `https://embraso.com.br`; retain existing stack and product facts.
 - [x] Update the hosting statement in the English technical-context paragraph of `docs/README.md` so it identifies GitHub Pages at `https://embraso.com.br` as the chosen deployment and leaves unrelated intake and project facts unchanged.
