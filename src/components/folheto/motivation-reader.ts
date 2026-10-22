@@ -1,11 +1,11 @@
 import { motionAllowed, onMotionChange } from '../../scripts/motion';
 
 const root = document.querySelector<HTMLElement>('[data-folheto]');
-const reader = root?.querySelector<HTMLElement>('[data-freedom-reader]');
-const controls = root?.querySelector<HTMLFieldSetElement>('[data-freedom-controls]');
-const pages = Array.from(root?.querySelectorAll<HTMLElement>('[data-freedom-page]') ?? []);
-const choices = Array.from(root?.querySelectorAll<HTMLInputElement>('input[name="freedom"]') ?? []);
-const status = root?.querySelector<HTMLElement>('[data-freedom-status]');
+const reader = root?.querySelector<HTMLElement>('[data-motivation-reader]');
+const controls = root?.querySelector<HTMLFieldSetElement>('[data-motivation-controls]');
+const pages = Array.from(root?.querySelectorAll<HTMLElement>('[data-motivation-page]') ?? []);
+const choices = Array.from(root?.querySelectorAll<HTMLInputElement>('input[name="motivation"]') ?? []);
+const status = root?.querySelector<HTMLElement>('[data-motivation-status]');
 
 if (reader && controls && pages.length === choices.length && pages.length > 0) {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -14,10 +14,10 @@ if (reader && controls && pages.length === choices.length && pages.length > 0) {
   let disposed = false;
   let readingAnimation: Animation | undefined;
 
-  function selectFreedom(announce: boolean) {
+  function selectMotivation(announce: boolean) {
     const choice = choices.find((input) => input.checked);
     if (!choice) return;
-    const selectedIndex = pages.findIndex((page) => page.dataset.freedomPage === choice.value);
+    const selectedIndex = pages.findIndex((page) => page.dataset.motivationPage === choice.value);
     if (selectedIndex < 0) return;
 
     readingAnimation?.cancel();
@@ -27,7 +27,7 @@ if (reader && controls && pages.length === choices.length && pages.length > 0) {
     const title = selectedPage.querySelector('h3')?.textContent ?? '';
     if (status) {
       status.hidden = false;
-      status.textContent = `Lendo: ${title}. Liberdade ${selectedIndex + 1} de ${pages.length}.`;
+      status.textContent = `Lendo: ${title}. Tema ${selectedIndex + 1} de ${pages.length}.`;
     }
     if (announce && readerVisible && pageActive && motionAllowed() && !reducedMotion.matches && typeof selectedPage.animate === 'function') {
       readingAnimation = selectedPage.animate([
@@ -38,7 +38,7 @@ if (reader && controls && pages.length === choices.length && pages.length > 0) {
   }
 
   function onSelection(event: Event) {
-    if (event.target instanceof HTMLInputElement && event.target.name === 'freedom') selectFreedom(true);
+    if (event.target instanceof HTMLInputElement && event.target.name === 'motivation') selectMotivation(true);
   }
   function synchronizeAnimation() {
     if (disposed) return;
@@ -77,7 +77,7 @@ if (reader && controls && pages.length === choices.length && pages.length > 0) {
   window.addEventListener('pageshow', onPageShow);
   document.addEventListener('astro:before-swap', dispose, { once: true });
   if (observer) observer.observe(reader);
-  selectFreedom(false);
+  selectMotivation(false);
   controls.hidden = false;
   controls.addEventListener('change', onSelection);
 }

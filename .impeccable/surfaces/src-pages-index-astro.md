@@ -11,7 +11,7 @@ Mode: Persuade. Official public entry `/`; developer entry `/devs/`; shared publ
 
 ## Direction contract
 
-THESIS: Freedom becomes tangible through shared knowledge. Folheto explains it through a living print composition and four-freedom reader; Terminal presents the actual proposal through a typed-topic carousel. Refuse fabricated activity or a decorative fake shell.
+THESIS: Freedom becomes tangible through shared knowledge and useful tools. Folheto pairs problems to face with intended changes in its motivation reader; Terminal carries the same concerns into engineering questions and presents the manifesto through a typed-topic carousel. Refuse fabricated activity or a decorative fake shell.
 
 OWN-WORLD: Paper, forest and amber; condensed Archivo for public display, Martian Mono for technical display; supplied vector and pixel fauna. Flat ruled reading surfaces, not neon product cards. OMP and Tern inform visual confidence and interaction, never Embraso's product claims.
 
@@ -25,7 +25,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Motion and behavior
 
-Folheto's isolated Scene runs bounded foreground fauna motion for (28s), including a short repeating capybara gait over slow drift. A large, low-opacity supplied emblem forms the static background; it has no clip or transform animation. Scene visibility controls only scene motion. The separate freedom reader controls its own selection wipe and visibility; all readings remain visible without JavaScript.
+Folheto's isolated Scene runs bounded foreground fauna motion for (28s), including a short repeating capybara gait over slow drift. A large, low-opacity supplied emblem forms the static background; it has no clip or transform animation. Scene visibility controls only scene motion. The separate motivation reader controls its own selection wipe and visibility. Six radio choices change substantive problem/outcome readings; all readings remain visible without JavaScript and in print.
 
 Developer particles sample the supplied SVG. Finite assembly gives way to warm-flame rise/curl/flicker; the recognizable toucan is retained. Maximum 1,400 desktop/600 mobile particles, DPR 1.5, one RAF. Pause, live reduced motion, document visibility and intersection state stop nonessential work; the complete SVG is the static fallback. No cross-document view transitions.
 

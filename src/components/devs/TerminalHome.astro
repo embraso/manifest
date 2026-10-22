@@ -4,10 +4,12 @@ import FaunaField from './FaunaField.astro';
 import pixelCapybara from '../../../assets/aa3df8c60c0205b36b599de7c17c2d7b.svg';
 
 const decisions = [
-  { question: 'E se precisarmos sair?', title: 'Dados que podem seguir viagem.', body: 'Defendemos formatos compreensíveis, padrões abertos e caminhos de migração. A possibilidade de sair precisa entrar na decisão de chegar.' },
-  { question: 'Precisamos coletar isso?', title: 'Menos dados. Mais cuidado.', body: 'Queremos coleta mínima e proteção proporcional aos riscos. Código aberto não dispensa revisão, correções e manutenção.' },
-  { question: 'Quem consegue continuar?', title: 'Simplicidade também é autonomia.', body: 'Documentação e conhecimento compartilhado importam tanto quanto a primeira entrega. Uma ferramenta precisa poder ser compreendida por quem vai cuidar dela.' },
-  { question: 'O que esta facilidade custa?', title: 'Dependências à vista.', body: 'Nuvem, ferramentas proprietárias e inteligência artificial podem ser escolhas conscientes. Importa conhecer custos, limites e alternativas, sem exigir pureza para começar.' },
+  { question: 'O software resolve o problema de quem?', title: 'Utilidade antes de mais código.', body: 'Uma solução que ignora aparelhos, conexões e rotinas pode criar mais uma barreira. Queremos definir o problema e experimentar caminhos com quem vai usar, antes de escolher a stack.' },
+  { question: 'E se o serviço mudar as regras?', title: 'Continuidade sem ficar refém.', body: 'Bloqueios e formatos fechados podem interromper o que foi construído. Defendemos exportação de dados, padrões abertos e caminhos de migração: a possibilidade de sair precisa entrar na decisão de chegar.' },
+  { question: 'Quem pode entender e adaptar?', title: 'Conhecimento que não fica concentrado.', body: 'Código apenas visível não assegura liberdade. Defendemos permissões para usar, estudar, modificar e compartilhar, inclusive comercialmente, com documentação que ajude outras pessoas a continuar.' },
+  { question: 'A recomendação serve a quem?', title: 'Descoberta com escolha, não atenção cativa.', body: 'Um feed opaco pode tirar de quem usa a decisão sobre o que acompanhar. Queremos critérios compreensíveis, fontes escolhidas pelas pessoas, recomendações ajustáveis ou desligáveis e decisões automatizadas que possam ser questionadas.' },
+  { question: 'Precisamos coletar isso?', title: 'Menos exposição. Mais cuidado.', body: 'Coleta excessiva e uso pouco claro dos dados ampliam riscos de vigilância, fraudes e perda de privacidade. Queremos coleta mínima e proteção proporcional aos riscos, com revisão, correções e limites explícitos.' },
+  { question: 'Quem consegue manter depois?', title: 'Uma solução que caiba nos recursos reais.', body: 'Complexidade excessiva, custos imprevisíveis e conhecimento concentrado podem inviabilizar uma boa ideia. Queremos escolhas compreensíveis, documentação e condições justas de manutenção. Nuvem, ferramentas proprietárias e IA podem ajudar quando custos, limites e dependências ficam à vista.' },
 ];
 ---
 
@@ -31,8 +33,9 @@ const decisions = [
     <div class="page-width proposal-layout">
       <h2 id="proposal-title">Antes de escolher<br />a stack,<br /><span>entender a vida.</span></h2>
       <div class="proposal-content">
-        <p class="large-copy">Mais uma ferramenta não é, por si só, uma resposta.</p>
-        <p>Uma sala de aula, um coletivo, um pequeno negócio: queremos começar escutando quem conhece o problema. Reconhecer o que já funciona. Descobrir onde o software pode ajudar — e quando não precisamos de outro aplicativo.</p>
+        <p class="large-copy">Queremos dedicar conhecimento a problemas que merecem cuidado, não só produzir mais código ou mais tempo de tela.</p>
+        <p>Consumir conteúdo não substitui a troca, a descoberta e o que podemos fazer juntos. Uma sala de aula, um coletivo, um pequeno negócio: queremos escutar quem vive cada necessidade e reconhecer o que já funciona.</p>
+        <p>Ferramentas de desenvolvimento podem encurtar o caminho entre ideia e software útil. Há gente no Brasil e fora dele com conhecimento para compartilhar. Aproximar essa capacidade de quem conhece os problemas é a oportunidade que queremos aproveitar.</p>
         <div class="two-fronts">
           <div><h3>Comunidade</h3><p>Relação, troca e cuidado. Aproximar experiências diferentes, sem tratar pessoas como mão de obra disponível.</p></div>
           <span class="fronts-plus" aria-hidden="true">+</span>
@@ -62,8 +65,8 @@ const decisions = [
   <section class="decisions-section" aria-labelledby="decisions-title">
     <div class="page-width">
       <div class="section-heading">
-        <h2 id="decisions-title">Princípio bom<br />muda <span>a decisão.</span></h2>
-        <p>Na engenharia, os compromissos viram perguntas concretas. Queremos levá-las para a arquitetura, a documentação e o cuidado com quem usa.</p>
+        <h2 id="decisions-title">O que queremos<br /><span>mudar com código.</span></h2>
+        <p>Dependência sem saída, conhecimento concentrado, atenção cativa e ferramentas difíceis de sustentar: são problemas que queremos enfrentar. Na engenharia, isso precisa mudar as decisões.</p>
       </div>
       <dl class="engineering-decisions">
         {decisions.map((decision) => (
