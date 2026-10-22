@@ -58,10 +58,10 @@ const contributions = [
       </div>
     </div>
     <div class="print-scene" aria-hidden="true">
-      <svg class="scene-wind" viewBox="0 0 472 208" fill="none" aria-hidden="true">
-        <path data-print-wind="0" d="M16 64 C58 48 92 74 142 56" />
-        <path data-print-wind="1" d="M4 112 C58 92 110 126 178 104" />
-        <path data-print-wind="2" d="M48 156 C84 142 116 164 150 150" />
+      <svg class="scene-wind" viewBox="0 0 240 100" fill="none" aria-hidden="true">
+        <path data-print-wind="0" d="M24 18 C72 4 112 30 172 16" />
+        <path data-print-wind="1" d="M12 48 C78 30 128 66 222 44" />
+        <path data-print-wind="2" d="M48 78 C92 64 124 88 176 74" />
       </svg>
       <img class="scene-toucan" data-print-toucan src={toucan.src} alt="" width="472" height="208" fetchpriority="high" />
       <div class="scene-emblem"><img src={emblem.src} alt="" width="462" height="654" fetchpriority="high" /></div>
@@ -147,8 +147,8 @@ const contributions = [
   .reading-arrow::after { content: ''; position: absolute; width: 8px; height: 8px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; transform: rotate(45deg); right: 1px; top: 2px; }
   .folheto :is(a, summary, input):focus-visible { outline: 3px solid var(--blue); outline-offset: 6px; }
   .folheto [hidden] { display: none !important; }
-  .opening { position: relative; min-height: 650px; padding-block: clamp(36px, 4vw, 64px) 68px; }
-  .opening-copy { position: relative; z-index: 1; width: 62%; }
+  .opening { position: relative; min-height: clamp(650px, 56vw, 800px); padding-block: clamp(36px, 4vw, 64px) 68px; }
+  .opening-copy { position: relative; z-index: 1; width: 56%; }
   .opening h1 { font-size: clamp(5rem, 8.2vw, 6rem); line-height: .88; }
   .opening h1 > span { display: block; }
   .together { margin-block: .04em .17em; }
@@ -157,15 +157,15 @@ const contributions = [
   .opening-intro { font-size: clamp(1.125rem, 1.6vw, 1.4rem); line-height: 1.5; max-width: 39ch; margin-top: 28px !important; }
   .opening-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 26px; margin-top: 26px; }
   .opening-actions .text-link { font-size: 14px; }
-  .print-scene { position: absolute; width: 35%; top: 9%; bottom: 65px; right: 0; }
-  .scene-toucan { position: absolute; z-index: 3; width: 94%; top: -3%; left: -12%; transform-origin: 58% 50%; }
-  .scene-wind { position: absolute; z-index: 2; width: 94%; top: -3%; left: -12%; overflow: visible; pointer-events: none; stroke: var(--green); stroke-width: 1.5; stroke-linecap: round; }
-  .scene-wind path { opacity: 0; }
-  .scene-emblem { position: absolute; top: 11%; right: 4%; width: 67%; }
+  .print-scene { position: absolute; width: 40%; aspect-ratio: 4 / 5; top: 48px; right: 0; }
+  .scene-toucan { position: absolute; z-index: 3; width: 76%; top: 0; left: 0; transform-origin: 58% 50%; }
+  .scene-wind { position: absolute; width: 48%; top: 29%; left: 0; overflow: visible; pointer-events: none; stroke: var(--green); stroke-width: 2; stroke-linecap: round; }
+  .scene-wind path { opacity: 0; vector-effect: non-scaling-stroke; }
+  .scene-emblem { position: absolute; top: 31%; right: 7%; width: 40%; }
   .scene-emblem img { width: 100%; }
-  .scene-capybara { position: absolute; z-index: 2; bottom: 40px; width: 68%; left: -10%; transform-origin: 50% 85%; }
-  .scene-ipe { position: absolute; width: 36%; bottom: 45px; right: -2%; transform-origin: 50% 100%; }
-  .scene-caption { position: absolute; bottom: -7px; right: 0; text-align: right; font-size: 12px; line-height: 1.45; }
+  .scene-capybara { position: absolute; z-index: 2; bottom: 0; width: 48%; left: 0; transform-origin: 50% 85%; }
+  .scene-ipe { position: absolute; width: 24%; bottom: 0; right: 0; transform-origin: 50% 100%; }
+  .scene-caption { position: absolute; bottom: -48px; right: 0; text-align: right; font-size: 12px; line-height: 1.45; }
   .proposal { padding-block: 76px 100px; border-top: 2px solid var(--green); }
   .proposal h2 { max-width: 1000px; margin-bottom: 46px; }
   .proposal h2 span { font-size: .78em; }
@@ -235,9 +235,6 @@ const contributions = [
   @media (max-width: 1000px) {
     .page-wrap { width: calc(100% - 48px); }
     .opening h1 { font-size: clamp(4.4rem, 12.7vw, 6rem); }
-    .print-scene { top: 10%; bottom: 76px; }
-    .scene-emblem { top: 19%; width: 77%; }
-    .scene-capybara { bottom: 38px; width: 80%; left: -16%; }
     .proposal-reading { grid-template-columns: 1fr; gap: 34px; }
     .large-reading { max-width: 42ch; }
     .two-fronts { max-width: 800px; }
@@ -253,13 +250,8 @@ const contributions = [
     .opening h1 { font-size: clamp(4.4rem, 18.5vw, 6rem); }
     .opening-intro { max-width: 43ch; margin-top: 27px !important; font-size: 18px; }
     .opening-actions { align-items: start; flex-direction: column; gap: 18px; margin-top: 23px; }
-    .print-scene { position: relative; inset: auto; height: 270px; width: min(100%, 430px); margin: 26px auto 0; }
-    .scene-toucan { width: 60%; top: 0; left: -1%; }
-    .scene-wind { width: 60%; top: 0; left: -1%; }
-    .scene-emblem { top: 1%; right: 12%; width: 36%; }
-    .scene-capybara { left: 2%; width: 51%; bottom: 36px; }
-    .scene-ipe { width: 28%; right: 0; bottom: 39px; }
-    .scene-caption { bottom: -5px; font-size: 11px; }
+    .print-scene { position: relative; inset: auto; width: min(100%, 430px); margin: 48px auto 64px; }
+    .scene-caption { font-size: 11px; }
     .proposal { padding-block: 50px 60px; }
     .folheto h2 { font-size: clamp(3rem, 10vw, 4.7rem); }
     .proposal h2 { margin-bottom: 28px; }
@@ -300,7 +292,6 @@ const contributions = [
   }
   @media (max-width: 380px) {
     .two-fronts { grid-template-columns: 1fr; }
-    .print-scene { height: 240px; }
     .opening-actions .button, .closing-reading .button { width: 100%; }
     .freedom-options label { padding-inline: 8px; gap: 7px; }
     .freedom-options input { width: 15px; height: 15px; }
