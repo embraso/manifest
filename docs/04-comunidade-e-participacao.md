@@ -8,7 +8,11 @@
 
 ### Uma comunidade começa com quem vive os problemas
 
-A Embraso quer aproximar pessoas para construir tecnologia que faça sentido na vida brasileira. Queremos reunir quem conhece um problema de perto, quem tem vontade de aprender e quem pode compartilhar o que sabe. Não é preciso chegar com uma solução pronta — nem saber programar.
+A Embraso quer reunir pessoas para dedicar conhecimento e trabalho a algo que faça diferença na vida por aqui. Não apenas produzir mais software: queremos aprender, criar, descobrir coisas e encontrar outras pessoas em torno de problemas que importam. Construir essas relações é parte do propósito, não uma etapa para recrutar quem execute tarefas.
+
+Passar horas consumindo conteúdo não é o mesmo que trocar com alguém. Queremos que as ferramentas ajudem uma conversa a acontecer, um conhecimento a circular ou uma atividade a sair do papel — inclusive quando isso significa passar menos tempo diante da tela. Encontrar algo inesperado também faz parte dessa vida, sem precisar transformar toda descoberta em recomendação sob medida.
+
+Ferramentas de desenvolvimento podem aproximar uma ideia de algo que funciona, mas não escolhem por nós o que vale fazer. Há conhecimento e vontade de contribuir no Brasil e entre brasileiros que vivem fora dele. Queremos aproximar essa capacidade de quem conhece um problema de perto, com espaço para aprender e compartilhar o que sabe. Não é preciso chegar com uma solução pronta — nem saber programar.
 
 Nosso ponto de partida é escutar. Antes de propor uma ferramenta, queremos entender o que já acontece, o que já funciona e onde a tecnologia pode ajudar. Às vezes, a melhor contribuição é melhorar uma explicação, aproximar duas iniciativas ou reconhecer que um novo aplicativo não é necessário.
 
@@ -74,6 +78,10 @@ Não é preciso chegar com um projeto pronto. Uma pergunta bem situada pode ser 
 
 O convite não deve procurar apenas gente para executar tarefas técnicas. Conhecimento de um bairro, de uma sala de aula, de um coletivo ou de um serviço é contribuição substantiva, não uma etapa inferior à programação.
 
+Antes de listar formas de contribuir, explicar por que vale construir relações e o que pode acontecer nelas: aprender com outra experiência, descobrir uma iniciativa, encontrar alguém com a mesma pergunta e decidir juntos se uma ferramenta faz sentido. O argumento de oportunidade reúne ferramentas disponíveis e conhecimento humano, não urgência artificial, números de produtividade ou promessa de custo quase zero. A lista de habilidades serve a essa troca; não a substitui.
+
+Não organizar a apresentação da comunidade como um funil que só considera bem-sucedida a conversa que termina em tarefa, cadastro ou produção de código. Troca e aprendizado têm valor mesmo sem um novo projeto. Isso é orientação para construir a comunidade, não anúncio de encontros ou espaços já disponíveis.
+
 - Perguntar primeiro o que a pessoa quer compartilhar e que disponibilidade deseja oferecer. Não exigir currículo, portfólio, vínculo universitário ou apresentação pública para uma primeira conversa.
 - Não usar rankings de contribuição, frequência de mensagens ou quantidade de código como medida de pertencimento.
 - Oferecer caminhos compreensíveis para iniciantes sem converter pessoas experientes em mentoras permanentes por obrigação.
@@ -135,6 +143,6 @@ Para ajustar chamadas a públicos diferentes, usar a [apresentação e os convit
 
 ## 3. Fontes e coerência editorial
 
-Esta proposta combina o acesso amplo ao conhecimento, a sustentabilidade do trabalho e a atenção às realidades locais do [manifesto original](fontes/manifesto-original.md) com a escuta do cotidiano, a aproximação entre universidades e diáspora, a cultura e a reconstrução de vínculos do [manifesto de Thiago](fontes/manifesto-thiago-original.md).
+Esta proposta combina o acesso amplo ao conhecimento, a sustentabilidade do trabalho e a atenção às realidades locais do [manifesto original](fontes/manifesto-original.md) com a motivação para dedicar capacidade ao que importa, a diferença entre consumo e troca e a abertura ao inesperado do [manifesto de Thiago](fontes/manifesto-thiago-original.md), especialmente a abertura, “As redes sociais no Brasil perderam o seu propósito social” e “Por que este momento é tão oportuno?”. A escuta do cotidiano e a construção de vínculos retomam também “Software que nos valoriza como brasileiros”, “As duas frentes que precisam orientar a Embraso” e “Este manifesto não é suficiente”.
 
-A linguagem de intenção substitui afirmações não verificadas de comunidade já formada. Os exemplos continuam sendo possibilidades. O convite enfático à contribuição dá lugar a participação sem culpa, com limites e condições materiais explícitos. A formulação canônica dos princípios permanece no [manifesto público](01-manifesto-publico.md); este documento não acrescenta um sétimo princípio ou um regulamento de participação.
+O texto público é uma **adaptação editorial das duas fontes**, não uma citação literal nem um acordo registrado entre autores. A oportunidade técnica é formulada como possibilidade, sem incorporar promessas de velocidade, custo ou qualidade. A linguagem de intenção substitui afirmações não verificadas de comunidade já formada. Os exemplos continuam sendo possibilidades. O convite enfático à contribuição dá lugar a participação sem culpa, com limites e condições materiais explícitos. A formulação canônica dos princípios permanece no [manifesto público](01-manifesto-publico.md); este documento não acrescenta um sétimo princípio ou um regulamento de participação.

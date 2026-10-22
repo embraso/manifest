@@ -1,6 +1,6 @@
 ---
 name: embraso-language
-description: Write, review, and organize Embraso's Brazilian Portuguese language across its manifesto, presentation, community, contact, phrases, story, mission, vision, goals, and values. Use to maintain a consistent verbal identity and separate public copy from internal editorial records and discussion; do not implement the website.
+description: Write, review, and organize Embraso's Brazilian Portuguese language across its manifesto, presentation, community, contact, phrases, story, mission, vision, goals, and values. Use to maintain a consistent verbal identity and separate public copy from internal editorial records and discussion, including during authorized website work.
 ---
 
 # Embraso language
@@ -35,6 +35,7 @@ The paths below are relative to this skill directory. Open them through the file
 
 1. Identify the audience, surface, intent, and whether the information is a principle, intention, fact, account, or hypothesis. When no material user decision is required, follow the document conventions.
 2. Choose the appropriate reference. Do not put the entire story, organizational plan, or licensing discussion in the manifesto. Preserve the remaining material in the corresponding internal editorial document; do not erase perspectives because they do not fit a publication.
+   Preserve the two-source argument before listing principles or skills: Thiago's motivating narrative explains why dedicate effort, consumption versus exchange and unexpected discovery, and the opportunity to connect available tools and knowledge in Brazil and abroad with real problems. Then show community-building and gradual autonomy as inseparable fronts; the original manifesto's criteria explain how to build and sustain. Follow the voice guide's sequence and phrase bank's labeled adaptations; use the canonical public introduction when presenting the manifesto. Condense for short surfaces, not into a generic principle-first pitch. Community relationships and learning are purposes, not a funnel into tasks. This editorial architecture does not establish agreement between authors.
 3. Write one strong idea, a concrete explanation, and, when appropriate, an invitation. Selected signature: “Liberdade se constrói junto.” Use it where appropriate, not in every piece. Explain the intent to bring people together to create useful, free software and make the initiative's stage clear.
 4. Separate usable copy from editorial notes. Do not automatically publish whole files, internal material, or historical sources. “Internal” is not access control: do not add secrets or personal data without authorization.
 5. Review accuracy, warmth, and consistency. Deliver the text, its location, and only the unresolved issues that prevent publication; do not turn every sentence into a public disclaimer.
@@ -50,7 +51,7 @@ The paths below are relative to this skill directory. Open them through the file
 - Political criticism can be firm. Do not turn predictions, accusations, third-party metrics, or personal recollections from the sources into established facts. Preserve context and disagreements internally rather than neutralizing them for convenience.
 - Do not invent products, a team, a CTO, numbers, partnerships, email addresses, channels, deadlines, or policies. A submission CTA requires a real destination; a success message requires a confirmed action.
 - A literal quotation preserves its wording and source. A rewrite is an adaptation; a newly written phrase is a new proposal. Do not attribute Embraso-specific commitments to external authors.
-- Do not build the website, install a stack, or create flows at this stage. The indicated visual reference was not successfully rendered during the initial documentation work; do not describe its layout by assumption.
+- Authorized website implementation is governed by `AGENTS.md`, `PRODUCT.md`, and `DESIGN.md` at the repository root. This skill governs language, not new flows or operational authority; do not publish placeholder claims from the visual reference.
 
 ## Before finishing
 

@@ -40,37 +40,37 @@ Uso: descrição institucional curta, apresentação oral e contexto de um link 
 
 ## Apresentação curta
 
-Queremos uma tecnologia que ajude a viver, não que ocupe a vida inteira. A Embraso é uma iniciativa para reunir pessoas em torno de software útil, livre e acessível às diferentes realidades do Brasil. Nosso caminho combina comunidade e autonomia digital: compartilhar conhecimento, resolver problemas concretos e preservar a capacidade de escolher o que usamos e construímos.
+Queremos dedicar o que sabemos a algo que faça diferença na vida das pessoas. A Embraso reúne essa intenção numa proposta: construir software útil e livre para as diferentes realidades do Brasil, com espaço para conversar, aprender e descobrir, não só consumir. Ferramentas disponíveis podem ajudar a começar; aproximar conhecimento técnico e experiência dos problemas dá direção a esse esforço. Por isso, queremos construir comunidade e ampliar nossa autonomia digital, aos poucos. Os seis princípios do manifesto orientam como fazer isso.
 
 Uso: seção “Sobre”, apresentação de um encontro ou resumo editorial. Não pressupõe produto lançado ou comunidade com tamanho conhecido.
 
 ## Apresentação ampliada
 
-Há muita gente capaz de criar tecnologia no Brasil — e muita gente que conhece, por experiência própria, problemas que merecem cuidado. Queremos aproximar esses conhecimentos.
+Por que dedicar nossas habilidades a essa construção? Porque queremos que a tecnologia ajude a viver: aprender, criar, encontrar outras pessoas e cuidar de iniciativas que importam. Passar horas consumindo conteúdo não é o mesmo que trocar com alguém. Queremos mais espaço para conversa e descoberta, não apenas mais tempo diante da tela.
 
-A Embraso é uma iniciativa para construir software útil e livre em comunidade. Não apenas ferramentas para trabalhar ou consumir, mas também para aprender, criar, organizar encontros, cuidar de iniciativas coletivas e compreender informações que afetam a vida de todos os dias.
+Ferramentas de desenvolvimento podem encurtar o caminho entre uma ideia e algo que funciona. A oportunidade é aproximar quem pode construir de quem conhece os problemas: pessoas nas universidades, em comunidades, no trabalho, no Brasil e fora dele. Produzir mais código não substitui essa aproximação.
 
-Queremos fazer isso com as pessoas envolvidas, respeitando diferenças de território, acesso, recursos e experiência digital. Quem escreve código tem lugar nessa construção. Quem desenha, ensina, pesquisa, organiza ou conhece uma necessidade de perto também.
+A Embraso é uma iniciativa para construir software útil, livre e acessível às diferentes realidades do Brasil. Comunidade não é apenas um meio de encontrar contribuições: queremos relações em que as pessoas aprendam, compartilhem conhecimento e possam decidir o que vale a pena fazer juntas. Quem escreve código tem lugar nessa construção. Quem desenha, ensina, pesquisa, organiza ou conhece uma necessidade de perto também.
 
-Defendemos liberdade para compreender e adaptar a tecnologia, cuidado com os dados e caminhos para reduzir dependências. Isso não exige começar com tudo pronto ou abandonar todas as ferramentas que usamos hoje. Exige escolhas conscientes, custos claros e uma direção que não se perca na pressa.
+Comunidade e autonomia digital caminham juntas. Queremos usar os recursos disponíveis sem perder a capacidade de compreender, adaptar e continuar o que criamos. Isso pede cuidado com dados, custos e dependências, além de condições para manter as ferramentas.
 
-Nosso manifesto reúne seis princípios para orientar essa construção. Ele não é a obra pronta. É um convite para começar com propósito e criar condições de continuar juntos.
+Os seis princípios do manifesto orientam como fazer essa construção. Eles não substituem o propósito que nos reúne nem a colaboração necessária para torná-lo concreto.
 
 ## Ponte entre a abertura e os seis princípios
 
 ### Uma direção para as escolhas difíceis
 
-É fácil falar em liberdade quando nenhuma decisão custa nada. Nosso manifesto existe para orientar o trabalho quando é preciso escolher: o que abrir, o que proteger, de quem depender, como sustentar e quem ouvir.
+Queremos dedicar conhecimento a algo que faça diferença, com mais espaço para troca e descoberta. As ferramentas disponíveis ajudam a começar; aproximar pessoas e problemas dá sentido a essa oportunidade. Por isso, comunidade e autonomia digital são duas frentes inseparáveis.
 
-São seis princípios, com duas frentes que caminham juntas: comunidade e autonomia digital.
+Os seis princípios respondem a como construir nessa direção: o que abrir, o que proteger, de quem depender, como sustentar e quem ouvir. Ajudam a escolher quando essas decisões ficarem difíceis.
 
-Uso: breve introdução à versão pública; não reescrever os seis títulos como seis slogans diferentes.
+Uso: ponte depois da motivação, da oportunidade e da comunidade; não usar os princípios como substitutos desse argumento nem reescrever os seis títulos como seis slogans diferentes.
 
 ## Abertura para o manifesto longo
 
 ### Antes do código, uma pergunta: isso ajuda quem?
 
-Queremos construir tecnologia que devolva possibilidades às pessoas. Que ajude uma comunidade a se organizar, torne uma informação mais compreensível ou aproxime gente que tem algo para fazer junto. O que nos move não é colocar mais uma ferramenta no mundo. É ampliar o que podemos fazer com liberdade, cuidado e companhia.
+Por que dedicar o que sabemos a essa construção? Queremos que a tecnologia ajude pessoas a conversar, descobrir e fazer juntas, não apenas consumir. Ferramentas disponíveis podem ajudar a transformar ideias em algo que funciona; aproximar quem sabe construir de quem conhece os problemas dá propósito a essa possibilidade. Construir comunidade e ampliar a autonomia digital são o caminho. Os princípios orientam como cuidar dessa construção.
 
 Uso: chamada para a leitura estendida, alternativa ao início completo já escrito no [manifesto estendido](02-manifesto-estendido.md). Não substituir a abertura canônica por esta sem uma decisão editorial.
 
@@ -100,18 +100,18 @@ Nota interna: publicar o convite de contato apenas junto de um caminho funcional
 
 Uso interno: o pedido menciona “intro/CTO”. Este trecho atende à apresentação técnica sem presumir que CTO era uma sigla para CTA. Os convites à ação também estão cobertos neste documento. Não há nome, cargo ocupado, biografia ou fala pessoal confirmados; não atribuir o texto a uma pessoa.
 
-> Uma tecnologia só oferece autonomia quando conseguimos entender suas escolhas e continuar cuidando dela. Queremos construir software útil, com código que possa ser estudado e adaptado, dados tratados com responsabilidade e dependências que não fiquem escondidas. Vamos usar as ferramentas disponíveis, inclusive serviços externos, quando fizer sentido. Mas cada conveniência precisa caber numa conversa honesta sobre custo, risco e continuidade. O objetivo não é a arquitetura mais impressionante. É algo que as pessoas consigam usar e que uma comunidade tenha condições de manter.
+> Por que dedicar nossa capacidade técnica a essa construção? Queremos software que ajude pessoas a aprender, criar e se encontrar, não apenas permanecer consumindo. Bibliotecas, infraestrutura compartilhada e ferramentas de desenvolvimento podem encurtar o caminho até algo que funciona. A oportunidade é ligar essa capacidade ao conhecimento de quem vive os problemas — nas universidades, em comunidades, no Brasil e fora dele. Construir comunidade faz parte do propósito, não é só obter contribuições. E essa comunidade precisa poder compreender, adaptar e continuar suas ferramentas. Por isso, queremos ampliar a autonomia digital aos poucos, com dados tratados com responsabilidade e escolhas honestas sobre custo, risco e dependência. Os seis princípios orientam como fazer isso. O objetivo não é a arquitetura mais impressionante: é algo que faça sentido usar e que tenhamos condições de cuidar juntos.
 
 Para uma futura apresentação pessoal, confirmar identidade, relação com a iniciativa e autorização antes de acrescentar assinatura, trajetória ou primeira pessoa singular. A introdução técnica não substitui a explicação humana do propósito.
 
 ## Ordem editorial sugerida para o futuro site
 
-1. Abertura: o que nos move e para quem isso faz sentido.
-2. Apresentação: o que é a iniciativa e quais são suas duas frentes.
-3. Seis princípios: a versão pública, com acesso à leitura estendida.
-4. Comunidade: quem pode participar e como contribuir sem precisar ser da área técnica.
-5. Possibilidades: exemplos identificados como ideias, não portfólio nem cronograma.
-6. Convite e contato: apenas ações com destino real.
+1. Por quê: dedicar conhecimento a algo que faça diferença; distinguir troca, descoberta e vida em comum de consumo prolongado.
+2. Por que agora: ferramentas disponíveis e aproximação entre talento, universidades, pessoas no Brasil e fora dele e conhecimento dos problemas — sem corrida por código, métricas ou superlativos.
+3. Comunidade como propósito: relações, aprendizado e participação nas escolhas, não um funil de recrutamento; apresentar comunidade e autonomia digital gradual como frentes inseparáveis.
+4. Seis princípios: explicar como orientar essa construção, com a versão pública e acesso à leitura estendida.
+5. Participação: quem pode se aproximar e quais contribuições fazem sentido, incluindo pessoas de fora da área técnica.
+6. Possibilidades e convite: exemplos identificados como ideias, não portfólio nem cronograma; ações apenas com destino real.
 
 Esta é uma ordem de leitura, não uma especificação de componentes ou uma tarefa de implementação. A referência visual não determina novos fatos, números ou promessas.
 

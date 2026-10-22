@@ -12,6 +12,8 @@ Usar uma ideia forte por abertura e deixar o texto seguinte explicar o que ela s
 
 As citações são documentos de origem, não provas de que a Embraso já presta serviços, reúne uma comunidade organizada ou adotou uma licença. Para representar a posição consolidada, preferir o texto canônico. Se houver corte dentro de uma citação, sinalizá-lo; se houver reescrita, mudar a classificação para adaptação.
 
+Ao compor uma apresentação, não começar por um inventário de princípios ou de habilidades. Explicar primeiro por que dedicar esforço a isso, a diferença entre consumir e trocar e a oportunidade de aproximar ferramentas disponíveis, conhecimento e problemas reais. Em seguida, apresentar comunidade e autonomia gradual como caminho; os princípios respondem a como construir. Essa sequência combina a motivação do texto de Thiago com os critérios do manifesto original, sem atribuir acordo aos autores. A [voz e terminologia](06-voz-e-terminologia.md) detalha o raciocínio; uma chamada isolada não precisa contê-lo inteiro.
+
 ## 2. Assinatura escolhida e descritor proposto
 
 ### NOVA — assinatura principal
@@ -143,6 +145,10 @@ Nenhuma entrada desta seção é citação literal. Os códigos remetem aos reco
 | A3 | Liberdade para usar e adaptar. Sustentação para continuar. | O1, O4 e os trechos sobre manutenção do manifesto original. Resume duas exigências; não declara uma licença ou um modelo de financiamento existente. | Chamada de uma explicação sobre software livre e trabalho remunerado. |
 | A4 | Autonomia se constrói aos poucos, sem perder a direção. | O3 e T5. Explicita a autonomia que a frase “chegar lá” pressupunha. | Fechamento de apresentação ou início de uma seção sobre escolhas graduais. |
 | A5 | Começar pela vida das pessoas, não pela ferramenta da vez. | T4. Acrescenta um contraste editorial com a escolha de ferramenta; não é frase do original. | Introdução à escuta de necessidades; evitar usá-la para desqualificar curiosidade técnica. |
+| A6 | Queremos dedicar o que sabemos a algo que faça diferença na vida das pessoas, para além do trabalho e do consumo. | Abertura e “Software que nos valoriza como brasileiros”, no manifesto de Thiago; “Nossa motivação”, no manifesto original. Preserva o desejo de usar capacidade para o bem comum sem importar a caracterização jurídica ou exigir renúncia a renda. | Abrir uma apresentação explicando por que vale construir, antes das formas de contribuição. |
+| A7 | Passar horas consumindo conteúdo não é o mesmo que trocar com alguém. Queremos espaço para conversar e descobrir o que não estávamos procurando. | T1 e as imagens da biblioteca, da livraria e da locadora na mesma seção do texto de Thiago. Reescreve a distinção entre consumo, troca e descoberta sem reproduzir uma condenação geral das redes. | Desenvolver o motivo humano depois de uma abertura; não anuncia um espaço comunitário já disponível. |
+| A8 | Ferramentas podem encurtar o caminho até algo que funciona. A oportunidade é aproximar quem sabe construir de quem conhece o problema, no Brasil e fora dele. | T2, T3 e “Por que este momento é tão oportuno?”, no manifesto de Thiago. Substitui superlativos e alegações de custo por uma possibilidade que depende de conhecimento e cuidado. | Explicar por que agir agora, sem hype, métricas de produtividade ou promessa de qualidade automática. |
+| A9 | Construir comunidade não é só reunir gente para fazer software. É aprender, compartilhar conhecimento e criar relações para cuidar do que fizermos — com mais autonomia a cada passo. | T5, “As duas frentes que precisam orientar a Embraso” e “Este manifesto não é suficiente”, no texto de Thiago; sustentação comunitária em “1. Liberdade por padrão”, no original. Aproxima relações e continuidade, sem declarar uma comunidade formada. | Transição entre a motivação e os princípios, ou abertura de um convite à troca. |
 
 ## 6. NOVAS — chamadas e títulos de seção
 
@@ -190,8 +196,8 @@ Não usar trechos para sugerir que software livre proíbe reaproveitamento comer
 
 ## 10. Rotas para compor uma peça completa
 
-- **Apresentar a iniciativa:** assinatura ou descritor + [apresentação e convites](03-apresentacao-e-convites.md). Explicar o estágio da construção antes de chamar alguém para agir.
-- **Explicar uma posição:** um recorte pertinente + [manifesto público](01-manifesto-publico.md) e, quando necessário, [manifesto estendido](02-manifesto-estendido.md). Não remontar um manifesto paralelo com slogans.
-- **Convidar pessoas:** uma pergunta concreta + [comunidade e participação](04-comunidade-e-participacao.md). Mostrar que a contribuição pode ir além do código e não precisa ser uma dívida de tempo.
+- **Apresentar a iniciativa:** usar A6 como motivo, A7 como contraste e A8 como oportunidade; A9 liga esse argumento às duas frentes e aos seis princípios. É uma rota de raciocínio, não uma ordem para colar quatro chamadas: compor um texto contínuo, com o tamanho e o vocabulário adequados ao público. A assinatura ou o descritor podem acompanhar, sem substituir a explicação. Usar a [apresentação e os convites](03-apresentacao-e-convites.md) e, para o manifesto, preservar sua introdução canônica.
+- **Explicar uma posição:** depois de situar o motivo, escolher um recorte pertinente + [manifesto público](01-manifesto-publico.md) e, quando necessário, [manifesto estendido](02-manifesto-estendido.md). Os critérios explicam como fazer; não remontar um manifesto paralelo com slogans.
+- **Convidar pessoas:** uma pergunta concreta + [comunidade e participação](04-comunidade-e-participacao.md). Mostrar o valor da conversa, do aprendizado e do encontro antes de listar tarefas; contribuir pode ir além do código e não precisa ser uma dívida de tempo. Explicar o estágio da construção antes de chamar alguém para agir.
 - **Abrir contato:** texto breve + [contato e microtextos](05-contato-e-microtextos.md). O convite só vira ação quando houver destino disponível.
 - **Revisar palavras e alegações:** [voz e terminologia](06-voz-e-terminologia.md) e [fontes e decisões editoriais](08-fontes-e-decisoes-editoriais.md).

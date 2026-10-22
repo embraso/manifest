@@ -31,6 +31,14 @@ The website will present Embraso, publish its projects, gather leads, and invite
 
 Embraso's editorial purpose is to bring people and knowledge together to build and sustain useful, free software, strengthening communities and gradual digital autonomy across Brazil's different realities. Community and digital autonomy are inseparable strategic fronts, not extra manifesto principles.
 
+### Narrative contract
+
+Both audience versions and the shared manifesto must establish a motivating argument before presenting principles or contribution skills: dedicate knowledge and effort to useful work beyond employment and consumption; distinguish passive consumption from actual exchange and unexpected discovery; explain the opportunity to connect available development tools and people with relevant knowledge in Brazil and abroad with those who know the problems. Community-building and gradual digital autonomy follow as inseparable fronts; the six principles then answer how to build and sustain.
+
+This architecture preserves two distinct source contributions: Thiago's narrative supplies why, with whom, and why now; the original manifesto supplies construction and continuity criteria. It is an editorial synthesis, not recorded author consensus. Community relationships, learning, and meeting around problems are purposes, not merely a recruitment or lead-capture funnel. Neither technical vocabulary nor a skill inventory can replace this argument on `/devs/`. Short surfaces can condense it while linking to its development.
+
+Use the [public manifesto's introduction](docs/01-manifesto-publico.md) as canonical copy, the [voice guide](docs/06-voz-e-terminologia.md) for the sequence, and the [phrase bank](docs/07-banco-de-frases.md) for attributed adaptations. Keep literal quotations literal and label adaptations as such in editorial records. Do not import unsupported political, productivity, or cost claims, nonprofit/legal status, or free-price promises from the source texts.
+
 The internal [mission and vision](docs/interno/02-missao-e-visao.md) and [progress criteria](docs/interno/03-objetivos-e-sinais-de-progresso.md) are proposals for discussion. They emphasize practical usefulness, meaningful participation, freedom, and continuity rather than attention capture or audience growth alone. No numerical website targets have been approved.
 
 ## Positioning

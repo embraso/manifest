@@ -4,11 +4,13 @@ Uso: proposta de texto público. Esta é a versão curta canônica; os nomes e a
 
 ## Liberdade se constrói junto.
 
-Queremos uma tecnologia que ajude a viver, não que ocupe a vida inteira. Que aproxime pessoas, compartilhe conhecimento e resolva problemas de quem está aqui.
+Queremos dedicar o que sabemos a algo que faça diferença na vida das pessoas. A Embraso é uma iniciativa para reunir gente e construir software útil, livre e acessível às diferentes realidades do Brasil — para aprender, criar, organizar e encontrar outras pessoas, não apenas trabalhar ou consumir.
 
-A Embraso é uma iniciativa para reunir pessoas em torno de software útil, livre e acessível às diferentes realidades do Brasil. Para estudar, criar, trabalhar, organizar um coletivo, tocar um pequeno negócio ou encontrar gente com quem fazer algo que importa.
+Passar horas consumindo conteúdo não é o mesmo que trocar com alguém. Queremos ferramentas que ajudem a conversar, descobrir o inesperado e fazer coisas juntos, em vez de organizar tudo para prolongar o tempo diante da tela.
 
-Nosso caminho tem duas frentes inseparáveis: construir comunidade e ampliar nossa autonomia digital. Não precisamos começar com tudo resolvido. Precisamos saber para onde estamos indo — e poder escolher o caminho juntos.
+Ferramentas de desenvolvimento podem encurtar o caminho entre uma ideia e algo que funciona. Há gente no Brasil e fora dele com conhecimento e vontade de contribuir para a vida por aqui. A oportunidade está em aproximar essas pessoas de quem conhece os problemas — não simplesmente em produzir mais código.
+
+Por isso, nosso caminho tem duas frentes inseparáveis: construir comunidade e ampliar nossa autonomia digital. Publicar software não basta: precisamos de relações, troca de conhecimento e condições para cuidar do que criamos. Os seis princípios a seguir orientam como queremos fazer essa construção.
 
 ## 1. Liberdade por padrão
 
