@@ -18,6 +18,7 @@ const messages = getMessages(locale).shell;
 const technical = audience === 'devs';
 const home = technical ? '/devs/' : '/';
 const description = messages.metadata.description;
+const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 ---
 
 <!doctype html>
@@ -26,6 +27,7 @@ const description = messages.metadata.description;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     <meta name="theme-color" content={technical ? '#0b1d13' : '#f4eedf'} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

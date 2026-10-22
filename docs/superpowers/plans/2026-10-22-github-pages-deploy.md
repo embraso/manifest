@@ -28,6 +28,7 @@
 - Pages artifact and GitHub Actions Pages source: inspect workflow permissions/actions and repository Pages source after configuration (Task 1).
 - Custom-domain CNAME survives artifact creation and serves over HTTPS: inspect `dist/CNAME`, Pages configuration, and `https://embraso.com.br/CNAME` after deploy (Task 1).
 - Root route URLs, trailing slashes, participation anchor, and root-relative assets/navigation: verify live route responses, fragment target, and loaded links/assets (Task 1).
+- Every live route exposes one canonical link for its exact path under the confirmed `https://embraso.com.br` origin (Task 1).
 - Existing page content, locale, and behavior remain unchanged: compare the three live pages and exercise existing navigation/anchor behavior against the pre-deploy site (Task 1).
 
 ---
@@ -40,6 +41,7 @@
 - Create: `public/CNAME` — exact content `embraso.com.br`.
 - Modify: `docs/README.md` — correct the technical context's hosting and deployment status.
 - Modify: `PRODUCT.md` — replace obsolete Cloudflare hosting/deployment statements with GitHub Pages and the confirmed custom domain.
+- Modify: `src/layouts/SiteLayout.astro` — emit canonical URLs from Astro's configured production site origin.
 
 **Interfaces:**
 - Consumes: existing `npm run build`, `package-lock.json`, and Astro's `dist/` output.
@@ -48,10 +50,11 @@
 - [x] Add `site: 'https://embraso.com.br'` to `astro.config.mjs`; do not add a base path or alter static/trailing-slash settings.
 - [x] Add `public/CNAME` containing only `embraso.com.br`.
 - [x] Add `.github/workflows/deploy.yml`: trigger only on `push` to `main`; guard both jobs to the canonical repository; grant build only `contents: read` and deploy only `pages: write` plus `id-token: write`; check out the source, configure Node 24, run `npm ci` and `npm run build`, upload `dist/`, and deploy through the `github-pages` environment. Do not add Jekyll, a manual trigger, or another deploy path.
+- [x] Emit one route-correct canonical URL per page from `Astro.site` in `SiteLayout.astro`; omit it if the configured production origin is unset.
 - [x] Restrict the `github-pages` deployment environment to `main`; add CODEOWNERS for deployment controls and require reviewed PRs on `main`; disable force pushes/deletions while retaining administrator bypass.
 - [x] Update the hosting and deployment facts in `PRODUCT.md` to GitHub Pages at `https://embraso.com.br`; retain existing stack and product facts.
 - [x] Update the hosting statement in the English technical-context paragraph of `docs/README.md` so it identifies GitHub Pages at `https://embraso.com.br` as the chosen deployment and leaves unrelated intake and project facts unchanged.
 - [x] Run `npm ci` then `npm run build`; the Astro build produced `dist/CNAME` containing `embraso.com.br`, and pages at `dist/index.html`, `dist/devs/index.html`, and `dist/manifesto/index.html`.
 - [x] Configure repository Pages source as GitHub Actions and set the custom domain `embraso.com.br` with HTTPS enforcement.
-- [ ] Push the integrated change to `main`; inspect the Actions run and require successful workflow completion and Pages deployment.
-- [ ] Verify the live site over HTTPS: `/`, `/devs/`, and `/manifesto/` return their corresponding pages at exactly those paths; `/#participacao` resolves to the existing destination; `CNAME` identifies `embraso.com.br`; internal navigation and root-relative assets load; existing content, locale, and behavior are unchanged. Confirm Pages reports the custom domain and HTTPS enabled.
+- [x] Push the integrated change to `main`; the latest Actions run completed successfully with a successful build and Pages deployment.
+- [ ] Verify the live site over HTTPS: `/`, `/devs/`, and `/manifesto/` return their corresponding built pages at exactly those paths; each contains one route-correct canonical URL; `/#participacao` resolves to the existing destination; `CNAME` identifies `embraso.com.br`; internal navigation and root-relative assets load; existing content, locale, and behavior are unchanged. Confirm Pages reports the custom domain and HTTPS enabled.

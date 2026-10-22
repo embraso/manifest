@@ -38,6 +38,8 @@ The home page also has the existing participation anchor `https://embraso.com.br
 
 Use the first approach: one workflow, triggered automatically by pushes to `main`, with no parallel/manual deployment mechanism. It should use a supported, explicitly selected Node.js version; run `npm ci` and `npm run build`; publish `dist/` using the GitHub Pages artifact/deployment actions; and apply least-privilege permissions separately to build and deploy jobs. The workflow must skip unless `github.repository` is exactly `embraso/manifest`, and the `github-pages` environment must allow deployments only from `main`. Require pull requests for changes to `main`, with a code-owner review for deployment configuration; disable force pushes and branch deletion while preserving administrator bypass. Preserve `embraso.com.br` via `public/CNAME`. GitHub Pages repository settings must use the Actions deployment source. The static files must be served from the domain root, preserving Astro's trailing-slash routes and root-relative asset/navigation URLs. A fork may run its own workflow copy, but must not deploy to the canonical repository's Pages environment or change canonical settings.
 
+Each rendered route also emits a canonical link from its pathname and the confirmed production origin configured in `astro.config.mjs`; do not synthesize a canonical URL when that origin is unset.
+
 No changes to editorial content or the site's visual identity are part of deployment. Existing content and browser behavior must remain unchanged.
 
 ## Acceptance criteria
@@ -49,3 +51,4 @@ No changes to editorial content or the site's visual identity are part of deploy
 5. Only the approved `main` push deployment path is configured; no Jekyll publishing, committed build output, or Cloudflare deployment is active for this release.
 6. A workflow run originating from a fork is skipped and cannot access the canonical repository's Pages environment; the environment accepts deployments only from `main`.
 7. `main` requires an approved pull request, deployment configuration requires code-owner review, and force pushes/deletion are disabled; administrator bypass remains available to authorized repository administrators.
+8. `/`, `/devs/`, and `/manifesto/` each emit exactly one canonical link using `https://embraso.com.br` and their route path.
