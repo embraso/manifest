@@ -48,11 +48,11 @@ const possibilities = [
         <img class="flying-toucan" src={toucan.src} alt="" width="472" height="208" fetchpriority="high" />
       </div>
       <h1 id="folheto-title">
-        <span>Tecnologia</span>
-        <span>livre.</span>
-        <span class="human-line">Gente por <mark>perto.</mark></span>
+        <span>Liberdade</span>
+        <span>se constrói</span>
+        <span><mark>junto.</mark></span>
       </h1>
-      <p class="hero-intro">A Embraso é uma iniciativa para reunir pessoas e construir software útil e livre, fortalecendo comunidades e a autonomia digital no Brasil.</p>
+      <p class="hero-intro">Queremos reunir pessoas e conhecimentos para criar software útil e livre, pensado para as diferentes realidades do Brasil.</p>
       <div class="hero-actions">
         <a class="button" href="/manifesto/">Ler o manifesto <span class="action-arrow" aria-hidden="true"></span></a>
         <a class="text-link" href="#participacao">Como fazer parte dessa ideia</a>
@@ -262,20 +262,12 @@ const possibilities = [
     display: block;
   }
 
-  .hero h1 .human-line {
-    margin-top: 0.16em;
-    font-size: 0.67em;
-    line-height: 1.06;
-    word-spacing: 0.08em;
-  }
-
-  .human-line mark {
+  .hero h1 mark {
     background: var(--yellow);
     color: inherit;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
     padding-inline: 0.04em;
-    margin-left: 0.08em;
   }
 
   .hero-intro {
@@ -741,10 +733,6 @@ const possibilities = [
       font-size: clamp(3.75rem, 8.8vw, 5.5rem);
     }
 
-    .hero h1 .human-line {
-      font-size: 0.61em;
-    }
-
     .print-plate {
       min-height: 26rem;
       padding: 1rem;
@@ -792,10 +780,6 @@ const possibilities = [
 
     .hero h1 {
       font-size: clamp(3.5rem, 14vw, 5.5rem);
-    }
-
-    .hero h1 .human-line {
-      font-size: 0.68em;
     }
 
     .hero-intro {

@@ -32,8 +32,8 @@ export const principles = [
   },
   {
     title: 'Transparência e liberdade algorítmica',
-    lead: 'Mais poder de escolha. Mais espaço para a troca.',
-    body: 'Queremos compreender os critérios que organizam o que vemos e poder questionar decisões automatizadas. Defendemos escolhas sobre recomendações e espaço para descobrir o inesperado, conversar e discordar com respeito. Atenção não deve ser uma armadilha; conexão deve favorecer relações reais, não apenas consumo sem fim.',
+    lead: 'Liberdade para escolher o que acompanhar.',
+    body: 'Não queremos depender de recomendações que decidem o que vemos sem deixar claros seus critérios e interesses. Defendemos poder escolher quem e o que acompanhar, entender por que um conteúdo aparece e desligar recomendações sem perder o acesso às pessoas e aos assuntos que seguimos. Queremos espaço para descobrir o inesperado e conversar, sem que tudo seja organizado para prolongar o consumo. Decisões automatizadas devem poder ser compreendidas e questionadas.',
   },
 ];
 

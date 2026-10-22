@@ -14,11 +14,11 @@ A Embraso quer aproximar pessoas para construir software útil e ampliar a auton
 - **Brasileira:** considera diferentes lugares, repertórios, corpos, rendas, equipamentos e conexões. Não representa o país inteiro como uma experiência única.
 - **Com algum encanto:** cabe uma imagem boa, uma frase que fica, um convite leve. Não cabe transformar todo parágrafo em slogan.
 
-**Assinatura proposta:** Tecnologia livre. Gente por perto.
+**Assinatura escolhida:** Liberdade se constrói junto.
 
 **Descritor proposto:** Software útil, feito em comunidade, para as diferentes realidades do Brasil.
 
-São formulações editoriais novas, não citações dos manifestos nem afirmações de que já existe uma comunidade em operação. A assinatura expressa uma direção; o descritor deve acompanhar uma apresentação que deixe claro o estágio da iniciativa. Não usar nenhum dos dois como selo de licença ou de funcionalidade entregue.
+São formulações editoriais novas, não citações dos manifestos nem afirmações de que já existe uma comunidade em operação. A assinatura foi escolhida pelo responsável pela iniciativa em 22 de outubro de 2026 e liga liberdade à construção coletiva. O descritor continua proposto; a apresentação deve explicar o foco em software útil e livre e deixar claro o estágio da iniciativa. Não usar nenhum dos dois como selo de licença ou de funcionalidade entregue.
 
 ## 2. Como nos dirigimos às pessoas
 
@@ -37,7 +37,7 @@ Em uma página institucional, o padrão é “queremos”, “defendemos” e �
 
 | Superfície | Tom e ritmo | Exemplo de formulação proposta |
 | --- | --- | --- |
-| Abertura do site | Curto, acolhedor, com uma ideia central | “Tecnologia livre. Gente por perto.” Depois, explicar a proposta sem outro slogan. |
+| Abertura do site | Curto, acolhedor, com uma ideia central | “Liberdade se constrói junto.” Depois, explicar a proposta de reunir pessoas para criar software útil e livre, sem outro slogan. |
 | Manifesto | Firme, argumentativo, com escolhas e limites | “Defendemos a liberdade de usar, estudar, modificar e compartilhar software.” |
 | Apresentação do projeto | Direto sobre propósito e estágio | “Estamos construindo uma iniciativa para aproximar pessoas e criar software útil para as diferentes realidades do Brasil.” |
 | Convite à comunidade | Aberto, específico, sem teste de pertencimento | “Uma boa pergunta também pode ser um começo.” |
@@ -99,11 +99,11 @@ Nomear quem pode se beneficiar e de quê. Uma ferramenta que ajude a compreender
 
 ### Algoritmos e atenção
 
-**Algoritmos** não são inimigos abstratos: são procedimentos, critérios e escolhas que participam do funcionamento dos sistemas. Quando o assunto for um feed ou uma recomendação, dizer isso. Perguntar o que está sendo priorizado, com qual objetivo e que controle a pessoa tem.
+**Algoritmos** não são inimigos abstratos: são procedimentos, critérios e escolhas que participam do funcionamento dos sistemas. A crítica é à dependência de recomendações obscuras e à falta de controle sobre o que aparece, não à existência de qualquer recomendação. Nomear o efeito: não saber por que um conteúdo foi mostrado, não conseguir escolher a ordem ou precisar aceitar sugestões para acompanhar quem se escolheu seguir. Não é preciso citar empresas para explicar essa dependência.
 
-**Preferir:** “Queremos alternativas em que as pessoas entendam os critérios das recomendações e tenham mais escolha sobre o que recebem.”
+**Preferir:** “Defendemos poder escolher o que acompanhar, entender por que um conteúdo aparece e desligar recomendações sem perder o acesso ao que escolhemos seguir.”
 
-**Evitar:** “Sem algoritmos”, “toda recomendação manipula” ou “as plataformas controlam tudo o que você pensa”. A crítica à concentração de poder e à disputa por atenção fica mais forte quando é específica e verificável, sem tratar as pessoas como incapazes de decidir.
+**Evitar:** “Sem algoritmos”, “toda recomendação manipula” ou “as plataformas controlam tudo o que você pensa”. Não prometer neutralidade por usar ordem cronológica ou código aberto, nem descrever controles como funcionalidades já entregues. A crítica à concentração de poder e à disputa por atenção fica mais forte quando explica a opacidade e a falta de escolha, sem tratar as pessoas como incapazes de decidir.
 
 ### Pragmatismo
 
@@ -150,7 +150,7 @@ Os textos da coluna “antes” são exemplos inventados de problemas editoriais
 | “Feito para o brasileiro médio.” | “Pensado para as diferentes realidades do Brasil.” | Não transforma um país desigual em um perfil único. O texto seguinte deve explicar quais diferenças são relevantes. |
 | “Junte-se ao nosso time de devs de alta performance.” | “Queremos reunir quem programa, pesquisa, escreve, desenha ou conhece de perto um problema que merece atenção.” | Abre o convite sem exigir uma identidade técnica. |
 | “Doe seu tempo e faça a sua parte.” | “Sua experiência pode ajudar a entender por onde começar.” | Reconhece valor sem dívida moral ou promessa de oportunidade aberta. |
-| “Nossos algoritmos devolvem o controle a você.” | “Queremos que as pessoas compreendam os critérios das recomendações e possam escolher como usá-las.” | Troca uma funcionalidade inventada por uma direção compreensível. |
+| “Nossos algoritmos devolvem o controle a você.” | “Defendemos poder escolher o que acompanhar, entender por que um conteúdo aparece e desligar recomendações.” | Troca uma funcionalidade inventada por escolhas concretas defendidas como direção. |
 | “Qualquer pessoa pode usar, sem dificuldade.” | “Queremos reduzir barreiras de acesso e aprender com as dificuldades de quem usa.” | Não confunde boa intenção com acessibilidade demonstrada. |
 | “O proprietário é sempre inimigo da liberdade.” | “Uma ferramenta pode ajudar agora e criar dependências depois. Precisamos olhar para as duas coisas.” | Faz a distinção necessária sem abandonar o princípio. |
 

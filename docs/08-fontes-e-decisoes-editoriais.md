@@ -32,6 +32,17 @@ Fontes auxiliares locais: `notes.txt` traz ideias preliminares de projetos, iden
 
 Decisão central: conservar os seis princípios como arquitetura pública e usar as duas frentes — comunidade e autonomia — como fio narrativo. Não transformar as duas frentes em dois princípios adicionais.
 
+## Revisão editorial de 22 de outubro de 2026
+
+**Origem e decisão:** nesta revisão, o responsável pela iniciativa escolheu “Liberdade se constrói junto.” como assinatura editorial e pediu que o sexto princípio expressasse melhor a saída da dependência de recomendações obscuras, sem citar empresas. A redação da assinatura recebeu acento e concordância naturais em português brasileiro; não é uma transcrição literal da mensagem nem uma citação das fontes.
+
+A nova assinatura substitui a proposta “Tecnologia livre. Gente por perto.”, considerada vaga por falar de proximidade sem explicitar construção coletiva. A formulação anterior fica preservada apenas neste registro da decisão, não como alternativa de uso corrente. A assinatura escolhida precisa de uma apresentação que situe a proposta de reunir pessoas para criar software útil e livre; não anuncia produtos ou comunidade já disponíveis. O descritor de apoio continua proposto.
+
+O título **Transparência e liberdade algorítmica** e a ordem dos seis princípios permanecem. Sua interpretação passa a explicitar escolhas concretas: saber por que um conteúdo aparece, escolher fontes, pessoas e assuntos, alterar critérios e desligar recomendações sem perder o acesso ao que se escolheu seguir. A crítica é à opacidade, à distribuição imposta e à captura de atenção, não a todos os algoritmos. Opções cronológicas ou não personalizadas são caminhos possíveis, não garantias de neutralidade.
+
+**Condição de publicação:** apresentar essas escolhas como princípios e direção de construção, não como funcionalidades entregues. Manter a possibilidade de questionar decisões automatizadas, o espaço para descoberta e a proteção de dados. As cópias históricas das fontes não mudam. O registro desta escolha não aprova automaticamente os demais textos, o descritor, uma campanha formal ou qualquer alegação operacional.
+
+
 ## Mapa da fusão
 
 | Destino canônico | Contribuição do primeiro manifesto | Contribuição do Thiago | Tratamento |
@@ -41,7 +52,7 @@ Decisão central: conservar os seis princípios como arquitetura pública e usar
 | 3. Segurança por princípio | Coleta mínima, criptografia, acesso, backups, LGPD, limites | Rejeição à exploração dos dados e da atenção | Proteção desde a concepção, sem garantia absoluta nem selo de conformidade |
 | 4. Pragmatismo com propósito | Custos reais, planos gratuitos, dependências e migração | Oportunidade de desenvolvimento, subsídios e ferramentas existentes | Usar recursos com critérios e limites; retirar promessas de escala quase sem custo |
 | 5. Tecnologia para o bem comum | Diferentes realidades, pequenos negócios, direitos, dados públicos, ambiente | Universidades, cultura, lazer, coletivos e vida cotidiana | Escuta e utilidade para além da produtividade; exemplos explicitamente possíveis |
-| 6. Transparência e liberdade algorítmica | Título do ponto 6, resumo final e transparência transversal | Consumo sem troca, bolhas, descoberta e conexão | Desenvolver o ponto ausente com escolhas, critérios, contestação e relações reais |
+| 6. Transparência e liberdade algorítmica | Título do ponto 6, resumo final e transparência transversal | Consumo sem troca, bolhas, descoberta e conexão | Desenvolver o ponto ausente com critérios compreensíveis, escolha do que acompanhar, possibilidade de desligar recomendações, contestação e relações reais |
 
 O ponto 6 do primeiro texto não tem corpo: há um título entre separadores. A síntese não afirma ter recuperado um trecho faltante. O desenvolvimento é uma nova redação apoiada no resumo final desse texto e nas seções sobre redes e comunidade do Thiago.
 

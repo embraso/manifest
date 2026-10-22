@@ -74,9 +74,9 @@ Legal status, adopted software licenses, financing, service pricing, team identi
 
 - **Working name: Embraso.** Do not infer a legal entity, government affiliation, or exclusive national membership.
 - **Voice:** clear, warm, concrete, confident, and Brazilian without manufactured slang, corporate pitch, exclusionary nationalism, or guilt about contributing.
-- **Proposed editorial signature:** “Tecnologia livre. Gente por perto.”
+- **Selected editorial signature:** “Liberdade se constrói junto.” The owner chose this direction on 22 October 2026; the wording uses standard Brazilian Portuguese spelling and agreement.
 - **Proposed descriptor:** “Software útil, feito em comunidade, para as diferentes realidades do Brasil.”
-- The signature and descriptor are editorial proposals, not a formally approved campaign or evidence of an operating community.
+- The signature is selected; the descriptor remains an editorial proposal. Neither establishes a formal campaign, an operating community, a license, or released products. Explain the intent to bring people together to create useful, free software rather than making the signature carry the entire proposition.
 - **Owner's visual constraint:** preserve the identity of the [supplied Claude artifact](https://claude.ai/artifact/BWKYPiNDodsXjPPY1c81dp#page-dcb81aee8d83), improve its craft, and use appropriate animation. The owner selected A · Folheto for the public version and B · Terminal for the developer version. The implemented system is recorded in [DESIGN.md](DESIGN.md).
 - **Reference evidence:** rendered inspection succeeded through Chrome during implementation. Both artboards were opened at full-window scale; their typography, palette, composition, and supplied illustrations informed the build. Placeholder projects, membership forms, foundation status, and fictional metrics in the reference were not adopted as product facts. The earlier inspection limitation remains a historical record in the [editorial memory](docs/08-fontes-e-decisoes-editoriais.md).
 
@@ -101,7 +101,7 @@ Keep the six canonical Portuguese names and their order when presenting the mani
 3. **Segurança por princípio** — privacy and proportionate protection from the outset, without absolute guarantees.
 4. **Pragmatismo com propósito** — useful choices now that preserve options for tomorrow.
 5. **Tecnologia para o bem comum** — build with affected people across different contexts; recognize maintenance and fairly paid work.
-6. **Transparência e liberdade algorítmica** — understandable criteria, choices, and the ability to question automated decisions; relationships rather than attention traps.
+6. **Transparência e liberdade algorítmica** — freedom from dependence on opaque recommendations: choose sources and people to follow, understand why content appears, change criteria, and turn recommendations off without losing access to chosen follows. Preserve discovery and the ability to question automated decisions; these are principles, not shipped controls or a rejection of all algorithms.
 
 The English explanations are implementation context, not replacement public titles or approved translations. Change the short manifesto, extended interpretation, and affected derivatives together if the principles change.
 

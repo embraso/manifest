@@ -4,7 +4,7 @@
 
 Embraso's first static Astro website and its language/direction reference: an initiative to bring people together, build useful free software, strengthen communities, and expand digital autonomy across Brazil's different realities.
 
-The identity combines a position on software freedom, privacy, the common good, and meaningful choice with a warm, concrete, approachable Brazilian voice. Two efforts move together: community-building and gradual digital autonomy. The proposed editorial signature is “Tecnologia livre. Gente por perto.”; it is not a formally approved campaign.
+The identity combines a position on software freedom, privacy, the common good, and meaningful choice with a warm, concrete, approachable Brazilian voice. Two efforts move together: community-building and gradual digital autonomy. The owner selected the editorial signature “Liberdade se constrói junto.” on 22 October 2026. This choice does not establish a formal campaign or operational claims.
 
 **Current stage: first homepage implementation, alongside ongoing editorial development.** The owner authorized two audience-specific versions: A · Folheto at `/` (default) and B · Terminal at `/devs/`, linked by a visible audience switch, plus a shared manifesto at `/manifesto/`. Use [PRODUCT.md](PRODUCT.md) for product decisions and local commands, and [DESIGN.md](DESIGN.md) for the implemented visual system. Contact intake, membership, project publishing, and deployment require their unresolved operational facts; do not simulate them.
 

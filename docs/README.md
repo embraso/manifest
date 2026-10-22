@@ -53,7 +53,7 @@ Não configurar futura publicação automática de todo `docs/`. O site deve rec
 4. Os guias de apresentação, comunidade, contato e voz desdobram o mesmo posicionamento. Não criam promessas novas.
 5. Fontes originais e manifestos externos explicam a origem; não substituem a redação proposta nem comprovam fatos operacionais.
 
-Duas frentes atravessam a série: **comunidade e autonomia digital gradual**. A assinatura editorial proposta é **“Tecnologia livre. Gente por perto.”** O descritor é **“Software útil, feito em comunidade, para as diferentes realidades do Brasil.”** Ambos são criações da síntese, não citações de origem.
+Duas frentes atravessam a série: **comunidade e autonomia digital gradual**. A assinatura editorial escolhida pelo responsável pela iniciativa em 22 de outubro de 2026 é **“Liberdade se constrói junto.”** O descritor proposto é **“Software útil, feito em comunidade, para as diferentes realidades do Brasil.”** Ambos são criações editoriais, não citações de origem. A escolha da assinatura e a revisão do sexto princípio estão registradas na [memória editorial](08-fontes-e-decisoes-editoriais.md#revisão-editorial-de-22-de-outubro-de-2026); não constituem aprovação de todos os textos nem comprovação de atividade institucional.
 
 ## O que está registrado e o que segue em aberto
 

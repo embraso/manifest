@@ -8,17 +8,17 @@ Usar uma ideia forte por abertura e deixar o texto seguinte explicar o que ela s
 
 - **VERBATIM — extração literal:** palavras dos arquivos-fonte, sem correção ou atualização. A apresentação pode retirar o negrito original, mas não altera o texto. A fonte e a seção estão indicadas em cada entrada.
 - **ADAPTADA — redação editorial:** reelaboração de uma passagem identificada. Não apresentar entre aspas como fala do autor nem como trecho literal do manifesto.
-- **NOVA — proposta editorial:** criação para este conjunto de documentos, inclusive a assinatura principal. Não atribuir aos manifestos originais.
+- **NOVA — criação editorial:** criação para este conjunto de documentos, inclusive a assinatura principal. Distinguir uma proposta de uma escolha registrada; nenhuma delas é citação dos manifestos originais.
 
 As citações são documentos de origem, não provas de que a Embraso já presta serviços, reúne uma comunidade organizada ou adotou uma licença. Para representar a posição consolidada, preferir o texto canônico. Se houver corte dentro de uma citação, sinalizá-lo; se houver reescrita, mudar a classificação para adaptação.
 
-## 2. Assinatura e descritor propostos
+## 2. Assinatura escolhida e descritor proposto
 
 ### NOVA — assinatura principal
 
-**Tecnologia livre. Gente por perto.**
+**Liberdade se constrói junto.**
 
-**Uso:** abertura de apresentação, assinatura de uma peça ou fechamento curto. Une as duas frentes da proposta: liberdade tecnológica e aproximação entre pessoas. É uma síntese editorial nova, não uma frase extraída dos manifestos. “Gente por perto” não promete atendimento, presença física ou uma rede já disponível.
+**Uso:** abertura de apresentação, assinatura de uma peça ou fechamento curto. Escolhida pelo responsável pela iniciativa em 22 de outubro de 2026, liga liberdade à construção coletiva. É uma criação editorial nova, não uma frase extraída dos manifestos. Precisa de contexto sobre software útil e livre; não comprova uma comunidade já organizada nem entregas existentes. A escolha e a substituição da proposta anterior estão registradas na [memória editorial](08-fontes-e-decisoes-editoriais.md#revisão-editorial-de-22-de-outubro-de-2026).
 
 ### NOVA — descritor de apoio
 

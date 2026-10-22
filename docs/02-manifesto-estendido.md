@@ -14,7 +14,7 @@ Não precisamos aceitar essa relação como a única possível.
 
 Queremos software que nos ajude a viver, em vez de disputar cada intervalo da nossa atenção. Que torne o conhecimento mais fácil de compartilhar. Que aproxime pessoas de outras pessoas e dê às comunidades mais capacidade de decidir sobre o que usam e constroem.
 
-**Tecnologia livre. Gente por perto.**
+**Liberdade se constrói junto.**
 
 É nessa direção que queremos construir a Embraso: uma iniciativa para reunir pessoas, desenvolver software útil e ampliar a autonomia digital nas diferentes realidades do Brasil.
 
@@ -167,27 +167,28 @@ Não queremos chegar a uma comunidade com uma solução pronta e pedir que ela s
 
 ## 6. Transparência e liberdade algorítmica
 
-### Uma conexão pode valer mais que horas de consumo
+### Escolher o que acompanhar, sem depender de recomendações obscuras
 
-Compartilhar não é sempre trocar. Podemos passar muito tempo diante de uma sequência de conteúdos e terminar sem ter conversado com ninguém, sem lembrar do que vimos ou sem encontrar o que procurávamos.
+Quando uma sequência de conteúdos decide o que merece aparecer sem explicar seus critérios, fica difícil distinguir nossas escolhas dos interesses de quem organiza a experiência. Não queremos depender desse caminho para encontrar pessoas, acompanhar um assunto ou participar de uma conversa.
 
-Não é a existência de algoritmos que torna isso inevitável. São escolhas sobre o que otimizar, quais interesses priorizar e quanto poder de decisão deixar com as pessoas.
+Não é a existência de algoritmos que cria o problema. É a falta de escolha diante de recomendações que não conseguimos compreender, alterar ou desligar, especialmente quando são orientadas a prolongar o consumo.
 
-Defendemos experiências que favoreçam encontros, descoberta e pensamento crítico. Que permitam compreender por que algo foi recomendado ou classificado, quando houver esse tipo de sistema. Que deixem espaço para escolher outros critérios e encontrar algo além do que confirma nossas preferências.
+Defendemos poder escolher quem e o que acompanhar, saber por que um conteúdo aparece e decidir se queremos receber sugestões. Desligar recomendações não deveria significar perder o acesso às pessoas e aos assuntos que escolhemos seguir. Uma ordem cronológica ou outros critérios compreensíveis, sem personalização obrigatória, são caminhos possíveis.
 
 O inesperado também faz parte de aprender. Uma biblioteca não precisa conhecer tudo sobre alguém para oferecer a possibilidade de uma descoberta. A tecnologia pode ajudar a ampliar esse espaço, em vez de fechá-lo em uma bolha.
 
 **Na prática, defendemos:**
 
-- Critérios e interesses de recomendações, classificações e decisões automatizadas explicados de forma compreensível, com limites reconhecidos.
-- Escolhas significativas sobre a experiência informacional; quando adequado, opções não personalizadas e formas de contestar decisões.
-- Clareza sobre a participação de automação e inteligência artificial em processos que afetem pessoas.
+- Critérios e interesses das recomendações explicados de forma compreensível, inclusive o que é publicidade e o que orienta a ordem dos conteúdos.
+- Escolha de fontes, pessoas e assuntos a acompanhar, com formas diretas de acessá-los sem depender de sugestões personalizadas.
+- Possibilidade de alterar critérios e desligar recomendações; ordem cronológica e opções não personalizadas como alternativas, não como garantia de neutralidade.
+- Clareza sobre classificações, decisões automatizadas e participação de inteligência artificial, com formas de questionar decisões que afetem pessoas.
 - Relações e conversas que não dependam de maximizar permanência, estimular hostilidade ou manter consumo contínuo.
 - Fontes verificáveis, diálogo respeitoso e possibilidade de discordar sem transformar pessoas em alvos.
 
 Transparência não exige divulgar dados pessoais nem detalhes que facilitem abuso. Exige não esconder atrás da complexidade técnica as decisões que afetam uma comunidade.
 
-**Nosso compromisso de direção:** colocar os sistemas a serviço da capacidade de escolher, compreender e se relacionar — não da captura de atenção a qualquer custo.
+**Nosso compromisso de direção:** reduzir a dependência de recomendações obscuras e ampliar a liberdade de escolher o que acompanhar, descobrir e compartilhar — sem trocar uma seleção imposta por outra.
 
 ## Transparência atravessa os seis princípios
 

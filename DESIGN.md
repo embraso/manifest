@@ -158,7 +158,7 @@ Selection uses amber with deep-forest text in both registers. Translucent curren
 Archivo's narrow width axis creates the printed voice without horizontally transforming text. Martian Mono changes the reading register, while long technical paragraphs remain Archivo for a comfortable measure. The frontmatter records the desktop roles; responsive changes belong to Layout.
 
 ### Hierarchy
-- **Public display:** uppercase, heavy and narrow; the final human line is smaller than the main headline, with an inline amber mark.
+- **Public display:** uppercase, heavy and narrow; “Liberdade / se constrói / junto.” uses three lines at the same display scale, with an inline amber mark on the collective closing word. The supporting introduction explains the free-software proposition rather than adding a second slogan.
 - **Public headline:** the same narrow uppercase family at section scale. Emphasis within headings stays upright, not italic.
 - **Public title:** moderately condensed subheadings for ruled editorial rows and paired columns.
 - **Technical display and headline:** mixed case, tight tracking and compact leading; amber or mint selectively distinguishes a phrase.

@@ -2,13 +2,13 @@
 
 Uso: propostas de texto para apresentar a Embraso em comprimentos diferentes. Escolher uma versão por contexto; não empilhar todas numa página. As notas de uso são internas, não texto público.
 
-## Assinatura editorial proposta
+## Assinatura editorial escolhida
 
-**Tecnologia livre. Gente por perto.**
+**Liberdade se constrói junto.**
 
 Descritor: **Software útil, feito em comunidade, para as diferentes realidades do Brasil.**
 
-A assinatura é uma criação desta síntese. O descritor explica o que a assinatura sozinha não diz. Não são uma alegação de marca registrada ou uma campanha já aprovada.
+A assinatura foi escolhida pelo responsável pela iniciativa na revisão editorial de 22 de outubro de 2026. É uma criação editorial nova, não uma citação dos manifestos de origem. Une liberdade e construção coletiva; a apresentação seguinte precisa explicar que a proposta é reunir pessoas e criar software útil e livre. O descritor continua como proposta de apoio. A escolha da assinatura não comprova registro de marca, comunidade em operação ou produtos disponíveis.
 
 ## Abertura principal — futura primeira dobra
 

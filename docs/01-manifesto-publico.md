@@ -2,7 +2,7 @@
 
 Uso: proposta de texto público. Esta é a versão curta canônica; os nomes e a ordem dos seis princípios orientam toda a série. Não é uma declaração de serviços já disponíveis.
 
-## Tecnologia livre. Gente por perto.
+## Liberdade se constrói junto.
 
 Queremos uma tecnologia que ajude a viver, não que ocupe a vida inteira. Que aproxime pessoas, compartilhe conhecimento e resolva problemas de quem está aqui.
 
@@ -42,9 +42,9 @@ Educação, cultura, ciência, lazer, organização comunitária e pequenos neg�
 
 ## 6. Transparência e liberdade algorítmica
 
-**Mais poder de escolha. Mais espaço para a troca.**
+**Liberdade para escolher o que acompanhar.**
 
-Queremos compreender os critérios que organizam o que vemos e poder questionar decisões automatizadas. Defendemos escolhas sobre recomendações e espaço para descobrir o inesperado, conversar e discordar com respeito. Atenção não deve ser uma armadilha; conexão deve favorecer relações reais, não apenas consumo sem fim.
+Não queremos depender de recomendações que decidem o que vemos sem deixar claros seus critérios e interesses. Defendemos poder escolher quem e o que acompanhar, entender por que um conteúdo aparece e desligar recomendações sem perder o acesso às pessoas e aos assuntos que seguimos. Queremos espaço para descobrir o inesperado e conversar, sem que tudo seja organizado para prolongar o consumo. Decisões automatizadas devem poder ser compreendidas e questionadas.
 
 ## Um convite para construir
 
