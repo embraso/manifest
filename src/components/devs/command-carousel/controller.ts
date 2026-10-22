@@ -1,5 +1,3 @@
-import { onMotionChange } from './motion';
-
 const carousel = document.querySelector<HTMLElement>('[data-command-carousel]');
 
 if (carousel && !carousel.dataset.enhanced) {
@@ -18,12 +16,10 @@ if (carousel && !carousel.dataset.enhanced) {
 
   if (readings.length && readings.length === topics.length && command && viewport && controls && previous && next && pause && position && state && progress && announcement) {
     const listeners = new AbortController();
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
     let index = 0;
-    let allowed = false;
     let visible = false;
     let locallyPaused = false;
-    let hoveringReading = false;
-    let focusingReading = false;
     let pageActive = true;
     let started = false;
     let timer: number | undefined;
@@ -38,15 +34,15 @@ if (carousel && !carousel.dataset.enhanced) {
     }
 
     function canPlay() {
-      return allowed && visible && pageActive && !locallyPaused && !hoveringReading && !focusingReading;
+      return !preference.matches && !document.hidden && visible && pageActive && !locallyPaused;
     }
 
     function synchronizeControls() {
-      const paused = locallyPaused || !allowed;
-      pause!.disabled = !allowed;
+      const paused = locallyPaused || preference.matches;
+      pause!.disabled = preference.matches;
       pause!.setAttribute('aria-pressed', String(paused));
-      pause!.setAttribute('aria-label', !allowed ? 'Sequência pausada pelo controle de movimento' : locallyPaused ? 'Retomar sequência' : 'Pausar sequência');
-      state!.textContent = !allowed ? 'Movimento pausado' : locallyPaused ? 'No seu ritmo' : hoveringReading || focusingReading ? 'Em leitura' : 'Em sequência';
+      pause!.setAttribute('aria-label', preference.matches ? 'Movimento reduzido' : locallyPaused ? 'Retomar sequência' : 'Pausar sequência');
+      state!.textContent = preference.matches ? 'Movimento reduzido' : locallyPaused ? 'No seu ritmo' : 'Em sequência';
       carousel!.dataset.playback = canPlay() ? 'running' : 'paused';
     }
 
@@ -77,7 +73,6 @@ if (carousel && !carousel.dataset.enhanced) {
     function selectTopic(requested: number, manual: boolean) {
       cancelWork();
       index = (requested + readings.length) % readings.length;
-      if (manual) locallyPaused = true;
       readings.forEach((reading, item) => { reading.hidden = item !== index; });
       topics.forEach((topic, item) => {
         if (item === index) topic.setAttribute('aria-current', 'true');
@@ -86,7 +81,7 @@ if (carousel && !carousel.dataset.enhanced) {
       viewport!.scrollTop = 0;
       position!.textContent = String(index + 1).padStart(2, '0');
       command!.textContent = readings[index].dataset.command!;
-      if (manual) announcement!.textContent = `Tópico ${index + 1} de ${readings.length}. ${topics[index].textContent!.trim()}. Sequência pausada; retome quando quiser.`;
+      if (manual) announcement!.textContent = `Tópico ${index + 1} de ${readings.length}. ${topics[index].textContent!.trim()}.`;
       // Keep the current choice in the mobile topic strip without moving the page.
       const navigation = topics[index].parentElement!;
       const topicLeft = topics[index].offsetLeft - navigation.offsetLeft;
@@ -95,6 +90,7 @@ if (carousel && !carousel.dataset.enhanced) {
       }
       synchronizeControls();
       if (canPlay()) {
+        started = true;
         readingAnimation = readings[index].animate([{ opacity: .55, transform: 'translateY(5px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 280, easing: 'cubic-bezier(.16, 1, .3, 1)' });
         typeCommand();
       } else carousel!.dataset.phase = 'reading';
@@ -122,52 +118,28 @@ if (carousel && !carousel.dataset.enhanced) {
       locallyPaused = !locallyPaused;
       synchronizePlayback();
     }, { signal: listeners.signal });
-    viewport.addEventListener('pointerenter', (event) => {
-      if (event.pointerType !== 'mouse') return;
-      hoveringReading = true;
-      synchronizePlayback();
-    }, { signal: listeners.signal });
-    viewport.addEventListener('pointerleave', () => {
-      hoveringReading = false;
-      synchronizePlayback();
-    }, { signal: listeners.signal });
-    // Touch scrolling is an explicit request to keep this reading on screen.
-    viewport.addEventListener('touchstart', () => {
-      locallyPaused = true;
-      synchronizePlayback();
-    }, { signal: listeners.signal, passive: true });
-    carousel.addEventListener('focusin', (event) => {
-      focusingReading = event.target instanceof Element && !event.target.closest('.playback-controls');
-      synchronizePlayback();
-    }, { signal: listeners.signal });
-    carousel.addEventListener('focusout', (event) => {
-      if (event.relatedTarget instanceof Node && carousel.contains(event.relatedTarget)) return;
-      focusingReading = false;
-      synchronizePlayback();
-    }, { signal: listeners.signal });
 
     carousel.dataset.enhanced = 'true';
     controls.hidden = false;
     selectTopic(0, false);
-    const unsubscribeMotion = onMotionChange((value) => {
-      allowed = value;
-      synchronizePlayback();
-    });
+    preference.addEventListener('change', synchronizePlayback, { signal: listeners.signal });
+    document.addEventListener('visibilitychange', synchronizePlayback, { signal: listeners.signal });
     const observer = new IntersectionObserver(([entry]) => {
+      if (visible === entry.isIntersecting) return;
       visible = entry.isIntersecting;
       synchronizePlayback();
-    }, { threshold: .15 });
-    observer.observe(viewport);
+    }, { threshold: 0 });
+    observer.observe(carousel);
     window.addEventListener('pagehide', (event) => {
       pageActive = false;
       synchronizePlayback();
       if (!event.persisted) {
         listeners.abort();
         observer.disconnect();
-        unsubscribeMotion();
       }
     }, { signal: listeners.signal });
     window.addEventListener('pageshow', () => {
+      if (pageActive) return;
       pageActive = true;
       synchronizePlayback();
     }, { signal: listeners.signal });

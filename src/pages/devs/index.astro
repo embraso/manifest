@@ -1,10 +1,13 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
-import TerminalHome from '../../components/TerminalHome.astro';
+import TerminalHome from '../../components/devs/TerminalHome.astro';
+import CommandCarousel from '../../components/devs/command-carousel/CommandCarousel.astro';
 ---
 
 <SiteLayout audience="devs" title="Embraso para devs — Liberdade se constrói junto.">
-  <TerminalHome />
+  <TerminalHome>
+    <CommandCarousel slot="reader" />
+  </TerminalHome>
 </SiteLayout>
 
 <script>
