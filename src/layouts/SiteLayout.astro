@@ -1,0 +1,77 @@
+---
+import '@fontsource-variable/archivo/wdth.css';
+import '@fontsource-variable/martian-mono';
+import '../styles/global.css';
+import logo from '../../assets/e6712f9ec67bfc5e5e1536d9b4377830.svg';
+import darkLogo from '../../assets/58fa12401e77dc41cc7e67952d136fdf.svg';
+import emblem from '../../assets/b084774a04a4acde15a270ee03518180.svg';
+
+interface Props {
+  audience?: 'public' | 'devs';
+  title: string;
+  isManifesto?: boolean;
+}
+const { audience = 'public', title, isManifesto = false } = Astro.props;
+const technical = audience === 'devs';
+const home = technical ? '/devs/' : '/';
+const description = 'Uma iniciativa para reunir pessoas, construir software útil e livre e ampliar a autonomia digital nas diferentes realidades do Brasil.';
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content={technical ? '#0b1d13' : '#f4eedf'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href={emblem.src} type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body data-audience={audience}>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="utility-bar">
+        <div class="container utility-inner">
+          <span class="utility-note">{technical ? 'software livre · construção coletiva' : 'Tecnologia livre. Gente por perto.'}</span>
+          <nav class="audience-switch" aria-label="Versão do site">
+            <a href="/" aria-current={!technical && !isManifesto ? 'page' : undefined} data-selected={!technical}>Público geral</a>
+            <a href="/devs/" aria-current={technical ? 'page' : undefined} data-selected={technical}><span aria-hidden="true">&gt;_ </span>Devs</a>
+          </nav>
+        </div>
+      </div>
+      <div class="container navigation-row">
+        <a class="brand" href={home} aria-label="Embraso — início">
+          <img src={technical ? darkLogo.src : logo.src} alt="Embraso" width="174" height="54" fetchpriority="high" />
+        </a>
+        <nav class="main-navigation" aria-label="Navegação principal">
+          <a href={`${home}#proposta`}>{technical ? './proposta' : 'A proposta'}</a>
+          <a href={`${home}#manifesto`} aria-current={isManifesto ? 'page' : undefined}>{technical ? './manifesto' : 'Manifesto'}</a>
+          <a href={`${home}#participacao`}>{technical ? './construir' : 'Construir junto'}</a>
+        </nav>
+      </div>
+      <div class="bunting" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="22"><defs><pattern id="bandeirinhas" width="184" height="22" patternUnits="userSpaceOnUse"><path d="M2 1h18v20l-9-5-9 5z" fill="#fdb112"/><path d="M25 1h18v20l-9-5-9 5z" fill="#f56d1d"/><path d="M48 1h18v20l-9-5-9 5z" fill="#086797"/><path d="M71 1h18v20l-9-5-9 5z" fill="#13522f"/><path d="M94 1h18v20l-9-5-9 5z" fill="#80b99a"/><path d="M117 1h18v20l-9-5-9 5z" fill="#fdb112"/><path d="M140 1h18v20l-9-5-9 5z" fill="#086797"/><path d="M163 1h18v20l-9-5-9 5z" fill="#f56d1d"/><path d="M0 .5h184" stroke="currentColor" fill="none"/></pattern></defs><rect width="100%" height="22" fill="url(#bandeirinhas)"/></svg>
+      </div>
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-identity">
+          <a href={home} aria-label="Embraso — início"><img src={darkLogo.src} alt="Embraso" width="190" height="59" loading="lazy" /></a>
+          <p>Tecnologia livre.<br />Gente por perto.</p>
+        </div>
+        <div class="footer-message">
+          <p>Um começo, uma direção.<br />Muita coisa para construir junto.</p>
+          <a href="/manifesto/">Leia o manifesto <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>Embraso · uma iniciativa em construção</span>
+        <a href={technical ? '/' : '/devs/'}>{technical ? 'Ver a versão para o público geral' : 'Prefere uma leitura mais técnica? Versão devs'} <span aria-hidden="true">→</span></a>
+      </div>
+    </footer>
+  </body>
+</html>

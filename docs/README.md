@@ -2,11 +2,11 @@
 
 Esta série reúne duas visões da Embraso: princípios de tecnologia livre, soberana e acessível; e o desejo de reconstruir vínculos e fazer software útil para a vida no Brasil. A redação é uma proposta para revisão e evolução, não uma aprovação formal ou prova de atividade institucional.
 
-**Agora estamos definindo linguagem e direção. Não estamos construindo o site.**
+**A linguagem e a direção seguem em desenvolvimento. A primeira implementação do site foi autorizada, com leituras para o público geral e para devs; o acervo inteiro não vira conteúdo público por isso.**
 
 ## Technical product context
 
-[PRODUCT.md](../PRODUCT.md) records the owner's website requirements in English: a static Astro site for project publishing, lead capture, and contributor invitations, deployed on Cloudflare under Embraso DNS. It also records the visual-reference constraint and unresolved operational decisions. This extends the earlier editorial-only planning scope; initialization does not implement or deploy the site. Public copy and this editorial collection remain in Brazilian Portuguese.
+[PRODUCT.md](../PRODUCT.md) records the owner's website requirements and local commands in English. The first static Astro implementation includes Folheto at `/`, Terminal at `/devs/`, and the shared public manifesto at `/manifesto/`. [DESIGN.md](../DESIGN.md) records the implemented visual system. Cloudflare deployment, lead intake, and a verified project inventory remain unresolved; no form or project catalogue is simulated. Public copy and this editorial collection remain in Brazilian Portuguese.
 
 The existing publication constraints still apply: ideas are not shipped projects, internal notes are not page copy, and contact actions need real destinations.
 
@@ -99,4 +99,4 @@ A skill orienta quais documentos ler conforme a tarefa, sem incorporar todo o ac
 
 **Convenção de idioma:** `AGENTS.md`, instruções de skills e documentação de implementação (especificações técnicas, arquitetura e guias de desenvolvimento) ficam em inglês. O acervo editorial, inclusive história, estratégia e demais materiais internos, permanece em português brasileiro, assim como o conteúdo do site. Citações, exemplos de texto, nomes canônicos e caminhos existentes não devem ser traduzidos ao aparecerem nas instruções em inglês.
 
-As instruções permanentes do projeto estão em [`AGENTS.md`](../AGENTS.md). A existência desta documentação e da skill não autoriza construir o site nesta etapa.
+As instruções permanentes do projeto estão em [`AGENTS.md`](../AGENTS.md). A autorização para a primeira página não permite inventar canais, ofertas ou operações nem publicar automaticamente os materiais internos e as fontes históricas.

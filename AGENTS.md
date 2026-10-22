@@ -2,11 +2,11 @@
 
 ## What we are building
 
-A language and direction reference for Embraso's future public presentation: an initiative to bring people together, build useful free software, strengthen communities, and expand digital autonomy across Brazil's different realities.
+Embraso's first static Astro website and its language/direction reference: an initiative to bring people together, build useful free software, strengthen communities, and expand digital autonomy across Brazil's different realities.
 
 The identity combines a position on software freedom, privacy, the common good, and meaningful choice with a warm, concrete, approachable Brazilian voice. Two efforts move together: community-building and gradual digital autonomy. The proposed editorial signature is “Tecnologia livre. Gente por perto.”; it is not a formally approved campaign.
 
-**Current stage: documentation, synthesis, and editorial development. Do not build the website.** Do not create components, install frameworks, choose a stack, publish pages, or implement forms without a new explicit request.
+**Current stage: first homepage implementation, alongside ongoing editorial development.** The owner authorized two audience-specific versions: A · Folheto at `/` (default) and B · Terminal at `/devs/`, linked by a visible audience switch, plus a shared manifesto at `/manifesto/`. Use [PRODUCT.md](PRODUCT.md) for product decisions and local commands, and [DESIGN.md](DESIGN.md) for the implemented visual system. Contact intake, membership, project publishing, and deployment require their unresolved operational facts; do not simulate them.
 
 ## Language policy
 
@@ -41,7 +41,7 @@ For writing or review, load the local [embraso-language](.agents/skills/embraso-
 
 The two manifestos were provided in `C:/dev/embraso/`, accessible in this environment as `/mnt/c/dev/embraso/`. Complete portable copies are available as the [original manifesto](docs/fontes/manifesto-original.md), [Thiago's text](docs/fontes/manifesto-thiago-original.md), and [notes](docs/fontes/notas-originais.txt). Preserve these records and the external originals; record new decisions in the synthesis documents rather than silently rewriting the sources.
 
-The reference for a future website is the [Claude artifact](https://claude.ai/artifact/BWKYPiNDodsXjPPY1c81dp#page-dcb81aee8d83). Rendered inspection was not possible during the initial documentation work; the limitation is recorded in the editorial decisions document. The externally available logo HTML is a separate export, not production code or evidence of that page's layout. Do not infer unobserved interface details or content.
+The visual reference is the [Claude artifact](https://claude.ai/artifact/BWKYPiNDodsXjPPY1c81dp#page-dcb81aee8d83). Rendered inspection was not possible during initial documentation, but succeeded through Chrome during homepage implementation: A · Folheto and B · Terminal were inspected at full-window scale. Preserve their selected visual identity, not their placeholder projects, forms, metrics, or unconfirmed organizational claims. Supplied local SVGs are under `assets/`; the separate external logo HTML is not production code. Do not infer unobserved details.
 
 GNU, Debian, Agile, Mozilla, and Cluetrain are references for structure and values, with primary sources linked in the editorial decisions document. Do not import their products, scale, policies, or history as Embraso's own.
 
@@ -51,4 +51,4 @@ Read the relevant section before editing. Reuse existing documents, keep the sho
 
 For documentation changes, verify paths, relative links, principle names, quotation fidelity, and separation between notes and public copy. For the skill, check frontmatter, location, and OMP loading when available. Do not create test infrastructure or an application merely to validate Markdown.
 
-If a later request authorizes building the website, first verify the visual reference, selected public content, actual availability of offers, and interaction destinations. A new implementation request changes the implementation scope, not these truthfulness requirements.
+For subsequent website work, verify the selected public content, actual availability of offers, and interaction destinations before implementation. New implementation requests change scope, not these truthfulness requirements. Build with `npm run build` and inspect the actual rendered surface at desktop and mobile sizes; documentation validation alone is not website verification.

@@ -2,7 +2,7 @@
 
 <!-- impeccable:product-schema 1 -->
 
-This is the English technical product record for the future Embraso website, not public-facing copy. It captures the owner's initialization decisions and the existing editorial constraints. The editorial collection remains the source for Portuguese wording, attribution, and the status of organizational claims.
+This is the English technical product record for the Embraso website, not public-facing copy. It captures the owner's product decisions and the existing editorial constraints. The editorial collection remains the source for Portuguese wording, attribution, and the status of organizational claims.
 
 ## Platform
 
@@ -14,7 +14,7 @@ web
 - **Delivery: a static website.** Generate publishable pages as static output; no server-rendered application is requested.
 - **Hosting: Cloudflare**, published under Embraso's DNS. The exact domain or subdomain and the Cloudflare deployment service are not yet specified.
 - A static frontend does not itself receive submissions. Lead capture will need a real destination or submission service; that choice remains open.
-- This initialization does not install Astro, scaffold the website, configure DNS, or deploy anything. Adapter, package manager, content management, and deployment commands are not selected here.
+- The first homepage implementation uses npm and Astro static output. Run `npm ci`, `npm run dev` for local development, `npm run build` to generate `dist/`, and `npm run preview` to inspect that output. No Cloudflare deployment, DNS configuration, adapter, or submission service has been configured.
 
 ## Users
 
@@ -23,7 +23,7 @@ Two audiences are supported by the editorial collection:
 - People interested in helping build Embraso projects: programmers, designers, writers, educators, researchers, organizers, maintainers, and others with relevant experience. They need to understand the initiative and find a real way to contribute.
 - People, collectives, and small businesses who know a concrete problem. They need to understand the proposal and, once an intake route exists, share context without being promised implementation or free consulting.
 
-**Audience priority remains open**, as explicitly chosen by the owner during initialization. Neither group is established as the primary audience. The site must not assume programming knowledge or unlimited availability to participate.
+**Two reading registers, one initiative.** The owner requested a general-public Folheto version at `/` and a technical Terminal version at `/devs/`, with audience-specific wording and shared principles/assets. The owner selected Folheto as the default entry, with a visible audience switch. This is an entry decision, not an organizational priority ranking; neither version assumes programming knowledge or unlimited availability to participate.
 
 ## Product Purpose
 
@@ -44,7 +44,7 @@ Autonomy does not mean isolation or rejecting every external tool. Proprietary t
 - **Technical implementation documentation is written in English.** Public-facing editorial copy remains Brazilian Portuguese unless the owner requests another language. Existing Portuguese editorial documents are not implementation specifications and are not translated by this initialization.
 - The [editorial map](docs/README.md) is the entry point to the content collection. Use the [short manifesto](docs/01-manifesto-publico.md) for the canonical principles, the [extended manifesto](docs/02-manifesto-estendido.md) for their interpretation, and the [voice guide](docs/06-voz-e-terminologia.md) for wording.
 - Public text, internal editorial notes, historical sources, and exploratory ideas coexist in the repository. Publication requires deliberate selection; do not publish all of `docs/` automatically.
-- The owner's website requirements recorded here extend the earlier editorial-only planning scope. The current request is still initialization, not a request to implement the website.
+- The owner explicitly authorized the first homepage implementation after initialization. The shipped surface includes both audience versions and a shared public manifesto at `/manifesto/`; this does not authorize publishing unconfirmed projects, contact channels, membership, or organizational claims.
 - Preserve historical source files. New product decisions belong in this record and affected synthesis documents, not in silent rewrites of originals.
 - The label “internal” is an editorial classification, not access control. Do not store credentials, secrets, or unauthorized personal information in this repository.
 
@@ -77,8 +77,8 @@ Legal status, adopted software licenses, financing, service pricing, team identi
 - **Proposed editorial signature:** “Tecnologia livre. Gente por perto.”
 - **Proposed descriptor:** “Software útil, feito em comunidade, para as diferentes realidades do Brasil.”
 - The signature and descriptor are editorial proposals, not a formally approved campaign or evidence of an operating community.
-- **Owner's visual constraint:** preserve the identity of the [supplied Claude artifact](https://claude.ai/artifact/BWKYPiNDodsXjPPY1c81dp#page-dcb81aee8d83), improve on it, and pursue a slick, polished result with animation wherever appropriate. This records the requested direction; it does not establish a palette, font selection, component system, or visual world during init.
-- **Reference evidence limit:** the static fetch during initialization returned the artifact shell, not its rendered design. Earlier inspection limits and observations of a separate logo export are documented in the [editorial memory](docs/08-fontes-e-decisoes-editoriais.md). Do not treat that separate export as proof of the artifact's layout. Inspect the rendered reference or an owner-provided export before visual implementation.
+- **Owner's visual constraint:** preserve the identity of the [supplied Claude artifact](https://claude.ai/artifact/BWKYPiNDodsXjPPY1c81dp#page-dcb81aee8d83), improve its craft, and use appropriate animation. The owner selected A · Folheto for the public version and B · Terminal for the developer version. The implemented system is recorded in [DESIGN.md](DESIGN.md).
+- **Reference evidence:** rendered inspection succeeded through Chrome during implementation. Both artboards were opened at full-window scale; their typography, palette, composition, and supplied illustrations informed the build. Placeholder projects, membership forms, foundation status, and fictional metrics in the reference were not adopted as product facts. The earlier inspection limitation remains a historical record in the [editorial memory](docs/08-fontes-e-decisoes-editoriais.md).
 
 ## Evidence on Hand
 
@@ -88,6 +88,7 @@ Legal status, adopted software licenses, financing, service pricing, team identi
 - [Voice and terminology](docs/06-voz-e-terminologia.md) and [phrase bank](docs/07-banco-de-frases.md): language guidance and distinctions between quotations, adaptations, and new writing.
 - [Sources and editorial decisions](docs/08-fontes-e-decisoes-editoriais.md), with preserved [original manifesto](docs/fontes/manifesto-original.md), [Thiago's manifesto](docs/fontes/manifesto-thiago-original.md), and [original notes](docs/fontes/notas-originais.txt).
 - Owner decisions from initialization: static website, Astro, Cloudflare under Embraso DNS, project publishing, lead capture, contributor invitations, English implementation documentation, visual continuity with improvements and animation; audience priority and intake destination left open.
+- Owner decisions during implementation: authorize the first homepage, develop both reference directions concurrently, adapt wording to each audience, use common assets and canonical principles, and open on Folheto with a visible switch. Intake destinations remain unresolved.
 
 These materials establish proposed language and product intent, not testimonials, partnerships, customer counts, impact metrics, shipped products, or security and accessibility certifications. Do not fabricate those forms of proof.
 
@@ -111,3 +112,11 @@ The English explanations are implementation context, not replacement public titl
 - Preserve reading and task completion when adding animation. Respect reduced-motion preferences and do not make essential information or actions depend on animation.
 - Performance and accessibility constrain the requested polish and motion. Do not claim universal device support, complete accessibility, or regulatory compliance without evaluation.
 - No specific conformance target has been approved in the product brief. Establish measurable implementation acceptance criteria before claiming compliance.
+
+## Implementation and Verification
+
+- `src/layouts/SiteLayout.astro` owns the shared header, audience navigation, footer, metadata, self-hosted font imports, and base themes.
+- `src/components/FolhetoHome.astro` and `src/components/TerminalHome.astro` own their audience-specific page bodies and scoped responsive styles.
+- `src/data/manifesto.ts` supplies both versions and `/manifesto/` with the canonical short manifesto. When the editorial source changes, update this public selection and verify wording and principle order together. Editorial notes and internal documents are not automatically published.
+- Only supplied SVG assets and self-hosted Archivo/Martian Mono fonts are delivered. Native links and disclosures work without a client-side application runtime. Reduced motion disables authored animation and nonessential CSS transitions; cross-page view transitions are not enabled.
+- Project publishing and lead capture remain intended product capabilities, not features simulated by this release. No repository URL, intake endpoint, membership workflow, CTO identity, license choice, or product inventory was invented.
