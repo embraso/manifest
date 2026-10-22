@@ -13,6 +13,8 @@
 ## Global Constraints
 
 - Deploy automatically only on pushes to `main`; use no parallel/manual deployment path.
+- Run only in the canonical `embraso/manifest` repository and only for `main`; explicitly skip workflow jobs in forks.
+- Restrict the `github-pages` environment to `main`; require pull requests and owner review for deployment configuration changes; disable force pushes/deletions while retaining administrator bypass.
 - Use static output from `dist/`; build with `npm ci` and `npm run build`.
 - Preserve `https://embraso.com.br` as the custom domain; do not set an Astro repository `base` path.
 - Keep routes exactly `/`, `/devs/`, and `/manifesto/`, and preserve `/#participacao`.
@@ -21,8 +23,9 @@
 
 ## Review Focus
 
-- Main-only trigger and no second publication path: inspect workflow triggers and confirm no other publishing workflow is active (Task 1).
-- Pages artifact, least-required permissions, and GitHub Actions Pages source: inspect workflow permissions/actions and repository Pages source after configuration (Task 1).
+- Canonical-repository guard and main-only trigger; both build and deployment jobs must skip on fork repositories (Task 1).
+- Main-only Pages environment, least-required per-job permissions, and branch protection requiring pull requests with code-owner approval for deployment files (Task 1).
+- Pages artifact and GitHub Actions Pages source: inspect workflow permissions/actions and repository Pages source after configuration (Task 1).
 - Custom-domain CNAME survives artifact creation and serves over HTTPS: inspect `dist/CNAME`, Pages configuration, and `https://embraso.com.br/CNAME` after deploy (Task 1).
 - Root route URLs, trailing slashes, participation anchor, and root-relative assets/navigation: verify live route responses, fragment target, and loaded links/assets (Task 1).
 - Existing page content, locale, and behavior remain unchanged: compare the three live pages and exercise existing navigation/anchor behavior against the pre-deploy site (Task 1).
@@ -44,7 +47,8 @@
 
 - [x] Add `site: 'https://embraso.com.br'` to `astro.config.mjs`; do not add a base path or alter static/trailing-slash settings.
 - [x] Add `public/CNAME` containing only `embraso.com.br`.
-- [x] Add `.github/workflows/deploy.yml`: trigger only on `push` to `main`; use Node 24 (the Astro action's default); grant only the permissions required for Pages artifact deployment; use `withastro/action@v6` to install/build and `actions/deploy-pages@v5` to deploy through the `github-pages` environment. Do not add Jekyll, a manual trigger, or another deploy path.
+- [x] Add `.github/workflows/deploy.yml`: trigger only on `push` to `main`; guard both jobs to the canonical repository; grant build only `contents: read` and deploy only `pages: write` plus `id-token: write`; use `withastro/action@v6` to install/build and `actions/deploy-pages@v5` to deploy through the `github-pages` environment. Do not add Jekyll, a manual trigger, or another deploy path.
+- [x] Restrict the `github-pages` deployment environment to `main`; add CODEOWNERS for deployment controls and require reviewed PRs on `main`; disable force pushes/deletions while retaining administrator bypass.
 - [x] Update the hosting and deployment facts in `PRODUCT.md` to GitHub Pages at `https://embraso.com.br`; retain existing stack and product facts.
 - [x] Update the hosting statement in the English technical-context paragraph of `docs/README.md` so it identifies GitHub Pages at `https://embraso.com.br` as the chosen deployment and leaves unrelated intake and project facts unchanged.
 - [x] Run `npm ci` then `npm run build`; the Astro build produced `dist/CNAME` containing `embraso.com.br`, and pages at `dist/index.html`, `dist/devs/index.html`, and `dist/manifesto/index.html`.
