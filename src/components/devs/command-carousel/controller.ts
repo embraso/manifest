@@ -80,16 +80,17 @@ if (carousel && !carousel.dataset.enhanced) {
       });
       viewport!.scrollTop = 0;
       position!.textContent = String(index + 1).padStart(2, '0');
-      command!.textContent = readings[index].dataset.command!;
+      command!.textContent = readings[index]!.dataset.command!;
       if (manual) announcement!.textContent = carousel!.dataset.announcementTemplate!
         .replaceAll('{current}', String(index + 1))
         .replaceAll('{total}', String(readings.length))
-        .replaceAll('{title}', topics[index].textContent!.trim());
-      // Keep the current choice in the mobile topic strip without moving the page.
-      const navigation = topics[index].parentElement!;
-      const topicLeft = topics[index].offsetLeft - navigation.offsetLeft;
-      if (navigation.scrollWidth > navigation.clientWidth) {
-        navigation.scrollLeft = topicLeft - (navigation.clientWidth - topics[index].offsetWidth) / 2;
+        .replaceAll('{title}', readings[index]!.querySelector('h3')?.textContent?.trim() ?? '');
+      // Keep the current choice visible in the horizontally scrollable mobile locator.
+      const navigation = topics[index]!.closest<HTMLElement>('.topic-navigation')!;
+      const navigationRect = navigation.getBoundingClientRect();
+      const topicRect = topics[index]!.getBoundingClientRect();
+      if (topicRect.left < navigationRect.left || topicRect.right > navigationRect.right) {
+        navigation.scrollLeft += topicRect.left - navigationRect.left - (navigation.clientWidth - topics[index]!.offsetWidth) / 2;
       }
       synchronizeControls();
       if (canPlay()) {
