@@ -1,4 +1,4 @@
-# Deployment configuration requires review from the repository owner.
-/.github/workflows/ @Acid995
-/astro.config.mjs @Acid995
-/public/CNAME @Acid995
+# Deployment configuration requires review from the repository owner or original maintainer.
+/.github/workflows/ @Acid995 @tprei
+/astro.config.mjs @Acid995 @tprei
+/public/CNAME @Acid995 @tprei

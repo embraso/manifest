@@ -51,7 +51,7 @@
 - [x] Add `public/CNAME` containing only `embraso.com.br`.
 - [x] Add `.github/workflows/deploy.yml`: trigger only on `push` to `main`; guard both jobs to the canonical repository; grant build only `contents: read` and deploy only `pages: write` plus `id-token: write`; check out the source, configure Node 24, run `npm ci` and `npm run build`, upload `dist/`, and deploy through the `github-pages` environment. Do not add Jekyll, a manual trigger, or another deploy path.
 - [x] Emit one route-correct canonical URL per page from `Astro.site` in `SiteLayout.astro`; omit it if the configured production origin is unset.
-- [x] Restrict the `github-pages` deployment environment to `main`; add CODEOWNERS for deployment controls and require reviewed PRs on `main`; disable force pushes/deletions while retaining administrator bypass.
+- [x] Restrict the `github-pages` deployment environment to `main`; add CODEOWNERS for deployment controls to `@Acid995` and original maintainer `@tprei`; require reviewed PRs on `main`; disable force pushes/deletions while retaining administrator bypass for both current repository admins.
 - [x] Update the hosting and deployment facts in `PRODUCT.md` to GitHub Pages at `https://embraso.com.br`; retain existing stack and product facts.
 - [x] Update the hosting statement in the English technical-context paragraph of `docs/README.md` so it identifies GitHub Pages at `https://embraso.com.br` as the chosen deployment and leaves unrelated intake and project facts unchanged.
 - [x] Run `npm ci` then `npm run build`; the Astro build produced `dist/CNAME` containing `embraso.com.br`, and pages at `dist/index.html`, `dist/devs/index.html`, and `dist/manifesto/index.html`.

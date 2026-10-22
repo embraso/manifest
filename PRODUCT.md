@@ -14,7 +14,7 @@ web
 - **Delivery: a static website.** Generate publishable pages as static output; no server-rendered application is requested.
 - **Hosting: GitHub Pages** at `https://embraso.com.br`, using Embraso's confirmed custom domain.
 - A static frontend does not itself receive submissions. Lead capture will need a real destination or submission service; that choice remains open.
-- The first homepage implementation uses npm and Astro static output. Run `npm ci`, `npm run dev` for local development, `npm run build` to generate `dist/`, and `npm run preview` to inspect that output. GitHub Pages deployment uses the repository's GitHub Actions workflow, which runs only for the canonical repository's `main` branch; fork copies are skipped. The `github-pages` environment is restricted to `main`, and branch protection requires pull requests, with owner review for deployment configuration. Administrators retain bypass capability. No server-side adapter or submission service is configured.
+- The first homepage implementation uses npm and Astro static output. Run `npm ci`, `npm run dev` for local development, `npm run build` to generate `dist/`, and `npm run preview` to inspect that output. GitHub Pages deployment uses the repository's GitHub Actions workflow, which runs only for the canonical repository's `main` branch; fork copies are skipped. The `github-pages` environment is restricted to `main`, and branch protection requires pull requests and one approval; deployment configuration requires review from either the repository owner (`@Acid995`) or original maintainer (`@tprei`). Both are current repository administrators and can bypass those rules when needed. No server-side adapter or submission service is configured.
 
 ## Users
 
