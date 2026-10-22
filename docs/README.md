@@ -4,6 +4,12 @@ Esta série reúne duas visões da Embraso: princípios de tecnologia livre, sob
 
 **Agora estamos definindo linguagem e direção. Não estamos construindo o site.**
 
+## Technical product context
+
+[PRODUCT.md](../PRODUCT.md) records the owner's website requirements in English: a static Astro site for project publishing, lead capture, and contributor invitations, deployed on Cloudflare under Embraso DNS. It also records the visual-reference constraint and unresolved operational decisions. This extends the earlier editorial-only planning scope; initialization does not implement or deploy the site. Public copy and this editorial collection remain in Brazilian Portuguese.
+
+The existing publication constraints still apply: ideas are not shipped projects, internal notes are not page copy, and contact actions need real destinations.
+
 ## Comece por aqui
 
 - Para apresentar a proposta: [manifesto público](01-manifesto-publico.md) e [apresentação e convites](03-apresentacao-e-convites.md).
