@@ -4,7 +4,6 @@ import '@fontsource-variable/martian-mono';
 import '../styles/global.css';
 import logo from '../../assets/e6712f9ec67bfc5e5e1536d9b4377830.svg';
 import darkLogo from '../../assets/58fa12401e77dc41cc7e67952d136fdf.svg';
-import emblem from '../../assets/b084774a04a4acde15a270ee03518180.svg';
 
 interface Props {
   audience?: 'public' | 'devs';
@@ -27,7 +26,8 @@ const description = 'Uma iniciativa para reunir pessoas, construir software úti
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <link rel="icon" href={emblem.src} type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
     <title>{title}</title>
   </head>
   <body data-audience={audience}>

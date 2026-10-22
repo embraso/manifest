@@ -209,6 +209,20 @@ Actions, reader surfaces and ruled content use square corners. Audience and moti
 
 Preserve supplied SVG logos, flame/toucan emblem, flying toucan, capybara and ipê; pixel capybara belongs to the technical register. Decorative scenes have empty alternatives; identity-bearing art retains meaningful alternatives. Draw directional and disclosure marks with CSS or inline SVG rather than inventing an icon language.
 
+### Brand exports
+
+Static brand downloads live under `public/`, so their URLs remain stable rather than receiving Astro asset hashes. The shared layout declares `/favicon.svg` and the `/favicon.ico` fallback on every route. All exports preserve the supplied vector artwork; no generated or replacement imagery is used.
+
+| File | Format / size | Use and source |
+| --- | --- | --- |
+| `public/favicon.svg` | Square SVG | Full-color emblem from `assets/b084774a04a4acde15a270ee03518180.svg`, centered in a square viewBox with 4% vertical breathing room per edge. |
+| `public/favicon.ico` | 16, 32 and 48px entries | Browser fallback rendered from the square SVG. |
+| `public/brand/embraso-logo.png` | 2477 × 749px, transparent | Full-color horizontal logo for light backgrounds, from `assets/e6712f9ec67bfc5e5e1536d9b4377830.svg`. |
+| `public/brand/embraso-logo-light.png` | 2489 × 773px, transparent | Cream horizontal logo for dark backgrounds, from `assets/58fa12401e77dc41cc7e67952d136fdf.svg`. |
+| `public/brand/embraso-icon.png` | 1024 × 1024px, transparent | Square emblem for avatars and other identity placements, from the square favicon SVG. |
+
+PNG exports were rasterized directly from the SVG sources using Chromium Canvas 2D on 22 October 2026, with no background fill. Wordmark proportions follow each source viewBox, rounded to whole pixels at approximately twice the source width. The ICO contains PNG-encoded entries. Keep original vectors under `assets/`; regenerate raster derivatives from those sources rather than resizing an existing PNG.
+
 ## Components
 
 ### Actions and text links

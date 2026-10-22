@@ -128,7 +128,7 @@ The owner approved these names and this order on 22 October 2026, replacing the 
 - `src/layouts/SiteLayout.astro` owns the shared header, audience navigation, footer, metadata, self-hosted font imports, and base themes.
 - Audience-specific code is colocated under `src/components/folheto/` and `src/components/devs/`. Their `FolhetoHome.astro` and `TerminalHome.astro` own page bodies and scoped responsive styles; routes compose them through the shared shell. No legacy root-component aliases remain.
 - `src/data/manifesto.ts` supplies every homepage and `/manifesto/` with the canonical short manifesto. When the editorial source changes, update this public selection and verify wording and principle order together. Editorial notes and internal documents are not automatically published.
-- Only supplied SVG assets and self-hosted Archivo/Martian Mono fonts are delivered. Native links and disclosures work without a client-side application runtime. Reduced motion disables authored animation and nonessential CSS transitions; cross-page view transitions are not enabled.
+- Supplied SVG assets, derived favicon/PNG brand exports, and self-hosted Archivo/Martian Mono fonts are delivered. See [Brand exports](DESIGN.md#brand-exports) for stable public paths and source provenance. Native links and disclosures work without a client-side application runtime. Reduced motion disables authored animation and nonessential CSS transitions; cross-page view transitions are not enabled.
 - Project publishing and lead capture remain intended product capabilities, not features simulated by this release. No repository URL, intake endpoint, membership workflow, CTO identity, license choice, or product inventory was invented.
 
 ### Interactive presentation
