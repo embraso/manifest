@@ -58,6 +58,11 @@ const contributions = [
       </div>
     </div>
     <div class="print-scene" aria-hidden="true">
+      <svg class="scene-wind" viewBox="0 0 472 208" fill="none" aria-hidden="true">
+        <path data-print-wind="0" d="M16 64 C58 48 92 74 142 56" />
+        <path data-print-wind="1" d="M4 112 C58 92 110 126 178 104" />
+        <path data-print-wind="2" d="M48 156 C84 142 116 164 150 150" />
+      </svg>
       <img class="scene-toucan" data-print-toucan src={toucan.src} alt="" width="472" height="208" fetchpriority="high" />
       <div class="scene-emblem"><img src={emblem.src} alt="" width="462" height="654" fetchpriority="high" /></div>
       <img class="scene-ipe" data-print-ipe src={ipe.src} alt="" width="196" height="212" />
@@ -154,6 +159,8 @@ const contributions = [
   .opening-actions .text-link { font-size: 14px; }
   .print-scene { position: absolute; width: 35%; top: 9%; bottom: 65px; right: 0; }
   .scene-toucan { position: absolute; z-index: 3; width: 94%; top: -3%; left: -12%; transform-origin: 58% 50%; }
+  .scene-wind { position: absolute; z-index: 2; width: 94%; top: -3%; left: -12%; overflow: visible; pointer-events: none; stroke: var(--green); stroke-width: 1.5; stroke-linecap: round; }
+  .scene-wind path { opacity: 0; }
   .scene-emblem { position: absolute; top: 11%; right: 4%; width: 67%; }
   .scene-emblem img { width: 100%; }
   .scene-capybara { position: absolute; z-index: 2; bottom: 40px; width: 68%; left: -10%; transform-origin: 50% 85%; }
@@ -248,6 +255,7 @@ const contributions = [
     .opening-actions { align-items: start; flex-direction: column; gap: 18px; margin-top: 23px; }
     .print-scene { position: relative; inset: auto; height: 270px; width: min(100%, 430px); margin: 26px auto 0; }
     .scene-toucan { width: 60%; top: 0; left: -1%; }
+    .scene-wind { width: 60%; top: 0; left: -1%; }
     .scene-emblem { top: 1%; right: 12%; width: 36%; }
     .scene-capybara { left: 2%; width: 51%; bottom: 36px; }
     .scene-ipe { width: 28%; right: 0; bottom: 39px; }
