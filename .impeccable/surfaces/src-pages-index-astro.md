@@ -33,4 +33,4 @@ The local terminal supports ajuda, manifesto, principio 1–6, comunidade, auton
 
 ## Implementation
 
-`src/layouts/SiteLayout.astro` and `src/styles/global.css` own the shared shell. `src/components/FolhetoHome.astro`, `src/components/TerminalHome.astro` and `src/scripts/{motion,folheto,terminal,particles}.ts` own progressive enhancements. `src/data/manifesto.ts` is shared public content; canonical titles/order remain unchanged. Supplied SVGs stay under `assets/`; font notices ship under `public/licenses/`. Internal editorial notes and source archives are not automatically published.
+`src/layouts/SiteLayout.astro` and `src/styles/global.css` own the shared shell. `src/components/FolhetoHome.astro`, `src/components/TerminalHome.astro` and `src/scripts/{motion,folheto,terminal,particles}.ts` own progressive enhancements. `src/data/manifesto.ts` is shared public content and follows the approved titles, order and copy in `docs/01-manifesto-publico.md`, beginning with “Tecnologia para o bem comum”. Supplied SVGs stay under `assets/`; font notices ship under `public/licenses/`. Internal editorial notes and source archives are not automatically published.
