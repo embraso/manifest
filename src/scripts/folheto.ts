@@ -16,14 +16,15 @@ function enhanceFolheto(root: HTMLElement) {
   let readingAnimation: Animation | undefined;
   let disposed = false;
 
-  function animatePart(selector: string, frames: Keyframe[]) {
-    const element = scene?.querySelector<HTMLElement>(selector);
+  function animatePart(selector: string, frames: Keyframe[], timing: KeyframeAnimationOptions = {}) {
+    const element = scene?.querySelector(selector);
     if (!element) return;
     const animation = element.animate(frames, {
       duration: 14000,
       iterations: 2,
       easing: 'linear',
       fill: 'none',
+      ...timing,
     });
     animation.pause();
     sceneAnimations.push(animation);
@@ -33,11 +34,14 @@ function enhanceFolheto(root: HTMLElement) {
     if (!scene || typeof scene.animate !== 'function') return;
     // The print starts and ends complete. Two finite circuits, no arrival gate.
     animatePart('[data-print-toucan]', [
-      { transform: 'translate(0, 0) rotate(0deg)', offset: 0 },
-      { transform: 'translate(-22%, -10%) rotate(-8deg)', offset: .12, easing: 'cubic-bezier(.16, 1, .3, 1)' },
-      { transform: 'translate(4%, -24%) rotate(3deg)', offset: .32, easing: 'cubic-bezier(.16, 1, .3, 1)' },
-      { transform: 'translate(12%, 7%) rotate(7deg)', offset: .54, easing: 'cubic-bezier(.16, 1, .3, 1)' },
-      { transform: 'translate(-5%, 4%) rotate(-3deg)', offset: .76, easing: 'cubic-bezier(.16, 1, .3, 1)' },
+      { transform: 'translate(0, 0) rotate(0deg)', offset: 0, easing: 'ease-out' },
+      { transform: 'translate(1%, -9%) rotate(-3deg)', offset: .125, easing: 'ease-in' },
+      { transform: 'translate(2%, 0) rotate(0deg)', offset: .25, easing: 'ease-out' },
+      { transform: 'translate(1%, 7%) rotate(2deg)', offset: .375, easing: 'ease-in' },
+      { transform: 'translate(0, 0) rotate(0deg)', offset: .5, easing: 'ease-out' },
+      { transform: 'translate(-1%, -12%) rotate(-4deg)', offset: .625, easing: 'ease-in' },
+      { transform: 'translate(-2%, 0) rotate(0deg)', offset: .75, easing: 'ease-out' },
+      { transform: 'translate(-1%, 6%) rotate(2deg)', offset: .875, easing: 'ease-in' },
       { transform: 'translate(0, 0) rotate(0deg)', offset: 1 },
     ]);
     animatePart('[data-print-capybara]', [
@@ -57,6 +61,15 @@ function enhanceFolheto(root: HTMLElement) {
       { transform: 'rotate(0deg)', offset: .86 },
       { transform: 'rotate(0deg)', offset: 1 },
     ]);
+    for (let index = 0; index < 3; index++) {
+      animatePart(`[data-print-wind="${index}"]`, [
+        { transform: 'translateX(16px)', opacity: 0, offset: 0 },
+        { opacity: 0, offset: .05 + index * .12 },
+        { opacity: .28, offset: .2 + index * .12 },
+        { opacity: 0, offset: .55 + index * .12 },
+        { transform: 'translateX(-36px)', opacity: 0, offset: 1 },
+      ], { duration: 3500, iterations: 8 });
+    }
     if (sceneAnimations[0]) sceneAnimations[0].onfinish = () => { sceneFinished = true; };
   }
 

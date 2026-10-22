@@ -1,0 +1,138 @@
+---
+import { introduction, invitation, principles } from '../data/manifesto';
+
+const topics = [
+  { command: 'manifesto', label: 'Por que construir', title: 'Conhecimento que encontra propósito.', paragraphs: introduction, href: '/manifesto/', link: 'Ler o manifesto completo' },
+  { command: 'comunidade', label: 'Com quem construir', title: 'Gente antes da pilha.', paragraphs: [invitation.introduction, invitation.body, 'Comunidade é lugar de troca, aprendizado e relações — não uma fila de tarefas. Participar não exige saber programar nem ter tempo toda semana.'], href: '#participacao', link: 'Conhecer as formas de participação' },
+  { command: 'autonomia', label: 'Poder continuar', title: 'Escolher também é poder mudar.', paragraphs: ['Autonomia digital não é fazer tudo sozinho. É compreender o que usamos, conhecer dependências e preservar caminhos para recuperar dados, adaptar ferramentas, migrar e continuar.', 'Comunidade e autonomia se sustentam: queremos compartilhar conhecimento para que mais pessoas possam participar das escolhas e cuidar do que for construído.'], href: '#proposta', link: 'Ler a proposta' },
+  ...principles.map((principle, index) => ({ command: `principio ${index + 1}`, label: principle.title, title: principle.title, paragraphs: [principle.lead, principle.body], href: '/manifesto/', link: 'Ler no manifesto' })),
+];
+---
+
+<section id="leitura-local" class="command-carousel" data-command-carousel aria-labelledby="carousel-title" aria-roledescription="carrossel">
+  <div class="carousel-guide">
+    <h2 id="carousel-title">Por trás de<br />cada <span>linha.</span></h2>
+    <p>Software começa com gente. Os comandos percorrem a proposta e os princípios que queremos levar para o código.</p>
+    <nav class="topic-navigation" aria-label="Tópicos de leitura">
+      {topics.map((topic, index) => (
+        <a href={`#leitura-${index}`} data-topic={index} aria-controls={`leitura-${index}`}>
+          <span class="topic-marker" aria-hidden="true">{index < 3 ? '>' : String(index - 2).padStart(2, '0')}</span>
+          <span>{topic.label}</span>
+          <svg class="topic-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>
+        </a>
+      ))}
+    </nav>
+  </div>
+  <div class="carousel-workspace">
+    <div class="workspace-heading"><span>embraso / leitura</span><span>Sem executar. Sem enviar.</span></div>
+    <div class="command-line" aria-hidden="true"><span class="prompt-marker">&gt;</span><span data-typed-command>manifesto</span><span class="command-caret"></span></div>
+    <div class="carousel-readings" data-carousel-readings tabindex="0" role="region" aria-label="Conteúdo do tópico selecionado">
+      {topics.map((topic, index) => (
+        <article id={`leitura-${index}`} class="topic-reading" data-reading={index} data-command={topic.command} aria-labelledby={`reading-title-${index}`}>
+          <p class="reading-command">&gt; {topic.command}</p>
+          <h3 id={`reading-title-${index}`}><span aria-hidden="true">// </span>{topic.title}</h3>
+          {topic.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          <a href={topic.href}>{topic.link}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a>
+        </article>
+      ))}
+    </div>
+    <div class="carousel-controls" data-carousel-controls hidden>
+      <div class="sequence-position"><span data-topic-position>01</span><span>/ {String(topics.length).padStart(2, '0')}</span><span class="sequence-state" data-carousel-state>Em sequência</span></div>
+      <div class="playback-controls">
+        <button type="button" data-carousel-previous aria-label="Tópico anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H5m6 6-6-6 6-6" /></svg></button>
+        <button type="button" data-carousel-pause aria-label="Pausar sequência" aria-pressed="false"><svg class="pause-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 5v14M16 5v14" /></svg><svg class="play-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z" /></svg></button>
+        <button type="button" data-carousel-next aria-label="Próximo tópico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></button>
+      </div>
+    </div>
+    <div class="sequence-progress" aria-hidden="true"><span data-sequence-progress></span></div>
+    <p class="carousel-status" data-carousel-announcement role="status" aria-live="polite" aria-atomic="true"></p>
+  </div>
+</section>
+
+<script>
+  import '../scripts/terminal-carousel';
+</script>
+
+<style>
+  .command-carousel { --rule: #365542; --muted: #b9c9bb; grid-column: 1 / -1; display: grid; grid-template-columns: minmax(270px, .8fr) minmax(0, 1.6fr); gap: clamp(32px, 5vw, 80px); margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--rule); scroll-margin-top: 32px; min-width: 0; }
+  .carousel-guide { min-width: 0; }
+  h2 { font: 600 clamp(1.8rem, 3.1vw, 3rem)/1.25 var(--font-mono); letter-spacing: -.02em; margin: 0 0 24px; }
+  h2 span { color: var(--yellow); }
+  .carousel-guide > p { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 38ch; margin: 0 0 32px; }
+  .topic-navigation { display: grid; }
+  .topic-navigation a { display: grid; grid-template-columns: 24px minmax(0, 1fr) 16px; gap: 12px; align-items: center; min-height: 48px; padding: 12px 8px; color: var(--muted); border-bottom: 1px solid var(--rule); text-decoration: none; font-size: 1rem; line-height: 1.6; }
+  .topic-navigation a:nth-child(4) { margin-top: 16px; border-top: 1px solid var(--rule); }
+  .topic-marker { color: var(--mint); font: 10px/1.5 var(--font-mono); }
+  .topic-arrow { opacity: 0; }
+  .topic-navigation a:hover { color: var(--cream); background: #10271a; }
+  .topic-navigation [aria-current='true'] { color: var(--yellow); background: #10271a; }
+  .topic-navigation [aria-current='true'] .topic-marker { color: var(--yellow); }
+  .topic-navigation [aria-current='true'] .topic-arrow { opacity: 1; }
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--yellow); outline-offset: 5px; }
+  .carousel-workspace { min-width: 0; align-self: start; background: #09190f; border: 1px solid var(--rule); }
+  .workspace-heading { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; padding: 18px 28px; border-bottom: 1px solid var(--rule); color: var(--muted); font: 10px/1.6 var(--font-mono); }
+  .workspace-heading > span:first-child { color: var(--mint); }
+  .command-line { display: none; align-items: center; padding: 32px 28px 28px; font: 500 clamp(1.2rem, 2.2vw, 2rem)/1.5 var(--font-mono); letter-spacing: -.03em; white-space: nowrap; min-height: 106px; }
+  [data-enhanced] .command-line { display: flex; }
+  .prompt-marker { color: var(--mint); margin-right: 18px; }
+  [data-typed-command] { color: var(--yellow); }
+  .command-caret { width: .55em; height: 1.15em; margin-left: 6px; background: var(--yellow); flex-shrink: 0; opacity: 0; }
+  [data-playback='running'] .command-caret { opacity: 1; animation: caret-blink 1.1s steps(1, end) infinite; }
+  [data-phase='typing'][data-playback='running'] .command-caret { animation: none; }
+  .carousel-readings { padding: 0 28px 32px; overflow-wrap: anywhere; }
+  [data-enhanced] .carousel-readings { height: 390px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--mint) #09190f; }
+  .topic-reading { padding-top: 28px; scroll-margin-top: 20px; }
+  [data-enhanced] .topic-reading { padding-top: 0; }
+  .topic-reading[hidden], .carousel-controls[hidden] { display: none; }
+  .reading-command { color: var(--mint); font: 12px/1.6 var(--font-mono); }
+  [data-enhanced] .reading-command { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); margin: 0; }
+  h3 { font: 500 clamp(1rem, 1.5vw, 1.25rem)/1.65 var(--font-mono); letter-spacing: -.015em; margin: 0 0 24px; color: var(--cream); }
+  h3 span { color: var(--mint); }
+  .topic-reading > p:not(.reading-command) { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 68ch; margin: 0 0 24px; }
+  .topic-reading > a { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; color: var(--cream); font-size: 1rem; text-underline-offset: 4px; }
+  .topic-reading > a:hover { color: var(--yellow); }
+  .carousel-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px 16px 28px; border-top: 1px solid var(--rule); }
+  .sequence-position { display: flex; align-items: center; gap: 9px; font: 11px/1.5 var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+  [data-topic-position] { color: var(--yellow); }
+  .sequence-state { font: 12px/1.5 var(--font-body); margin-left: 10px; }
+  .playback-controls { display: flex; gap: 8px; }
+  .playback-controls button { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--rule); color: var(--cream); background: transparent; cursor: pointer; touch-action: manipulation; }
+  .playback-controls button:hover:not(:disabled) { border-color: var(--yellow); color: var(--yellow); background: #10271a; }
+  .playback-controls button:disabled { color: var(--muted); border-style: dashed; cursor: default; }
+  .play-icon, [aria-pressed='true'] .pause-icon { display: none; }
+  [aria-pressed='true'] .play-icon { display: block; }
+  .sequence-progress { height: 2px; overflow: hidden; }
+  .sequence-progress span { display: block; height: 100%; background: var(--yellow); transform: scaleX(0); transform-origin: left; }
+  .carousel-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  @keyframes caret-blink { 50% { opacity: 0; } }
+  @media (max-width: 1100px) {
+    .command-carousel { grid-template-columns: minmax(230px, .8fr) minmax(0, 1.4fr); gap: 32px; }
+    .workspace-heading, .command-line, .carousel-readings { padding-inline: 24px; }
+    .sequence-state { display: none; }
+  }
+  @media (max-width: 760px) {
+    .command-carousel { grid-row: 2; grid-template-columns: minmax(0, 1fr); margin-top: 48px; padding-top: 32px; gap: 32px; }
+    h2 { font-size: clamp(1.8rem, 6.5vw, 2.6rem); }
+    h2 br { display: none; }
+    .carousel-guide > p { max-width: 52ch; margin-bottom: 20px; }
+    [data-enhanced] .topic-navigation { display: flex; overflow-x: auto; gap: 8px; padding: 6px 4px 12px; margin-inline: -4px; scrollbar-width: thin; scrollbar-color: var(--mint) #09190f; }
+    [data-enhanced] .topic-navigation a { display: flex; flex-shrink: 0; max-width: 270px; padding: 10px 12px; border: 1px solid var(--rule); }
+    [data-enhanced] .topic-navigation a:nth-child(4) { margin-top: 0; }
+    [data-enhanced] .topic-arrow { display: none; }
+    .workspace-heading { padding: 16px 20px; font-size: 9px; }
+    .command-line { padding: 24px 20px; font-size: clamp(1.2rem, 5vw, 1.75rem); min-height: 88px; }
+    .carousel-readings { padding: 0 20px 24px; }
+    [data-enhanced] .carousel-readings { height: 380px; }
+    .carousel-controls { padding: 12px 16px 12px 20px; gap: 8px; }
+    .playback-controls { gap: 6px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .command-caret { animation: none !important; opacity: 0 !important; } }
+  @media print {
+    .command-carousel { display: block; color: #000; }
+    .topic-navigation, .command-line, .carousel-controls, .sequence-progress { display: none !important; }
+    .carousel-workspace { background: none; border: 0; }
+    [data-enhanced] .carousel-readings { height: auto; overflow: visible; }
+    .topic-reading[hidden] { display: block !important; }
+    h3, .topic-reading > p:not(.reading-command), .topic-reading > a { color: #000; }
+  }
+</style>

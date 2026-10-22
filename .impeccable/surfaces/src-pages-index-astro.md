@@ -11,7 +11,7 @@ Mode: Persuade. Official public entry `/`; developer entry `/devs/`; shared publ
 
 ## Direction contract
 
-THESIS: Freedom becomes tangible through shared knowledge. Folheto explains it through a living print composition and four-freedom reader; Terminal lets people explore the actual proposal through local commands. Refuse fabricated activity or a decorative fake shell.
+THESIS: Freedom becomes tangible through shared knowledge. Folheto explains it through a living print composition and four-freedom reader; Terminal presents the actual proposal through a typed-topic carousel. Refuse fabricated activity or a decorative fake shell.
 
 OWN-WORLD: Paper, forest and amber; condensed Archivo for public display, Martian Mono for technical display; supplied vector and pixel fauna. Flat ruled reading surfaces, not neon product cards. OMP and Tern inform visual confidence and interaction, never Embraso's product claims.
 
@@ -19,7 +19,7 @@ STORY: Understand the initiative and inseparable community/autonomy fronts, read
 
 FIRST VIEWPORT: Public: selected signature at left, manifesto action, supplied fauna at right; the flame remains completely static and unmasked while toucan/capybara/ipê move. Developer: larger signature, real supplied-emblem particles with continuous flame-only flicker, a prominent route into the substantial command reader. Mobile puts reading and commands before decorative art. Audience and motion controls stay visible in the header.
 
-FORM: Code-led expansion of the owner-selected Folheto and Terminal worlds. The owner explicitly requested richer animal motion, local command exploration, prompt-connected autocomplete, high-contrast amber-surface text selection, and removal of comparison routes/labels. No new visual-world lottery or generated raster.
+FORM: Code-led expansion of the owner-selected Folheto and Terminal worlds. The owner requested richer animal motion, high-contrast amber-surface text selection, and removal of comparison routes/labels. The later carousel decision replaces prompt-connected autocomplete with automatic typing, reading pauses and manual topic navigation. No new visual-world lottery or generated raster.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
@@ -29,8 +29,8 @@ Folheto runs two bounded coordinated fauna circuits; its flame is static, with n
 
 Developer particles sample the supplied SVG. Finite assembly gives way to warm-flame rise/curl/flicker; the recognizable toucan is retained. Maximum 1,400 desktop/600 mobile particles, DPR 1.5, one RAF. Pause, live reduced motion, document visibility and intersection state stop nonessential work; the complete SVG is the static fallback. No cross-document view transitions.
 
-The local terminal supports ajuda, manifesto, principio 1–6, comunidade, autonomia and limpar. Prompt-connected combobox/listbox provides descriptions, arrows/Enter, partial-command Tab completion without a trap, Escape dismissal and closed-menu history. Output/history are bounded; user input is text, never HTML, code execution or network submission. Native disclosures and actual reading links remain available without scripts.
+The local reader cycles through manifesto, comunidade, autonomia and principio 1–6. Commands type at 65ms per character, followed by a word-weighted dwell capped at 18 seconds and an amber progress rule. Manual topic/previous/next selection pauses; hover and keyboard reading focus suspend movement. Reduced motion, shared pause, hidden-document and offscreen state cancel work and show complete commands. No input, dropdown, history, shell execution or network submission remains. Every article is available without JavaScript and in print; native disclosures and real reading links remain available.
 
 ## Implementation
 
-`src/layouts/SiteLayout.astro` and `src/styles/global.css` own the shared shell. `src/components/FolhetoHome.astro`, `src/components/TerminalHome.astro` and `src/scripts/{motion,folheto,terminal,particles}.ts` own progressive enhancements. `src/data/manifesto.ts` is shared public content; canonical titles/order remain unchanged. Supplied SVGs stay under `assets/`; font notices ship under `public/licenses/`. Internal editorial notes and source archives are not automatically published.
+`src/layouts/SiteLayout.astro` and `src/styles/global.css` own the shared shell. `src/components/FolhetoHome.astro`, `src/components/TerminalHome.astro`, `src/components/CommandCarousel.astro` and `src/scripts/{motion,folheto,terminal-carousel,particles}.ts` own progressive enhancements. `src/data/manifesto.ts` is shared public content and follows the approved titles, order and copy in `docs/01-manifesto-publico.md`, beginning with “Tecnologia para o bem comum”. Supplied SVGs stay under `assets/`; font notices ship under `public/licenses/`. Internal editorial notes and source archives are not automatically published.

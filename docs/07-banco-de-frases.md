@@ -34,6 +34,8 @@ Não empilhar assinatura, descritor e vários outros lemas no mesmo bloco. Não 
 
 A identificação “original” serve para localizar a fonte, não para declarar que ela tem precedência sobre a redação consolidada. São seis recortes curtos, escolhidos por expressarem posições sem depender de números ou realizações não comprovados.
 
+Os códigos O1–O6 identificam recortes deste banco, não a numeração dos princípios atuais. Nomes e números nas indicações de fonte abaixo pertencem ao original e permanecem intactos. Para títulos e ordem de apresentação atuais, usar o [manifesto público](01-manifesto-publico.md) e a [correspondência registrada na memória editorial](08-fontes-e-decisoes-editoriais.md#nomes-e-ordem-aprovados-para-a-revisão-acolhedora).
+
 ### O1 — Liberdade que pode ser explicada
 
 > Preferimos tecnologias livres, abertas, auditáveis e modificáveis a soluções fechadas que criam dependências desnecessárias.
@@ -153,6 +155,8 @@ Nenhuma entrada desta seção é citação literal. Os códigos remetem aos reco
 ## 6. NOVAS — chamadas e títulos de seção
 
 Estas são propostas autorais para os materiais da Embraso, não extrações nem paráfrases atribuídas a uma única passagem. Escolher conforme o assunto, sem usá-las no lugar dos nomes oficiais dos seis princípios.
+
+Preferir chamadas que mostrem o que queremos tornar possível e deixem o próximo parágrafo explicar a escolha concreta. Contrastes podem ajudar a compreender, mas não devem virar confronto com pessoas, empresas ou ferramentas. Os títulos históricos citados neste banco não são alternativas aos nomes atuais.
 
 | Formulação | Uso sugerido | Limite |
 | --- | --- | --- |

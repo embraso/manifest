@@ -123,9 +123,6 @@ components:
   freedom-selected:
     backgroundColor: "{colors.yellow}"
     textColor: "{colors.dark}"
-  command-selected:
-    backgroundColor: "{colors.yellow}"
-    textColor: "{colors.dark}"
 ---
 
 # Design System: Embraso
@@ -134,7 +131,7 @@ components:
 
 **Creative North Star: "Folheto / Terminal"**
 
-One initiative speaks through two reading registers. Folheto is warm printed paper: narrow forest-green display type, amber marker emphasis, generous margins and supplied Brazilian fauna. Terminal expands the same identity into deep forest grounds, cream monospaced headings, amber actions and a working local-command reader. The family is material, direct and human rather than glossy or neon.
+One initiative speaks through two reading registers. Folheto is warm printed paper: narrow forest-green display type, amber marker emphasis, generous margins and supplied Brazilian fauna. Terminal expands the same identity into deep forest grounds, cream monospaced headings, amber actions and a typed-topic reader. The family is material, direct and human rather than glossy or neon.
 
 Both registers preserve supplied SVG identity, self-hosted variable fonts, explicit rules and rectangular surfaces. Illustration and movement support reading without gating content. The public manifesto returns to paper and a quieter long-form measure. The official surfaces are `/`, `/devs/` and `/manifesto/`.
 
@@ -167,7 +164,7 @@ The frontmatter owns the palette values; local hover mixtures are state treatmen
 
 **The Shared Ink Rule.** Keep the forest/paper/amber relationship recognizable in both registers; supporting identity colors do not introduce an unrelated theme.
 
-Native text selection is dark on amber by default. On amber public participation and technical proposal grounds, and inside selected autocomplete options, selection reverses to cream on deep forest. Preserve this explicit inverse treatment so selecting amber-ground prose remains visible.
+Native text selection is dark on amber by default. On amber public participation and technical proposal grounds, selection reverses to cream on deep forest. Preserve this explicit inverse treatment so selecting amber-ground prose remains visible.
 
 ## Typography
 
@@ -177,10 +174,10 @@ Native text selection is dark on amber by default. On amber public participation
 - **Public display and headline:** uppercase, heavy Archivo at (72%) width, weight (800), and (-0.015em) tracking. Leading is (1.02) in the hero and (1.05) in sections: condensed, but no longer stacked edge-to-edge. The three-line hero uses a smaller responsive scale below (1000px) and (700px) to preserve complete phrases with the wider lettering.
 - **Public title:** disclosure titles use (85%) width, weight (700), and (1.25) leading; contribution labels use the same width/weight with (1.3) leading. Freedom-reading titles retain the larger condensed role with (1.1) leading and a ceiling of (6rem).
 - **Technical display and headline:** bold mixed-case mono with selective amber emphasis, (-0.02em) tracking, and (1.15)/(1.25) leading. The mobile hero uses one continuous rem-plus-viewport scale, with (1.2) leading and no abrupt size drop at (380px).
-- **Technical title:** principle headings use (-0.015em) tracking and (1.5) leading; mobile titles use (1.125rem)/(1.6). Command-output headings use a quieter (1rem) mono treatment rather than display sizing.
+- **Technical title:** principle headings use (-0.015em) tracking and (1.5) leading; mobile titles use (1.125rem)/(1.6). Topic-reading headings use a quieter mono treatment rather than display sizing.
 - **Body:** homepage prose uses proportional Archivo at (1.0625rem), with (1.75) leading on paper and (1.8) on Terminal. Technical prose has slight (0.005em) tracking. Introductory and large-reading roles retain their contextual fluid scales. Reading measures are typically (48–72ch) when space permits; narrow screens use the available column rather than forcing desktop measures.
 - **Reading body:** the manifesto keeps its separate (17px)/(1.65) role, returning to (16px) below (700px). Its title caps at (6rem); article headings remain Archivo, not the homepage's compressed uppercase treatment.
-- **Command and label:** mono distinguishes commands and utility metadata. Reader prose and autocomplete descriptions use (1rem), keyboard guidance uses (.875rem), and the editable prompt stays at (1rem) even on narrow phones. Terse command labels remain compact. Shared navigation and audience/motion utilities are one pixel larger than the initial implementation; public primary actions use (1rem).
+- **Command and label:** mono distinguishes typed reading commands and utility metadata. Topic prose uses (1rem)/(1.8), with (24px) paragraph spacing; topic navigation and reading links use (1rem). Shared navigation and audience/motion utilities are one pixel larger than the initial implementation; public primary actions use (1rem). Do not promote every incidental local text size into a system token.
 
 **The Two Registers Rule.** Use narrow Archivo for Folheto display and Martian Mono for Terminal headings; do not turn technical body prose into a wall of monospace.
 
@@ -190,7 +187,7 @@ The shared shell caps its container at (1200px), with (40px) desktop and (20px) 
 
 Folheto content caps at (1320px), with (40px) desktop gutters, (24px) below (1000px), and (20px) below (700px). Oversized editorial headings alternate with paired reading columns and full-bleed forest/amber bands. The manifesto introduction and disclosures stack below (1000px); community/autonomy prose stacks below (700px) instead of remaining in narrow nested columns. Mobile places the complete illustration below the hero copy and turns four freedom choices into a two-column grid. Semantic contribution rows stack label above reading. Explanatory paragraphs use (24px) separation; disclosures and contribution rows have larger reading insets. The public illustration has no framing or registration lines.
 
-Terminal content caps at (1440px), with (48px) desktop gutters, (32px) below (1100px), and (20px) below (760px). The desktop hero pairs copy and fauna above a full-width local reader. Nested community/autonomy readings stack below (1100px). Below (760px), the local reader follows the copy and the fauna follows the reader; reader guide and workspace stack. Mobile grids allow tracks to shrink so enlarged text wraps instead of widening the page. Expanded principle prose uses the full mobile measure. The output remains internally scrollable (380px desktop, 360px mobile) to accommodate larger reading text and paragraph gaps. Additional narrow-screen adjustments occur at (380px), including (16px) gutters; very wide hero proportions adjust at (1700px).
+Terminal content caps at (1440px), with (48px) desktop gutters, (32px) below (1100px), and (20px) below (760px). The desktop hero pairs copy and fauna above a full-width typed-topic reader. Its editorial guide and nine-topic index sit beside a bordered reading workspace. Nested community/autonomy readings stack below (1100px). Below (760px), the reader follows the copy and precedes fauna; its index becomes a horizontally scrollable strip. Mobile grids allow tracks to shrink so enlarged text wraps instead of widening the page, and expanded principle prose uses the full measure. The topic output remains internally scrollable (390px desktop, 380px mobile). Additional narrow-screen adjustments occur at (380px), including (16px) gutters; very wide hero proportions adjust at (1700px).
 
 The manifesto page caps at (1000px), with an article measure of (740px). Its six principles are expanded reading sections, not disclosures. Section padding follows editorial scale rather than a single universal section token.
 
@@ -200,7 +197,7 @@ There is no box-shadow vocabulary. Depth comes from paper-to-forest reversals, s
 
 **The Flat Material Rule.** Distinguish surfaces with ink, ground and rules rather than shadows or neon glow.
 
-Motion is subordinate to complete static composition. Shared action-color transitions last (180ms). Folheto's toucan, capybara and ipê run two finite (14s) circuits, only while visible and allowed; the public emblem/flame itself is static, unclipped and untransformed. A user-selected freedom reading may receive a (360ms) wipe, never a scroll-triggered content gate.
+Motion is subordinate to complete static composition. Shared action-color transitions last (180ms). Folheto's toucan, capybara and ipê run two finite (14s) circuits, only while visible and allowed; the public emblem/flame itself is static, unclipped and untransformed. The toucan rides two smooth rise-and-settle arcs per circuit, with restrained horizontal drift and banking rather than stop-start lateral travel. Three faint forest-green wind strokes pass behind it in staggered (3.5s) pulses for the same (28s) total; they share the scene's pause/visibility/reduced-motion controls and disappear when finished or motion is reduced. The complete supplied bird remains visible without JavaScript. A user-selected freedom reading may receive a (360ms) wipe, never a scroll-triggered content gate.
 
 Terminal samples the supplied SVG into particles, gathers over (1600ms), then continuously moves only the warm upper flame islands. The beak, cream face and green/blue body do not enter the flame mask; after assembly their particle geometry stays at rest. Traveling lift/curl and subtle opacity variation keep the recognizable flame alive, rather than giving every particle a random orbit. Source bounds reserve tip headroom. The budget is a single requestAnimationFrame loop, at most (1400) particles or (600) below (760px), and device-pixel ratio capped at (1.5). These are implementation budgets, not measured frame-rate or hardware guarantees.
 
@@ -226,17 +223,21 @@ The switch reads “Público geral” and “Devs”; `data-selected` selects th
 
 A native fieldset/legend groups four radios: Usar, Estudar, Modificar and Compartilhar. Checked labels reverse to amber/deep forest; unselected hover gains a cream tint. Preserve native radio keyboard selection, (18px) radio controls, associated labels and `aria-controls`. A label focus-within has a (3px) amber ring with (5px) offset; the checked control's own focus uses deep forest. Selection displays one real article and a polite “Lendo…” status. Without JavaScript, controls stay hidden and all four readings stay visible.
 
-### Connected local-command combobox
+### Typed-topic carousel
 
-The only text field is a real, browser-local reading command, not a shell or a contact form. Label “Seu comando”, prompt marker, text input, “Ler” submit action and an adjacent listbox form one connected control. The field uses a dark inset, cream text, mint-toned supporting text and an amber caret. Suggestion buttons have ruled borders; hover turns their text/border amber with a darker green fill. Listbox options have command names and descriptions; selected options reverse to amber/deep forest, while unselected hover receives the green fill. Focus stays on the input through `aria-activedescendant`; selected options use `aria-selected`.
+“Por trás de cada linha.” introduces nine local readings: `manifesto`, `comunidade`, `autonomia`, then `principio 1` through `principio 6` in canonical order. The topic index uses native anchors, `aria-controls` and `aria-current`. Selected text and the prompt are amber on a deep-green surface; no input, autocomplete, command history or simulated execution remains. The command line uses a mint prompt and a block caret; output pairs quieter mono headings with proportional reading text.
 
-Focus or typing opens prefix-filtered suggestions, normalized for case, accents and whitespace. Arrow keys wrap the active option; Enter reads that option or the typed command. Tab completes a nonempty partial command once, then normal Tab navigation continues; Shift+Tab is never captured for completion. Escape closes the list. With it closed, arrows navigate up to (24) session-memory commands and restore the draft. Click/touch executes an option without moving focus away first. Blur closes suggestions. Empty results explain recovery; polite status announces options and reading results.
+While visible and motion is allowed, commands type at (65ms) per character. A (280ms) output transition accompanies automatic topic changes; the text itself stays available throughout typing. Reading dwell is (9000ms + 35ms per word), capped at (18000ms); an amber progress rule measures that dwell. Previous/next wrap through all nine topics. Manual selection and touch reading pause the sequence until resumed. Mouse hover over the reading and keyboard focus outside playback controls temporarily suspend it. Every interruption cancels pending work and completes the command; resuming grants a fresh reading dwell.
 
-Supported commands are `ajuda`, `manifesto`, `principio 1` through `principio 6`, `comunidade`, `autonomia` and `limpar`. They consult actual shared content; nothing is sent or executed on the visitor's system. Invalid commands/indices produce a visible recovery reading with orange heading. Input is capped at (120) characters and rendered as text, not HTML. The output is a labeled, focusable scroll region, capped at (12) entries. Clearing output does not erase command history. Without JavaScript, the form and command buttons stay hidden; the initial reading, native disclosures and real manifesto links remain available.
+The shared motion preference, document visibility, page lifecycle and reading-viewport intersection gate all timers, cursor movement and Web Animations. Reduced motion/global pause show complete commands and keep manual topic navigation usable. Automatic changes are not live-announced; manual selection has a polite status. Playback buttons have (44px) targets and explicit Portuguese labels. Without JavaScript, every article and its real destination remain visible; print also expands all nine readings. Contextual topic/link sizes (13–14px) and responsive command/headline sizes are local hierarchy treatments, not additions to the normative type ramp.
 
 ### Native principle disclosures and editorial rows
 
 Both homepages use six native details/summary controls in canonical order, with the first open. Full titles and Portuguese shared data remain authoritative; this system does not rewrite copy. Public titles underline on hover; technical titles become amber on hover or open. Drawn plus/minus strokes communicate state without JavaScript. Contribution and engineering definition lists use ruled label/reading columns, not clickable cards. The manifesto route keeps all principles expanded.
+
+Use the approved titles and order from the [public manifesto](docs/01-manifesto-publico.md), beginning with “Tecnologia para o bem comum”. Do not shorten or translate the titles; allow longer names to wrap naturally. The revised names and copy were inspected at desktop and mobile widths without changing the visual system.
+
+Numbered readings and their topic labels follow the same canonical order. Reordering the principles must keep each reading's title, lead and body together.
 
 ### Keyboard, motion and print controls
 

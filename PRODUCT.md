@@ -104,14 +104,16 @@ These materials establish proposed language and product intent, not testimonials
 
 Keep the six canonical Portuguese names and their order when presenting the manifesto:
 
-1. **Liberdade por padrão** — freedom to use, study, modify, and share; maintenance and resources matter.
-2. **Soberania por escolha** — meaningful choices about data, code, dependencies, migration, and continuity.
-3. **Segurança por princípio** — privacy and proportionate protection from the outset, without absolute guarantees.
-4. **Pragmatismo com propósito** — useful choices now that preserve options for tomorrow.
-5. **Tecnologia para o bem comum** — build with affected people across different contexts; recognize maintenance and fairly paid work.
-6. **Transparência e liberdade algorítmica** — freedom from dependence on opaque recommendations: choose sources and people to follow, understand why content appears, change criteria, and turn recommendations off without losing access to chosen follows. Preserve discovery and the ability to question automated decisions; these are principles, not shipped controls or a rejection of all algorithms.
+1. **Tecnologia para o bem comum** — build useful tools with affected people across different contexts; recognize maintenance and fairly paid work.
+2. **Autonomia para escolher** — meaningful choices about data, code, dependencies, migration, and continuity.
+3. **Software livre e conhecimento compartilhado** — freedom to use, study, modify, and share, including commercial use; real permissions, maintenance, and resources matter.
+4. **Clareza e escolha no que acompanhamos** — choose sources and people to follow, understand recommendation criteria and interests, and adjust or turn recommendations off without losing access to chosen follows. Preserve discovery and the ability to question automated decisions; these are principles, not shipped controls or a rejection of all algorithms.
+5. **Privacidade e segurança desde o início** — privacy and proportionate protection from the outset, with maintenance and clear limits rather than absolute guarantees.
+6. **Simplicidade para construir e manter** — useful choices suited to current resources, with understandable costs and dependencies, fair working conditions, and gradual autonomy.
 
 The English explanations are implementation context, not replacement public titles or approved translations. Change the short manifesto, extended interpretation, and affected derivatives together if the principles change.
+
+The owner approved these names and this order on 22 October 2026, replacing the earlier slogan-like titles with concrete, approachable language. The short and extended manifestos, editorial guidance, and shared website data use the same revision. Historical source titles remain unchanged; see the [editorial decision record](docs/08-fontes-e-decisoes-editoriais.md).
 
 ## Accessibility & Inclusion
 
@@ -134,7 +136,7 @@ The English explanations are implementation context, not replacement public titl
 - The official pair is Folheto at `/` and Terminal at `/devs/`, with the shared manifesto at `/manifesto/`. The owner selected this animated implementation as the only website presentation; no comparison routes or generation labels remain.
 - The rendered [Tern](https://stencil.so/tern) and [OMP](https://omp.sh/) pages inform visual confidence and terminal interaction. Their product claims, gradients, metrics and capabilities are not Embraso's.
 - `src/components/` contains the public page bodies; `src/scripts/` contains progressive enhancements. Folheto adds coordinated supplied-fauna motion and a native-radio reader for the four software freedoms. Its flame stays static and unmasked; decorative illustration rules were removed at the owner's request. Without JavaScript, all four readings remain available.
-- Terminal provides local commands: `ajuda`, `manifesto`, `principio 1` through `principio 6`, `comunidade`, `autonomia`, and `limpar`. A prompt-connected combobox suggests commands and canonical principle descriptions. Arrows select, Enter reads, Tab completes only partial commands, and Escape closes suggestions; closed-menu arrows browse bounded history. User input is rendered as text, not HTML. No shell execution, command submission, server connection or simulated activity exists.
+- Terminal replaces the command dropdown with a typed-topic carousel under “Por trás de cada linha.” Nine readings cover the manifesto, community, autonomy and six canonical principles. Commands type automatically, then remain for a word-weighted reading pause (up to 18 seconds). Native topic links, previous/next and pause/resume provide manual control; manual selection/touch reading pauses until resumed. Hover and keyboard reading focus suspend playback temporarily. Shared motion settings, reduced motion, visibility and intersection control timers and animation. All readings survive without JavaScript and in print. No text input, shell execution, command submission, server connection or simulated activity exists.
 - Supplied SVG pixels form the optional particle artwork. The warm flame regions continuously rise, curl and flicker after assembly; the supplied toucan remains recognizable. Sampling is capped at 1,400 particles on desktop, 600 on mobile and DPR 1.5. A shared pause button, live reduced-motion preference, visibility and intersection observers control nonessential work. Pausing or reducing terminal motion displays the complete supplied SVG.
 - Amber content surfaces use a dark/cream selection treatment so selected text remains visibly distinct. Ordinary reading links and native disclosures remain usable without scripts.
-- `src/scripts/motion.ts` stores only the motion-pause preference in session storage when available; reading commands are not persisted. These controls do not establish a broader privacy or data-retention policy. Scripts progressively enhance static reading content. Cross-page view transitions remain disabled.
+- `src/components/CommandCarousel.astro` and `src/scripts/terminal-carousel.ts` own the typed-topic reader; the old command-input enhancement is removed. `src/scripts/motion.ts` stores only the global motion-pause preference in session storage when available; carousel selection is not persisted. These controls do not establish a broader privacy or data-retention policy. Scripts progressively enhance static reading content. Cross-page view transitions remain disabled.
