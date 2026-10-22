@@ -10,7 +10,7 @@ const topics = [
   { ...copy.topics[0], command: messages.devs.commands.manifesto, paragraphs: messages.manifesto.introduction },
   { ...copy.topics[1], command: messages.devs.commands.community, paragraphs: [messages.manifesto.invitation.introduction, messages.manifesto.invitation.body, copy.communityParagraph] },
   { ...copy.topics[2], command: messages.devs.commands.autonomy, paragraphs: copy.autonomyParagraphs },
-  ...principles.map((principle, index) => ({ command: messages.devs.commands.principles[index]!, label: principle.title, title: principle.title, paragraphs: [principle.lead, principle.body], href: '/manifesto/', link: copy.principlesLink })),
+  ...principles.map((principle, index) => ({ command: messages.devs.commands.principles[index]!, label: principle.title, title: principle.title, summary: principle.lead, paragraphs: [principle.body], href: '/manifesto/', link: copy.principlesLink })),
 ];
 ---
 
@@ -18,25 +18,41 @@ const topics = [
   <div class="carousel-guide">
     <h2 id="carousel-title">{copy.heading.map((part) => part.type === 'break' ? <><br />{' '}</> : part.type === 'emphasis' || part.type === 'accent' ? <span>{part.text}</span> : part.type === 'strong' ? <strong>{part.text}</strong> : part.type === 'mark' ? <span>{part.text}</span> : part.text)}</h2>
     <p>{copy.intro}</p>
-    <nav class="topic-navigation" aria-label={copy.navigation}>
-      {topics.map((topic, index) => (
-        <a href={`#leitura-${index}`} data-topic={index} aria-controls={`leitura-${index}`}>
-          <span class="topic-marker" aria-hidden="true">{index < 3 ? '>' : String(index - 2).padStart(2, '0')}</span>
-          <span>{topic.label}</span>
-          <svg class="topic-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>
-        </a>
-      ))}
+    <nav class="topic-navigation" aria-label={copy.locator}>
+      <div class="topic-group">
+        <h3>{copy.framingTopics}</h3>
+        <ol>
+          {topics.slice(0, 3).map((topic, index) => (
+            <li><a href={`#leitura-${index}`} data-topic={index} aria-controls={`leitura-${index}`} aria-current={index === 0 ? 'true' : undefined}>
+              <span class="topic-marker" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><span>{topic.label}</span>
+            </a></li>
+          ))}
+        </ol>
+      </div>
+      <div class="topic-group">
+        <h3>{copy.principles}</h3>
+        <ol>
+          {topics.slice(3).map((topic, offset) => {
+            const index = offset + 3;
+            return <li><a href={`#leitura-${index}`} data-topic={index} aria-controls={`leitura-${index}`}>
+              <span class="topic-marker" aria-hidden="true">{String(index - 2).padStart(2, '0')}</span><span>{topic.label}</span>
+            </a></li>;
+          })}
+        </ol>
+      </div>
     </nav>
   </div>
   <div class="carousel-workspace">
     <div class="workspace-heading"><span>{copy.workspace}</span><span>{copy.workspaceNotice}</span></div>
     <div class="command-line" aria-hidden="true"><span class="prompt-marker">&gt;</span><span data-typed-command>{topics[0]!.command}</span><span class="command-caret"></span></div>
-    <div class="carousel-readings" data-carousel-readings tabindex="0" role="region" aria-label={copy.selectedContent}>
+    <div class="carousel-readings" data-carousel-readings role="region" aria-label={copy.selectedContent}>
       {topics.map((topic, index) => (
         <article id={`leitura-${index}`} class="topic-reading" data-reading={index} data-command={topic.command} aria-labelledby={`reading-title-${index}`}>
           <p class="reading-command">&gt; {topic.command}</p>
-          <h3 id={`reading-title-${index}`}><span aria-hidden="true">// </span>{topic.title}</h3>
-          {topic.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          <p class="reading-label">{topic.label}</p>
+          <h3 id={`reading-title-${index}`}>{topic.title}</h3>
+          <p class="reading-summary">{topic.summary}</p>
+          <div class="topic-full-reading">{topic.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
           <a href={topic.href}>{topic.link}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a>
         </article>
       ))}
@@ -64,36 +80,36 @@ const topics = [
   h2 { font: 600 clamp(1.8rem, 3.1vw, 3rem)/1.25 var(--font-mono); letter-spacing: -.02em; margin: 0 0 24px; }
   h2 span { color: var(--yellow); }
   .carousel-guide > p { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 38ch; margin: 0 0 32px; }
-  .topic-navigation { display: grid; }
-  .topic-navigation a { display: grid; grid-template-columns: 24px minmax(0, 1fr) 16px; gap: 12px; align-items: center; min-height: 48px; padding: 12px 8px; color: var(--muted); border-bottom: 1px solid var(--rule); text-decoration: none; font-size: 1rem; line-height: 1.6; }
-  .topic-navigation a:nth-child(4) { margin-top: 16px; border-top: 1px solid var(--rule); }
+  .topic-navigation { display: grid; gap: 20px; }
+  .topic-group h3 { margin: 0 0 8px; color: var(--mint); font: 10px/1.6 var(--font-mono); text-transform: uppercase; letter-spacing: .035em; }
+  .topic-group ol { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+  .topic-group li { border-bottom: 1px solid var(--rule); }
+  .topic-navigation a { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; align-items: center; min-height: 44px; padding: 8px; color: var(--muted); text-decoration: none; font-size: .9375rem; line-height: 1.5; }
   .topic-marker { color: var(--mint); font: 10px/1.5 var(--font-mono); }
-  .topic-arrow { opacity: 0; }
-  .topic-navigation a:hover { color: var(--cream); background: #10271a; }
-  .topic-navigation [aria-current='true'] { color: var(--yellow); background: #10271a; }
+  .topic-navigation a:hover, .topic-navigation [aria-current='true'] { color: var(--yellow); }
   .topic-navigation [aria-current='true'] .topic-marker { color: var(--yellow); }
-  .topic-navigation [aria-current='true'] .topic-arrow { opacity: 1; }
   a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--yellow); outline-offset: 5px; }
   .carousel-workspace { min-width: 0; align-self: start; background: #09190f; border: 1px solid var(--rule); }
   .workspace-heading { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; padding: 18px 28px; border-bottom: 1px solid var(--rule); color: var(--muted); font: 10px/1.6 var(--font-mono); }
   .workspace-heading > span:first-child { color: var(--mint); }
-  .command-line { display: none; align-items: center; padding: 32px 28px 28px; font: 500 clamp(1.2rem, 2.2vw, 2rem)/1.5 var(--font-mono); letter-spacing: -.03em; white-space: nowrap; min-height: 106px; }
+  .command-line { display: none; align-items: center; padding: 32px 28px 28px; font: 500 clamp(1.2rem, 2.2vw, 2rem)/1.5 var(--font-mono); letter-spacing: -.03em; overflow-wrap: anywhere; min-height: 106px; }
   [data-enhanced] .command-line { display: flex; }
-  .prompt-marker { color: var(--mint); margin-right: 18px; }
+  .prompt-marker { color: var(--mint); margin-right: 18px; flex: 0 0 auto; }
   [data-typed-command] { color: var(--yellow); }
   .command-caret { width: .55em; height: 1.15em; margin-left: 6px; background: var(--yellow); flex-shrink: 0; opacity: 0; }
   .command-carousel[data-playback='running'] .command-caret { opacity: 1; animation: caret-blink 1.1s steps(1, end) infinite; animation-play-state: running !important; }
   [data-phase='typing'][data-playback='running'] .command-caret { animation: none; }
   .carousel-readings { padding: 0 28px 32px; overflow-wrap: anywhere; }
-  [data-enhanced] .carousel-readings { height: 390px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--mint) #09190f; }
+  [data-enhanced] .carousel-readings { min-height: 330px; padding-top: 0; }
   .topic-reading { padding-top: 28px; scroll-margin-top: 20px; }
   [data-enhanced] .topic-reading { padding-top: 0; }
   .topic-reading[hidden], .carousel-controls[hidden] { display: none; }
   .reading-command { color: var(--mint); font: 12px/1.6 var(--font-mono); }
   [data-enhanced] .reading-command { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); margin: 0; }
-  h3 { font: 500 clamp(1rem, 1.5vw, 1.25rem)/1.65 var(--font-mono); letter-spacing: -.015em; margin: 0 0 24px; color: var(--cream); }
-  h3 span { color: var(--mint); }
-  .topic-reading > p:not(.reading-command) { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 68ch; margin: 0 0 24px; }
+  .reading-label { margin: 0 0 12px; color: var(--mint); font: 12px/1.6 var(--font-mono); }
+  .topic-reading h3 { max-width: 20ch; margin: 0 0 20px; color: var(--cream); font: 600 clamp(1.6rem, 3.2vw, 2.4rem)/1.35 var(--font-mono); letter-spacing: -.02em; text-wrap: pretty; }
+  .reading-summary, .topic-full-reading p { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 68ch; margin: 0 0 24px; }
+  [data-enhanced] .topic-full-reading { display: none; }
   .topic-reading > a { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; color: var(--cream); font-size: 1rem; text-underline-offset: 4px; }
   .topic-reading > a:hover { color: var(--yellow); }
   .carousel-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px 16px 28px; border-top: 1px solid var(--rule); }
@@ -117,17 +133,21 @@ const topics = [
   }
   @media (max-width: 760px) {
     .command-carousel { grid-row: 2; grid-template-columns: minmax(0, 1fr); margin-top: 48px; padding-top: 32px; gap: 32px; }
+    .carousel-guide { display: contents; }
+    .carousel-workspace { order: 1; }
+    .topic-navigation { order: 2; }
     h2 { font-size: clamp(1.8rem, 6.5vw, 2.6rem); }
     h2 br { display: none; }
     .carousel-guide > p { max-width: 52ch; margin-bottom: 20px; }
-    [data-enhanced] .topic-navigation { display: flex; overflow-x: auto; gap: 8px; padding: 6px 4px 12px; margin-inline: -4px; scrollbar-width: thin; scrollbar-color: var(--mint) #09190f; }
-    [data-enhanced] .topic-navigation a { display: flex; flex-shrink: 0; max-width: 270px; padding: 10px 12px; border: 1px solid var(--rule); }
-    [data-enhanced] .topic-navigation a:nth-child(4) { margin-top: 0; }
-    [data-enhanced] .topic-arrow { display: none; }
+    [data-enhanced] .topic-navigation { display: flex; overflow-x: auto; gap: 20px; padding: 6px 4px 12px; margin-inline: -4px; scrollbar-width: thin; scrollbar-color: var(--mint) #09190f; }
+    [data-enhanced] .topic-group { flex: 0 0 auto; }
+    [data-enhanced] .topic-group ol { display: flex; }
+    [data-enhanced] .topic-group li { flex: 0 0 auto; border: 1px solid var(--rule); }
+    [data-enhanced] .topic-navigation a { display: flex; gap: 8px; max-width: 270px; min-height: 60px; padding: 10px 12px; }
     .workspace-heading { padding: 16px 20px; font-size: 9px; }
     .command-line { padding: 24px 20px; font-size: clamp(1.2rem, 5vw, 1.75rem); min-height: 88px; }
     .carousel-readings { padding: 0 20px 24px; }
-    [data-enhanced] .carousel-readings { height: 380px; }
+    [data-enhanced] .carousel-readings { min-height: 300px; }
     .carousel-controls { padding: 12px 16px 12px 20px; gap: 8px; }
     .playback-controls { gap: 6px; }
   }
@@ -138,6 +158,7 @@ const topics = [
     .carousel-workspace { background: none; border: 0; }
     [data-enhanced] .carousel-readings { height: auto; overflow: visible; }
     .topic-reading[hidden] { display: block !important; }
-    h3, .topic-reading > p:not(.reading-command), .topic-reading > a { color: #000; }
+    [data-enhanced] .topic-full-reading { display: block; }
+    h3, .topic-reading > p:not(.reading-command), .topic-full-reading p, .topic-reading > a { color: #000; }
   }
 </style>

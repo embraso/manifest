@@ -9,10 +9,31 @@ export const commands = {
 
 export const carousel = {
   topics: [
-    { label: 'Por que construir', title: 'Conhecimento que encontra propósito.', href: '/manifesto/', link: actions.readManifestoFull },
-    { label: 'Com quem construir', title: 'Gente antes da stack.', href: '#participacao', link: 'Conhecer as formas de participação' },
-    { label: 'Poder continuar', title: 'Escolher também é poder mudar.', href: '#proposta', link: 'Ler a proposta' },
+    {
+      label: 'Por que construir',
+      title: 'Conhecimento que encontra propósito.',
+      summary: 'Aproximar ferramentas e conhecimento de quem conhece os problemas permite criar coisas úteis, trocar experiências e descobrir o inesperado.',
+      href: '/manifesto/',
+      link: actions.readManifestoFull,
+    },
+    {
+      label: 'Com quem construir',
+      title: 'Gente antes da stack.',
+      summary: 'Comunidade é espaço de troca, aprendizado e relações. Participar não exige saber programar nem ter disponibilidade constante.',
+      href: '#participacao',
+      link: 'Conhecer as formas de participação',
+    },
+    {
+      label: 'Poder continuar',
+      title: 'Escolher também é poder mudar.',
+      summary: 'Compreender ferramentas e dependências ajuda a recuperar dados, mudar de serviço e dar continuidade ao que foi construído.',
+      href: '#proposta',
+      link: 'Ler a proposta',
+    },
   ],
+  locator: 'Índice de tópicos',
+  framingTopics: 'Por que construir',
+  principles: 'Seis princípios',
   communityParagraph: 'Comunidade é lugar de troca, aprendizado e relações — não uma fila de tarefas. Participar não exige saber programar nem ter tempo toda semana.',
   autonomyParagraphs: [
     'Autonomia digital não é fazer tudo sozinho. É compreender o que usamos, conhecer dependências e preservar caminhos para recuperar dados, adaptar ferramentas, migrar e continuar.',
