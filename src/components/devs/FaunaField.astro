@@ -4,32 +4,95 @@ import emblem from '../../../assets/b084774a04a4acde15a270ee03518180.svg';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
-const caption = getMessages(locale).devs.opening.faunaCaption;
+const messages = getMessages(locale).devs.opening;
 ---
 
-<div class="fauna-field" data-fauna-field aria-hidden="true">
-  <img data-fauna-source src={emblem.src} alt="" width="462" height="654" fetchpriority="high" />
-  <canvas data-fauna-canvas></canvas>
-  <span class="field-caption">{caption}</span>
-</div>
+<section class="fauna-field" data-fauna-field aria-labelledby="fetch-profile-title">
+  <header class="fetch-titlebar">
+    <div class="fetch-window-controls" aria-hidden="true"><span></span><span></span><span></span></div>
+    <p>{messages.fetchWindowTitle}</p>
+    <span class="fetch-titlebar-space" aria-hidden="true"></span>
+  </header>
+  <p class="fetch-prompt"><span>{messages.fetchPrompt}</span><span class="fetch-prompt-separator" aria-hidden="true">$</span> {messages.fetchCommand}</p>
+  <div class="fetch-output">
+    <div class="fetch-logo" aria-hidden="true">
+      <img data-fauna-source src={emblem.src} alt="" width="462" height="654" fetchpriority="high" />
+    </div>
+    <div class="fetch-info">
+      <h2 id="fetch-profile-title">{messages.fetchTitle}</h2>
+      <dl class="fetch-list">
+        <div><dt>{messages.fetchProfileLabel}</dt><dd>{messages.fetchProfile}</dd></div>
+        <div><dt>{messages.fetchFocusLabel}</dt><dd>{messages.fetchFocus}</dd></div>
+        <div><dt>{messages.fetchBaseLabel}</dt><dd>{messages.fetchBase}</dd></div>
+        <div><dt>{messages.fetchFrontsLabel}</dt><dd>{messages.fetchFronts}</dd></div>
+        <div><dt>{messages.fetchContextLabel}</dt><dd>{messages.fetchContextValue}</dd></div>
+        <div><dt>{messages.fetchPrinciplesLabel}</dt><dd>{messages.fetchPrinciples}</dd></div>
+        <div><dt>{messages.fetchDirectionLabel}</dt><dd>{messages.fetchDirection}</dd></div>
+      </dl>
+    </div>
+  </div>
+  <canvas data-fauna-canvas aria-hidden="true"></canvas>
+  <div class="fetch-palette" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</section>
 
 <script>
   import './particles';
 </script>
 
 <style>
-  .fauna-field { position: relative; align-self: stretch; min-height: 610px; isolation: isolate; }
-  .fauna-field img { position: absolute; width: 86%; height: 89%; top: 2%; left: 7%; object-fit: contain; }
-  .fauna-field canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; }
+  .fauna-field { position: relative; isolation: isolate; align-self: center; display: flex; flex-direction: column; width: 100%; height: 440px; min-height: 440px; overflow: hidden; color: var(--cream); background: #09190f; border: 1px solid var(--rule); border-radius: 8px; }
+  .fetch-titlebar { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 42px; padding-inline: 14px; background: #13271b; border-bottom: 1px solid var(--rule); }
+  .fetch-window-controls { display: flex; gap: 7px; align-items: center; }
+  .fetch-window-controls span { width: 10px; height: 10px; border-radius: 50%; background: var(--orange); }
+  .fetch-window-controls span:nth-child(2) { background: var(--yellow); }
+  .fetch-window-controls span:nth-child(3) { background: var(--mint); }
+  .fetch-titlebar p { margin: 0; color: var(--muted); font: 10px/1.5 var(--font-mono); }
+  .fetch-titlebar-space { width: 44px; }
+  .fetch-prompt { position: relative; z-index: 2; margin: 0; padding: 13px 18px; color: var(--cream); font: 11px/1.5 var(--font-mono); border-bottom: 1px solid var(--rule); }
+  .fetch-prompt > span:first-child { color: var(--mint); font-weight: 600; }
+  .fetch-prompt-separator { color: var(--yellow); }
+  .fetch-output { flex: 1; display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); align-items: center; gap: 12px; padding: 24px 20px; }
+  .fetch-logo { position: relative; min-width: 0; min-height: 260px; }
+  .fauna-field img { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  .fauna-field canvas { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; }
   .fauna-field[data-particles='running'] canvas { opacity: 1; }
   .fauna-field[data-particles='running'] img { opacity: 0; }
-  .field-caption { position: absolute; bottom: 16px; left: 0; right: 0; text-align: center; color: var(--muted); font: 10px/1.6 var(--font-mono); }
-  @media (max-width: 1100px) { .fauna-field { min-height: 550px; } }
-  @media (max-width: 760px) {
-    .fauna-field { grid-row: 3; min-height: 0; height: 410px; margin-top: 38px; }
-    .fauna-field img { width: 74%; left: 13%; height: 88%; }
+  .fetch-info { position: relative; z-index: 2; align-self: start; min-width: 0; margin-top: 8px; padding: 12px 0 12px 16px; background: #09190f; }
+  .fetch-info h2 { margin: 0 0 14px; padding-bottom: 12px; color: var(--mint); font: 600 13px/1.5 var(--font-mono); border-bottom: 1px dashed var(--rule); }
+  .fetch-list { margin: 0; }
+  .fetch-list > div { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: baseline; gap: 8px; padding-top: 7px; }
+  .fetch-list dt { color: var(--mint); font: 10px/1.6 var(--font-mono); }
+  .fetch-list dd { min-width: 0; margin: 0; color: var(--cream); text-align: left; font: 10px/1.6 var(--font-mono); overflow-wrap: anywhere; }
+  .fetch-palette { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(7, 1fr); height: 12px; margin-inline: 18px; }
+  .fetch-palette span:nth-child(1) { background: var(--green); }
+  .fetch-palette span:nth-child(2) { background: var(--mint); }
+  .fetch-palette span:nth-child(3) { background: var(--yellow); }
+  .fetch-palette span:nth-child(4) { background: var(--orange); }
+  .fetch-palette span:nth-child(5) { background: var(--blue); }
+  .fetch-palette span:nth-child(6) { background: var(--dark); }
+  .fetch-palette span:nth-child(7) { background: var(--cream); }
+  @media (max-width: 1100px) {
+    .fauna-field { height: 460px; min-height: 460px; }
+    .fetch-output { grid-template-columns: minmax(0, .68fr) minmax(0, 1.32fr); gap: 8px; padding-inline: 14px; }
+    .fetch-info { padding-left: 10px; }
   }
-  @media (max-width: 380px) { .fauna-field { height: 340px; } }
+  @media (max-width: 760px) {
+    .fauna-field { grid-row: 3; align-self: start; width: 100%; height: auto; min-height: 0; margin-top: 38px; }
+    .fetch-output { grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: 8px; padding: 18px 14px 20px; }
+    .fetch-logo { min-height: 220px; }
+    .fauna-field canvas { display: none; }
+    .fauna-field[data-particles='running'] img { opacity: 1; }
+    .fetch-info { padding-left: 10px; }
+    .fetch-palette { margin-inline: 14px; }
+  }
+  @media (max-width: 380px) {
+    .fetch-output { grid-template-columns: minmax(0, .62fr) minmax(0, 1.38fr); gap: 6px; padding-inline: 10px; }
+    .fetch-logo { min-height: 180px; }
+    .fetch-info { padding-left: 8px; }
+    .fetch-list > div { grid-template-columns: 1fr; gap: 0; padding-top: 5px; }
+    .fetch-list dd { padding-left: 8px; }
+    .fetch-palette { margin-inline: 10px; }
+  }
   @media (prefers-reduced-motion: reduce) {
     .fauna-field canvas { display: none; }
     .fauna-field[data-particles='running'] img { opacity: 1; }

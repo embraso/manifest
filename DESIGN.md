@@ -193,7 +193,7 @@ The manifesto page caps at (1000px), with an article measure of (740px). Its six
 
 ## Elevation & Depth
 
-There is no box-shadow vocabulary. Depth comes from paper-to-forest reversals, subtly darker reader grounds, thin rules and illustration placement. No fake window chrome is needed to establish the working reader.
+There is no box-shadow vocabulary. Depth comes from paper-to-forest reversals, subtly darker reader grounds, thin rules and illustration placement. The EmbrasoFetch profile uses restrained terminal titlebar chrome to establish its fetch-screen reference; other reading surfaces do not need window framing.
 
 **The Flat Material Rule.** Distinguish surfaces with ink, ground and rules rather than shadows or neon glow.
 
@@ -232,6 +232,10 @@ Public primary links use forest/cream, a (48px) minimum height and the frontmatt
 ### Navigation and audience switch
 
 The switch reads “Público geral” and “Devs”; `data-selected` selects the visual register, while `aria-current="page"` identifies only a current page destination. Public selected state is forest/cream; technical selected state amber/deep forest. Unselected hover uses a subtle register-colored fill; selected hover retains its selected ground. Main-navigation hover underlines, with path-style mono labels in Terminal. Mobile keeps all destinations visible.
+
+### Developer fauna profile
+
+The `/devs/` hero presents a terminal-style EmbrasoFetch window with restrained titlebar controls, a static `$ embrasofetch` prompt, the sampled emblem in one column, initiative metadata in the other, and a seven-color brand strip. The command is a visual transcript, not shell execution. The panel uses a semantic definition list and catalog-backed Brazilian Portuguese; it shows no fabricated OS, host, kernel, uptime or hardware details, and retains the static emblem on narrow screens and under reduced motion.
 
 ### Motivation reader radios
 
