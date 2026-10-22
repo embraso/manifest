@@ -14,7 +14,7 @@ Foram lidos integralmente os dois manifestos disponibilizados em `C:/dev/embraso
 
 | Fonte | Cópia de consulta | Papel na síntese |
 | --- | --- | --- |
-| `Manifesto.md`, título “Manifesto por uma Tecnologia Livre, Soberana e Acessível” | [Manifesto original](fontes/manifesto-original.md) | Nomes e ordem dos seis princípios; critérios de liberdade, direitos, continuidade, segurança, custos, contextos brasileiros e transparência que respondem a como construir |
+| `Manifesto.md`, título “Manifesto por uma Tecnologia Livre, Soberana e Acessível” | [Manifesto original](fontes/manifesto-original.md) | Origem dos seis compromissos e de sua primeira nomenclatura e ordem; critérios de liberdade, direitos, continuidade, segurança, custos, contextos brasileiros e transparência que respondem a como construir |
 | `Manifesto - Thiago.md`, título “Nunca houve momento tão oportuno para desenvolvermos software brasileiro” | [Manifesto do Thiago](fontes/manifesto-thiago-original.md) | Argumento organizador da abertura: por que dedicar capacidade a isso, troca e descoberta versus consumo, oportunidade de aproximar ferramentas e pessoas, comunidade como propósito e duas frentes antes dos princípios |
 
 As cópias são registros históricos, não instruções de linguagem nem fatos automaticamente válidos. O [banco de frases](07-banco-de-frases.md) diferencia transcrição literal, adaptação e criação editorial.
@@ -30,7 +30,7 @@ Fontes auxiliares locais: `notes.txt` traz ideias preliminares de projetos, iden
 - Pessoas e comunidades importam além do retorno econômico; continuidade também exige recursos e trabalho.
 - Relações reais e participação têm mais valor que permanência artificial em plataformas.
 
-Decisão central: manter intactos os seis princípios como critérios públicos de como construir, precedidos pelo argumento de por que construir, por que começar agora e por que comunidade e autonomia são inseparáveis. As duas frentes não são princípios adicionais.
+Decisão central da síntese: preservar os compromissos dos seis princípios como critérios públicos de como construir, precedidos pelo argumento de por que construir, por que começar agora e por que comunidade e autonomia são inseparáveis. As duas frentes não são princípios adicionais. A nomenclatura e a ordem atuais seguem a aprovação posterior registrada abaixo.
 
 ### Reequilíbrio solicitado pelo usuário
 
@@ -42,9 +42,11 @@ Os quatro parágrafos iniciais de `01-manifesto-publico.md` são a abertura can�
 
 Universidades e brasileiros fora do país entram como pessoas e conhecimentos que queremos aproximar, não como parceiros confirmados nem prova de superioridade nacional. A experiência pessoal do Thiago sobre profissionais brasileiros não vira diagnóstico universal. A oportunidade técnica é uma possibilidade concreta de começar, sem superlativos históricos, métricas promocionais ou garantias de custo. Os limites factuais permanecem nas notas e nos critérios pertinentes, sem ocupar o lugar da motivação pública.
 
-Nesta revisão, os nomes, a ordem e o conteúdo dos seis princípios e a assinatura existente são preservados. O desenvolvimento do ponto 6 registrado abaixo pertence à síntese anterior; não foi reescrito neste reequilíbrio.
+Na etapa de reequilíbrio aqui registrada, os nomes, a ordem e o conteúdo dos seis princípios e a assinatura então existente foram preservados. O desenvolvimento do ponto 6 registrado abaixo pertencia à síntese anterior; não foi reescrito naquele reequilíbrio. Este é um registro da etapa, não a regra atual de nomes e ordem.
 
 ## Revisão editorial de 22 de outubro de 2026
+
+**Registro de uma etapa anterior:** a escolha da assinatura continua vigente. A manutenção dos títulos e da ordem descrita nesta seção foi substituída pela aprovação posterior em “Nomes e ordem aprovados para a revisão acolhedora”; o então sexto princípio passou a quarto.
 
 **Origem e decisão:** nesta revisão, o responsável pela iniciativa escolheu “Liberdade se constrói junto.” como assinatura editorial e pediu que o sexto princípio expressasse melhor a saída da dependência de recomendações obscuras, sem citar empresas. A redação da assinatura recebeu acento e concordância naturais em português brasileiro; não é uma transcrição literal da mensagem nem uma citação das fontes.
 
@@ -55,21 +57,40 @@ O título **Transparência e liberdade algorítmica** e a ordem dos seis princí
 **Condição de publicação:** apresentar essas escolhas como princípios e direção de construção, não como funcionalidades entregues. Manter a possibilidade de questionar decisões automatizadas, o espaço para descoberta e a proteção de dados. As cópias históricas das fontes não mudam. O registro desta escolha não aprova automaticamente os demais textos, o descritor, uma campanha formal ou qualquer alegação operacional.
 
 
+## Nomes e ordem aprovados para a revisão acolhedora
+
+**Origem e decisão:** em 22 de outubro de 2026, após as etapas registradas acima, o responsável pela iniciativa aprovou reorganizar e renomear os seis princípios e tornar os textos de apoio mais acolhedores, diretos, concretos e menos combativos. Esta é a regra atual de apresentação; substitui a orientação anterior de manter nomes e ordem intactos. A aprovação é do responsável pela iniciativa, não um consenso atribuído aos autores das fontes.
+
+| Ordem e nome atuais | Ordem e nome na síntese anterior |
+| --- | --- |
+| 1. Tecnologia para o bem comum | 5. Tecnologia para o bem comum |
+| 2. Autonomia para escolher | 2. Soberania por escolha |
+| 3. Software livre e conhecimento compartilhado | 1. Liberdade por padrão |
+| 4. Clareza e escolha no que acompanhamos | 6. Transparência e liberdade algorítmica |
+| 5. Privacidade e segurança desde o início | 3. Segurança por princípio |
+| 6. Simplicidade para construir e manter | 4. Pragmatismo com propósito |
+
+O bem comum abre os critérios pelo benefício que buscamos; os demais títulos tornam mais visíveis as escolhas e os cuidados cotidianos. A motivação, a oportunidade e as frentes de comunidade e autonomia gradual continuam antes da lista. Preferir o que queremos tornar possível e explicar os limites com calma, sem definir pertencimento pela oposição a empresas ou ferramentas.
+
+A revisão preserva as liberdades de usar, estudar, modificar e compartilhar, inclusive comercialmente; continuidade de dados e código e possibilidades de migração; recomendações compreensíveis e opcionais e decisões automatizadas contestáveis; privacidade e segurança proporcionais aos riscos, sem garantias absolutas; ferramentas disponíveis, custos, remuneração, manutenção e autonomia futura. Não escolhe licença nem cria produtos, controles ou políticas em operação. Fontes históricas, títulos citados, transcrições e atribuições não mudam.
+
 ## Mapa da fusão
+
+O destino segue a ordem atual. Números indicados na contribuição do primeiro manifesto localizam a fonte histórica, não a posição atual do princípio.
 
 | Destino canônico | Contribuição do primeiro manifesto | Contribuição do Thiago | Tratamento |
 | --- | --- | --- | --- |
 | Abertura e percurso antes dos princípios | Motivação para ampliar autonomia e capacidade de agir; construção gradual e sustentável | Pergunta “por quê?”, consumo versus troca, descoberta, oportunidade técnica e humana, comunidade antes do produto, duas frentes | Organizar a leitura pelo argumento do Thiago em síntese com os critérios do primeiro texto; manter os princípios como o como, não como toda a motivação |
-| 1. Liberdade por padrão | Uso, estudo, auditoria, adaptação, compartilhamento, manutenção | Software útil, gratuito e aberto; crítica à apropriação | Preservar liberdades e sustentabilidade; separar livre de gratuito e registrar a questão de licença em aberto |
-| 2. Soberania por escolha | Dados, código, infraestrutura, cópias e continuidade | Perguntas sobre servidores e login; independência dos canais de organização | Autonomia como capacidade e caminho gradual, não promessa de hospedagem inteiramente própria |
-| 3. Segurança por princípio | Coleta mínima, criptografia, acesso, backups, LGPD, limites | Rejeição à exploração dos dados e da atenção | Proteção desde a concepção, sem garantia absoluta nem selo de conformidade |
-| 4. Pragmatismo com propósito | Custos reais, planos gratuitos, dependências e migração | Oportunidade de desenvolvimento, subsídios e ferramentas existentes | Usar recursos com critérios e limites; retirar promessas de escala quase sem custo |
-| 5. Tecnologia para o bem comum | Diferentes realidades, pequenos negócios, direitos, dados públicos, ambiente | Universidades, cultura, lazer, coletivos e vida cotidiana | Escuta e utilidade para além da produtividade; exemplos explicitamente possíveis |
-| 6. Transparência e liberdade algorítmica | Título do ponto 6, resumo final e transparência transversal | Consumo sem troca, bolhas, descoberta e conexão | Desenvolver o ponto ausente com critérios compreensíveis, escolha do que acompanhar, possibilidade de desligar recomendações, contestação e relações reais |
+| 1. Tecnologia para o bem comum | Ponto 5: diferentes realidades, pequenos negócios, direitos, dados públicos, ambiente | Universidades, cultura, lazer, coletivos e vida cotidiana | Escuta e utilidade para além da produtividade; exemplos explicitamente possíveis |
+| 2. Autonomia para escolher | Ponto 2: dados, código, infraestrutura, cópias e continuidade | Perguntas sobre servidores e login; independência dos canais de organização | Autonomia como capacidade e caminho gradual, com migração e continuidade, não promessa de hospedagem inteiramente própria |
+| 3. Software livre e conhecimento compartilhado | Ponto 1: uso, estudo, auditoria, adaptação, compartilhamento, manutenção | Software útil, gratuito e aberto; crítica à apropriação | Preservar liberdades, inclusive uso comercial, e sustentabilidade; separar livre de gratuito e registrar a questão de licença em aberto |
+| 4. Clareza e escolha no que acompanhamos | Título do ponto 6, resumo final e transparência transversal | Consumo sem troca, bolhas, descoberta e conexão | Critérios compreensíveis, escolha do que acompanhar, possibilidade de desligar recomendações, contestação de decisões automatizadas e relações reais |
+| 5. Privacidade e segurança desde o início | Ponto 3: coleta mínima, criptografia, acesso, backups, LGPD, limites | Rejeição à exploração dos dados e da atenção | Proteção desde a concepção, proporcional aos riscos, sem garantia absoluta nem selo de conformidade |
+| 6. Simplicidade para construir e manter | Ponto 4: custos reais, planos gratuitos, dependências e migração | Oportunidade de desenvolvimento, subsídios e ferramentas existentes | Usar recursos com critérios e limites; considerar manutenção, remuneração e autonomia futura; retirar promessas de escala quase sem custo |
 
-O ponto 6 do primeiro texto não tem corpo: há um título entre separadores. A síntese não afirma ter recuperado um trecho faltante. O desenvolvimento é uma nova redação apoiada no resumo final desse texto e nas seções sobre redes e comunidade do Thiago.
+O ponto 6 do primeiro texto, hoje desenvolvido no princípio 4, não tem corpo: há um título entre separadores. A síntese não afirma ter recuperado um trecho faltante. O desenvolvimento é uma nova redação apoiada no resumo final desse texto e nas seções sobre redes e comunidade do Thiago.
 
-O nome “Tecnologia para o bem comum”, presente no resumo do original, foi escolhido como título canônico do ponto 5. “Tecnologia a serviço do bem comum”, usado no corpo de origem, permanece apenas no registro histórico.
+Na síntese anterior, o nome “Tecnologia para o bem comum”, presente no resumo do original, foi escolhido como título canônico do então ponto 5, agora ponto 1. “Tecnologia a serviço do bem comum”, usado no corpo de origem, permanece apenas no registro histórico.
 
 ## Tensões que a redação não deve esconder
 

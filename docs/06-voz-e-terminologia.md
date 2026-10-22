@@ -14,6 +14,8 @@ A Embraso quer aproximar pessoas para construir software útil e ampliar a auton
 - **Brasileira:** considera diferentes lugares, repertórios, corpos, rendas, equipamentos e conexões. Não representa o país inteiro como uma experiência única.
 - **Com algum encanto:** cabe uma imagem boa, uma frase que fica, um convite leve. Não cabe transformar todo parágrafo em slogan.
 
+Começar pelo que queremos tornar possível: aprender, escolher, adaptar, compartilhar e manter. Explicar riscos e dependências com situações reconhecíveis, sem organizar a identidade em torno de inimigos ou exigir pureza de quem lê. Um tom mais acolhedor não reduz os compromissos; torna suas consequências mais fáceis de compreender.
+
 **Assinatura escolhida:** Liberdade se constrói junto.
 
 **Descritor proposto:** Software útil, feito em comunidade, para as diferentes realidades do Brasil.
@@ -181,7 +183,7 @@ Começar pela ideia principal. Uma frase pode ser curta sem soar como anúncio; 
 
 Explicar uma sigla na primeira ocorrência quando ela for necessária. Para público amplo, “inteligência artificial” costuma bastar; “LLM” só entra quando essa distinção importa. “Código”, “dados” e “infraestrutura” também podem precisar de um exemplo. Não usar inglês como atalho para prestígio.
 
-Os seis nomes de princípios são estáveis: **Liberdade por padrão; Soberania por escolha; Segurança por princípio; Pragmatismo com propósito; Tecnologia para o bem comum; Transparência e liberdade algorítmica.** Um título criativo não deve substituí-los quando o texto estiver apresentando os princípios.
+Os seis nomes e sua ordem, aprovados pelo responsável pela iniciativa, são: **1. Tecnologia para o bem comum; 2. Autonomia para escolher; 3. Software livre e conhecimento compartilhado; 4. Clareza e escolha no que acompanhamos; 5. Privacidade e segurança desde o início; 6. Simplicidade para construir e manter.** Um título criativo não deve substituí-los quando o texto estiver apresentando os princípios. Esta regra substitui a nomenclatura e a ordem anteriores; títulos de fontes históricas e citações literais permanecem como foram escritos. A [memória editorial](08-fontes-e-decisoes-editoriais.md#nomes-e-ordem-aprovados-para-a-revisão-acolhedora) registra a correspondência.
 
 Antes de publicar, distinguir:
 

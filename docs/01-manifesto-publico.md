@@ -12,41 +12,41 @@ Ferramentas de desenvolvimento podem encurtar o caminho entre uma ideia e algo q
 
 Por isso, nosso caminho tem duas frentes inseparáveis: construir comunidade e ampliar nossa autonomia digital. Publicar software não basta: precisamos de relações, troca de conhecimento e condições para cuidar do que criamos. Os seis princípios a seguir orientam como queremos fazer essa construção.
 
-## 1. Liberdade por padrão
+## 1. Tecnologia para o bem comum
+
+**Ferramentas úteis, construídas com quem vai usá-las.**
+
+Queremos criar ferramentas que ajudem pessoas a aprender, trabalhar, criar e se organizar. Isso começa por ouvir quem vive cada necessidade e construir junto, considerando acessibilidade, aparelhos, conexões e diferentes realidades do Brasil. Educação, cultura, ciência, lazer, comunidades e pequenos negócios têm lugar nessa construção. Benefício coletivo e trabalho justamente remunerado podem caminhar juntos.
+
+## 2. Autonomia para escolher
+
+**Poder escolher, mudar de ferramenta e continuar.**
+
+Queremos que pessoas e projetos possam decidir sobre seus dados, código e ferramentas, respeitando os direitos de cada pessoa. Colaborar e usar serviços externos faz parte desse caminho. O cuidado está em compreender as dependências e preservar meios de recuperar dados, mudar de serviço e dar continuidade ao que foi construído.
+
+## 3. Software livre e conhecimento compartilhado
 
 **Liberdade para usar, estudar, modificar e compartilhar.**
 
-Preferimos software livre, padrões abertos e conhecimento compartilhado a ferramentas que só podemos usar nos termos de quem as controla. Queremos que o que construímos possa ser compreendido, adaptado e continuado por outras pessoas. Liberdade também precisa de gente e de recursos para cuidar dela.
+Defendemos software livre, padrões abertos e conhecimento compartilhado para que outras pessoas possam compreender, adaptar e continuar o que construímos. Essas liberdades incluem o uso comercial e dependem de permissões reais, não apenas de acesso ao código. Software livre não significa necessariamente gratuito: manter ferramentas e compartilhar conhecimento também exige recursos e trabalho reconhecido.
 
-## 2. Soberania por escolha
+## 4. Clareza e escolha no que acompanhamos
 
-**Usar um serviço deve ser uma escolha, não uma saída sem volta.**
+**Entender as recomendações e decidir o que acompanhar.**
 
-Queremos controle efetivo sobre dados, código e continuidade dos projetos, respeitando os direitos das pessoas. Isso não exige fazer tudo sozinhos nem rejeitar colaboração internacional. Exige conhecer nossas dependências e preservar caminhos para recuperar, migrar e continuar.
+Queremos poder escolher pessoas, fontes e assuntos, entender por que um conteúdo aparece e ajustar ou desligar recomendações sem perder o acesso ao que escolhemos seguir. Recomendações podem ajudar a descobrir algo novo quando seus critérios e interesses são compreensíveis e seu uso é uma escolha. Defendemos espaço para a conversa e a descoberta, com respeito ao tempo de cada pessoa. Decisões automatizadas também devem poder ser compreendidas e questionadas.
 
-## 3. Segurança por princípio
+## 5. Privacidade e segurança desde o início
 
-**Privacidade e cuidado desde o começo.**
+**Cuidar dos dados é cuidar das pessoas.**
 
-A confiança das pessoas vale mais que a conveniência de coletar seus dados. Defendemos coleta mínima, proteção proporcional aos riscos e clareza sobre limites. Código aberto não é garantia automática de segurança; proteger, manter e corrigir também faz parte de construir.
+Queremos considerar privacidade e segurança em cada etapa: coletar apenas os dados necessários, explicar para que servem e protegê-los de acordo com os riscos. Esse cuidado inclui manter as ferramentas, corrigir problemas e comunicar limites com clareza. Código aberto pode ajudar na revisão, mas não garante segurança por si só.
 
-## 4. Pragmatismo com propósito
+## 6. Simplicidade para construir e manter
 
-**Construir hoje sem entregar as escolhas de amanhã.**
+**Começar com o que temos e criar condições para continuar.**
 
-Podemos aproveitar nuvem, ferramentas proprietárias e inteligência artificial sem fingir que não criam dependências. Preferimos soluções simples que funcionam, com custos e limites compreensíveis e caminhos graduais para mais autonomia. Não exigimos pureza para começar, nem usamos a pressa para justificar qualquer escolha.
-
-## 5. Tecnologia para o bem comum
-
-**A vida é maior que o mercado — e o Brasil é maior que uma única realidade.**
-
-Educação, cultura, ciência, lazer, organização comunitária e pequenos negócios merecem ferramentas e cuidado. Queremos ouvir quem vive os problemas e construir com essas pessoas, considerando acessibilidade, dispositivos, conexões e condições diferentes. Valor coletivo e trabalho justamente remunerado podem caminhar juntos.
-
-## 6. Transparência e liberdade algorítmica
-
-**Liberdade para escolher o que acompanhar.**
-
-Não queremos depender de recomendações que decidem o que vemos sem deixar claros seus critérios e interesses. Defendemos poder escolher quem e o que acompanhar, entender por que um conteúdo aparece e desligar recomendações sem perder o acesso às pessoas e aos assuntos que seguimos. Queremos espaço para descobrir o inesperado e conversar, sem que tudo seja organizado para prolongar o consumo. Decisões automatizadas devem poder ser compreendidas e questionadas.
+Buscamos soluções simples e úteis, adequadas às necessidades e aos recursos disponíveis. Nuvem, ferramentas proprietárias e inteligência artificial podem ajudar quando seus custos, limites e dependências são compreendidos. Queremos fazer escolhas que respeitem a privacidade, permitam mais autonomia ao longo do tempo e deem condições justas a quem desenvolve e mantém.
 
 ## Um convite para construir
 

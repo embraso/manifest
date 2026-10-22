@@ -104,14 +104,16 @@ These materials establish proposed language and product intent, not testimonials
 
 Keep the six canonical Portuguese names and their order when presenting the manifesto:
 
-1. **Liberdade por padrão** — freedom to use, study, modify, and share; maintenance and resources matter.
-2. **Soberania por escolha** — meaningful choices about data, code, dependencies, migration, and continuity.
-3. **Segurança por princípio** — privacy and proportionate protection from the outset, without absolute guarantees.
-4. **Pragmatismo com propósito** — useful choices now that preserve options for tomorrow.
-5. **Tecnologia para o bem comum** — build with affected people across different contexts; recognize maintenance and fairly paid work.
-6. **Transparência e liberdade algorítmica** — freedom from dependence on opaque recommendations: choose sources and people to follow, understand why content appears, change criteria, and turn recommendations off without losing access to chosen follows. Preserve discovery and the ability to question automated decisions; these are principles, not shipped controls or a rejection of all algorithms.
+1. **Tecnologia para o bem comum** — build useful tools with affected people across different contexts; recognize maintenance and fairly paid work.
+2. **Autonomia para escolher** — meaningful choices about data, code, dependencies, migration, and continuity.
+3. **Software livre e conhecimento compartilhado** — freedom to use, study, modify, and share, including commercial use; real permissions, maintenance, and resources matter.
+4. **Clareza e escolha no que acompanhamos** — choose sources and people to follow, understand recommendation criteria and interests, and adjust or turn recommendations off without losing access to chosen follows. Preserve discovery and the ability to question automated decisions; these are principles, not shipped controls or a rejection of all algorithms.
+5. **Privacidade e segurança desde o início** — privacy and proportionate protection from the outset, with maintenance and clear limits rather than absolute guarantees.
+6. **Simplicidade para construir e manter** — useful choices suited to current resources, with understandable costs and dependencies, fair working conditions, and gradual autonomy.
 
 The English explanations are implementation context, not replacement public titles or approved translations. Change the short manifesto, extended interpretation, and affected derivatives together if the principles change.
+
+The owner approved these names and this order on 22 October 2026, replacing the earlier slogan-like titles with concrete, approachable language. The short and extended manifestos, editorial guidance, and shared website data use the same revision. Historical source titles remain unchanged; see the [editorial decision record](docs/08-fontes-e-decisoes-editoriais.md).
 
 ## Accessibility & Inclusion
 

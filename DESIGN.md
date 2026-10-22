@@ -208,7 +208,7 @@ The always-visible switch reads “Público geral” and “Devs”; selected ba
 
 Both homepages use `details` and `summary`, with the first principle initially open. Number, full Portuguese title and a drawn plus/minus sign form the control. Hover emphasizes the title; focus remains visible. The public variant is ruled cream-on-forest with condensed Archivo titles and an amber lead. The file variant has mint numbering, mono titles, secondary Archivo lead text and amber open-state title. Opening removes the vertical sign stroke without requiring JavaScript.
 
-Preserve the six titles and order: “Liberdade por padrão”, “Soberania por escolha”, “Segurança por princípio”, “Pragmatismo com propósito”, “Tecnologia para o bem comum”, and “Transparência e liberdade algorítmica”. Do not treat the layout as permission to shorten or translate these titles.
+Use the approved titles and order from the [public manifesto](docs/01-manifesto-publico.md), beginning with “Tecnologia para o bem comum”. Do not shorten or translate the titles; allow longer names to wrap naturally. The revised names and copy were inspected at desktop and mobile widths without changing the visual system.
 
 ### Ruled editorial lists
 
