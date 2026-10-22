@@ -5,19 +5,23 @@ import '../styles/global.css';
 import logo from '../../assets/e6712f9ec67bfc5e5e1536d9b4377830.svg';
 import darkLogo from '../../assets/58fa12401e77dc41cc7e67952d136fdf.svg';
 
+import { getMessages, type Locale } from '../i18n';
+
 interface Props {
   audience?: 'public' | 'devs';
+  locale: Locale;
   title: string;
   isManifesto?: boolean;
 }
-const { audience = 'public', title, isManifesto = false } = Astro.props;
+const { audience = 'public', locale, title, isManifesto = false } = Astro.props;
+const messages = getMessages(locale).shell;
 const technical = audience === 'devs';
 const home = technical ? '/devs/' : '/';
-const description = 'Uma iniciativa para reunir pessoas, construir software útil e livre e ampliar a autonomia digital nas diferentes realidades do Brasil.';
+const description = messages.metadata.description;
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -31,13 +35,13 @@ const description = 'Uma iniciativa para reunir pessoas, construir software úti
     <title>{title}</title>
   </head>
   <body data-audience={audience}>
-    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <a class="skip-link" href="#conteudo">{messages.skipLink}</a>
     <header class="site-header">
       <div class="utility-bar">
         <div class="container utility-inner">
-          <nav class="audience-switch" aria-label="Público da leitura">
-            <a href="/" aria-current={!technical && !isManifesto ? 'page' : undefined} data-selected={!technical}>Público geral</a>
-            <a href="/devs/" aria-current={technical ? 'page' : undefined} data-selected={technical}><span aria-hidden="true">&gt;_ </span>Devs</a>
+          <nav class="audience-switch" aria-label={messages.audienceLabel}>
+            <a href="/" aria-current={!technical && !isManifesto ? 'page' : undefined} data-selected={!technical}>{messages.audiencePublic}</a>
+            <a href="/devs/" aria-current={technical ? 'page' : undefined} data-selected={technical}><span aria-hidden="true">&gt;_ </span>{messages.audienceDevs}</a>
           </nav>
           {!isManifesto && (
             <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false" hidden>
@@ -45,19 +49,19 @@ const description = 'Uma iniciativa para reunir pessoas, construir software úti
                 <path class="pause-icon" d="M4 3h3v10H4zm5 0h3v10H9z" />
                 <path class="play-icon" d="m5 3 8 5-8 5z" />
               </svg>
-              <span data-motion-label>Pausar movimento</span>
+              <span data-motion-label data-motion-pause={messages.motion.pause} data-motion-resume={messages.motion.resume} data-motion-reduced={messages.motion.reducedLabel} data-motion-reduced-title={messages.motion.reducedTitle} data-motion-control-title={messages.motion.controlTitle}>{messages.motion.initial}</span>
             </button>
           )}
         </div>
       </div>
       <div class="container navigation-row">
-        <a class="brand" href={home} aria-label="Embraso — início">
-          <img src={technical ? darkLogo.src : logo.src} alt="Embraso" width="174" height="54" fetchpriority="high" />
+        <a class="brand" href={home} aria-label={messages.brandHome}>
+          <img src={technical ? darkLogo.src : logo.src} alt={messages.brandName} width="174" height="54" fetchpriority="high" />
         </a>
-        <nav class="main-navigation" aria-label="Navegação principal">
-          <a href={`${home}#proposta`}>{technical ? './proposta' : 'A proposta'}</a>
-          <a href={`${home}#manifesto`} aria-current={isManifesto ? 'page' : undefined}>{technical ? './manifesto' : 'Manifesto'}</a>
-          <a href={`${home}#participacao`}>{technical ? './construir' : 'Construir junto'}</a>
+        <nav class="main-navigation" aria-label={messages.primaryNavigation}>
+          <a href={`${home}#proposta`}>{technical ? messages.devProposal : messages.publicProposal}</a>
+          <a href={`${home}#manifesto`} aria-current={isManifesto ? 'page' : undefined}>{technical ? messages.devManifesto : messages.publicManifesto}</a>
+          <a href={`${home}#participacao`}>{technical ? messages.devBuild : messages.publicBuildTogether}</a>
         </nav>
       </div>
       <div class="bunting" aria-hidden="true" hidden={technical}>
@@ -68,17 +72,17 @@ const description = 'Uma iniciativa para reunir pessoas, construir software úti
     <footer class="site-footer">
       <div class="container footer-main">
         <div class="footer-identity">
-          <a href={home} aria-label="Embraso — início"><img src={darkLogo.src} alt="Embraso" width="190" height="59" loading="lazy" /></a>
-          <p>Liberdade<br />se constrói junto.</p>
+          <a href={home} aria-label={messages.brandHome}><img src={darkLogo.src} alt={messages.brandName} width="190" height="59" loading="lazy" /></a>
+          <p>{messages.signature.map((part) => part.type === 'break' ? part.footer === 'break' ? <br /> : ' ' : part.text)}</p>
         </div>
         <div class="footer-message">
-          <p>Um começo, uma direção.<br />Muita coisa para construir junto.</p>
-          <a href="/manifesto/">Leia o manifesto <span aria-hidden="true">↗</span></a>
+          <p>{messages.footer.message}<br />{messages.footer.messageLine}</p>
+          <a href="/manifesto/">{messages.footer.manifestoLink} <span aria-hidden="true">↗</span></a>
         </div>
       </div>
       <div class="container footer-bottom">
-        <span>Embraso · uma iniciativa em construção</span>
-        <a href={technical ? '/' : '/devs/'}>{technical ? 'Ver a leitura para o público geral' : 'Prefere uma leitura mais técnica? Para devs'} <span aria-hidden="true">→</span></a>
+        <span>{messages.footer.status}</span>
+        <a href={technical ? '/' : '/devs/'}>{technical ? messages.footer.publicSwitch : messages.footer.devsSwitch} <span aria-hidden="true">→</span></a>
       </div>
     </footer>
   </body>

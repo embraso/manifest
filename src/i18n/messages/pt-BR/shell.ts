@@ -1,0 +1,46 @@
+import { actions } from './actions';
+
+export const shell = {
+  metadata: {
+    description: 'Uma iniciativa para reunir pessoas, construir software útil e livre e ampliar a autonomia digital nas diferentes realidades do Brasil.',
+    publicTitle: 'Embraso — Liberdade se constrói junto.',
+    devsTitle: 'Embraso para devs — Liberdade se constrói junto.',
+    manifestoTitle: 'Manifesto — Embraso',
+  },
+  signature: [
+    { type: 'text', text: 'Liberdade' },
+    { type: 'break', footer: 'break' },
+    { type: 'text', text: 'se constrói' },
+    { type: 'break', footer: 'space' },
+    { type: 'accent', text: 'junto.' },
+  ],
+  skipLink: 'Pular para o conteúdo',
+  audienceLabel: 'Público da leitura',
+  audiencePublic: 'Público geral',
+  audienceDevs: 'Devs',
+  brandName: 'Embraso',
+  brandHome: 'Embraso — início',
+  primaryNavigation: 'Navegação principal',
+  publicProposal: 'A proposta',
+  publicManifesto: actions.manifestoLabel,
+  publicBuildTogether: 'Construir junto',
+  devProposal: './proposta',
+  devManifesto: './manifesto',
+  devBuild: './construir',
+  motion: {
+    initial: actions.pauseMotion,
+    reducedTitle: 'O movimento está reduzido conforme a preferência do seu dispositivo.',
+    controlTitle: 'Controlar as animações desta versão.',
+    reducedLabel: actions.reducedMotion,
+    resume: 'Ativar movimento',
+    pause: actions.pauseMotion,
+  },
+  footer: {
+    message: 'Um começo, uma direção.',
+    messageLine: 'Muita coisa para construir junto.',
+    manifestoLink: 'Leia o manifesto',
+    status: 'Embraso · uma iniciativa em construção',
+    publicSwitch: 'Ver a leitura para o público geral',
+    devsSwitch: 'Prefere uma leitura mais técnica? Para devs',
+  },
+} as const;

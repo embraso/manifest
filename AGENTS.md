@@ -27,6 +27,22 @@ The [editorial map](docs/README.md) is the entry point to the collection and rec
 
 For writing or review, load the local [embraso-language](.agents/skills/embraso-language/SKILL.md) skill. Keep it short and reference-driven; do not duplicate the collection inside the skill. OMP recognizes `.agents/skills/<name>/SKILL.md` under its default configuration and discovers skills at session startup. This file is named `AGENTS.md`, in uppercase, for conventional discovery on Linux.
 
+## Feature workflow and frontend skills
+
+Load these explicitly when applicable, even when automatic skill discovery is available:
+
+- [embraso-feature-workflow](.agents/skills/embraso-feature-workflow/SKILL.md): start feature work in a dedicated worktree; delegate specification, planning, development, and validation; parallelize only independent, exclusively owned slices. The parent owns shared contracts, integration, and completion evidence.
+- [embraso-frontend-patterns](.agents/skills/embraso-frontend-patterns/SKILL.md): substantial page sections own their component, scoped CSS, and namespaced catalog content; routes compose them. Follow the typed i18n pattern, semantic HTML, SEO, accessibility, progressive enhancement, and frontend lifecycle guidance.
+- [embraso-browser-validation](.agents/skills/embraso-browser-validation/SKILL.md): independently exercise the actual worktree's rendered UI in Chrome/Chromium, including desktop/mobile behavior, keyboard use, metadata, diagnostics, and inspected screenshots. Prefer a verified low-cost image-capable worker through the available OMP browser integration; do not assume a separate Chrome MCP is installed.
+- [impeccable](.agents/skills/impeccable/SKILL.md): load its applicable playbook for frontend work and its craft floor immediately before UI edits. Preserve the selected Folheto / Terminal identity; browser evidence complements, rather than replaces, its design review.
+- [embraso-language](.agents/skills/embraso-language/SKILL.md): apply to public copy and editorial review. Internationalization does not authorize rewriting approved Portuguese copy or publishing unreviewed translations.
+
+The locally installed [Superpowers bootstrap](.agents/skills/using-superpowers/SKILL.md) supplies the methodology; load `using-git-worktrees`, `brainstorming`, `writing-plans`, `subagent-driven-development`, `dispatching-parallel-agents`, `verification-before-completion`, and `finishing-a-development-branch` at the corresponding workflow steps. Their upstream revision is pinned in `skills-lock.json`. The [OMP adapter](.agents/skills/embraso-feature-workflow/reference/omp.md) records supported model routing and deliberate project adaptations: disjoint parallel workers, one integrated build/check wave, no invented test command, and no merge/push/worktree removal without authorization. Higher-priority instructions and these project constraints take precedence over generic upstream defaults.
+
+Only `pt-BR` is shipped. Public UI text, metadata, accessibility names, and dynamic announcements must reference typed `src/i18n/` catalogs; identifiers, routes, selectors, and protocol/code tokens are not translated. New locales require complete reviewed catalogs and explicit routing decisions, not silent Portuguese fallbacks or a decorative language switch. Keep canonical manifesto content in one shared catalog and preserve the editorial collection as its source.
+
+**Testing policy:** prefer a small, maintainable set of E2E tests that validates visitor intent and observable outcomes. Do not test everything or create a contract per function, component, message key, callback, or forwarding layer. Add targeted lower-level regressions only for meaningful behavior/boundaries that E2E cannot adequately expose. Reject implementation-shape, incidental wording/class, and “function A calls function B” tests; remove temporary probes after verification. This policy overrides generic upstream test-per-task/full-suite prescriptions; no test runner is installed merely for a documentation or catalog refactor.
+
 ## Editorial commitments
 
 1. Preserve the six owner-approved names and their order: **Tecnologia para o bem comum; Autonomia para escolher; Software livre e conhecimento compartilhado; Clareza e escolha no que acompanhamos; Privacidade e segurança desde o início; Simplicidade para construir e manter.** This approval supersedes the earlier naming/order rule; historical source headings and quotations remain unchanged. The two strategic efforts are not additional principles.

@@ -1,8 +1,13 @@
 ---
+import { getMessages, type Locale } from '../../i18n';
 import emblem from '../../../assets/b084774a04a4acde15a270ee03518180.svg';
 import toucan from '../../../assets/18b51d99adf971345c6d3e2da4ff6e2c.svg';
 import capybara from '../../../assets/64e6db346ad8c01e777f7cf3f3a36383.svg';
 import ipe from '../../../assets/77b83da13ccc31cb0f862276cf552fac.svg';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const messages = getMessages(locale);
 ---
 
 <div class="print-scene" data-print-scene aria-hidden="true">
@@ -17,7 +22,7 @@ import ipe from '../../../assets/77b83da13ccc31cb0f862276cf552fac.svg';
   <div class="scene-capybara" data-print-capybara>
     <img data-print-capybara-gait src={capybara.src} alt="" width="352" height="192" />
   </div>
-  <span class="scene-caption">Conhecimento que circula.<br />Liberdade que continua.</span>
+  <span class="scene-caption">{messages.home.opening.sceneCaption[0]}<br />{messages.home.opening.sceneCaption[1]}</span>
 </div>
 
 <script>

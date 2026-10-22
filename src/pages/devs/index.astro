@@ -2,11 +2,15 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import TerminalHome from '../../components/devs/TerminalHome.astro';
 import CommandCarousel from '../../components/devs/command-carousel/CommandCarousel.astro';
+import { defaultLocale, getMessages } from '../../i18n';
+
+const locale = defaultLocale;
+const messages = getMessages(locale);
 ---
 
-<SiteLayout audience="devs" title="Embraso para devs — Liberdade se constrói junto.">
-  <TerminalHome>
-    <CommandCarousel slot="reader" />
+<SiteLayout audience="devs" locale={locale} title={messages.shell.metadata.devsTitle}>
+  <TerminalHome locale={locale}>
+    <CommandCarousel locale={locale} slot="reader" />
   </TerminalHome>
 </SiteLayout>
 

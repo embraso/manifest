@@ -41,8 +41,8 @@ if (carousel && !carousel.dataset.enhanced) {
       const paused = locallyPaused || preference.matches;
       pause!.disabled = preference.matches;
       pause!.setAttribute('aria-pressed', String(paused));
-      pause!.setAttribute('aria-label', preference.matches ? 'Movimento reduzido' : locallyPaused ? 'Retomar sequência' : 'Pausar sequência');
-      state!.textContent = preference.matches ? 'Movimento reduzido' : locallyPaused ? 'No seu ritmo' : 'Em sequência';
+      pause!.setAttribute('aria-label', preference.matches ? carousel!.dataset.stateReduced! : locallyPaused ? carousel!.dataset.stateResume! : carousel!.dataset.statePause!);
+      state!.textContent = preference.matches ? carousel!.dataset.stateReduced! : locallyPaused ? carousel!.dataset.statePaced! : carousel!.dataset.stateSequence!;
       carousel!.dataset.playback = canPlay() ? 'running' : 'paused';
     }
 
@@ -81,7 +81,10 @@ if (carousel && !carousel.dataset.enhanced) {
       viewport!.scrollTop = 0;
       position!.textContent = String(index + 1).padStart(2, '0');
       command!.textContent = readings[index].dataset.command!;
-      if (manual) announcement!.textContent = `Tópico ${index + 1} de ${readings.length}. ${topics[index].textContent!.trim()}.`;
+      if (manual) announcement!.textContent = carousel!.dataset.announcementTemplate!
+        .replaceAll('{current}', String(index + 1))
+        .replaceAll('{total}', String(readings.length))
+        .replaceAll('{title}', topics[index].textContent!.trim());
       // Keep the current choice in the mobile topic strip without moving the page.
       const navigation = topics[index].parentElement!;
       const topicLeft = topics[index].offsetLeft - navigation.offsetLeft;

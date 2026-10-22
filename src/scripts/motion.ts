@@ -29,15 +29,14 @@ function synchronizeMotion(): void {
     button.hidden = false;
     button.disabled = preference.matches;
     button.setAttribute('aria-pressed', String(manuallyPaused || preference.matches));
+    const label = button.querySelector<HTMLElement>('[data-motion-label]');
+    if (!label) return;
     button.title = preference.matches
-      ? 'O movimento está reduzido conforme a preferência do seu dispositivo.'
-      : 'Controlar as animações desta versão.';
-    const label = button.querySelector('[data-motion-label]');
-    if (label) {
-      label.textContent = preference.matches
-        ? 'Movimento reduzido'
-        : manuallyPaused ? 'Ativar movimento' : 'Pausar movimento';
-    }
+      ? label.dataset.motionReducedTitle!
+      : label.dataset.motionControlTitle!;
+    label.textContent = preference.matches
+      ? label.dataset.motionReduced!
+      : manuallyPaused ? label.dataset.motionResume! : label.dataset.motionPause!;
   });
 
   for (const listener of listeners) listener(allowed);

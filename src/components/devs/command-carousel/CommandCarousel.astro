@@ -1,19 +1,24 @@
 ---
-import { introduction, invitation, principles } from '../../../data/manifesto';
+import { getMessages, type Locale } from '../../../i18n';
 
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const messages = getMessages(locale);
+const copy = messages.devs.carousel;
+const principles = messages.manifesto.principles;
 const topics = [
-  { command: 'manifesto', label: 'Por que construir', title: 'Conhecimento que encontra propósito.', paragraphs: introduction, href: '/manifesto/', link: 'Ler o manifesto completo' },
-  { command: 'comunidade', label: 'Com quem construir', title: 'Gente antes da stack.', paragraphs: [invitation.introduction, invitation.body, 'Comunidade é lugar de troca, aprendizado e relações — não uma fila de tarefas. Participar não exige saber programar nem ter tempo toda semana.'], href: '#participacao', link: 'Conhecer as formas de participação' },
-  { command: 'autonomia', label: 'Poder continuar', title: 'Escolher também é poder mudar.', paragraphs: ['Autonomia digital não é fazer tudo sozinho. É compreender o que usamos, conhecer dependências e preservar caminhos para recuperar dados, adaptar ferramentas, migrar e continuar.', 'Comunidade e autonomia se sustentam: queremos compartilhar conhecimento para que mais pessoas possam participar das escolhas e cuidar do que for construído.'], href: '#proposta', link: 'Ler a proposta' },
-  ...principles.map((principle, index) => ({ command: `principio ${index + 1}`, label: principle.title, title: principle.title, paragraphs: [principle.lead, principle.body], href: '/manifesto/', link: 'Ler no manifesto' })),
+  { ...copy.topics[0], command: messages.devs.commands.manifesto, paragraphs: messages.manifesto.introduction },
+  { ...copy.topics[1], command: messages.devs.commands.community, paragraphs: [messages.manifesto.invitation.introduction, messages.manifesto.invitation.body, copy.communityParagraph] },
+  { ...copy.topics[2], command: messages.devs.commands.autonomy, paragraphs: copy.autonomyParagraphs },
+  ...principles.map((principle, index) => ({ command: messages.devs.commands.principles[index]!, label: principle.title, title: principle.title, paragraphs: [principle.lead, principle.body], href: '/manifesto/', link: copy.principlesLink })),
 ];
 ---
 
-<section id="leitura-local" class="command-carousel" data-command-carousel aria-labelledby="carousel-title" aria-roledescription="carrossel">
+<section id="leitura-local" class="command-carousel" data-command-carousel data-state-sequence={copy.sequence} data-state-reduced={copy.reducedMotion} data-state-paced={copy.paced} data-state-pause={copy.pause} data-state-resume={copy.resume} data-announcement-template={copy.announcement} aria-labelledby="carousel-title" aria-roledescription={copy.roleDescription}>
   <div class="carousel-guide">
-    <h2 id="carousel-title">Por trás de<br />cada <span>linha.</span></h2>
-    <p>Software começa com gente. Os comandos percorrem a proposta e os princípios que queremos levar para o código.</p>
-    <nav class="topic-navigation" aria-label="Tópicos de leitura">
+    <h2 id="carousel-title">{copy.heading.map((part) => part.type === 'break' ? <br /> : part.type === 'emphasis' || part.type === 'accent' ? <span>{part.text}</span> : part.type === 'strong' ? <strong>{part.text}</strong> : part.type === 'mark' ? <span>{part.text}</span> : part.text)}</h2>
+    <p>{copy.intro}</p>
+    <nav class="topic-navigation" aria-label={copy.navigation}>
       {topics.map((topic, index) => (
         <a href={`#leitura-${index}`} data-topic={index} aria-controls={`leitura-${index}`}>
           <span class="topic-marker" aria-hidden="true">{index < 3 ? '>' : String(index - 2).padStart(2, '0')}</span>
@@ -24,9 +29,9 @@ const topics = [
     </nav>
   </div>
   <div class="carousel-workspace">
-    <div class="workspace-heading"><span>embraso / leitura</span><span>Este espaço é só para leitura.</span></div>
-    <div class="command-line" aria-hidden="true"><span class="prompt-marker">&gt;</span><span data-typed-command>manifesto</span><span class="command-caret"></span></div>
-    <div class="carousel-readings" data-carousel-readings tabindex="0" role="region" aria-label="Conteúdo do tópico selecionado">
+    <div class="workspace-heading"><span>{copy.workspace}</span><span>{copy.workspaceNotice}</span></div>
+    <div class="command-line" aria-hidden="true"><span class="prompt-marker">&gt;</span><span data-typed-command>{topics[0]!.command}</span><span class="command-caret"></span></div>
+    <div class="carousel-readings" data-carousel-readings tabindex="0" role="region" aria-label={copy.selectedContent}>
       {topics.map((topic, index) => (
         <article id={`leitura-${index}`} class="topic-reading" data-reading={index} data-command={topic.command} aria-labelledby={`reading-title-${index}`}>
           <p class="reading-command">&gt; {topic.command}</p>
@@ -37,11 +42,11 @@ const topics = [
       ))}
     </div>
     <div class="carousel-controls" data-carousel-controls hidden>
-      <div class="sequence-position"><span data-topic-position>01</span><span>/ {String(topics.length).padStart(2, '0')}</span><span class="sequence-state" data-carousel-state>Em sequência</span></div>
+      <div class="sequence-position"><span data-topic-position>01</span><span>/ {String(topics.length).padStart(2, '0')}</span><span class="sequence-state" data-carousel-state>{copy.sequence}</span></div>
       <div class="playback-controls">
-        <button type="button" data-carousel-previous aria-label="Tópico anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H5m6 6-6-6 6-6" /></svg></button>
-        <button type="button" data-carousel-pause aria-label="Pausar sequência" aria-pressed="false"><svg class="pause-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 5v14M16 5v14" /></svg><svg class="play-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z" /></svg></button>
-        <button type="button" data-carousel-next aria-label="Próximo tópico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></button>
+        <button type="button" data-carousel-previous aria-label={copy.previous}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H5m6 6-6-6 6-6" /></svg></button>
+        <button type="button" data-carousel-pause aria-label={copy.pause} aria-pressed="false"><svg class="pause-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 5v14M16 5v14" /></svg><svg class="play-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z" /></svg></button>
+        <button type="button" data-carousel-next aria-label={copy.next}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></button>
       </div>
     </div>
     <div class="sequence-progress" aria-hidden="true"><span data-sequence-progress></span></div>

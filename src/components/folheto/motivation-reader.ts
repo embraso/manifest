@@ -27,7 +27,10 @@ if (reader && controls && pages.length === choices.length && pages.length > 0) {
     const title = selectedPage.querySelector('h3')?.textContent ?? '';
     if (status) {
       status.hidden = false;
-      status.textContent = `Lendo: ${title}. Tema ${selectedIndex + 1} de ${pages.length}.`;
+      status.textContent = status.dataset.statusTemplate!
+        .replace('{title}', title)
+        .replace('{current}', String(selectedIndex + 1))
+        .replace('{total}', String(pages.length));
     }
     if (announce && readerVisible && pageActive && motionAllowed() && !reducedMotion.matches && typeof selectedPage.animate === 'function') {
       readingAnimation = selectedPage.animate([
@@ -54,7 +57,7 @@ if (reader && controls && pages.length === choices.length && pages.length > 0) {
   }
   function onPageHide() { pageActive = false; synchronizeAnimation(); }
   function onPageShow() { pageActive = true; synchronizeAnimation(); }
-  function dispose() {
+  const dispose = () => {
     disposed = true;
     unsubscribe();
     observer?.disconnect();
@@ -63,7 +66,7 @@ if (reader && controls && pages.length === choices.length && pages.length > 0) {
     window.removeEventListener('pagehide', onPageHide);
     window.removeEventListener('pageshow', onPageShow);
     readingAnimation?.cancel();
-  }
+  };
 
   const observer = typeof IntersectionObserver === 'function' ? new IntersectionObserver((entries) => {
     for (const entry of entries) {

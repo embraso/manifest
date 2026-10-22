@@ -253,6 +253,10 @@ Use the approved titles and order from the [public manifesto](docs/01-manifesto-
 
 Numbered readings and their topic labels follow the same canonical order. Reordering the principles must keep each reading's title, lead and body together.
 
+### Localized content and ownership
+
+The visual system is unchanged by message extraction. `src/i18n/` supplies the current `pt-BR` content: shared shell and canonical manifesto namespaces, plus section-owned home/developer leaf catalogs. Astro renders reviewed copy and rich emphasis; scripts receive only localized control/announcement labels through server-rendered data. Titles, metadata, alternatives and accessible names are catalog-backed too. No other locale, language switch, translated URL or guessed production canonical is shipped. See `PRODUCT.md` and `embraso-frontend-patterns` for locale extension and section ownership; preserve complete reading without JavaScript and in print.
+
 ### Keyboard, motion and print controls
 
 The skip link becomes visible on focus. Shared focus is a (3px) outline with (5px) offset, blue publicly and amber technically; public scoped links/summaries use (6px) offset. Context-specific radio rings remain distinct. Motion pause is a real small bordered button with inline SVG, `aria-pressed`, dynamic Portuguese label and optional session-storage persistence. It appears only after enhancement. Reduced motion disables it with a dashed border and “Movimento reduzido”; manual pause can be reversed through “Ativar movimento”. Hover adds a subtle current-color wash only when enabled. No contact, membership, backend submission or success-state primitives exist.

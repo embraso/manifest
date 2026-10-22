@@ -1,11 +1,16 @@
 ---
+import { getMessages, type Locale } from '../../i18n';
 import emblem from '../../../assets/b084774a04a4acde15a270ee03518180.svg';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const caption = getMessages(locale).devs.opening.faunaCaption;
 ---
 
 <div class="fauna-field" data-fauna-field aria-hidden="true">
   <img data-fauna-source src={emblem.src} alt="" width="462" height="654" fetchpriority="high" />
   <canvas data-fauna-canvas></canvas>
-  <span class="field-caption">Partes que formam um todo.</span>
+  <span class="field-caption">{caption}</span>
 </div>
 
 <script>

@@ -1,12 +1,17 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import FolhetoHome from '../components/folheto/FolhetoHome.astro';
+import { defaultLocale, getMessages } from '../i18n';
+
+const locale = defaultLocale;
+const messages = getMessages(locale);
 ---
 
-<SiteLayout audience="public" title="Embraso — Liberdade se constrói junto.">
-  <FolhetoHome />
+<SiteLayout audience="public" locale={locale} title={messages.shell.metadata.publicTitle}>
+  <FolhetoHome locale={locale} />
 </SiteLayout>
 
 <script>
   import '../scripts/motion';
 </script>
+
