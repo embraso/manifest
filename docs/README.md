@@ -91,4 +91,6 @@ A skill local fica em [`.agents/skills/embraso-language/SKILL.md`](../.agents/sk
 
 A skill orienta quais documentos ler conforme a tarefa, sem incorporar todo o acervo no contexto. Os links relativos dela partem do diretório da própria skill; os documentos continuam aqui como fonte única de referência.
 
+**Convenção de idioma:** `AGENTS.md`, instruções de skills e documentação de implementação (especificações técnicas, arquitetura e guias de desenvolvimento) ficam em inglês. O acervo editorial, inclusive história, estratégia e demais materiais internos, permanece em português brasileiro, assim como o conteúdo do site. Citações, exemplos de texto, nomes canônicos e caminhos existentes não devem ser traduzidos ao aparecerem nas instruções em inglês.
+
 As instruções permanentes do projeto estão em [`AGENTS.md`](../AGENTS.md). A existência desta documentação e da skill não autoriza construir o site nesta etapa.
