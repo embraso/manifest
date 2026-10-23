@@ -43,39 +43,47 @@ const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).href :
         <a class="brand" href={home} aria-label={messages.brandHome}>
           <img src={technical ? darkLogo.src : logo.src} alt={messages.brandName} width="174" height="54" fetchpriority="high" />
         </a>
-        <nav class="main-navigation" aria-label={messages.primaryNavigation}>
-          <a href={`${home}#proposta`}>{technical ? messages.devProposal : messages.publicProposal}</a>
-          <a href={isManifesto ? '/manifesto/' : `${home}#manifesto`} aria-current={isManifesto ? 'page' : undefined}>{technical ? messages.devManifesto : messages.publicManifesto}</a>
-          <a href={`${home}#participacao`}>{technical ? messages.devBuild : messages.publicBuildTogether}</a>
-        </nav>
-        <nav class="social-links" aria-label={messages.socials.label}>
-          <span class="social-unavailable" role="img" aria-label={`${messages.socials.instagram}: ${messages.socials.unavailable}`} title={`${messages.socials.instagram}: ${messages.socials.unavailable}`}>
-            <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg>
-            <svg class="social-unavailable-mark" viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="6" cy="6" r="4.5" /><path d="m3 9 6-6" /></svg>
-          </span>
-          <a class="social-link" href="https://github.com/embraso" aria-label={messages.socials.github} title={messages.socials.github}>
-            <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.82c.85 0 1.71.11 2.5.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg>
-          </a>
-          <span class="social-unavailable" role="img" aria-label={`${messages.socials.linkedin}: ${messages.socials.unavailable}`} title={`${messages.socials.linkedin}: ${messages.socials.unavailable}`}>
-            <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true"><path d="M5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3.5 9h3v12h-3V9Zm5.5 0h3v1.6c.7-1.2 1.8-1.9 3.4-1.9 3 0 4.1 1.9 4.1 5.1V21h-3v-6.4c0-1.8-.5-2.9-2-2.9-1.7 0-2.5 1.2-2.5 3.1V21H9V9Z" /></svg>
-            <svg class="social-unavailable-mark" viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="6" cy="6" r="4.5" /><path d="m3 9 6-6" /></svg>
-          </span>
-        </nav>
-        <div class="navigation-controls">
-          <nav class="audience-switch" aria-label={messages.audienceLabel}>
-            <a href="/" aria-current={!technical && !isManifesto ? 'page' : undefined} data-selected={!technical}>{messages.audiencePublic}</a>
-            <a href="/devs/" aria-current={technical ? 'page' : undefined} data-selected={technical}><span aria-hidden="true">&gt;_ </span>{messages.audienceDevs}</a>
-          </nav>
-          {!isManifesto && (
-            <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false" hidden>
-              <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                <path class="pause-icon" d="M4 3h3v10H4zm5 0h3v10H9z" />
-                <path class="play-icon" d="m5 3 8 5-8 5z" />
-              </svg>
-              <span class="sr-only" data-motion-label data-motion-pause={messages.motion.pause} data-motion-resume={messages.motion.resume} data-motion-reduced={messages.motion.reducedLabel} data-motion-reduced-title={messages.motion.reducedTitle} data-motion-control-title={messages.motion.controlTitle}>{messages.motion.initial}</span>
-            </button>
-          )}
-        </div>
+        <details class="site-navigation" data-site-navigation>
+          <summary class="navigation-toggle" data-navigation-toggle aria-controls="site-navigation-panel">
+            <span>{messages.navigationMenu}</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path class="navigation-menu-icon" d="M4 6h16M4 12h16M4 18h16" /><path class="navigation-close-icon" d="m6 6 12 12M6 18 18 6" /></svg>
+          </summary>
+          <div id="site-navigation-panel" class="navigation-panel" data-navigation-panel>
+            <nav class="main-navigation" aria-label={messages.primaryNavigation}>
+              <a href={`${home}#proposta`}>{technical ? messages.devProposal : messages.publicProposal}</a>
+              <a href={isManifesto ? '/manifesto/' : `${home}#manifesto`} aria-current={isManifesto ? 'page' : undefined}>{technical ? messages.devManifesto : messages.publicManifesto}</a>
+              <a href={`${home}#participacao`}>{technical ? messages.devBuild : messages.publicBuildTogether}</a>
+            </nav>
+            <nav class="social-links" aria-label={messages.socials.label}>
+              <span class="social-unavailable" role="img" aria-label={`${messages.socials.instagram}: ${messages.socials.unavailable}`} title={`${messages.socials.instagram}: ${messages.socials.unavailable}`}>
+                <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg>
+                <svg class="social-unavailable-mark" viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="6" cy="6" r="4.5" /><path d="m3 9 6-6" /></svg>
+              </span>
+              <a class="social-link" href="https://github.com/embraso" aria-label={messages.socials.github} title={messages.socials.github}>
+                <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.82c.85 0 1.71.11 2.5.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg>
+              </a>
+              <span class="social-unavailable" role="img" aria-label={`${messages.socials.linkedin}: ${messages.socials.unavailable}`} title={`${messages.socials.linkedin}: ${messages.socials.unavailable}`}>
+                <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true"><path d="M5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3.5 9h3v12h-3V9Zm5.5 0h3v1.6c.7-1.2 1.8-1.9 3.4-1.9 3 0 4.1 1.9 4.1 5.1V21h-3v-6.4c0-1.8-.5-2.9-2-2.9-1.7 0-2.5 1.2-2.5 3.1V21H9V9Z" /></svg>
+                <svg class="social-unavailable-mark" viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="6" cy="6" r="4.5" /><path d="m3 9 6-6" /></svg>
+              </span>
+            </nav>
+            <div class="navigation-controls">
+              <nav class="audience-switch" aria-label={messages.audienceLabel}>
+                <a href="/" aria-current={!technical && !isManifesto ? 'page' : undefined} data-selected={!technical}>{messages.audiencePublic}</a>
+                <a href="/devs/" aria-current={technical ? 'page' : undefined} data-selected={technical}><span aria-hidden="true">&gt;_ </span>{messages.audienceDevs}</a>
+              </nav>
+              {!isManifesto && (
+                <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false" hidden>
+                  <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                    <path class="pause-icon" d="M4 3h3v10H4zm5 0h3v10H9z" />
+                    <path class="play-icon" d="m5 3 8 5-8 5z" />
+                  </svg>
+                  <span class="sr-only" data-motion-label data-motion-pause={messages.motion.pause} data-motion-resume={messages.motion.resume} data-motion-reduced={messages.motion.reducedLabel} data-motion-reduced-title={messages.motion.reducedTitle} data-motion-control-title={messages.motion.controlTitle}>{messages.motion.initial}</span>
+                </button>
+              )}
+            </div>
+          </div>
+        </details>
       </div>
       <div class="bunting" aria-hidden="true" hidden={technical}>
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="22"><defs><pattern id="bandeirinhas" width="184" height="22" patternUnits="userSpaceOnUse"><path d="M2 1h18v20l-9-5-9 5z" fill="#fdb112"/><path d="M25 1h18v20l-9-5-9 5z" fill="#f56d1d"/><path d="M48 1h18v20l-9-5-9 5z" fill="#086797"/><path d="M71 1h18v20l-9-5-9 5z" fill="#13522f"/><path d="M94 1h18v20l-9-5-9 5z" fill="#80b99a"/><path d="M117 1h18v20l-9-5-9 5z" fill="#fdb112"/><path d="M140 1h18v20l-9-5-9 5z" fill="#086797"/><path d="M163 1h18v20l-9-5-9 5z" fill="#f56d1d"/><path d="M0 .5h184" stroke="currentColor" fill="none"/></pattern></defs><rect width="100%" height="22" fill="url(#bandeirinhas)"/></svg>
@@ -100,3 +108,7 @@ const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).href :
     </footer>
   </body>
 </html>
+
+<script>
+  import '../scripts/navigation';
+</script>
