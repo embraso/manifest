@@ -23,6 +23,7 @@ export const shell = {
   brandName: 'Embraso',
   brandHome: 'Embraso — início',
   primaryNavigation: 'Navegação principal',
+  navigationMenu: 'Menu',
   publicProposal: 'A proposta',
   publicManifesto: actions.manifestoLabel,
   publicBuildTogether: 'Construir junto',

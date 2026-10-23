@@ -5,14 +5,13 @@ export const participation = {
     { type: 'emphasis', text: 'é um commit.' },
   ],
   lead: 'Quem conhece o problema também tem o que construir.',
-  body: 'Queremos aproximar quem programa, desenha, escreve, pesquisa, traduz, ensina, organiza e cuida. Não é preciso dominar as ferramentas, chegar com uma solução pronta ou ter tempo toda semana.',
+  body: 'Queremos reunir quem programa, desenha, escreve, pesquisa, traduz, ensina, organiza ou está aprendendo.',
   possibilities: [
     'Trazer o contexto de um problema real.',
     'Tornar uma explicação mais compreensível.',
     'Pensar acessibilidade, testar e documentar.',
     'Compartilhar conhecimento e cuidar da continuidade.',
   ],
-  status: 'Queremos entender primeiro o contexto, sem presumir que a resposta precise ser um software.',
   form: {
     heading: 'Conte uma ideia',
     problemLabel: 'Descreva sua ideia',
@@ -23,5 +22,5 @@ export const participation = {
   },
   imageAlt: 'Capivara na ilustração pixelada da Embraso',
   closeLead: 'Seu interesse não cria uma dívida.',
-  close: 'Construir junto também é respeitar o tempo de cada pessoa.',
+  close: 'Colaborar não pressupõe trabalho gratuito, disponibilidade permanente ou domínio de todas as ferramentas.',
 } as const;
