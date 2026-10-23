@@ -5,7 +5,7 @@ description: Use when independently validating a changed Embraso website in a re
 
 # Embraso browser validation
 
-Validate rendered behavior independently; do not edit source or repair findings. Read repository `AGENTS.md`, `PRODUCT.md`, and `DESIGN.md` first, plus the relevant route/component guidance. For implementation workflow use `embraso-feature-workflow`; for structure and section ownership use `embraso-frontend-patterns`; follow `embraso-language` for Brazilian Portuguese content, and `impeccable` for design quality.
+Validate rendered behavior independently; do not edit source or repair findings. Read repository `AGENTS.md` first, plus `embraso-frontend-patterns` for the product/design contract and the relevant route/component guidance. For implementation workflow use `embraso-feature-workflow`; follow `embraso-language` for Brazilian Portuguese content, and `impeccable` for design quality. `embraso-testing` governs check selection and statuses; `embraso-pull-requests` packages evidence into PR bodies.
 
 ## Baseline and scope
 
@@ -17,14 +17,14 @@ For autoplay/timing journeys that span tool calls, open the worker's own tab wit
 
 ## Run
 
-Batch captures at desktop (1440px), mobile (390px), and a narrow viewport (320–360px), plus project/user-supported sizes. For each route, record its exact URL, viewport, browser backend, engine/version, and outcome. Capture top-of-document and relevant full-page states; inspect the saved image itself for correct route, loaded content, and completeness. Save evidence under `.impeccable/review/` (the repository ignores this directory). Example using Browser Eval JS APIs; set the absolute worktree, route and server URL explicitly:
+Batch captures at desktop (1440px), mobile (390px), and a narrow viewport (320–360px), plus project/user-supported sizes. For each route, record its exact URL, viewport, browser backend, engine/version, and outcome. Capture top-of-document and relevant full-page states; inspect the saved image itself for correct route, loaded content, and completeness. Save evidence outside the repository under `~/embraso-work/manifest/<slug>/evidence/<runId>/` and never commit captures. Example using Browser Eval JS APIs; set the feature slug, route and server URL explicitly:
 
 ```js
 const runId = new Date().toISOString().replace(/[:.]/g, "-");
 const requestedViewport = { width: 1440, height: 1000 };
 const route = "/";
 const url = "http://127.0.0.1:4321/";
-const worktree = "/absolute/path/to/worktree";
+const slug = "<feature-slug>";
 const name = `embraso-${runId}-home-desktop`;
 const tab = await browser.open({
   name, url, app: { tern: false }, viewport: requestedViewport,
@@ -46,9 +46,10 @@ try {
   }
   const fs = await import("node:fs/promises");
   const path = await import("node:path");
-  const dir = path.join(worktree, ".impeccable", "review", runId);
+  const { homedir } = await import("node:os");
+  const dir = path.join(homedir(), "embraso-work", "manifest", slug, "evidence", runId);
   await fs.mkdir(dir, { recursive: true });
-  // Direct helper returns the path it saved. Copy that exact capture into the worktree.
+  // Direct helper returns the path it saved. Copy that exact capture into the evidence directory.
   const captured = await tab.screenshot({ fullPage: false, format: "png" });
   const screenshot = path.join(dir, "home-desktop.png");
   await fs.copyFile(captured, screenshot);
@@ -61,7 +62,7 @@ try {
 }
 ```
 
-Use corresponding fresh named tabs and unique screenshot paths for mobile and narrow widths. Assert and report actual CSS viewport (`innerWidth`, `innerHeight`, DPR) after emulation; do not infer it from the requested viewport or screenshot pixel dimensions. A CSS viewport can map to different physical screenshot pixels depending on DPR and capture backend. Read each exact saved image from `.impeccable/review/<runId>/` with the image-capable file reader; do not substitute a later screenshot that may show different state. If full-page capture times out, capture the viewport or relevant sections with the direct screenshot helper, mark omitted full-page coverage NOT EXERCISED, and do not repeat the identical timed-out call indefinitely. Record the browser backend actually reported by `browser.open`. `tab.run` is real browser Eval, not a sandbox; use only against the intended local site. Keep each run's screenshots, structured observations, and notes together; never overwrite evidence from another route/run without recording that choice.
+Use corresponding fresh named tabs and unique screenshot paths for mobile and narrow widths. Assert and report actual CSS viewport (`innerWidth`, `innerHeight`, DPR) after emulation; do not infer it from the requested viewport or screenshot pixel dimensions. A CSS viewport can map to different physical screenshot pixels depending on DPR and capture backend. Read each exact saved image from `~/embraso-work/manifest/<slug>/evidence/<runId>/` with the image-capable file reader; do not substitute a later screenshot that may show different state. If full-page capture times out, capture the viewport or relevant sections with the direct screenshot helper, mark omitted full-page coverage NOT EXERCISED, and do not repeat the identical timed-out call indefinitely. Record the browser backend actually reported by `browser.open`. `tab.run` is real browser Eval, not a sandbox; use only against the intended local site. Keep each run's screenshots, structured observations, and notes together; never overwrite evidence from another route/run without recording that choice.
 
 
 

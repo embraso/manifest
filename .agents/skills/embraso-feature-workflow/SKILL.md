@@ -9,9 +9,9 @@ Coordinate; do not silently substitute inline implementation for requested deleg
 
 ## Start isolated
 
-Read `AGENTS.md`, `PRODUCT.md`, and relevant source. Load **using-superpowers** and **using-git-worktrees**. Record the intended base revision, dirty files, existing worktrees, and a unique feature slug. Create a sibling worktree before feature edits; a new worktree contains committed base content, **not another checkout's uncommitted work**. Never copy ongoing unrelated changes, stash/reset another workspace, or reuse someone else's branch. If this feature requires uncommitted prerequisites, obtain an explicit handoff rather than assuming a snapshot is coherent.
+Read `AGENTS.md`, the relevant Embraso skills, and the source. Load **using-superpowers** and **using-git-worktrees**. Record the intended base revision, dirty files, existing worktrees, and a unique feature slug. Create a sibling worktree before feature edits; a new worktree contains committed base content, **not another checkout's uncommitted work**. Never copy ongoing unrelated changes, stash/reset another workspace, or reuse someone else's branch. If this feature requires uncommitted prerequisites, obtain an explicit handoff rather than assuming a snapshot is coherent.
 
-Use `reference/omp.md` for commands, model routing, and dispatch contracts. Keep every worker's absolute cwd, server port, browser tab, and evidence paths tied to the feature worktree. Install from the lockfile there. A feature already in its own worktree reuses it; workers do not each create another feature root unnecessarily.
+Use `reference/omp.md` for commands, model routing, and dispatch contracts. Keep every worker's absolute cwd, server port, browser tab, and evidence paths tied to the feature slug. Install from the lockfile there. A feature already in its own worktree reuses it; workers do not each create another feature root unnecessarily.
 
 ## Phase gates
 
@@ -24,7 +24,7 @@ Use `reference/omp.md` for commands, model routing, and dispatch contracts. Keep
 
 Before final validation, refresh the feature onto the latest intended `main` revision, preserving both upstream changes and the feature. Resolve conflicts in the feature worktree—not the active checkout—and regenerate baseline/evidence for that revision. An old screenshot or a pass against an earlier main is not final proof. Do not rewrite a shared branch or discard uncommitted work to refresh it.
 
-Store specs/plans at Superpowers' documented `docs/superpowers/{specs,plans}/` locations when durable documents are warranted; keep progress, briefs and reports in the plan's own scratch workspace. After interruption, read that ledger before dispatching completed work again.
+Store specs, plans, progress, briefs, and reports outside the repository under `~/embraso-work/manifest/<slug>/`; upstream templates that write to `docs/superpowers/` are overridden by `AGENTS.md`. After interruption, read that ledger before dispatching completed work again.
 
 ## Parallel development contract
 
@@ -34,14 +34,10 @@ This is a deliberate OMP adaptation of Superpowers' sequential implementer loop:
 
 ## Test intent, not implementation
 
-Prefer a **small, durable set of E2E scenarios** that proves what a visitor came to do. Select scenarios from changed user journeys and plausible failures, not one test per function, message key, component, or plan step. A plan names each selected intent, action and observable outcome, and why that scenario earns its maintenance cost; it does not prescribe exhaustive contract or coverage matrices.
-
-Assert outcomes such as following the audience switch to the correct page, selecting a reading and getting its content, or pausing playback until explicitly resumed. Do not test that a function calls another function, a prop is forwarded, a catalog alias equals its source, or code has a particular shape. Avoid snapshots of whole pages, wording inventories, private state, CSS classes, and duplicated happy paths.
-
-Add a focused unit/integration regression only when a real algorithm, boundary, error or transition is important and a small E2E scenario cannot adequately expose it. Reuse an existing runner; do not install a framework for documentation, string extraction, or every refactor. Temporary smoke/type probes can answer implementation uncertainty and must be removed after proof. Permanent tests must survive a behavior-preserving refactor; remove incidental tests instead of re-pinning them. This project policy overrides generic upstream instructions to create tests for every task or run an invented full suite.
+`embraso-testing` governs test selection: prefer a **small, durable set of E2E scenarios** that proves what a visitor came to do — following the audience switch to the correct page, selecting a reading and getting its content, pausing playback until explicitly resumed. Do not test that a function calls another function, a prop is forwarded, a catalog alias equals its source, or code has a particular shape; no wording inventories, source-shape checks, or per-component matrices. Add a lower-level regression only for a real algorithm or boundary risk a small journey cannot expose, and remove temporary probes after proof. This project policy overrides generic upstream instructions to create tests for every task or run an invented full suite.
 
 ## Completion
 
 Before publishing or changing routes/content/assets, inspect the final static artifact (`dist/`) and deployment artifact path. Confirm only intended public routes/assets are included; internal editorial notes, source archives, specs/plans, repository metadata, and build/test files must not be copied or bundled for public access. A source file being outside `public/` is not sufficient evidence if routes or build scripts can import/copy it. Treat internal classification as editorial organization, not access control.
 
-Resolve review findings, then repeat the affected runtime scenarios on the final integrated source. A worker's `DONE`, a screenshot alone, or a clean detector is not proof. Report PASS/FAIL/BLOCKED per criterion, actual models/backends, commands observed, screenshots, and limits; missing evidence is not PASS. Update affected implementation docs after proof, preserve Portuguese copy and canonical content, and remove temporary scaffolding. Use **finishing-a-development-branch**, but never merge, push, delete a branch/worktree, or discard changes without authorization. Default handoff: completed feature remains in its worktree.
+Resolve review findings, then repeat the affected runtime scenarios on the final integrated source. A worker's `DONE`, a screenshot alone, or a clean detector is not proof. Report PASS/FAIL/BLOCKED per criterion, actual models/backends, commands observed, screenshots, and limits; missing evidence is not PASS. Record outcomes in the workspace notes under `~/embraso-work/manifest/<slug>/`, preserve Portuguese copy and canonical content, and remove temporary scaffolding. Use **finishing-a-development-branch**, but never merge, push, delete a branch/worktree, or discard changes without authorization. Default handoff: completed feature remains in its worktree.
