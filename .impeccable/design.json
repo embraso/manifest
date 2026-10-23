@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-22T01:59:05.621Z",
+  "generatedAt": "2026-10-23T01:48:10Z",
   "title": "Design System: Embraso",
   "extensions": {
     "colorMeta": {
@@ -19,7 +19,7 @@
         ]
       },
       "green": {
-        "displayName": "Green",
+        "displayName": "Forest Green",
         "role": "primary",
         "tonalRamp": [
           "oklch(15% 0.0863 154.31)",
@@ -33,7 +33,7 @@
         ]
       },
       "yellow": {
-        "displayName": "Yellow",
+        "displayName": "Amber",
         "role": "primary",
         "tonalRamp": [
           "oklch(15% 0.1672 77.11)",
@@ -192,6 +192,18 @@
         "displayName": "Body Reading",
         "purpose": "Long-form manifesto; 16px on mobile."
       },
+      "body-home": {
+        "displayName": "Body Home",
+        "purpose": "Homepage prose in the Folheto register."
+      },
+      "body-terminal": {
+        "displayName": "Body Terminal",
+        "purpose": "Homepage prose in the Terminal register."
+      },
+      "body-command-reader": {
+        "displayName": "Body Command Reader",
+        "purpose": "Proportional prose in the typed-topic reader."
+      },
       "command": {
         "displayName": "Command",
         "purpose": "Editable commands and completion names."
@@ -206,7 +218,7 @@
       {
         "name": "ease-out",
         "value": "cubic-bezier(.16, 1, .3, 1)",
-        "purpose": "Public fauna waypoints and freedom-reading wipe."
+        "purpose": "Eased public fauna movement."
       },
       {
         "name": "action-color",
@@ -214,19 +226,34 @@
         "purpose": "Shared reading-link color transitions; removed by reduced motion."
       },
       {
-        "name": "public-fauna-circuit",
+        "name": "public-foreground-circuit",
         "value": "14000ms × 2",
-        "purpose": "Finite toucan/capybara/ipê circuits; public flame remains static."
+        "purpose": "Two finite toucan and ipê circuits; public emblem/flame remains static."
       },
       {
-        "name": "freedom-reading-wipe",
-        "value": "360ms",
-        "purpose": "Selection-triggered reading connection, only while visible and permitted."
+        "name": "capybara-gait",
+        "value": "14000ms drift; 16 × 1750ms gait cycles; 28000ms total",
+        "purpose": "Eased lateral drift with smooth gait reversals; settles with the other public fauna."
       },
       {
-        "name": "particle-assembly",
-        "value": "1600ms",
-        "purpose": "Finite SVG-sampled gathering followed by continuous warm-flame-only lift/curl/flicker."
+        "name": "topic-reader",
+        "value": "65ms/character; 9000ms + 35ms/word dwell, capped at 18000ms",
+        "purpose": "Automatic topic reading; manual selection preserves playback mode and explicit pause."
+      },
+      {
+        "name": "topic-change",
+        "value": "280ms",
+        "purpose": "Output transition when the selected local reading changes."
+      },
+      {
+        "name": "developer-art-choice",
+        "value": "50% SVG particles / 50% pixel voxels",
+        "purpose": "One stable choice per eligible /devs/ visit; SVG remains the static fallback."
+      },
+      {
+        "name": "developer-particle-budget",
+        "value": "1400 desktop / 600 mobile; DPR ≤ 1.5",
+        "purpose": "Responsive cap for the SVG-particle artwork."
       }
     ],
     "breakpoints": [
@@ -282,19 +309,16 @@
       "refersTo": "audience-selected-public"
     },
     {
-      "name": "Freedom reading choices",
+      "name": "Motivation decision rows",
       "kind": "custom",
-      "description": "Native radios choose substantive readings; runtime connects aria-controls and polite status.",
-      "html": "<fieldset class=\"ds-freedoms\"><legend>Escolha uma liberdade para ler</legend><div class=\"ds-freedom-options\"><label><input type=\"radio\" name=\"ds-freedom\" checked/><span>Usar</span></label><label><input type=\"radio\" name=\"ds-freedom\"/><span>Estudar</span></label><label><input type=\"radio\" name=\"ds-freedom\"/><span>Modificar</span></label><label><input type=\"radio\" name=\"ds-freedom\"/><span>Compartilhar</span></label></div></fieldset>",
-      "css": ".ds-freedoms{border:0;padding:20px;margin:0;min-width:0;background:var(--green,#13522f);color:var(--cream,#fbf7ec);font-family:var(--font-body,'Archivo Variable','Archivo',sans-serif);}.ds-freedoms legend{font-size:14px;background:var(--green,#13522f);padding:4px}.ds-freedom-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-block:1px solid currentColor}.ds-freedom-options label{display:flex;align-items:center;gap:12px;min-height:65px;padding:12px;cursor:pointer;font-size:20px;font-weight:750;line-height:1.2;font-stretch:75%}.ds-freedom-options label:hover{background:color-mix(in srgb,var(--cream,#fbf7ec) 12%,transparent)}.ds-freedom-options label:has(input:checked){background:var(--yellow,#fdb112);color:var(--dark,#0b1d13)}.ds-freedom-options input{width:18px;height:18px;margin:0;accent-color:var(--green,#13522f)}.ds-freedom-options label:focus-within{outline:3px solid var(--yellow,#fdb112);outline-offset:5px;}.ds-freedom-options input:focus-visible{outline:3px solid var(--dark,#0b1d13);outline-offset:3px}",
-      "refersTo": "freedom-selected"
-    },
-    {
-      "name": "Typed-topic reader",
+      "description": "Six complete, always-visible problem/approach readings in Folheto's editorial register. Static server-rendered content; no selector, radio controls, script or interaction.",
+      "html": "<section class=\"ds-motivations\"><h3>Por que a Embraso existe?</h3><ol><li>Vida em comum</li><li>Autonomia</li><li>Conhecimento</li><li>Atenção</li><li>Privacidade</li><li>Continuidade</li></ol></section>",
+      "css": ".ds-motivations{background:var(--green,#13522f);color:var(--cream,#fbf7ec);font-family:var(--font-body,'Archivo Variable','Archivo',sans-serif)}.ds-motivations h3{margin:0;padding:24px 0;color:var(--yellow,#fdb112);font-size:1.5rem}.ds-motivations ol{margin:0;padding:0;list-style:none}.ds-motivations li{display:grid;grid-template-columns:minmax(10rem,1fr) 2fr;gap:24px;padding:20px 0;border-block-start:1px solid currentColor}.ds-motivations li::first-line{color:var(--yellow,#fdb112);font-weight:700}",
+      "name": "Typed-topic carousel",
       "kind": "custom",
-      "description": "Developer-only reader with automatically typed commands, reading dwell, topic navigation and its own explicit pause. Pointer, focus, touch and topic changes retain playback mode; shared artwork motion does not control it. Complete static content remains available without scripts.",
-      "html": "<div class=\"ds-reader\"><nav aria-label=\"Tópicos de leitura\"><a href=\"#ds-reading\" aria-current=\"true\">Por que construir</a></nav><div class=\"ds-command\" aria-hidden=\"true\">&gt; manifesto</div><article id=\"ds-reading\"><h3>Conhecimento que encontra propósito.</h3><p>Queremos dedicar o que sabemos a algo que faça diferença na vida das pessoas.</p><a href=\"/manifesto/\">Ler o manifesto completo</a></article></div>",
-      "css": ".ds-reader{padding:28px;border:1px solid #365542;background:#09190f;color:var(--cream,#fbf7ec);font-family:var(--font-body,'Archivo Variable','Archivo',sans-serif)}.ds-reader nav{border-bottom:1px solid #365542;padding-bottom:18px}.ds-reader nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--yellow,#fdb112)}.ds-command{padding-block:28px;color:var(--yellow,#fdb112);font:500 24px/1.5 var(--font-mono,'Martian Mono Variable','Martian Mono',monospace)}.ds-reader h3{font:500 18px/1.6 var(--font-mono,'Martian Mono Variable','Martian Mono',monospace)}.ds-reader p{color:#b9c9bb;line-height:1.7}.ds-reader a:focus-visible{outline:3px solid var(--yellow,#fdb112);outline-offset:5px}"
+      "description": "Developer-only reader for nine local readings: manifesto, comunidade, autonomia and the six canonical principles. Commands type at 65ms per character, followed by word-weighted reading dwell; manual topic navigation and explicit pause are independent of artwork motion. Complete content remains available without JavaScript.",
+      "html": "<div class=\"ds-reader\"><nav aria-label=\"Tópicos de leitura\"><a href=\"#ds-reading\" aria-current=\"page\">manifesto</a><a href=\"#ds-reading\">comunidade</a><a href=\"#ds-reading\">autonomia</a><a href=\"#ds-reading\">Tecnologia para o bem comum</a></nav><div class=\"ds-command\" aria-hidden=\"true\">&gt; manifesto</div><article id=\"ds-reading\"><h3>Tecnologia para o bem comum</h3><a href=\"/manifesto/\">Ler o manifesto completo</a></article></div>",
+      "css": ".ds-reader{padding:28px;border:1px solid var(--terminal-line,#365542);background:var(--terminal-panel,#09190f);color:var(--cream,#fbf7ec);font-family:var(--font-body,'Archivo Variable','Archivo',sans-serif)}.ds-reader nav{display:flex;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--terminal-line,#365542);padding-bottom:18px}.ds-reader nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--yellow,#fdb112)}.ds-reader nav a[aria-current=page]{background:var(--yellow,#fdb112);color:var(--dark,#0b1d13)}.ds-command{padding-block:28px;color:var(--yellow,#fdb112);font:500 24px/1.5 var(--font-mono,'Martian Mono Variable','Martian Mono',monospace)}.ds-reader h3{font:500 18px/1.6 var(--font-mono,'Martian Mono Variable','Martian Mono',monospace)}.ds-reader a:focus-visible{outline:3px solid var(--yellow,#fdb112);outline-offset:5px}"
     },
     {
       "name": "Native principle disclosure",
@@ -318,7 +342,7 @@
       "Forest, paper and amber connect both registers.",
       "Narrow Archivo display and Martian Mono technical headings have distinct jobs.",
       "Ruled editorial layouts and flat tonal grounds organize reading without shadows.",
-      "Supplied fauna remain recognizable, including the static public flame and sampled developer flame.",
+      "Supplied fauna remain recognizable: the public emblem is static, while the developer emblem selects particle or pixel-voxel motion per eligible visit.",
       "Native controls, visible focus and complete static reading survive without motion or JavaScript."
     ],
     "rules": [
