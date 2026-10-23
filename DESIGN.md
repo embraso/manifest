@@ -147,7 +147,7 @@ Both registers preserve supplied SVG identity, self-hosted variable fonts, expli
 The frontmatter owns the palette values; local hover mixtures are state treatments, not additional brand colors.
 
 ### Primary
-- **Forest green** (`green`): public ink, actions, motivation-reader ground and footer.
+- **Forest green** (`green`): public ink, actions, motivation-section ground and footer.
 - **Amber** (`yellow`): public marker emphasis and participation ground; technical emphasis, actions and selected controls.
 
 ### Secondary
@@ -237,9 +237,9 @@ The switch reads “Público geral” and “Devs”; `data-selected` selects th
 
 The `/devs/` hero presents a terminal-style EmbrasoFetch window with restrained titlebar controls, a static `$ embrasofetch` prompt, the sampled emblem in one column, initiative metadata in the other, and a seven-color brand strip. The command is a visual transcript, not shell execution. The panel uses a semantic definition list and catalog-backed Brazilian Portuguese; it shows no fabricated OS, host, kernel, uptime or hardware details, and retains the static emblem on narrow screens and under reduced motion.
 
-### Motivation reader radios
+### Motivation decision rows
 
-“Por que a Embraso existe?” pairs obstacles with intended changes under six themes: Vida em comum, Autonomia, Conhecimento, Atenção, Privacidade and Continuidade. These are audience-facing topics, not replacement manifesto titles. A native fieldset/legend groups six radios; checked labels reverse to amber/deep forest, and unselected hover gains a cream tint. Preserve native radio keyboard selection, (18px) controls, associated labels and `aria-controls`. A label focus-within has a (3px) amber ring with (5px) offset; the checked control's own focus uses deep forest. Selection displays one article and a polite “Lendo…” status. Without JavaScript, controls stay hidden and all six readings remain visible; print expands them too. The developer engineering rows address the same concerns through concrete questions and intended decisions, without claiming shipped products or guaranteed outcomes.
+“Por que a Embraso existe?” presents all six themes—Vida em comum, Autonomia, Conhecimento, Atenção, Privacidade and Continuidade—as complete, always-visible problem/approach readings. Each ruled row pairs a public-facing question and theme with the problem and intended approach, following Terminal’s decision-row structure in Folheto’s Archivo, forest/cream/amber visual register. Both labels use amber emphasis; there is no separate lead headline. No topic selector, radio controls, reader script, or interaction is required; all copy is present in server-rendered HTML and remains available without JavaScript and in print. These themes do not replace the canonical manifesto principles.
 
 ### Typed-topic carousel
 

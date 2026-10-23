@@ -39,26 +39,24 @@ const contributions = messages.home.participation.contributions;
     </div>
   </section>
 
-  <section class="motivations" aria-labelledby="motivations-title" data-motivation-reader>
+  <section class="motivations" aria-labelledby="motivations-title">
     <div class="page-wrap">
       <div class="motivations-heading"><h2 id="motivations-title">{messages.home.motivations.title.map((part) => part.type === 'break' ? <br /> : part.type === 'emphasis' ? <span>{part.text}</span> : part.type === 'strong' ? <strong>{part.text}</strong> : part.type === 'mark' || part.type === 'accent' ? <mark>{part.text}</mark> : part.text)}</h2><p>{messages.home.motivations.intro}</p></div>
-      <fieldset class="motivation-controls" data-motivation-controls hidden>
-        <legend>{messages.home.motivations.chooser}</legend>
-        <div class="motivation-options">
-          {motivations.map((motivation, index) => <label for={`motivation-choice-${motivation.id}`}><input id={`motivation-choice-${motivation.id}`} type="radio" name="motivation" value={motivation.id} checked={index === 0} aria-controls={`motivation-reading-${motivation.id}`} /><span>{motivation.title}</span></label>)}
-        </div>
-      </fieldset>
-      <p class="motivation-status" role="status" aria-live="polite" aria-atomic="true" data-motivation-status data-status-template={messages.home.motivations.status} hidden></p>
-      <div class="motivation-pages">
+      <dl class="motivation-decisions">
         {motivations.map((motivation) => (
-          <article class="motivation-page" id={`motivation-reading-${motivation.id}`} data-motivation-page={motivation.id} aria-labelledby={`motivation-heading-${motivation.id}`}>
-            <div class="motivation-title"><h3 id={`motivation-heading-${motivation.id}`}>{motivation.title}</h3><p>{motivation.lead}</p></div>
-            <div class="motivation-reading"><p><strong>{messages.home.motivations.problemLabel}</strong>{motivation.problem}</p><p><strong>{messages.home.motivations.goalLabel}</strong>{motivation.goal}</p></div>
-          </article>
+          <div class="motivation-row">
+            <dt class="motivation-question">
+              <p class="motivation-topic">{motivation.title}</p>
+              <h3>{motivation.question}</h3>
+            </dt>
+            <dd class="motivation-response">
+              <p><strong>{messages.home.motivations.problemLabel}</strong>{motivation.problem}</p>
+              <p><strong>{messages.home.motivations.approachLabel}</strong>{motivation.approach}</p>
+            </dd>
+          </div>
         ))}
-      </div>
+      </dl>
       <p class="motivation-footnote">{messages.home.motivations.footnote}</p>
-      <noscript><p class="no-script-note">{messages.home.motivations.noScript}</p></noscript>
     </div>
   </section>
 
@@ -92,10 +90,6 @@ const contributions = messages.home.participation.contributions;
   </section>
 </main>
 
-<script>
-  import './motivation-reader';
-</script>
-
 <style>
   .folheto { color: var(--green); background: var(--paper); overflow: clip; overflow-wrap: break-word; font-size: 1.0625rem; line-height: 1.75; }
   .page-wrap { width: min(1320px, calc(100% - 80px)); margin-inline: auto; }
@@ -128,28 +122,19 @@ const contributions = messages.home.participation.contributions;
   .two-fronts { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
   .two-fronts h3 { font-size: 1.7rem; font-stretch: 85%; line-height: 1.25; margin-bottom: 16px; }
   .two-fronts p { line-height: 1.75; }
-  .motivations { background: var(--green); color: var(--cream); padding-block: 82px 54px; }
-  .motivations-heading { display: flex; align-items: end; gap: 40px; justify-content: space-between; margin-bottom: 42px; }
+  .motivations { background: var(--green); color: var(--cream); padding-block: 96px 68px; }
+  .motivations-heading { display: flex; align-items: end; gap: 40px; justify-content: space-between; margin-bottom: 52px; }
   .motivations-heading p { max-width: 40ch; font-size: 1.0625rem; line-height: 1.75; }
-  .motivation-controls { border: 0; padding: 0; margin: 0; min-width: 0; }
-  .motivation-controls legend { font-size: 14px; margin-bottom: 14px; }
-  .motivation-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--cream); }
-  .motivation-options label { cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 76px; padding: 12px; font-size: clamp(1.25rem, 2.6vw, 2.1rem); font-stretch: 75%; font-weight: 750; line-height: 1.2; border-bottom: 1px solid color-mix(in srgb, var(--cream) 40%, transparent); }
-  .motivation-options label:not(:nth-child(3n + 1)) { border-left: 1px solid color-mix(in srgb, var(--cream) 40%, transparent); }
-  .motivation-options label:has(input:checked) { background: var(--yellow); color: var(--dark); }
-  .motivation-options label:hover { background: color-mix(in srgb, var(--cream) 12%, transparent); }
-  .motivation-options label:has(input:checked):hover { background: var(--yellow); }
-  .motivation-options input { accent-color: var(--green); width: 18px; height: 18px; margin: 0; flex: 0 0 auto; }
-  .motivation-options label:focus-within { outline: 3px solid var(--yellow); outline-offset: 5px; position: relative; z-index: 1; }
-  .motivation-options input:focus-visible { outline-color: var(--dark); outline-offset: 3px; }
-  .motivation-status { padding-top: 18px; font-size: 13px; color: var(--yellow); }
-  .motivation-page { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; padding-block: 48px; border-bottom: 1px solid color-mix(in srgb, var(--cream) 35%, transparent); }
-  .motivation-title h3 { font-stretch: 72%; font-size: clamp(3.4rem, 7.3vw, 6rem); font-weight: 800; letter-spacing: -.015em; line-height: 1.1; overflow-wrap: anywhere; }
-  .motivation-title p { margin-top: 24px; font-size: clamp(1.3rem, 2vw, 1.8rem); line-height: 1.5; max-width: 30ch; color: var(--yellow); }
-  .motivation-reading p + p { margin-top: 24px; }
-  .motivation-reading strong { display: block; margin-bottom: 8px; }
+  .motivation-decisions { margin: 0; border-top: 1px solid color-mix(in srgb, var(--cream) 45%, transparent); }
+  .motivation-row { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 8%; padding-block: 36px; border-bottom: 1px solid color-mix(in srgb, var(--cream) 35%, transparent); }
+  .motivation-question { margin: 0; }
+  .motivation-topic { margin-bottom: 12px !important; color: var(--yellow); font-size: .875rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .motivation-question h3 { font-size: clamp(1.8rem, 3.2vw, 2.8rem); font-stretch: 78%; font-weight: 800; letter-spacing: -.015em; line-height: 1.15; }
+  .motivation-response { margin: 0; }
+  .motivation-response p { max-width: 66ch; }
+  .motivation-response p + p { margin-top: 24px; }
+  .motivation-response strong { display: block; margin-bottom: 6px; color: var(--yellow); }
   .motivation-footnote { max-width: 72ch; margin-top: 32px !important; font-size: 1rem; }
-  .no-script-note { margin-top: 16px !important; font-size: 14px; }
   .manifesto { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8%; padding-block: 110px; }
   .manifesto-opening h2 { font-size: clamp(3.6rem, 5.8vw, 5.8rem); }
   .manifesto-opening p { margin-block: 32px; max-width: 36ch; font-size: 1.125rem; line-height: 1.75; }
@@ -216,16 +201,12 @@ const contributions = messages.home.participation.contributions;
     .large-reading { font-size: 23px; }
     .two-fronts { grid-template-columns: 1fr; gap: 32px; }
     .two-fronts h3 { font-size: 1.6rem; }
-    .motivations { padding-block: 54px 38px; }
-    .motivations-heading { display: block; margin-bottom: 28px; }
+    .motivations { padding-block: 58px 42px; }
+    .motivations-heading { display: block; margin-bottom: 34px; }
     .motivations-heading p { margin-top: 24px; max-width: 43ch; }
-    .motivation-options { grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); }
-    .motivation-options label { min-height: 65px; font-size: clamp(1.25rem, 5vw, 1.8rem); justify-content: start; gap: 9px; padding-inline: 12px; }
-    .motivation-options label:nth-child(n) { border-left: 0; }
-    .motivation-page { display: block; padding-block: 32px; }
-    .motivation-title h3 { font-size: clamp(3rem, 12vw, 5.2rem); }
-    .motivation-title p { font-size: 1.5rem; margin-top: 20px; max-width: 30ch; }
-    .motivation-reading { margin-top: 32px; }
+    .motivation-row { grid-template-columns: minmax(0, 1fr); gap: 18px; padding-block: 30px; }
+    .motivation-question h3 { max-width: 24ch; font-size: clamp(1.8rem, 7vw, 2.6rem); }
+    .motivation-response p + p { margin-top: 20px; }
     .manifesto { display: block; padding-block: 64px; }
     .manifesto-opening p { max-width: 45ch; margin-block: 28px; }
     .principles { margin-top: 40px; }
@@ -247,16 +228,11 @@ const contributions = messages.home.participation.contributions;
   }
   @media (max-width: 380px) {
     .opening-actions .button, .closing-idea-form .button { width: 100%; }
-    .motivation-options { grid-template-columns: 1fr; }
-    .motivation-options label:nth-child(n) { padding-inline: 12px; border-left: 0; }
-    .motivation-options input { width: 15px; height: 15px; }
     .principle summary h3 { font-size: 1.6rem; }
   }
   @media print {
-    .motivation-controls, .motivation-status { display: none; }
-    .folheto .motivation-page[hidden] { display: grid !important; }
     .motivations, .participation { background: transparent; color: black; }
-    .motivation-title p, .motivation-status { color: black; }
+    .motivation-response strong, .motivation-topic { color: black; }
     .opening-copy { width: 100%; }
   }
 </style>
