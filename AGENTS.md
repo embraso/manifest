@@ -10,9 +10,9 @@ The identity combines a position on software freedom, privacy, the common good, 
 
 ## Language policy
 
-Write implementation documentation in English, including `AGENTS.md`, agent/skill instructions, and future technical specifications, architecture notes, and development guides. Keep editorial documents, source archives, internal story/strategy material, and website copy in Brazilian Portuguese. Internal editorial material is not implementation documentation.
+Use English for agent-to-user interaction by default: replies, questions, plans, progress updates, reviews, and technical explanations. Keep implementation documentation in English, including `AGENTS.md`, agent/skill instructions, and future technical specifications, architecture notes, and development guides. Use Brazilian Portuguese for editorial documents, source archives, internal story/strategy material, and website copy.
 
-Preserve Portuguese quotations, copy examples, canonical principle names, brand signatures, and existing file paths when referencing them in English instructions. An English instruction to write copy must still produce Brazilian Portuguese copy unless explicitly requested otherwise.
+Switch to Brazilian Portuguese only when writing or editing website/editorial copy, quoting Portuguese source material, or when the user explicitly requests Portuguese. Do not let the website's `pt-BR` language change the language of agent communication or technical documentation. Preserve Portuguese quotations, copy examples, canonical principle names, brand signatures, and existing file paths in English instructions. An English instruction to write copy must still produce Brazilian Portuguese copy unless explicitly requested otherwise.
 
 ## Where to read
 
