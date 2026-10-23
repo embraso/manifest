@@ -1,5 +1,3 @@
-import { actions } from '../actions';
-
 export const participation = {
   heading: [
     { type: 'text', text: 'Nem toda contribuição' },
@@ -14,17 +12,15 @@ export const participation = {
     'Pensar acessibilidade, testar e documentar.',
     'Compartilhar conhecimento e cuidar da continuidade.',
   ],
-  status: 'A iniciativa está tomando forma. O primeiro passo disponível aqui é conhecer a proposta e pensar no que faria sentido construir junto.',
-  link: actions.startWithManifesto,
+  status: 'Queremos entender primeiro o contexto — sem presumir que a resposta precise ser um software.',
+  form: {
+    heading: 'Conte uma ideia',
+    problemLabel: 'Descreva sua ideia',
+    problemHint: 'Que problema você conhece por dentro? O que gostaria de mudar?',
+    privacyNote: 'Não inclua informações pessoais.',
+    submit: 'Em breve',
+  },
   imageAlt: 'Capivara na ilustração pixelada da Embraso',
-  question: [
-    { type: 'text', text: 'Que problema' },
-    { type: 'break' },
-    { type: 'text', text: 'você conhece' },
-    { type: 'break' },
-    { type: 'emphasis', text: 'por dentro?' },
-  ],
-  caption: 'Uma boa pergunta já é um começo.',
   closeLead: 'Seu interesse não cria uma dívida.',
   close: 'Construir junto também é respeitar o tempo de cada pessoa.',
 } as const;

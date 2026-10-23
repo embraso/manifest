@@ -81,13 +81,17 @@ const messages = getMessages(locale);
         {messages.devs.participation.possibilities.map((possibility) => <li>{possibility}</li>)}
       </ul>
       <p>{messages.devs.participation.status}</p>
-      <a class="terminal-action" href="/manifesto/">{messages.devs.participation.link} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a>
     </div>
-    <aside class="participation-question">
+    <div class="participation-form-wrap">
       <img src={pixelCapybara.src} width="376" height="224" alt={messages.devs.participation.imageAlt} loading="lazy" />
-      <p>{messages.devs.participation.question.map((part) => part.type === 'break' ? <br /> : part.type === 'emphasis' ? <span>{part.text}</span> : part.type === 'strong' ? <strong>{part.text}</strong> : part.type === 'mark' || part.type === 'accent' ? <mark>{part.text}</mark> : part.text)}</p>
-      <span>{messages.devs.participation.caption}</span>
-    </aside>
+      <form class="idea-form">
+        <h3>{messages.devs.participation.form.heading}</h3>
+        <label for="idea-problem">{messages.devs.participation.form.problemLabel}</label>
+        <textarea id="idea-problem" name="problem" rows="5" placeholder={messages.devs.participation.form.problemHint}></textarea>
+        <p class="privacy-note">{messages.devs.participation.form.privacyNote}</p>
+        <button class="terminal-action submit-button" type="button" disabled>{messages.devs.participation.form.submit}</button>
+      </form>
+    </div>
     <p class="participation-close">{messages.devs.participation.closeLead}<br /><span>{messages.devs.participation.close}</span></p>
   </section>
 </main>
@@ -155,12 +159,17 @@ const messages = getMessages(locale);
   .participation-possibilities { list-style: none; padding: 0; margin: 28px 0; }
   .participation-possibilities li { border-bottom: 1px solid var(--rule); padding-block: 12px; }
   .participation-possibilities li:first-child { border-top: 1px solid var(--rule); }
-  .participation-copy .terminal-action { margin-top: 15px; }
-  .participation-question { align-self: center; padding: 35px 0 30px 4vw; border-left: 1px solid var(--rule); }
-  .participation-question img { width: min(100%, 330px); margin: 0 auto 38px; image-rendering: pixelated; }
-  .participation-question > p { font: 500 clamp(1.7rem, 3.4vw, 3.3rem)/1.4 var(--font-mono); letter-spacing: -.02em; margin-bottom: 24px; }
-  .participation-question > p span { color: var(--yellow); }
-  .participation-question > span { color: var(--muted); font-size: 13px; }
+  .participation-form-wrap { align-self: start; padding: 30px 0 28px 4vw; border-left: 1px solid var(--rule); }
+  .participation-form-wrap > img { width: min(100%, 240px); margin: 0 auto 22px; image-rendering: pixelated; }
+  .idea-form { display: grid; gap: 11px; padding: 24px; background: #09190f; border: 1px solid var(--rule); }
+  .idea-form h3 { color: var(--yellow); font-size: 1rem; line-height: 1.5; margin: 0; }
+  .idea-form label { font: 12px/1.6 var(--font-mono); color: var(--mint); margin-top: 8px; }
+  .idea-form textarea { width: 100%; min-height: 144px; padding: 12px; color: var(--cream); background: var(--dark); border: 1px solid var(--rule); border-radius: 0; font: inherit; line-height: 1.55; resize: vertical; }
+  .idea-form textarea::placeholder { color: var(--muted); opacity: 1; }
+  .idea-form textarea:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; border-color: var(--yellow); }
+  .idea-form .privacy-note { color: var(--muted); font-size: 12px; line-height: 1.6; margin: 5px 0 0; }
+  .idea-form .submit-button { width: fit-content; margin-top: 5px; border: 0; font: 600 12px/1.5 var(--font-mono); }
+  .idea-form .submit-button:disabled { color: var(--cream); background: var(--rule); cursor: not-allowed; }
   .participation-close { grid-column: 1 / -1; font-size: 18px; padding-top: 42px; border-top: 1px solid var(--rule); margin-bottom: 0; }
   .participation-close span { font-size: 15px; color: var(--muted); }
   @media (min-width: 1700px) { .terminal-opening { grid-template-columns: 1.25fr 1fr; } }
@@ -192,9 +201,9 @@ const messages = getMessages(locale);
     .principle-content .principle-lead { font-size: 17px; }
     .engineering-decisions > div { grid-template-columns: minmax(0, 1fr); gap: 14px; }
     .participation-section { padding-block: 70px 42px; grid-template-columns: minmax(0, 1fr); gap: 42px; }
-    .participation-question { padding: 32px 0 0; border-left: 0; border-top: 1px solid var(--rule); }
-    .participation-question > p { font-size: clamp(2rem, 7vw, 3.4rem); }
-    .participation-question img { width: 230px; margin-left: auto; margin-right: 0; }
+    .participation-form-wrap { padding: 28px 0 0; border-left: 0; border-top: 1px solid var(--rule); }
+    .participation-form-wrap > img { width: 190px; margin: 0 0 18px auto; }
+    .idea-form { padding: 20px 16px; }
     .participation-close { padding-top: 30px; }
   }
   @media (max-width: 380px) {
