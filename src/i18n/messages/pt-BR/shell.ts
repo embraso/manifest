@@ -2,10 +2,12 @@ import { actions } from './actions';
 
 export const shell = {
   metadata: {
-    description: 'Uma iniciativa para reunir pessoas, construir software útil e livre e ampliar a autonomia digital nas diferentes realidades do Brasil.',
+    publicDescription: 'Conheça a Embraso, uma iniciativa para reunir pessoas, construir software útil e livre e ampliar a autonomia digital no Brasil.',
+    devsDescription: 'Uma leitura técnica da proposta da Embraso: construir software útil e livre, compartilhar conhecimento e fortalecer comunidades.',
+    manifestoDescription: 'Conheça os princípios do manifesto da Embraso para construir tecnologia útil, com autonomia, liberdade, clareza, privacidade e simplicidade.',
     publicTitle: 'Embraso — Liberdade se constrói junto.',
     devsTitle: 'Embraso para devs — Liberdade se constrói junto.',
-    manifestoTitle: 'Manifesto — Embraso',
+    manifestoTitle: 'Manifesto da Embraso — Liberdade se constrói junto.',
   },
   signature: [
     { type: 'text', text: 'Liberdade' },

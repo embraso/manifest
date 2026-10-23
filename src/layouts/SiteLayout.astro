@@ -11,13 +11,13 @@ interface Props {
   audience?: 'public' | 'devs';
   locale: Locale;
   title: string;
+  description: string;
   isManifesto?: boolean;
 }
-const { audience = 'public', locale, title, isManifesto = false } = Astro.props;
+const { audience = 'public', locale, title, description, isManifesto = false } = Astro.props;
 const messages = getMessages(locale).shell;
 const technical = audience === 'devs';
 const home = technical ? '/devs/' : '/';
-const description = messages.metadata.description;
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 ---
 

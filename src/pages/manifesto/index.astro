@@ -7,7 +7,7 @@ const locale = defaultLocale;
 const messages = getMessages(locale);
 ---
 
-<SiteLayout locale={locale} title={messages.shell.metadata.manifestoTitle} isManifesto>
+<SiteLayout locale={locale} title={messages.shell.metadata.manifestoTitle} description={messages.shell.metadata.manifestoDescription} isManifesto>
   <main id="conteudo" class="manifesto-page container">
     <a class="back-link" href="/">{messages.manifesto.back}</a>
     <header class="manifesto-header">
