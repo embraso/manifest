@@ -13,5 +13,5 @@ export const participation = {
     ['Programar e cuidar', 'Construir, documentar, corrigir e manter. Cuidar da continuidade é trabalho e merece reconhecimento e condições justas.'],
   ],
   noteLead: 'Interesse não é obrigação.',
-  note: 'Você não precisa saber tudo nem ter tempo toda semana. Colaboração não pressupõe trabalho gratuito ou disponibilidade permanente. As formas concretas de participação ainda estão sendo construídas; por enquanto, conhecer o manifesto é o caminho disponível.',
+  note: 'Você não precisa saber tudo nem ter tempo toda semana. Colaboração não pressupõe trabalho gratuito ou disponibilidade permanente.',
 } as const;
