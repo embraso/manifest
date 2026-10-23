@@ -7,10 +7,10 @@ const messages = getMessages(locale);
 const copy = messages.devs.carousel;
 const principles = messages.manifesto.principles;
 const topics = [
-  { ...copy.topics[0], command: messages.devs.commands.manifesto, paragraphs: messages.manifesto.introduction },
-  { ...copy.topics[1], command: messages.devs.commands.community, paragraphs: [messages.manifesto.invitation.introduction, messages.manifesto.invitation.body, copy.communityParagraph] },
-  { ...copy.topics[2], command: messages.devs.commands.autonomy, paragraphs: copy.autonomyParagraphs },
-  ...principles.map((principle, index) => ({ command: messages.devs.commands.principles[index]!, label: principle.title, title: principle.title, summary: principle.lead, paragraphs: [principle.body], href: '/manifesto/', link: copy.principlesLink })),
+  { ...copy.topics[0], command: messages.devs.commands.manifesto, paragraphs: messages.manifesto.introduction, isPrinciple: false },
+  { ...copy.topics[1], command: messages.devs.commands.community, paragraphs: [messages.manifesto.invitation.introduction, messages.manifesto.invitation.body, copy.communityParagraph], isPrinciple: false },
+  { ...copy.topics[2], command: messages.devs.commands.autonomy, paragraphs: copy.autonomyParagraphs, isPrinciple: false },
+  ...principles.map((principle) => ({ command: principle.title, label: principle.title, title: principle.title, summary: principle.lead, paragraphs: [principle.body], href: '/manifesto/', link: copy.principlesLink, isPrinciple: true })),
 ];
 ---
 
@@ -43,15 +43,15 @@ const topics = [
     </nav>
   </div>
   <div class="carousel-workspace">
-    <div class="workspace-heading"><span>{copy.workspace}</span><span>{copy.workspaceNotice}</span></div>
+    <div class="workspace-heading"><span data-workspace-title data-default-title={copy.workspace}>{copy.workspace}</span><span>{copy.workspaceNotice}</span></div>
     <div class="command-line" aria-hidden="true"><span class="prompt-marker">&gt;</span><span data-typed-command>{topics[0]!.command}</span><span class="command-caret"></span></div>
     <div class="carousel-readings" data-carousel-readings role="region" aria-label={copy.selectedContent}>
       {topics.map((topic, index) => (
-        <article id={`leitura-${index}`} class="topic-reading" data-reading={index} data-command={topic.command} aria-labelledby={`reading-title-${index}`}>
+        <article id={`leitura-${index}`} class:list={['topic-reading', { 'principle-reading': topic.isPrinciple }]} data-reading={index} data-command={topic.command} data-workspace-title={topic.isPrinciple ? topic.title : undefined} aria-labelledby={`reading-title-${index}`}>
           <p class="reading-command">&gt; {topic.command}</p>
-          <p class="reading-label">{topic.label}</p>
-          <h3 id={`reading-title-${index}`}>{topic.title}</h3>
-          <p class="reading-summary">{topic.summary}</p>
+          {!topic.isPrinciple && <p class="reading-label">{topic.label}</p>}
+          <h3 id={`reading-title-${index}`}>{topic.isPrinciple ? topic.summary : topic.title}</h3>
+          {!topic.isPrinciple && <p class="reading-summary">{topic.summary}</p>}
           <div class="topic-full-reading">{topic.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
           <a href={topic.href}>{topic.link}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg></a>
         </article>
@@ -91,7 +91,7 @@ const topics = [
   a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--yellow); outline-offset: 5px; }
   .carousel-workspace { min-width: 0; align-self: start; background: #09190f; border: 1px solid var(--rule); }
   .workspace-heading { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; padding: 18px 28px; border-bottom: 1px solid var(--rule); color: var(--muted); font: 10px/1.6 var(--font-mono); }
-  .workspace-heading > span:first-child { color: var(--mint); }
+  .workspace-heading > span:first-child { min-width: 0; color: var(--mint); font-size: 12px; font-weight: 600; overflow-wrap: anywhere; }
   .command-line { display: none; align-items: center; padding: 32px 28px 28px; font: 500 clamp(1.2rem, 2.2vw, 2rem)/1.5 var(--font-mono); letter-spacing: -.03em; overflow-wrap: anywhere; min-height: 106px; }
   [data-enhanced] .command-line { display: flex; }
   .prompt-marker { color: var(--mint); margin-right: 18px; flex: 0 0 auto; }
@@ -108,8 +108,10 @@ const topics = [
   [data-enhanced] .reading-command { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); margin: 0; }
   .reading-label { margin: 0 0 12px; color: var(--mint); font: 12px/1.6 var(--font-mono); }
   .topic-reading h3 { max-width: 20ch; margin: 0 0 20px; color: var(--cream); font: 600 clamp(1.6rem, 3.2vw, 2.4rem)/1.35 var(--font-mono); letter-spacing: -.02em; text-wrap: pretty; }
+  .principle-reading h3 { max-width: 68ch; margin: 0 0 24px; color: var(--muted); font: 600 1rem/1.8 var(--font-body); letter-spacing: .005em; }
   .reading-summary, .topic-full-reading p { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 68ch; margin: 0 0 24px; }
-  [data-enhanced] .topic-full-reading { display: none; }
+  [data-enhanced] .topic-reading:not(.principle-reading) .topic-full-reading { display: none; }
+  [data-enhanced] .principle-reading .topic-full-reading { display: block; }
   .topic-reading > a { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; color: var(--cream); font-size: 1rem; text-underline-offset: 4px; }
   .topic-reading > a:hover { color: var(--yellow); }
   .carousel-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px 16px 28px; border-top: 1px solid var(--rule); }

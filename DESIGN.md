@@ -243,7 +243,7 @@ The `/devs/` hero presents a terminal-style EmbrasoFetch window with restrained 
 
 ### Typed-topic carousel
 
-“Manifesto, objetivos e princípios” introduces nine local readings: `manifesto`, `comunidade`, `autonomia`, then `principio 1` through `principio 6` in canonical order. The grouped locator uses native anchors, `aria-controls` and `aria-current`, with three framing topics before the principles. The workspace shows one selected label, title and concise description, plus a link to its complete reading. Selected text and prompt are amber on a deep-green surface; no input, autocomplete, command history or simulated execution remains. The command line uses a mint prompt and a block caret; reading text stays proportional rather than forming a wall of monospace.
+“Manifesto, objetivos e princípios” introduces nine local readings: `manifesto`, `comunidade`, `autonomia`, then the six canonical principles in order. Each principle's canonical title supplies its typed prompt and workspace heading; its lead appears as compact bold text, followed by the canonical body. The grouped locator uses native anchors, `aria-controls` and `aria-current`, with three framing topics before the principles. The workspace presents the selected title, description and link to the complete reading. Selected text and prompt are amber on a deep-green surface; no input, autocomplete, command history or simulated execution remains. The command line uses a mint prompt and a block caret; reading text stays proportional rather than forming a wall of monospace.
 
 Responsive rich-text line breaks retain a whitespace fallback when the mobile layout hides the `<br>` element, so adjacent translated words do not run together.
 
