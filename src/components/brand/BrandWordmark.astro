@@ -1,0 +1,17 @@
+---
+import wordmark from '../../../assets/8c008702b11390d6d3bf4d7fce4eb667.svg';
+
+interface Props { light?: boolean }
+const { light = false } = Astro.props;
+---
+
+<span class:list={['brand-wordmark', { 'brand-wordmark-light': light }]}><img src={wordmark.src} alt="Embraso" width="948" height="258" /></span>
+
+<style>
+  .brand-wordmark { display: inline-block; width: 3.68em; vertical-align: -.055em; line-height: 0; }
+  .brand-wordmark img { display: block; width: 100%; height: auto; }
+  .brand-wordmark-light img { filter: brightness(0) saturate(100%) invert(97%) sepia(13%) saturate(326%) hue-rotate(335deg) brightness(103%) contrast(97%); }
+  @media print {
+    .brand-wordmark-light img { filter: none; }
+  }
+</style>

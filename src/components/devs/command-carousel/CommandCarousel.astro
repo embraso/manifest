@@ -8,7 +8,7 @@ const copy = messages.devs.carousel;
 const proposal = messages.home.proposal;
 const principles = messages.manifesto.principles;
 const topics = [
-  { ...copy.topics[0], summary: proposal.reading, command: messages.devs.commands.about, paragraphs: [proposal.opportunity], isPrinciple: false },
+  { ...copy.topics[0], summary: proposal.lead, command: messages.devs.commands.about, paragraphs: [proposal.about], isPrinciple: false },
   { ...copy.topics[1], summary: proposal.community, command: messages.devs.commands.community, paragraphs: [], isPrinciple: false },
   { ...copy.topics[2], summary: proposal.autonomy, command: messages.devs.commands.autonomy, paragraphs: [], isPrinciple: false },
   ...principles.map((principle) => ({ command: principle.title, label: principle.title, title: principle.title, summary: principle.lead, paragraphs: [principle.body], href: '/manifesto/', link: copy.principlesLink, isPrinciple: true })),
