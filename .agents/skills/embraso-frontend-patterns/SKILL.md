@@ -7,7 +7,35 @@ description: Use when implementing or reviewing Embraso Astro pages, sections, l
 
 ## Authority and related skills
 
-Before editing, read the repository-root `AGENTS.md`, `PRODUCT.md`, and `DESIGN.md` for project constraints, verified product truth, and the committed visual system. Follow those over generic defaults. For visual UI work, load `impeccable` and its applicable playbook; read `reference/craft-floor.md` immediately before UI edits. Preserve the Folheto / Terminal identity; an isolated section inherits its page's established visual world. For Portuguese copy, use `embraso-language` and the editorial references it selects. Browser review belongs to `embraso-browser-validation`.
+Before editing, read the repository `AGENTS.md` and this skill's product/design contract below for project constraints, verified product truth, and the visual system. Follow those over generic defaults. For visual UI work, load `impeccable` and its applicable playbook; read `.agents/skills/impeccable/reference/craft-floor.md` immediately before UI edits. Preserve the Folheto / Terminal identity; an isolated section inherits its page's established visual world. For Portuguese copy, use `embraso-language`; it selects the canonical catalogs. For check selection and permanent-test policy use `embraso-testing`; browser review belongs to `embraso-browser-validation`.
+
+## Product and design contract
+
+Two registers share one identity. Folheto (`/`) is warm paper (`--paper`) with forest ink and amber emphasis; Terminal (`/devs/`) is deep forest (`--dark`) with cream text, mono headings, and amber actions. Routes are `/` (default), `/devs/`, and `/manifesto/`. Never invent contacts, team members, legal status, metrics, backend services, or intake endpoints.
+
+`src/layouts/SiteLayout.astro` is the shared shell. It emits the canonical URL from the configured production origin (`astro.config.mjs` `site`, `https://embraso.com.br`), title/description metadata, `theme-color`, and the favicon set (`/favicon.ico`, `/favicon.svg`). Never hard-code another origin or emit a fabricated canonical. Only `pt-BR` ships; `resolveLocale` rejects unsupported codes.
+
+Design tokens live in `src/styles/global.css`. Use the named custom properties (`--paper`, `--green`, `--yellow`, `--orange`, `--blue`, `--dark`, `--cream`, `--mint`) instead of hex values. Roles: forest green is public ink and primary actions; amber marks public emphasis plus Terminal actions and selected controls; mint is technical numbering and code; orange and blue are supplied identity and public keyboard focus; paper is the public ground; cream is reversed and primary Terminal text; deep forest is the Terminal ground. Terminal components define some values locally — panel and hover grounds and the scoped `--rule`/`--muted` reader tones — do not treat those as global tokens or reuse reader tones on public surfaces.
+
+Typography: Archivo Variable for body and display (`--font-body`, `--font-display`), Martian Mono Variable for Terminal headings and commands (`--font-mono`). The Folheto opening `h1` uses `clamp(3rem, 9vw, 6rem)`; do not exceed a 6rem display ceiling.
+
+Shape: square corners and 1px rules organize reading; there is no box-shadow vocabulary. Scoped radii exist — 6px Folheto controls, 4px Folheto textarea, 3px Terminal textarea, 3px utility radius — do not generalize them into pills or cards.
+
+Focus is visible everywhere: a shared 3px outline with 5px offset (blue publicly, amber on Terminal); Folheto controls use a 6px offset. Native text selection is dark on amber by default. Honor `prefers-reduced-motion`: authored animation and smooth scroll turn off, and motion never gates content.
+
+Terminal is a presentation surface, not a shell: no input, no command execution, no submission, no server connection. The hero's `EmbrasoFetch` profile renders content from the `devs/hero` catalog — do not invent system details beyond it. The idea forms on `/` and `/devs/` are disabled placeholders labeled “Em breve”: keep them disabled; enabling submission, adding a fetch, or adding a success state requires a confirmed destination and owner approval.
+
+Brand: the wordmark is supplied SVG artwork — never typeset or approximate it. Keep vectors under `assets/` and rendered exports under `public/`. No tracked regeneration script exists; derive new exports from the SVG sources rather than resizing an existing PNG. The Brazilian flag is approved identity; keep supplied artwork intact.
+
+| Export | Source |
+| --- | --- |
+| `public/favicon.svg` | `assets/b084774a04a4acde15a270ee03518180.svg` (square viewBox) |
+| `public/favicon.ico` | PNG entries rendered from the square favicon SVG (16/32/48) |
+| `public/brand/embraso-icon.png` (1024×1024) | Square favicon SVG |
+| `public/brand/embraso-logo.png` | `assets/e6712f9ec67bfc5e5e1536d9b4377830.svg` |
+| `public/brand/embraso-logo-light.png` | `assets/58fa12401e77dc41cc7e67952d136fdf.svg` |
+
+Past visual intent is documented in an external, non-authoritative reference: `https://claude.ai/artifact/BWKYPiNDodsXjPPY1c81dp#page-dcb81aee8d83`. This contract and the shipped source outrank it.
 
 ## Own a section; compose thinly
 
@@ -48,8 +76,8 @@ Keep word boundaries when rendering rich `break` tokens: a line break hidden by 
 - Use semantic landmarks, one clear page `h1`, ordered section headings, native controls, labels, and accurate accessible names/states. Keep all functionality keyboard-operable with visible focus, usable contrast, and practical target sizes.
 - Honor `prefers-reduced-motion`; motion must not gate content or operation. Handle component lifecycle, listeners, timers, observers, navigation, visibility, and cleanup without leaks or stale state.
 - Check responsive reading and interaction at narrow and wide viewports, zoom/enlarged text, and print when the page's purpose requires it. Keep content legible when scripts, motion, or remote services are unavailable.
-- Treat page metadata as shared layout responsibility where appropriate. Include accurate title/description and social metadata; set a canonical URL only from a confirmed production origin. The Embraso domain is unresolved: do not guess a URL or emit a fabricated canonical.
-- Treat `docs/` as source material, not website content. Public pages may consume only deliberately selected, approved public copy; never import internal editorial notes, source archives, specs, plans, or repository files wholesale into routes, catalogs, client bundles, or public assets. Keep generated output and deployment inputs allowlisted to the intended pages and assets; do not copy the repository or `docs/` into the published tree.
+- Treat page metadata as shared layout responsibility where appropriate. Include accurate title/description and social metadata; the canonical URL derives from the configured production origin in `astro.config.mjs` `site` through `SiteLayout`. Change the origin there, never per page.
+- Internal notes, source archives, specs, plans, evidence, and design exports never ship: public pages consume only deliberately selected, approved public copy from the catalogs. Keep generated output and deployment inputs allowlisted to the intended pages and assets; do not copy repository working files into the published tree.
 - Load only appropriate local assets, preserve meaningful alternatives and intrinsic dimensions, and avoid unnecessary client JavaScript, layout shifts, or expensive work. For features involving personal data, external services, user input, or dynamic URLs, minimize exposure and validate/render safely; don't imply privacy, security, or operational guarantees not established by the product brief.
-- Keep permanent tests few and intent-focused: prefer E2E journeys with visitor-visible outcomes over per-component/unit contract matrices. Use targeted lower-level tests only for meaningful risks a small journey cannot expose. Never test forwarding, one function calling another, catalog aliases, code shape, or incidental wording/classes; follow `embraso-feature-workflow` for the full test policy.
+- Keep permanent tests few and intent-focused: prefer E2E journeys with visitor-visible outcomes over per-component/unit contract matrices. Use targeted lower-level tests only for meaningful risks a small journey cannot expose. Never test forwarding, one function calling another, catalog aliases, code shape, or incidental wording/classes; follow `embraso-testing` for check selection and the permanent-test policy.
 - Make no unrelated application refactor. Use `embraso-browser-validation` to inspect rendered behavior and report verified results; do not claim accessibility or performance conformance without evidence.

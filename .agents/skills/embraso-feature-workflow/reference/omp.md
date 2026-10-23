@@ -7,14 +7,14 @@ Read current tool schemas and CLI help; they outrank copied examples. Repository
 After inspecting the actual base, branch names and worktree list, choose an unused sibling path and branch:
 
 ```sh
-git worktree add -b feat/<slug> ../landing-page-<slug> <verified-base>
+git worktree add -b feat/<slug> ../manifest-<slug> <verified-base>
 ```
 
 `<slug>` and `<verified-base>` are deliberate replacements, not literal command arguments. Run subsequent commands with an explicit worktree cwd. OMP also exposes `omp worktree add`; check `omp worktree --help` before using version-specific flags. Never use `-B`, forced cleanup or `git clean` to make room.
 
-Use `npm ci`, `npm run build`, `npm run dev -- --port <unique-port>` or `npm run preview -- --port <unique-port>` as appropriate. Observe the actual URL and readiness. Some Astro versions daemonize dev: an exited launcher is not proof that the server stopped; use that version's dev status/stop commands for the server you created. Serve production output for the final pass. No `npm test` script currently exists. Establish a failing-before scenario for a bug; use targeted existing behavioral tests where appropriate, and runtime smoke proof for new behavior. Do not add brittle wording/source-wiring tests.
+Use `npm ci`, `npm run build`, `npm run dev -- --port <unique-port>` or `npm run preview -- --port <unique-port>` as appropriate. Observe the actual URL and readiness. Some Astro versions daemonize dev: an exited launcher is not proof that the server stopped; use that version's dev status/stop commands for the server you created. Serve production output for the final pass. No lint, typecheck, or test script exists. Establish a failing-before scenario for a bug; use targeted existing behavioral tests where appropriate, and runtime smoke proof for new behavior. Do not add brittle wording/source-wiring tests.
 
-The local workflow's **Test intent, not implementation** section governs test selection: prefer a few meaningful E2E journeys, add a lower-level test only for a risk those journeys miss, and do not grow forwarding/callback/alias/wording-contract suites. Upstream TDD templates do not require a permanent test for every implementation task here.
+**embraso-testing** governs test selection: prefer a few meaningful E2E journeys, add a lower-level test only for a risk those journeys miss, and do not grow forwarding/callback/alias/wording-contract suites. Upstream TDD templates do not require a permanent test for every implementation task here.
 
 ## Actual model routing
 
@@ -25,7 +25,7 @@ Inspect `omp models ls --json` for current selectors, image inputs, and pricing;
 ```sh
 omp --cwd /absolute/feature-worktree \
   --model openai-codex/gpt-6-luna --no-session \
-  -p @/absolute/feature-worktree/.impeccable/review/validation-brief.md
+  -p @/absolute/path/to/embraso-work/manifest/<slug>/validation-brief.md
 ```
 
 `openai-codex/gpt-6-luna` was available with image input and exercised successfully during setup; re-discover before future use. Use the same command shape with a capable available selector for architecture/spec/planning. CLI `--smol`, `--plan`, and `--slow` select roles for that process; do not change persisted user configuration. The process must receive its full task brief, not assume access to the parent conversation. Preserve normal project rules and skill discovery. Use tool allowlists only when their names are verified in that runtime.
@@ -47,4 +47,4 @@ The parent verifies each report, escalates missing capabilities or uncertain res
 
 ## Installed dependencies
 
-Superpowers skills are installed locally under `.agents/skills/`, with their upstream revision and hashes in `skills-lock.json`. Source: [obra/superpowers](https://github.com/obra/superpowers), revision `2ce8aa15d05bd57213e6f746f953aafb7ded7a8b`. Existing Impeccable and Embraso language skills remain separate authorities. Restore/update through the skills installer and review upstream changes; do not silently replace these project adapters or discard upstream supporting references/scripts. Include the upstream MIT notice when distributing the copied skills.
+Superpowers skills are installed locally under `.agents/skills/`, with their upstream revision and hashes in `skills-lock.json`. Source: [obra/superpowers](https://github.com/obra/superpowers), revision `2ce8aa15d05bd57213e6f746f953aafb7ded7a8b`. The Embraso skills (`embraso-*`) remain separate authorities. Where upstream templates reference `docs/superpowers/`, `PRODUCT.md`, `DESIGN.md`, or `.impeccable/`, `AGENTS.md` overrides them; write those artifacts outside the repository and do not run generators that would recreate them. Restore/update through the skills installer and review upstream changes; do not silently replace these project adapters or discard upstream supporting references/scripts. Include the upstream MIT notice when distributing the copied skills.

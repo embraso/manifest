@@ -1,4 +1,11 @@
 node_modules/
 dist/
 .astro/
-.impeccable/review/
+/docs/
+/DESIGN.md
+/PRODUCT.md
+/.impeccable/
+/.superpowers/
+/screenshots/
+/evidence/
+*:Zone.Identifier
