@@ -4,7 +4,7 @@ export const shell = {
   metadata: {
     publicDescription: 'Conheça a Embraso, uma iniciativa para reunir pessoas, construir software útil e livre e ampliar a autonomia digital no Brasil.',
     devsDescription: 'Uma leitura técnica da proposta da Embraso: construir software útil e livre, compartilhar conhecimento e fortalecer comunidades.',
-    manifestoDescription: 'Conheça os princípios do manifesto da Embraso para construir tecnologia útil, com autonomia, liberdade, clareza, privacidade e simplicidade.',
+    manifestoDescription: 'Conheça os princípios do manifesto da Embraso para construir tecnologia útil, com autonomia, liberdade, transparência, privacidade e simplicidade.',
     publicTitle: 'Embraso — Liberdade se constrói junto.',
     devsTitle: 'Embraso para devs — Liberdade se constrói junto.',
     manifestoTitle: 'Manifesto da Embraso — Liberdade se constrói junto.',
@@ -44,5 +44,12 @@ export const shell = {
     status: 'Embraso · uma iniciativa em construção',
     publicSwitch: 'Ver a leitura para o público geral',
     devsSwitch: 'Prefere uma leitura mais técnica? Para devs',
+  },
+  socials: {
+    label: 'Redes e código',
+    instagram: 'Instagram',
+    github: 'GitHub',
+    linkedin: 'LinkedIn',
+    unavailable: 'Indisponível por enquanto',
   },
 } as const;

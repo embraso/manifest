@@ -11,6 +11,7 @@ export const closing = {
     label: 'Descreva sua ideia',
     placeholder: 'O que você gostaria de mudar?',
     privacyNote: 'Não inclua informações pessoais.',
+    status: 'Envio indisponível por enquanto.',
     submit: 'Em breve',
   },
 } as const;

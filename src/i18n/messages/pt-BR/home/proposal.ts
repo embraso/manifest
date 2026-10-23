@@ -6,9 +6,9 @@ export const proposal = {
   ],
   lead: 'Queremos usar o que sabemos para fazer coisas que melhorem a vida das pessoas.',
   aboutTitle: 'Sobre nós.',
-  about: 'Juntos, somamos mais de 50 anos de experiência trabalhando com tecnologia, inclusive em grandes empresas. Agora, queremos colocar esse conhecimento a serviço de problemas que importam por aqui.',
+  about: 'Juntos, somamos mais de 50 anos de experiência com tecnologia. Agora, queremos colocar esse conhecimento a serviço de problemas que importam no Brasil.',
   communityTitle: 'Comunidade.',
-  community: 'Queremos aproximar quem conhece um problema de quem pode compartilhar conhecimento. Conversar, aprender com as experiências umas das outras e descobrir algo inesperado — mais do que apenas consumir conteúdo — também faz parte dessa construção.',
+  community: 'Quem programa, desenha, ensina, pesquisa, cuida de um negócio ou conhece um problema no bairro é bem-vindo, inclusive quem está começando. Queremos compartilhar o que já foi tentado, aprender uns com os outros e enfrentar necessidades locais.',
   autonomyTitle: 'Autonomia.',
-  autonomy: 'Essas trocas também podem virar ferramentas que ajudem na vida de quem conhece o problema. Queremos compreender, adaptar e escolher o que usamos, ampliando aos poucos nossa autonomia.',
+  autonomy: 'As relações ajudam a construir ferramentas que possamos entender, adaptar e manter. Exportar dados, trocar de serviço e não perder o trabalho feito fazem parte dessa autonomia.',
 } as const;

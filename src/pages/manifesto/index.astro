@@ -1,5 +1,10 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
+import BrazilFlag from '../../components/brand/BrazilFlag.astro';
+import ParkLandscape from '../../components/folheto/ParkLandscape.astro';
+import logo from '../../../assets/e6712f9ec67bfc5e5e1536d9b4377830.svg';
+import capybara from '../../../assets/64e6db346ad8c01e777f7cf3f3a36383.svg';
+import bunting from '../../../assets/af6bb04699c6df143a4505baca524aad.svg';
 import toucan from '../../../assets/18b51d99adf971345c6d3e2da4ff6e2c.svg';
 import { defaultLocale, getMessages } from '../../i18n';
 
@@ -9,60 +14,165 @@ const messages = getMessages(locale);
 
 <SiteLayout locale={locale} title={messages.shell.metadata.manifestoTitle} description={messages.shell.metadata.manifestoDescription} isManifesto>
   <main id="conteudo" class="manifesto-page container">
-    <a class="back-link" href="/">{messages.manifesto.back}</a>
-    <header class="manifesto-header">
-      <h1>{messages.manifesto.title}</h1>
-      <img src={toucan.src} alt="" width="236" height="104" />
-    </header>
-    <article class="manifesto-copy" aria-label={messages.manifesto.articleLabel}>
-      <div class="manifesto-intro">
-        <h2>{messages.shell.signature.map((part) => part.type === 'break' ? ' ' : part.text)}</h2>
-        {messages.manifesto.introduction.map((paragraph) => <p>{paragraph}</p>)}
+    <div class="manifesto-toolbar">
+      <a class="back-link" href="/">{messages.manifesto.back}</a>
+      <div class="manifesto-actions" role="group" aria-label={messages.manifesto.share.label} data-manifesto-actions data-share-url="https://embraso.com.br/manifesto/" data-link-copied={messages.manifesto.share.linkCopied} data-text-copied={messages.manifesto.share.textCopied} data-copy-failed={messages.manifesto.share.copyFailed}>
+        <button type="button" data-manifesto-print hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V8h16v9h-3M7 14h10v7H7zM16 11h1" /></svg>{messages.manifesto.share.print}</button>
+        <button type="button" data-manifesto-copy-link hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m10 7 3-3a5 5 0 0 1 7 7l-3 3M14 17l-3 3a5 5 0 0 1-7-7l3-3M8 16l8-8" /></svg>{messages.manifesto.share.copyLink}</button>
+        <button type="button" data-manifesto-copy-text hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M8 7h12v14H8zM16 7V3H4v14h4M11 11h6m-6 4h6" /></svg>{messages.manifesto.share.copyText}</button>
       </div>
-      <ol class="principles">
-        {messages.manifesto.principles.map((principle) => (
-          <li>
-            <section>
-              <h2>{principle.title}</h2>
-              <p class="principle-lead">{principle.lead}</p>
-              <p>{principle.body}</p>
-            </section>
-          </li>
-        ))}
-      </ol>
-      <section class="manifesto-invitation">
-        <h2>{messages.manifesto.invitation.title}</h2>
-        <p>{messages.manifesto.invitation.introduction}</p>
-        <p>{messages.manifesto.invitation.body}</p>
-        <p class="invitation-closing">{messages.manifesto.invitation.closing}</p>
-        <a class="button" href="/#participacao">{messages.manifesto.invitation.link} <span aria-hidden="true">→</span></a>
-      </section>
+    </div>
+    <p class="manifesto-status" role="status" aria-live="polite" aria-atomic="true" data-manifesto-status></p>
+    <article class="pamphlet" aria-label={messages.manifesto.articleLabel} data-manifesto-document>
+      <div class="pamphlet-bunting" style={`background-image: url(${bunting.src})`} aria-hidden="true"></div>
+      <div class="sheet-content">
+        <header class="pamphlet-masthead">
+          <img class="pamphlet-logo" src={logo.src} alt={messages.shell.brandName} width="174" height="54" />
+          <p class="pamphlet-edition"><span>{messages.manifesto.edition}</span><span class="edition-place"><span class="edition-flag"><BrazilFlag /></span>{messages.manifesto.place}</span></p>
+        </header>
+        <div class="pamphlet-title"><h1>{messages.manifesto.title}</h1><img src={toucan.src} alt="" width="236" height="104" /></div>
+        <div class="manifesto-intro">
+          <h2>{messages.shell.signature.map((part) => part.type === 'break' ? ' ' : part.text)}</h2>
+          {messages.manifesto.introduction.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        <ol class="principles">
+          {messages.manifesto.principles.map((principle, index) => (
+            <li><section aria-labelledby={`principle-${principle.id}`}>
+              <div class="principle-heading"><span class="principle-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><h2 id={`principle-${principle.id}`}>{principle.title}</h2></div>
+              <p class="principle-lead">{principle.lead}</p><p>{principle.body}</p>
+            </section></li>
+          ))}
+        </ol>
+        <section class="manifesto-invitation" aria-labelledby="invitation-title">
+          <h2 id="invitation-title">{messages.manifesto.invitation.title}</h2>
+          <p>{messages.manifesto.invitation.introduction}</p><p>{messages.manifesto.invitation.body}</p>
+          <p class="invitation-closing">{messages.manifesto.invitation.closing}</p>
+          <a class="invitation-link" href="/#participacao">{messages.manifesto.invitation.link} <span aria-hidden="true">→</span></a>
+        </section>
+        <footer class="pamphlet-footer"><span>{messages.manifesto.share.footer}</span><a href="https://embraso.com.br/manifesto/">embraso.com.br/manifesto</a></footer>
+      </div>
+      <div class="pamphlet-landscape" aria-hidden="true"><ParkLandscape /><div class="landscape-flag"><span></span><BrazilFlag /></div><img class="landscape-capybara" src={capybara.src} alt="" width="352" height="192" /></div>
     </article>
   </main>
 </SiteLayout>
 
+<script>
+  import '../../scripts/manifesto-actions';
+</script>
+
 <style>
-  .manifesto-page { max-width: 1000px; padding-block: 45px 100px; }
-  .back-link { font-size: 13px; }
-  .manifesto-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 35px 0 30px; border-bottom: 3px solid var(--green); }
-  .manifesto-header h1 { margin: 0; font-size: clamp(3rem, 9vw, 6rem); line-height: 1; font-weight: 900; font-stretch: 65%; text-transform: uppercase; letter-spacing: -.035em; }
-  .manifesto-header img { width: min(24%, 180px); }
-  .manifesto-copy { max-width: 740px; margin-inline: auto; font-size: 17px; }
-  .manifesto-intro { padding-block: 50px 24px; }
-  .manifesto-copy h2 { font-size: clamp(1.45rem, 3.5vw, 2rem); line-height: 1.2; font-weight: 800; letter-spacing: -.025em; margin-bottom: 22px; }
-  .manifesto-intro h2 { font-size: clamp(2rem, 5vw, 3.2rem); }
-  .manifesto-copy p { margin-bottom: 22px; }
-  .principles { list-style: none; padding: 0; margin: 0; counter-reset: principles; }
-  .principles li { counter-increment: principles; padding-block: 38px 20px; border-top: 1px solid #abb9a3; }
-  .principles h2::before { content: counter(principles) '. '; color: #a74e12; }
-  .principle-lead { font-weight: 700; }
-  .manifesto-invitation { margin-top: 24px; border-top: 3px solid var(--green); padding-top: 40px; }
-  .invitation-closing { font-weight: 800; font-size: 23px; line-height: 1.3; }
-  .manifesto-invitation .button { margin-top: 10px; }
+  .manifesto-page { max-width: 960px; padding-block: 28px 64px; }
+  .manifesto-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; }
+  .back-link { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; font-weight: 600; }
+  .manifesto-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .manifesto-actions button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 13px; border: 1px solid #8a9e80; border-radius: 3px; background: var(--cream); color: var(--green); font-size: 12px; font-weight: 650; line-height: 1.3; cursor: pointer; transition: background-color 150ms, color 150ms; }
+  .manifesto-actions button:hover { color: var(--cream); background: var(--green); }
+  .manifesto-actions button svg { flex: 0 0 18px; }
+  .manifesto-status { margin: 0 0 16px; font-size: 14px; font-weight: 600; }
+  .manifesto-status:empty { margin: 0; }
+  .pamphlet { background: var(--cream); border: 1px solid #bcc4ac; font-size: 16px; line-height: 1.6; }
+  .pamphlet-bunting { height: 38px; background-repeat: repeat-x; background-size: 220px auto; background-position: center top; }
+  .sheet-content { padding: 28px 48px 0; }
+  .pamphlet :is(h1, h2, p) { margin: 0; }
+  .pamphlet-masthead { display: flex; align-items: end; justify-content: space-between; gap: 20px; padding-bottom: 20px; border-bottom: 2px solid var(--green); }
+  .pamphlet-logo { width: 184px; }
+  .pamphlet-edition { display: grid; gap: 7px; text-align: right; font-size: 11px; font-weight: 700; line-height: 1.3; letter-spacing: .08em; text-transform: uppercase; }
+  .edition-place { display: flex; align-items: center; justify-content: end; gap: 8px; }
+  .edition-flag { width: 28px; }
+  .pamphlet-title { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 24px; }
+  .pamphlet-title h1 { font-size: clamp(4rem, 9vw, 6rem); font-weight: 900; font-stretch: 65%; letter-spacing: -.04em; line-height: 1; text-transform: uppercase; text-decoration: underline; text-decoration-color: var(--orange); text-decoration-thickness: 5px; text-underline-offset: 9px; }
+  .pamphlet-title img { width: 130px; transform: rotate(-5deg); }
+  .manifesto-intro { margin-top: 28px; }
+  .manifesto-intro h2 { margin-bottom: 12px; font-size: 1.45rem; font-weight: 650; font-style: italic; letter-spacing: -.02em; line-height: 1.4; }
+  .manifesto-intro p + p { margin-top: 10px; }
+  .principles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 32px; list-style: none; padding: 0; margin: 28px 0; }
+  .principles li { min-width: 0; break-inside: avoid; }
+  .principle-heading { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 8px; align-items: baseline; margin-bottom: 10px; }
+  .principle-number { color: #ac460b; font-size: 28px; font-stretch: 75%; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; }
+  .principle-heading h2 { font-size: 18px; font-weight: 750; line-height: 1.3; letter-spacing: -.015em; text-wrap: pretty; }
+  .principles p { font-size: 15px; line-height: 1.6; }
+  .principles .principle-lead { margin-bottom: 7px; font-weight: 650; }
+  .manifesto-invitation { border-top: 2px solid var(--green); padding-top: 20px; }
+  .manifesto-invitation h2 { font-size: 1.45rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.3; margin-bottom: 10px; }
+  .manifesto-invitation p + p { margin-top: 8px; }
+  .manifesto-invitation .invitation-closing { margin-top: 16px; font-size: 1.2rem; font-weight: 750; line-height: 1.4; }
+  .invitation-link { display: inline-block; margin-top: 12px; padding-block: 6px; font-size: 14px; font-weight: 650; }
+  .pamphlet-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-top: 20px; padding-top: 14px; border-top: 1px solid #8d9f82; font-size: 12px; font-weight: 600; line-height: 1.5; }
+  .pamphlet-footer a { text-decoration: none; }
+  .pamphlet-landscape { position: relative; height: 150px; margin-top: 10px; }
+  .landscape-flag { position: absolute; width: 90px; left: 73%; bottom: 45%; transform: rotate(-3deg); }
+  .landscape-flag > span { position: absolute; width: 3px; height: 165%; top: -3px; left: -3px; background: #7e4f2a; }
+  .landscape-capybara { position: absolute; width: 112px; left: 27%; bottom: 10%; }
   @media (max-width: 700px) {
-    .manifesto-page { padding-block: 28px 65px; }
-    .manifesto-copy { font-size: 16px; }
-    .manifesto-header { padding-block: 28px 22px; }
-    .manifesto-intro { padding-top: 35px; }
+    .manifesto-page { width: calc(100% - 32px); padding-block: 18px 36px; }
+    .manifesto-toolbar { gap: 8px; margin-bottom: 14px; }
+    .manifesto-actions { width: 100%; gap: 6px; }
+    .manifesto-actions button { flex: 1 1 auto; padding-inline: 9px; font-size: 11px; }
+    .pamphlet-bunting { height: 28px; background-size: 180px auto; }
+    .sheet-content { padding: 20px 22px 0; }
+    .pamphlet-masthead { align-items: center; gap: 12px; padding-bottom: 16px; }
+    .pamphlet-logo { width: 132px; }
+    .pamphlet-edition { font-size: 9px; letter-spacing: .025em; }
+    .edition-place { gap: 5px; }
+    .edition-flag { width: 23px; }
+    .pamphlet-title { margin-top: 24px; gap: 12px; }
+    .pamphlet-title h1 { font-size: clamp(2.8rem, 12vw, 5rem); text-decoration-thickness: 4px; text-underline-offset: 7px; }
+    .pamphlet-title img { width: 65px; }
+    .manifesto-intro { margin-top: 26px; }
+    .manifesto-intro h2 { font-size: 1.3rem; }
+    .manifesto-intro p { font-size: 1rem; }
+    .principles { grid-template-columns: minmax(0, 1fr); gap: 22px; margin-block: 26px; }
+    .principle-heading { grid-template-columns: 32px minmax(0, 1fr); gap: 8px; margin-bottom: 9px; }
+    .principle-heading h2 { font-size: 19px; }
+    .principles p { font-size: 1rem; }
+    .manifesto-invitation h2 { font-size: 1.4rem; }
+    .pamphlet-footer { font-size: 11px; }
+    .pamphlet-landscape { height: 116px; }
+    .landscape-flag { width: 57px; left: 74%; }
+    .landscape-capybara { width: 86px; left: 24%; }
+  }
+  @media (max-width: 380px) {
+    .sheet-content { padding-inline: 16px; }
+    .pamphlet-logo { width: 113px; }
+    .pamphlet-title img { width: 50px; }
+    .pamphlet-edition { font-size: 8px; }
+    .manifesto-actions button { flex-basis: calc(50% - 6px); }
+  }
+  @page { size: A4; margin: 8mm; }
+  @media print {
+    :global(html) { font-size: 12pt; }
+    :global(body) { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .manifesto-page { width: 100%; max-width: none; padding: 0; margin: 0; }
+    .manifesto-toolbar, .manifesto-status, .invitation-link { display: none; }
+    .pamphlet { border: 0; color: var(--green); font-size: 10.5pt; line-height: 1.35; }
+    .pamphlet-bunting { height: 6mm; background-size: 48mm auto; }
+    .sheet-content { padding: 3mm 4mm 0; }
+    .pamphlet-masthead { align-items: end; padding-bottom: 3mm; border-bottom-width: 1.5px; }
+    .pamphlet-logo { width: 39mm; }
+    .pamphlet-edition { font-size: 7.5pt; gap: 1.2mm; }
+    .edition-flag { width: 6mm; }
+    .pamphlet-title { margin-top: 3mm; }
+    .pamphlet-title h1 { font-size: 48pt; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+    .pamphlet-title img { width: 26mm; }
+    .manifesto-intro { margin-top: 3mm; }
+    .manifesto-intro h2 { font-size: 13pt; line-height: 1.3; margin-bottom: 2mm; }
+    .manifesto-intro p { font-size: 10.5pt; line-height: 1.35; }
+    .manifesto-intro p + p { margin-top: 1.5mm; }
+    .principles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3mm 6mm; margin-block: 3.5mm; }
+    .principle-heading { grid-template-columns: 7mm minmax(0, 1fr); gap: 1.5mm; margin-bottom: 1.5mm; }
+    .principle-number { font-size: 18pt; }
+    .principle-heading h2 { font-size: 10.5pt; line-height: 1.25; }
+    .principles p { font-size: 10.5pt; line-height: 1.35; orphans: 3; widows: 3; }
+    .principles .principle-lead { display: inline; margin-bottom: 0; }
+    .principles .principle-lead::after { content: ' '; }
+    .principles .principle-lead + p { display: inline; }
+    .manifesto-invitation { padding-top: 2.5mm; break-inside: avoid; }
+    .manifesto-invitation h2 { font-size: 13pt; margin-bottom: 1.5mm; }
+    .manifesto-invitation p + p { margin-top: 1.5mm; }
+    .manifesto-invitation .invitation-closing { margin-top: 2mm; font-size: 11.5pt; }
+    .pamphlet-footer { margin-top: 2.5mm; padding-top: 2mm; font-size: 8pt; }
+    .pamphlet-landscape { height: 18mm; margin-top: 1mm; break-inside: avoid; }
+    .landscape-flag { width: 15mm; }
+    .landscape-capybara { width: 24mm; }
   }
 </style>
