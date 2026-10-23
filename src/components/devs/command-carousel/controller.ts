@@ -4,6 +4,7 @@ if (carousel && !carousel.dataset.enhanced) {
   const readings = [...carousel.querySelectorAll<HTMLElement>('[data-reading]')];
   const topics = [...carousel.querySelectorAll<HTMLAnchorElement>('[data-topic]')];
   const command = carousel.querySelector<HTMLElement>('[data-typed-command]');
+  const workspaceTitle = carousel.querySelector<HTMLElement>('[data-workspace-title]');
   const viewport = carousel.querySelector<HTMLElement>('[data-carousel-readings]');
   const controls = carousel.querySelector<HTMLElement>('[data-carousel-controls]');
   const previous = carousel.querySelector<HTMLButtonElement>('[data-carousel-previous]');
@@ -14,7 +15,7 @@ if (carousel && !carousel.dataset.enhanced) {
   const progress = carousel.querySelector<HTMLElement>('[data-sequence-progress]');
   const announcement = carousel.querySelector<HTMLElement>('[data-carousel-announcement]');
 
-  if (readings.length && readings.length === topics.length && command && viewport && controls && previous && next && pause && position && state && progress && announcement) {
+  if (readings.length && readings.length === topics.length && command && viewport && workspaceTitle && controls && previous && next && pause && position && state && progress && announcement) {
     const listeners = new AbortController();
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
     let index = 0;
@@ -80,11 +81,12 @@ if (carousel && !carousel.dataset.enhanced) {
       });
       viewport!.scrollTop = 0;
       position!.textContent = String(index + 1).padStart(2, '0');
+      workspaceTitle!.textContent = readings[index]!.dataset.workspaceTitle || workspaceTitle!.dataset.defaultTitle!;
       command!.textContent = readings[index]!.dataset.command!;
       if (manual) announcement!.textContent = carousel!.dataset.announcementTemplate!
         .replaceAll('{current}', String(index + 1))
         .replaceAll('{total}', String(readings.length))
-        .replaceAll('{title}', readings[index]!.querySelector('h3')?.textContent?.trim() ?? '');
+        .replaceAll('{title}', readings[index]!.dataset.workspaceTitle || (readings[index]!.querySelector('h3')?.textContent?.trim() ?? ''));
       // Keep the current choice visible in the horizontally scrollable mobile locator.
       const navigation = topics[index]!.closest<HTMLElement>('.topic-navigation')!;
       const navigationRect = navigation.getBoundingClientRect();

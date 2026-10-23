@@ -1,6 +1,7 @@
 ---
 import { getMessages, type Locale } from '../../i18n';
 import emblem from '../../../assets/b084774a04a4acde15a270ee03518180.svg';
+import LogoPreview3D from './LogoPreview3D.astro';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -15,8 +16,9 @@ const messages = getMessages(locale).devs.opening;
   </header>
   <p class="fetch-prompt"><span>{messages.fetchPrompt}</span><span class="fetch-prompt-separator" aria-hidden="true">$</span> {messages.fetchCommand}</p>
   <div class="fetch-output">
-    <div class="fetch-logo" aria-hidden="true">
+    <div class="fetch-logo">
       <img data-fauna-source src={emblem.src} alt="" width="462" height="654" fetchpriority="high" />
+      <LogoPreview3D />
     </div>
     <div class="fetch-info">
       <h2 id="fetch-profile-title">{messages.fetchTitle}</h2>
@@ -24,7 +26,6 @@ const messages = getMessages(locale).devs.opening;
         <div><dt>{messages.fetchProfileLabel}</dt><dd>{messages.fetchProfile}</dd></div>
         <div><dt>{messages.fetchFocusLabel}</dt><dd>{messages.fetchFocus}</dd></div>
         <div><dt>{messages.fetchBaseLabel}</dt><dd>{messages.fetchBase}</dd></div>
-        <div><dt>{messages.fetchFrontsLabel}</dt><dd>{messages.fetchFronts}</dd></div>
         <div><dt>{messages.fetchContextLabel}</dt><dd>{messages.fetchContextValue}</dd></div>
         <div><dt>{messages.fetchPrinciplesLabel}</dt><dd>{messages.fetchPrinciples}</dd></div>
         <div><dt>{messages.fetchDirectionLabel}</dt><dd>{messages.fetchDirection}</dd></div>
@@ -36,7 +37,16 @@ const messages = getMessages(locale).devs.opening;
 </section>
 
 <script>
-  import './particles';
+  const field = document.querySelector<HTMLElement>('[data-fauna-field]');
+  if (field && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const useVoxelEmblem = Math.random() < 0.5;
+    try {
+      if (useVoxelEmblem) await import('./logo-preview-3d');
+      else await import('./particles');
+    } catch {
+      // The server-rendered emblem remains visible if the selected enhancement fails.
+    }
+  }
 </script>
 
 <style>
@@ -53,11 +63,12 @@ const messages = getMessages(locale).devs.opening;
   .fetch-prompt-separator { color: var(--yellow); }
   .fetch-output { flex: 1; display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); align-items: center; gap: 12px; padding: 24px 20px; }
   .fetch-logo { position: relative; min-width: 0; min-height: 260px; }
-  .fauna-field img { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; object-fit: contain; }
-  .fauna-field canvas { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; }
-  .fauna-field[data-particles='running'] canvas { opacity: 1; }
-  .fauna-field[data-particles='running'] img { opacity: 0; }
-  .fetch-info { position: relative; z-index: 2; align-self: start; min-width: 0; margin-top: 8px; padding: 12px 0 12px 16px; background: #09190f; }
+  .fetch-logo > img, .logo-preview { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .fetch-logo > img { z-index: 0; display: block; object-fit: contain; }
+  .fauna-field > [data-fauna-canvas] { position: absolute; z-index: 1; inset: 0; display: block; width: 100%; height: 100%; opacity: 0; pointer-events: none; }
+  .fauna-field[data-particles='running'] .fetch-logo > img, .fauna-field[data-voxel-ready='true'] .fetch-logo > img { opacity: 0; }
+  .fauna-field[data-particles='running'] > [data-fauna-canvas] { opacity: 1; }
+  .fetch-info { position: relative; z-index: 2; align-self: start; min-width: 0; margin-top: 8px; padding: 12px 0 12px 16px; background: transparent; }
   .fetch-info h2 { margin: 0 0 14px; padding-bottom: 12px; color: var(--mint); font: 600 13px/1.5 var(--font-mono); border-bottom: 1px dashed var(--rule); }
   .fetch-list { margin: 0; }
   .fetch-list > div { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: baseline; gap: 8px; padding-top: 7px; }
@@ -80,10 +91,10 @@ const messages = getMessages(locale).devs.opening;
     .fauna-field { grid-row: 3; align-self: start; width: 100%; height: auto; min-height: 0; margin-top: 38px; }
     .fetch-output { grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: 8px; padding: 18px 14px 20px; }
     .fetch-logo { min-height: 220px; }
-    .fauna-field canvas { display: none; }
-    .fauna-field[data-particles='running'] img { opacity: 1; }
     .fetch-info { padding-left: 10px; }
     .fetch-palette { margin-inline: 14px; }
+    .fauna-field > [data-fauna-canvas] { display: none; }
+    .fauna-field[data-particles='running'] .fetch-logo > img { opacity: 1; }
   }
   @media (max-width: 380px) {
     .fetch-output { grid-template-columns: minmax(0, .62fr) minmax(0, 1.38fr); gap: 6px; padding-inline: 10px; }
@@ -94,7 +105,7 @@ const messages = getMessages(locale).devs.opening;
     .fetch-palette { margin-inline: 10px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .fauna-field canvas { display: none; }
-    .fauna-field[data-particles='running'] img { opacity: 1; }
+    .fauna-field > [data-fauna-canvas], .logo-preview canvas { display: none; }
+    .fauna-field[data-particles='running'] .fetch-logo > img, .fauna-field[data-voxel-ready='true'] .fetch-logo > img { opacity: 1; }
   }
 </style>

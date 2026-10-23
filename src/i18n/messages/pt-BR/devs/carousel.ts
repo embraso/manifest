@@ -4,7 +4,6 @@ export const commands = {
   manifesto: 'manifesto',
   community: 'comunidade',
   autonomy: 'autonomia',
-  principles: ['principio 1', 'principio 2', 'principio 3', 'principio 4', 'principio 5', 'principio 6'],
 } as const;
 
 export const carousel = {

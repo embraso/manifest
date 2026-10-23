@@ -154,6 +154,10 @@ A seção do Folheto passa a se chamar **“Por que a Embraso existe?”**. As s
 
 A abertura de cada proposta preserva a motivação humana, a troca e a descoberta em contraste com o consumo, a oportunidade de aproximar ferramentas e conhecimento dos problemas e as duas frentes inseparáveis. A crítica nomeia dependências, opacidade, exposição de dados e condições de continuidade; não presume inimigos únicos, práticas universais de empresas ou garantias de resultado. As leituras expressam intenções, não um catálogo de produtos ou funcionalidades entregues. As fontes históricas e o manifesto canônico permanecem intactos.
 
+## Experiência combinada na abertura do Folheto — 23 de outubro de 2026
+
+O responsável pela iniciativa forneceu diretamente e aprovou para publicação na proposta da página inicial a afirmação de que, juntos, somam mais de 50 anos de experiência trabalhando com tecnologia, inclusive em grandes empresas. A aprovação autoriza somente essa formulação e esse escopo; não constitui verificação independente nem sustenta nomes, empregadores ou credenciais adicionais.
+
 ## Critério para continuar a série
 
 1. Atualizar fatos e decisões no [índice](README.md), identificando a origem e quem confirmou.
