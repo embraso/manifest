@@ -1,13 +1,9 @@
 ---
-import { getMessages, type Locale } from '../../i18n';
 import emblem from '../../../assets/b084774a04a4acde15a270ee03518180.svg';
 import toucan from '../../../assets/18b51d99adf971345c6d3e2da4ff6e2c.svg';
 import capybara from '../../../assets/64e6db346ad8c01e777f7cf3f3a36383.svg';
 import ipe from '../../../assets/77b83da13ccc31cb0f862276cf552fac.svg';
 
-interface Props { locale: Locale }
-const { locale } = Astro.props;
-const messages = getMessages(locale);
 ---
 
 <div class="print-scene" data-print-scene aria-hidden="true">
@@ -22,7 +18,6 @@ const messages = getMessages(locale);
   <div class="scene-capybara" data-print-capybara>
     <img data-print-capybara-gait src={capybara.src} alt="" width="352" height="192" />
   </div>
-  <span class="scene-caption">{messages.home.opening.sceneCaption[0]}<br />{messages.home.opening.sceneCaption[1]}</span>
 </div>
 
 <script>
@@ -39,10 +34,8 @@ const messages = getMessages(locale);
   .scene-capybara { position: absolute; z-index: 2; bottom: 2%; width: 52%; left: 0; }
   .scene-capybara img { display: block; width: 100%; height: auto; transform-origin: 50% 85%; }
   .scene-ipe { position: absolute; z-index: 2; width: 24%; bottom: 2%; right: 0; transform-origin: 50% 100%; }
-  .scene-caption { position: absolute; bottom: -48px; right: 0; text-align: right; font-size: 12px; line-height: 1.45; }
   @media (max-width: 700px) {
     .print-scene { position: relative; inset: auto; width: min(100%, 430px); margin: 48px auto 64px; }
-    .scene-caption { font-size: 11px; }
   }
   @media print {
     .print-scene { display: none; }

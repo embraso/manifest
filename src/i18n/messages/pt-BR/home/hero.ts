@@ -8,5 +8,4 @@ export const opening = {
   ],
   manifestoLink: actions.readManifesto,
   participationLink: 'Como participar dessa construção',
-  sceneCaption: ['Conhecimento que circula.', 'Liberdade que continua.'],
 } as const;
