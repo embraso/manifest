@@ -76,10 +76,10 @@ const contributions = messages.home.participation.contributions;
       <dl class="contributions">{contributions.map(([title, body]) => <div><dt>{title}</dt><dd>{body}</dd></div>)}</dl>
       <div class="participation-note"><strong>{messages.home.participation.noteLead}</strong><p>{messages.home.participation.note}</p></div>
     </div>
+    <img class="participation-capybara" src={capybara.src} alt="" width="352" height="192" loading="lazy" />
   </section>
 
   <section class="closing page-wrap" aria-labelledby="closing-title">
-    <img src={capybara.src} alt="" width="352" height="192" loading="lazy" />
     <div class="closing-heading"><h2 id="closing-title">{messages.home.closing.heading.map((part) => part.type === 'break' ? <br /> : part.type === 'emphasis' ? <span>{part.text}</span> : part.type === 'strong' ? <strong>{part.text}</strong> : part.type === 'mark' || part.type === 'accent' ? <mark>{part.text}</mark> : part.text)}</h2></div>
     <div class="closing-reading"><p>{messages.home.closing.reading}</p><form class="closing-idea-form">
       <label for="folheto-idea">{messages.home.closing.form.label}</label>
@@ -153,7 +153,7 @@ const contributions = messages.home.participation.contributions;
   .principle[open] .disclosure-sign::after { display: none; }
   .principle-reading { padding: 0 38px 32px 44px; font-size: 1.0625rem; line-height: 1.75; }
   .principle-lead { font-size: 1.125rem; line-height: 1.6; font-weight: 650; margin-bottom: 20px !important; }
-  .participation { background: var(--yellow); padding-block: 85px 70px; color: var(--dark); }
+  .participation { position: relative; background: var(--yellow); padding: 85px 0 140px; color: var(--dark); }
   .participation ::selection { background: var(--dark); color: var(--cream); }
   .participation-opening { display: grid; grid-template-columns: 1fr .8fr; gap: 8%; align-items: end; margin-bottom: 56px; }
   .participation-opening h2 { font-size: clamp(3.7rem, 7vw, 6rem); }
@@ -164,10 +164,8 @@ const contributions = messages.home.participation.contributions;
   .contributions dd { max-width: 62ch; }
   .participation-note { display: grid; grid-template-columns: 1fr 1.4fr; gap: 8%; margin-top: 40px; font-size: 1rem; }
   .participation-note strong { font-size: 18px; line-height: 1.5; }
+  .participation-capybara { position: absolute; z-index: 1; width: clamp(130px, 14vw, 200px); height: auto; right: max(20px, calc((100vw - 1320px) / 2)); bottom: 0; pointer-events: none; }
   .closing { display: grid; grid-template-columns: 1fr .8fr; align-items: start; position: relative; gap: 8%; padding-block: 138px 100px; }
-  .closing > img { position: absolute; width: clamp(130px, 14vw, 200px); top: 45px; right: 0; }
-  .closing h2 { font-size: clamp(4.2rem, 8.2vw, 6rem); }
-  .closing h2 span { text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: .12em; text-underline-offset: .02em; }
   .closing-reading { max-width: 40ch; }
   .closing-idea-form { display: grid; justify-items: start; gap: 11px; margin-top: 28px; }
   .closing-idea-form label { font-weight: 700; }
@@ -213,7 +211,7 @@ const contributions = messages.home.participation.contributions;
     .principle summary { padding-block: 24px; gap: 12px; }
     .principle summary h3 { font-size: 1.8rem; }
     .principle-reading { padding-left: 0; padding-right: 0; }
-    .participation { padding-block: 56px 42px; }
+    .participation { padding: 56px 0 100px; }
     .participation-opening { display: block; margin-bottom: 34px; }
     .participation-opening h2 { margin-bottom: 28px; }
     .contributions > div { grid-template-columns: 1fr; gap: 16px; padding-block: 28px; }
@@ -221,7 +219,7 @@ const contributions = messages.home.participation.contributions;
     .participation-note { display: block; margin-top: 30px; }
     .participation-note p { margin-top: 14px; }
     .closing { grid-template-columns: 1fr; gap: 32px; padding-block: 110px 64px; }
-    .closing > img { width: 140px; top: 24px; }
+    .participation-capybara { width: 140px; right: 20px; bottom: 0; }
     .closing h2 { font-size: clamp(3.8rem, 15vw, 6rem); }
     .closing-reading { max-width: 47ch; }
     .closing-idea-form textarea { min-height: 132px; }
