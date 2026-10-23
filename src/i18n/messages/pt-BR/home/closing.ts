@@ -1,5 +1,3 @@
-import { actions } from '../actions';
-
 export const closing = {
   heading: [
     { type: 'text', text: 'Que problema' },
@@ -8,7 +6,11 @@ export const closing = {
     { type: 'break' },
     { type: 'emphasis', text: 'por dentro?' },
   ],
-  reading: 'Uma boa pergunta já é um começo. Antes de propor mais um aplicativo, queremos entender o que já funciona, o que falta e o que vale construir junto.',
-  principles: 'Conheça os princípios que orientam essa iniciativa.',
-  link: actions.startWithManifesto,
+  reading: 'Antes de propor mais um aplicativo, queremos entender o que já funciona, o que falta e o que vale construir junto.',
+  form: {
+    label: 'Descreva sua ideia',
+    placeholder: 'O que você gostaria de mudar?',
+    privacyNote: 'Não inclua informações pessoais.',
+    submit: 'Em breve',
+  },
 } as const;

@@ -8,7 +8,7 @@ const locale = defaultLocale;
 const messages = getMessages(locale);
 ---
 
-<SiteLayout audience="devs" locale={locale} title={messages.shell.metadata.devsTitle}>
+<SiteLayout audience="devs" locale={locale} title={messages.shell.metadata.devsTitle} description={messages.shell.metadata.devsDescription}>
   <TerminalHome locale={locale}>
     <CommandCarousel locale={locale} slot="reader" />
   </TerminalHome>

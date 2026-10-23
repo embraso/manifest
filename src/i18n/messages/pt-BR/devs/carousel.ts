@@ -10,21 +10,21 @@ export const commands = {
 export const carousel = {
   topics: [
     {
-      label: 'Por que construir',
+      label: 'Sobre nós',
       title: 'Conhecimento que encontra propósito.',
       summary: 'Aproximar ferramentas e conhecimento de quem conhece os problemas permite criar coisas úteis, trocar experiências e descobrir o inesperado.',
       href: '/manifesto/',
       link: actions.readManifestoFull,
     },
     {
-      label: 'Com quem construir',
-      title: 'Gente antes da stack.',
+      label: 'Comunidade',
+      title: 'A gente nasceu para viver em comunidade.',
       summary: 'Comunidade é espaço de troca, aprendizado e relações. Participar não exige saber programar nem ter disponibilidade constante.',
       href: '#participacao',
       link: 'Conhecer as formas de participação',
     },
     {
-      label: 'Poder continuar',
+      label: 'Nossos objetivos',
       title: 'Escolher também é poder mudar.',
       summary: 'Compreender ferramentas e dependências ajuda a recuperar dados, mudar de serviço e dar continuidade ao que foi construído.',
       href: '#proposta',
@@ -32,7 +32,7 @@ export const carousel = {
     },
   ],
   locator: 'Índice de tópicos',
-  framingTopics: 'Por que construir',
+  framingTopics: 'Sobre nós',
   principles: 'Seis princípios',
   communityParagraph: 'Comunidade é lugar de troca, aprendizado e relações — não uma fila de tarefas. Participar não exige saber programar nem ter tempo toda semana.',
   autonomyParagraphs: [
