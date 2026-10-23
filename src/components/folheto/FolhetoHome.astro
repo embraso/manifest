@@ -30,12 +30,13 @@ const contributions = messages.home.participation.contributions;
 
   <section id="proposta" class="proposal page-wrap" aria-labelledby="proposal-title">
     <h2 id="proposal-title">{messages.home.proposal.heading.map((part) => part.type === 'break' ? <br /> : part.type === 'emphasis' ? <span>{part.text}</span> : part.type === 'strong' ? <strong>{part.text}</strong> : part.type === 'mark' || part.type === 'accent' ? <mark>{part.text}</mark> : part.text)}</h2>
+    <p class="large-reading">{messages.home.proposal.lead}</p>
     <div class="proposal-reading">
-      <div><p class="large-reading">{messages.home.proposal.reading}</p><p class="proposal-opportunity">{messages.home.proposal.opportunity}</p></div>
-      <div class="two-fronts">
-        <article><h3>{messages.home.proposal.communityTitle}</h3><p>{messages.home.proposal.community}</p></article>
-        <article><h3>{messages.home.proposal.autonomyTitle}</h3><p>{messages.home.proposal.autonomy}</p></article>
-      </div>
+      {[
+        { title: messages.home.proposal.aboutTitle, body: messages.home.proposal.about },
+        { title: messages.home.proposal.communityTitle, body: messages.home.proposal.community },
+        { title: messages.home.proposal.autonomyTitle, body: messages.home.proposal.autonomy },
+      ].map(({ title, body }) => <article><h3>{title}</h3><p>{body}</p></article>)}
     </div>
   </section>
 
@@ -116,12 +117,10 @@ const contributions = messages.home.participation.contributions;
   .proposal { padding-block: 76px 100px; border-top: 2px solid var(--green); }
   .proposal h2 { max-width: 1000px; margin-bottom: 46px; }
   .proposal h2 span { font-size: .78em; }
-  .proposal-reading { display: grid; grid-template-columns: .8fr 1.2fr; gap: 6%; }
-  .large-reading { font-size: clamp(1.3rem, 2.2vw, 1.9rem); line-height: 1.5; max-width: 27ch; }
-  .proposal-opportunity { margin-top: 24px !important; max-width: 48ch; }
-  .two-fronts { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-  .two-fronts h3 { font-size: 1.7rem; font-stretch: 85%; line-height: 1.25; margin-bottom: 16px; }
-  .two-fronts p { line-height: 1.75; }
+  .large-reading { font-size: clamp(1.3rem, 2.2vw, 1.9rem); line-height: 1.5; max-width: 27ch; margin-bottom: 40px !important; }
+  .proposal-reading { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+  .proposal-reading h3 { font-size: 1.7rem; font-stretch: 85%; line-height: 1.25; margin-bottom: 16px; }
+  .proposal-reading p { line-height: 1.75; }
   .motivations { background: var(--green); color: var(--cream); padding-block: 96px 68px; }
   .motivations-heading { display: flex; align-items: end; gap: 40px; justify-content: space-between; margin-bottom: 52px; }
   .motivations-heading p { max-width: 40ch; font-size: 1.0625rem; line-height: 1.75; }
@@ -180,8 +179,7 @@ const contributions = messages.home.participation.contributions;
     .page-wrap { width: calc(100% - 48px); }
     .opening h1 { font-size: clamp(3rem, 9vw, 6rem); }
     .proposal-reading { grid-template-columns: 1fr; gap: 34px; }
-    .large-reading { max-width: 42ch; }
-    .two-fronts { max-width: 800px; }
+    .large-reading { max-width: 64ch; }
     .manifesto { gap: 48px; grid-template-columns: 1fr; }
     .manifesto-opening p { max-width: 52ch; }
     .principle-reading { max-width: 72ch; }
@@ -199,8 +197,7 @@ const contributions = messages.home.participation.contributions;
     .proposal h2 { margin-bottom: 28px; }
     .proposal h2 span { font-size: .88em; }
     .large-reading { font-size: 23px; }
-    .two-fronts { grid-template-columns: 1fr; gap: 32px; }
-    .two-fronts h3 { font-size: 1.6rem; }
+    .proposal-reading { grid-template-columns: 1fr; gap: 32px; }
     .motivations { padding-block: 58px 42px; }
     .motivations-heading { display: block; margin-bottom: 34px; }
     .motivations-heading p { margin-top: 24px; max-width: 43ch; }
