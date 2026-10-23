@@ -42,4 +42,6 @@ Add a focused unit/integration regression only when a real algorithm, boundary, 
 
 ## Completion
 
+Before publishing or changing routes/content/assets, inspect the final static artifact (`dist/`) and deployment artifact path. Confirm only intended public routes/assets are included; internal editorial notes, source archives, specs/plans, repository metadata, and build/test files must not be copied or bundled for public access. A source file being outside `public/` is not sufficient evidence if routes or build scripts can import/copy it. Treat internal classification as editorial organization, not access control.
+
 Resolve review findings, then repeat the affected runtime scenarios on the final integrated source. A worker's `DONE`, a screenshot alone, or a clean detector is not proof. Report PASS/FAIL/BLOCKED per criterion, actual models/backends, commands observed, screenshots, and limits; missing evidence is not PASS. Update affected implementation docs after proof, preserve Portuguese copy and canonical content, and remove temporary scaffolding. Use **finishing-a-development-branch**, but never merge, push, delete a branch/worktree, or discard changes without authorization. Default handoff: completed feature remains in its worktree.
