@@ -28,6 +28,7 @@ const messages = getMessages(locale);
     <div class="page-width proposal-layout">
       <h2 id="proposal-title">{messages.devs.proposal.heading.map((part) => part.type === 'break' ? <br /> : part.type === 'emphasis' ? <span>{part.text}</span> : part.type === 'strong' ? <strong>{part.text}</strong> : part.type === 'mark' || part.type === 'accent' ? <mark>{part.text}</mark> : part.text)}</h2>
       <div class="proposal-content">
+        <h3>{messages.home.proposal.aboutTitle}</h3>
         <p class="large-copy">{messages.devs.proposal.lead}</p>
         <p>{messages.devs.proposal.listening}</p>
         <p>{messages.devs.proposal.body}</p>
