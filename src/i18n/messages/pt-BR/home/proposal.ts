@@ -4,10 +4,10 @@ export const proposal = {
     { type: 'break' },
     { type: 'emphasis', text: 'Gente com quem construir.' },
   ],
-  reading: 'Queremos dedicar o que sabemos a algo que faça diferença na vida das pessoas. Não apenas consumir conteúdo, mas trocar, descobrir e fazer coisas juntos.',
-  opportunity: 'Ferramentas de desenvolvimento podem aproximar uma ideia de algo que funciona. Há gente no Brasil e fora dele com conhecimento para compartilhar. Queremos conectar essa possibilidade a quem conhece os problemas.',
+  reading: 'Queremos usar o que sabemos para fazer coisas que melhorem a vida das pessoas. Juntos, somamos mais de 50 anos de experiência trabalhando com tecnologia, inclusive em grandes empresas. Agora, queremos colocar esse conhecimento a serviço de problemas que importam por aqui.',
+  opportunity: 'Passar horas consumindo conteúdo não é o mesmo que conversar, trocar e descobrir algo inesperado. Há gente no Brasil e fora dele com conhecimento para compartilhar. Queremos aproximar essas pessoas de quem conhece os problemas — e construir junto, não produzir código por produzir.',
   communityTitle: 'Comunidade.',
   community: 'Aproximar quem conhece um problema de quem pode compartilhar um conhecimento. Escutar, aprender e construir com as pessoas envolvidas.',
   autonomyTitle: 'Autonomia.',
-  autonomy: 'Compreender as ferramentas, poder adaptá-las e levar seus dados para outro lugar. Ter escolhas sem precisar fazer tudo por conta própria.',
+  autonomy: 'As ferramentas podem ajudar a transformar uma ideia em algo que funciona. Mas construir com as pessoas e ampliar, aos poucos, a autonomia sobre o que usamos também fazem parte do caminho.',
 } as const;

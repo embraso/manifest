@@ -40,7 +40,7 @@ Uso: descrição institucional curta, apresentação oral e contexto de um link 
 
 ## Apresentação curta
 
-Queremos dedicar o que sabemos a algo que faça diferença na vida das pessoas. A Embraso reúne essa intenção numa proposta: construir software útil e livre para as diferentes realidades do Brasil, com espaço para conversar, aprender e descobrir, não só consumir. Ferramentas disponíveis podem ajudar a começar; aproximar conhecimento técnico e experiência dos problemas dá direção a esse esforço. Por isso, queremos construir comunidade e ampliar nossa autonomia digital, aos poucos. Os seis princípios do manifesto orientam como fazer isso.
+Queremos usar o que sabemos para fazer coisas que melhorem a vida das pessoas. Juntos, somamos mais de 50 anos de experiência trabalhando com tecnologia, inclusive em grandes empresas. Agora, queremos colocar esse conhecimento a serviço de problemas que importam por aqui. Passar horas consumindo conteúdo não é o mesmo que conversar, trocar e descobrir algo inesperado; queremos aproximar quem tem conhecimento para compartilhar de quem conhece os problemas. Construir comunidade e ampliar, aos poucos, nossa autonomia digital são frentes inseparáveis. Os seis princípios do manifesto orientam como fazer isso.
 
 Uso: seção “Sobre”, apresentação de um encontro ou resumo editorial. Não pressupõe produto lançado ou comunidade com tamanho conhecido.
 
