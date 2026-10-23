@@ -4,9 +4,10 @@ const navigation = document.querySelector<HTMLDetailsElement>('[data-site-naviga
 const toggle = navigation?.querySelector<HTMLElement>('[data-navigation-toggle]');
 const panel = navigation?.querySelector<HTMLElement>('[data-navigation-panel]');
 const firstPrimaryLink = panel?.querySelector<HTMLAnchorElement>('.main-navigation a[href]');
+const header = navigation?.closest<HTMLElement>('.site-header');
 
-if (navigation && toggle && panel && firstPrimaryLink) {
-  const wideViewport = window.matchMedia('(min-width: 1024px)');
+if (navigation && toggle && panel && firstPrimaryLink && header) {
+  const headerResizeObserver = new ResizeObserver(synchronizeNavigation);
   let disposed = false;
 
   function closeNavigation(restoreFocus: boolean): void {
@@ -19,7 +20,7 @@ if (navigation && toggle && panel && firstPrimaryLink) {
 
   function synchronizeNavigation(): void {
     if (disposed) return;
-    const nextMode: NavigationMode = wideViewport.matches ? 'wide' : 'compact';
+    const nextMode: NavigationMode = header.getBoundingClientRect().width >= 900 ? 'wide' : 'compact';
     if (navigation.dataset.navigationMode === nextMode) {
       if (nextMode === 'wide') navigation.open = true;
       return;
@@ -43,7 +44,7 @@ if (navigation && toggle && panel && firstPrimaryLink) {
   }
 
   function onNavigationClick(event: MouseEvent): void {
-    if (wideViewport.matches || event.defaultPrevented || !(event.target instanceof Element)) return;
+    if (navigation.dataset.navigationMode === 'wide' || event.defaultPrevented || !(event.target instanceof Element)) return;
 
     if (toggle.contains(event.target)) {
       if (navigation.open && panel.contains(document.activeElement)) {
@@ -61,19 +62,19 @@ if (navigation && toggle && panel && firstPrimaryLink) {
   }
 
   function onDocumentClick(event: MouseEvent): void {
-    if (wideViewport.matches || !navigation.open || !(event.target instanceof Node)) return;
+    if (navigation.dataset.navigationMode === 'wide' || !navigation.open || !(event.target instanceof Node)) return;
     if (!navigation.contains(event.target)) closeNavigation(true);
   }
 
   function onNavigationFocusOut(event: FocusEvent): void {
-    if (wideViewport.matches || !navigation.open) return;
+    if (navigation.dataset.navigationMode === 'wide' || !navigation.open) return;
     const { relatedTarget } = event;
     if (!(relatedTarget instanceof Node) || navigation.contains(relatedTarget)) return;
     closeNavigation(false);
   }
 
   function onDocumentKeydown(event: KeyboardEvent): void {
-    if (event.defaultPrevented || event.key !== 'Escape' || wideViewport.matches || !navigation.open) return;
+    if (event.defaultPrevented || event.key !== 'Escape' || navigation.dataset.navigationMode === 'wide' || !navigation.open) return;
     event.preventDefault();
     closeNavigation(true);
   }
@@ -85,7 +86,7 @@ if (navigation && toggle && panel && firstPrimaryLink) {
     navigation.removeEventListener('focusout', onNavigationFocusOut);
     document.removeEventListener('click', onDocumentClick);
     document.removeEventListener('keydown', onDocumentKeydown);
-    wideViewport.removeEventListener('change', synchronizeNavigation);
+    headerResizeObserver.disconnect();
     window.removeEventListener('pageshow', synchronizeNavigation);
     document.removeEventListener('astro:before-swap', dispose);
   }
@@ -94,7 +95,7 @@ if (navigation && toggle && panel && firstPrimaryLink) {
   navigation.addEventListener('focusout', onNavigationFocusOut);
   document.addEventListener('click', onDocumentClick);
   document.addEventListener('keydown', onDocumentKeydown);
-  wideViewport.addEventListener('change', synchronizeNavigation);
+  headerResizeObserver.observe(header);
   window.addEventListener('pageshow', synchronizeNavigation);
   document.addEventListener('astro:before-swap', dispose, { once: true });
   synchronizeNavigation();
