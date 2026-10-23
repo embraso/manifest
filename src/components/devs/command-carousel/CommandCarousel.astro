@@ -5,11 +5,12 @@ interface Props { locale: Locale }
 const { locale } = Astro.props;
 const messages = getMessages(locale);
 const copy = messages.devs.carousel;
+const proposal = messages.home.proposal;
 const principles = messages.manifesto.principles;
 const topics = [
-  { ...copy.topics[0], command: messages.devs.commands.manifesto, paragraphs: messages.manifesto.introduction, isPrinciple: false },
-  { ...copy.topics[1], command: messages.devs.commands.community, paragraphs: [messages.manifesto.invitation.introduction, messages.manifesto.invitation.body, copy.communityParagraph], isPrinciple: false },
-  { ...copy.topics[2], command: messages.devs.commands.autonomy, paragraphs: copy.autonomyParagraphs, isPrinciple: false },
+  { ...copy.topics[0], summary: proposal.reading, command: messages.devs.commands.about, paragraphs: [proposal.opportunity], isPrinciple: false },
+  { ...copy.topics[1], summary: proposal.community, command: messages.devs.commands.community, paragraphs: [], isPrinciple: false },
+  { ...copy.topics[2], summary: proposal.autonomy, command: messages.devs.commands.autonomy, paragraphs: [], isPrinciple: false },
   ...principles.map((principle) => ({ command: principle.title, label: principle.title, title: principle.title, summary: principle.lead, paragraphs: [principle.body], href: '/manifesto/', link: copy.principlesLink, isPrinciple: true })),
 ];
 ---
@@ -108,7 +109,6 @@ const topics = [
   .topic-reading h3 { max-width: 20ch; margin: 0 0 20px; color: var(--cream); font: 600 clamp(1.6rem, 3.2vw, 2.4rem)/1.35 var(--font-mono); letter-spacing: -.02em; text-wrap: pretty; }
   .principle-reading h3 { max-width: 68ch; margin: 0 0 24px; color: var(--muted); font: 600 1rem/1.8 var(--font-body); letter-spacing: .005em; }
   .reading-summary, .topic-full-reading p { color: var(--muted); font-size: 1rem; line-height: 1.8; max-width: 68ch; margin: 0 0 24px; }
-  [data-enhanced] .topic-reading:not(.principle-reading) .topic-full-reading { display: none; }
   [data-enhanced] .principle-reading .topic-full-reading { display: block; }
   .topic-reading > a { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; color: var(--cream); font-size: 1rem; text-underline-offset: 4px; }
   .topic-reading > a:hover { color: var(--yellow); }

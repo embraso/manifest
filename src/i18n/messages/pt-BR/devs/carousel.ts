@@ -1,7 +1,7 @@
 import { actions } from '../actions';
 
 export const commands = {
-  manifesto: 'manifesto',
+  about: 'sobre nós',
   community: 'comunidade',
   autonomy: 'autonomia',
 } as const;
@@ -9,20 +9,17 @@ export const commands = {
 export const carousel = {
   topics: [
     {
-      title: actions.manifestoLabel,
-      summary: 'Aproximar ferramentas e conhecimento de quem conhece os problemas permite criar coisas úteis, trocar experiências e descobrir o inesperado.',
+      title: 'Sobre nós',
       href: '/manifesto/',
       link: actions.readManifestoFull,
     },
     {
       title: 'Comunidade',
-      summary: 'Comunidade é espaço de troca, aprendizado e relações. Participar não exige saber programar nem ter disponibilidade constante.',
       href: '#participacao',
       link: 'Conhecer as formas de participação',
     },
     {
       title: 'Autonomia',
-      summary: 'Compreender ferramentas e dependências ajuda a recuperar dados, mudar de serviço e dar continuidade ao que foi construído.',
       href: '#proposta',
       link: 'Ler a proposta',
     },
@@ -30,11 +27,6 @@ export const carousel = {
   locator: 'Índice de tópicos',
   framingTopics: 'Sobre nós',
   principles: 'Seis princípios',
-  communityParagraph: 'Comunidade é lugar de troca, aprendizado e relações — não uma fila de tarefas. Participar não exige saber programar nem ter tempo toda semana.',
-  autonomyParagraphs: [
-    'Autonomia digital não é fazer tudo sozinho. É compreender o que usamos, conhecer dependências e preservar caminhos para recuperar dados, adaptar ferramentas, migrar e continuar.',
-    'Comunidade e autonomia se sustentam: queremos compartilhar conhecimento para que mais pessoas possam participar das escolhas e cuidar do que for construído.',
-  ],
   principlesLink: 'Ler no manifesto',
   roleDescription: 'carrossel',
   heading: [
