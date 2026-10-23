@@ -6,7 +6,7 @@ export const manifesto = {
     { type: 'break' },
     { type: 'text', text: 'Seis princípios.' },
   ],
-  description: 'O que abrir. O que proteger. De quem depender. Quem ouvir. O manifesto orienta as escolhas difíceis — não é a obra pronta.',
+  description: 'O manifesto ajuda a manter nossas escolhas alinhadas ao que queremos construir.',
   link: actions.readManifestoFull,
   readingHint: 'Abra os princípios para ler.',
 } as const;
