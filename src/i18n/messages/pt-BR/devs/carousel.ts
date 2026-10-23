@@ -9,22 +9,19 @@ export const commands = {
 export const carousel = {
   topics: [
     {
-      label: 'Sobre nós',
-      title: 'Conhecimento que encontra propósito.',
+      title: actions.manifestoLabel,
       summary: 'Aproximar ferramentas e conhecimento de quem conhece os problemas permite criar coisas úteis, trocar experiências e descobrir o inesperado.',
       href: '/manifesto/',
       link: actions.readManifestoFull,
     },
     {
-      label: 'Comunidade',
-      title: 'A gente nasceu para viver em comunidade.',
+      title: 'Comunidade',
       summary: 'Comunidade é espaço de troca, aprendizado e relações. Participar não exige saber programar nem ter disponibilidade constante.',
       href: '#participacao',
       link: 'Conhecer as formas de participação',
     },
     {
-      label: 'Nossos objetivos',
-      title: 'Escolher também é poder mudar.',
+      title: 'Autonomia',
       summary: 'Compreender ferramentas e dependências ajuda a recuperar dados, mudar de serviço e dar continuidade ao que foi construído.',
       href: '#proposta',
       link: 'Ler a proposta',
