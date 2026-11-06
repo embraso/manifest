@@ -1,4 +1,7 @@
+import { productExamples } from './product-examples';
+
 export const products = {
+  examples: productExamples,
   catalogue: {
     title: 'Produtos',
     description: 'Conheça os produtos e explore as informações disponíveis sobre cada um deles.',

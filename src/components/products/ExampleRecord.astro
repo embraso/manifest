@@ -1,0 +1,29 @@
+---
+interface Props {
+  label: string;
+  title: string;
+  value?: string;
+  fields: readonly (readonly [string, string])[];
+}
+const { label, title, value, fields } = Astro.props;
+---
+
+<article class="example-record">
+  <p class="example-label">{label}</p>
+  <h4>{title}</h4>
+  {value && <p class="example-value">{value}</p>}
+  <dl>
+    {fields.map(([name, description]) => <div><dt>{name}</dt><dd>{description}</dd></div>)}
+  </dl>
+</article>
+
+<style>
+  .example-record { border-top: 1px solid var(--green); padding-top: 20px; margin-top: 24px; }
+  .example-label { font-size: .85rem; font-weight: 700; }
+  h4 { font-size: 1.15rem; line-height: 1.3; margin: 8px 0; }
+  .example-value { font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+  dl { margin: 16px 0 0; }
+  dl div { margin-top: 12px; }
+  dt { font-weight: 700; }
+  dd { margin: 2px 0 0; }
+</style>
