@@ -1,12 +1,13 @@
 ---
 import { getMessages, type Locale } from '../../i18n';
 import type { products } from '../../i18n/messages/pt-BR/products';
+import ExampleRecord from './ExampleRecord.astro';
 
 type ProductId = typeof products.items[number]['id'];
 type ViewId = typeof products.views[number]['id'];
 interface Props { locale: Locale; productId: ProductId; viewId: ViewId }
 const { locale, productId, viewId } = Astro.props;
-const { items, views, report, catalogue } = getMessages(locale).products;
+const { items, views, report, catalogue, examples } = getMessages(locale).products;
 const product = items.find((item) => item.id === productId);
 const view = views.find((item) => item.id === viewId);
 if (!product || !view) throw new Error('Unknown product report route');
@@ -42,19 +43,54 @@ if (!product || !view) throw new Error('Unknown product report route');
         <section><h3>{catalogue.status}</h3><p>{catalogue.unknownStatus}</p></section>
       </>}
       {viewId === 'custos' && <>
-        <section><h3>{report.costs}</h3><p>{report.unknownCosts}</p></section>
-        <section><h3>{report.metrics}</h3><p>{report.unknownMetrics}</p></section>
+        {product.id === 'pinoquio' && <p class="example-introduction">{examples.introduction}</p>}
+        <section>
+          <h3>{report.costs}</h3><p>{report.unknownCosts}</p>
+          {product.id === 'pinoquio' && examples.costs.map((item) => (
+            <ExampleRecord label={examples.example} title={item.title} value={item.amount} fields={item.fields} />
+          ))}
+        </section>
+        <section>
+          <h3>{report.metrics}</h3><p>{report.unknownMetrics}</p>
+          {product.id === 'pinoquio' && <ExampleRecord label={examples.example} title={examples.metric.title} value={examples.metric.value} fields={examples.metric.fields} />}
+        </section>
       </>}
       {viewId === 'como-foi-feito' && <>
-        <section><h3>{report.technology}</h3><p>{report.unknownTechnology}</p></section>
-        <section><h3>{report.standards}</h3><p>{report.unknownStandards}</p></section>
+        {product.id === 'pinoquio' && <p class="example-introduction">{examples.introduction}</p>}
+        <section>
+          <h3>{report.technology}</h3><p>{report.unknownTechnology}</p>
+          {product.id === 'pinoquio' && <ExampleRecord label={examples.example} title={examples.technology.title} fields={examples.technology.fields} />}
+        </section>
+        <section>
+          <h3>{report.standards}</h3><p>{report.unknownStandards}</p>
+          {product.id === 'pinoquio' && <ExampleRecord label={examples.example} title={examples.standard.title} fields={examples.standard.fields} />}
+        </section>
         {product.id === 'dividimos' && <section><h3>{report.sources}</h3><p><a href="https://github.com/tprei/dividimos">{report.repository}</a></p><p class="source-context">{report.sourceContext}</p></section>}
       </>}
       {viewId === 'seguranca-e-valor' && <>
-        <section><h3>{report.security}</h3><p>{report.unknownSecurity}</p></section>
-        <section><h3>{report.value}</h3><p>{report.unknownValue}</p></section>
+        {product.id === 'pinoquio' && <p class="example-introduction">{examples.introduction}</p>}
+        <section>
+          <h3>{report.security}</h3><p>{report.unknownSecurity}</p>
+          {product.id === 'pinoquio' && <ExampleRecord label={examples.example} title={examples.security.title} fields={examples.security.fields} />}
+        </section>
+        <section>
+          <h3>{report.value}</h3><p>{report.unknownValue}</p>
+          {product.id === 'pinoquio' && <ExampleRecord label={examples.example} title={examples.value.title} fields={examples.value.fields} />}
+        </section>
       </>}
-      {viewId === 'atualizacoes' && <section><p>{report.unknownUpdates}</p></section>}
+      {viewId === 'atualizacoes' && <section>
+        <p>{report.unknownUpdates}</p>
+        {product.id === 'pinoquio' && <>
+          <p class="example-introduction">{examples.introduction}</p>
+          {examples.updates.map((item) => <article class="update">
+            <p class="example-label">{examples.example}</p>
+            <h3>{item.title}</h3>
+            <p><time datetime={item.date}>{item.displayDate}</time> · {item.status}</p>
+            <p>{item.description}</p>
+            <p>{item.source}</p>
+          </article>)}
+        </>}
+      </section>}
     </article>
   </div>
 </main>
@@ -82,5 +118,8 @@ if (!product || !view) throw new Error('Unknown product report route');
   .references li { margin-block: 10px; }
   .references a, .view-content a { font-weight: 700; overflow-wrap: anywhere; }
   .source-context { max-width: 60ch; font-size: .9rem; }
+  .example-introduction { margin-top: 28px; padding: 16px; background: var(--yellow); color: var(--dark); font-weight: 600; }
+  .update { border-top: 1px solid var(--green); margin-top: 24px; padding-top: 20px; }
+  .example-label { font-size: .85rem; font-weight: 700; }
   @media (max-width: 760px) { .report-layout { grid-template-columns: 1fr; } }
 </style>
