@@ -1,0 +1,86 @@
+---
+import { getMessages, type Locale } from '../../i18n';
+import type { products } from '../../i18n/messages/pt-BR/products';
+
+type ProductId = typeof products.items[number]['id'];
+type ViewId = typeof products.views[number]['id'];
+interface Props { locale: Locale; productId: ProductId; viewId: ViewId }
+const { locale, productId, viewId } = Astro.props;
+const { items, views, report, catalogue } = getMessages(locale).products;
+const product = items.find((item) => item.id === productId);
+const view = views.find((item) => item.id === viewId);
+if (!product || !view) throw new Error('Unknown product report route');
+---
+
+<main id="conteudo" class="container report">
+  <a class="back" href="/produtos/"><span aria-hidden="true">←</span> {report.back}</a>
+  <header class="report-heading">
+    <h1>{product.name}</h1>
+    <p>{product.description}</p>
+  </header>
+  <div class="report-layout">
+    <nav class="view-navigation" aria-label={report.navigation}>
+      <ul>
+        {views.map((item) => (
+          <li><a href={item.id === 'sobre' ? `/produtos/${product.id}/` : `/produtos/${product.id}/${item.id}/`} aria-current={item.id === viewId ? 'page' : undefined}>
+            <span>{item.label}</span>{item.id === viewId && <span class="current">{report.current}</span>}
+          </a></li>
+        ))}
+      </ul>
+    </nav>
+    <article class="view-content">
+      <h2>{view.label}</h2>
+      {viewId === 'sobre' && <>
+        <p class="lead">{product.description}</p>
+        {product.id === 'pinoquio' && <section><h3>{report.fictionalExampleLabel}</h3><p>{report.fictionalExample}</p></section>}
+        <section>
+          <h3>{report.availability}</h3>
+          <p>{product.availability}</p>
+          {product.links.length > 0 && <ul class="references">{product.links.map((link) => <li><a href={link.href}>{link.label} <span aria-hidden="true">↗</span></a></li>)}</ul>}
+          {product.id === 'dividimos' && <p class="source-context">{report.sourceContext}</p>}
+        </section>
+        <section><h3>{catalogue.status}</h3><p>{catalogue.unknownStatus}</p></section>
+      </>}
+      {viewId === 'custos' && <>
+        <section><h3>{report.costs}</h3><p>{report.unknownCosts}</p></section>
+        <section><h3>{report.metrics}</h3><p>{report.unknownMetrics}</p></section>
+      </>}
+      {viewId === 'como-foi-feito' && <>
+        <section><h3>{report.technology}</h3><p>{report.unknownTechnology}</p></section>
+        <section><h3>{report.standards}</h3><p>{report.unknownStandards}</p></section>
+        {product.id === 'dividimos' && <section><h3>{report.sources}</h3><p><a href="https://github.com/tprei/dividimos">{report.repository}</a></p><p class="source-context">{report.sourceContext}</p></section>}
+      </>}
+      {viewId === 'seguranca-e-valor' && <>
+        <section><h3>{report.security}</h3><p>{report.unknownSecurity}</p></section>
+        <section><h3>{report.value}</h3><p>{report.unknownValue}</p></section>
+      </>}
+      {viewId === 'atualizacoes' && <section><p>{report.unknownUpdates}</p></section>}
+    </article>
+  </div>
+</main>
+
+<style>
+  .report { padding-block: clamp(36px, 5vw, 64px) clamp(80px, 10vw, 140px); }
+  .back { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-weight: 700; }
+  .report-heading { max-width: 780px; padding-block: clamp(40px, 6vw, 72px); }
+  h1 { margin-bottom: 18px; font-size: clamp(3rem, 8vw, 5.5rem); line-height: 1; letter-spacing: -.035em; overflow-wrap: anywhere; }
+  .report-heading p { max-width: 52ch; margin: 0; font-size: clamp(1.1rem, 2vw, 1.35rem); }
+  .report-layout { display: grid; grid-template-columns: minmax(210px, 280px) minmax(0, 1fr); gap: clamp(32px, 6vw, 88px); border-top: 1px solid var(--green); padding-top: 28px; }
+  .view-navigation ul { list-style: none; padding: 0; margin: 0; }
+  .view-navigation li { border-bottom: 1px solid color-mix(in srgb, var(--green) 30%, transparent); }
+  .view-navigation a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 10px 12px; font-weight: 600; line-height: 1.35; text-decoration: none; }
+  .view-navigation a:hover { text-decoration: underline; }
+  .view-navigation a[aria-current='page'] { background: var(--yellow); color: var(--dark); font-weight: 800; }
+  .current { flex: 0 0 auto; font-size: .7rem; font-weight: 700; }
+  .view-content { min-width: 0; max-width: 68ch; }
+  h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -.025em; margin-bottom: 28px; overflow-wrap: anywhere; }
+  .lead { font-size: 1.2rem; }
+  section { margin-top: 36px; }
+  h3 { margin-bottom: 8px; font-size: 1.2rem; line-height: 1.3; }
+  section p { margin-bottom: 12px; }
+  .references { margin: 20px 0; padding-left: 1.25em; }
+  .references li { margin-block: 10px; }
+  .references a, .view-content a { font-weight: 700; overflow-wrap: anywhere; }
+  .source-context { max-width: 60ch; font-size: .9rem; }
+  @media (max-width: 760px) { .report-layout { grid-template-columns: 1fr; } }
+</style>
