@@ -1,0 +1,21 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import ProductReport from '../../../components/products/ProductReport.astro';
+import { defaultLocale, getMessages } from '../../../i18n';
+import { products } from '../../../i18n/messages/pt-BR/products';
+
+export function getStaticPaths() {
+  return products.items.map((product) => ({ params: { product: product.id }, props: { productId: product.id } }));
+}
+
+const { productId } = Astro.props;
+const locale = defaultLocale;
+const { items, views } = getMessages(locale).products;
+const product = items.find((item) => item.id === productId);
+if (!product) throw new Error('Unknown product');
+const title = `${product.name} — ${views[0].label} | Embraso`;
+---
+
+<SiteLayout locale={locale} title={title} description={product.description}>
+  <ProductReport locale={locale} productId={productId} viewId="sobre" />
+</SiteLayout>

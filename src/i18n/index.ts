@@ -3,8 +3,9 @@ import { devs } from './messages/pt-BR/devs';
 import { home } from './messages/pt-BR/home';
 import { manifesto } from './messages/pt-BR/manifesto';
 import { shell } from './messages/pt-BR/shell';
+import { products } from './messages/pt-BR/products';
 
-const ptBR = { shell, home, devs, manifesto } as const;
+const ptBR = { shell, home, devs, manifesto, products } as const;
 
 type Widen<T> = T extends string
   ? string

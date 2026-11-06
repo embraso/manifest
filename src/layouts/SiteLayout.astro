@@ -51,6 +51,7 @@ const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).href :
           <div id="site-navigation-panel" class="navigation-panel" data-navigation-panel>
             <nav class="main-navigation" aria-label={messages.primaryNavigation}>
               <a href={`${home}#proposta`}>{technical ? messages.devProposal : messages.publicProposal}</a>
+              {!technical && <a href="/produtos/" aria-current={Astro.url.pathname.startsWith('/produtos/') ? 'page' : undefined}>{messages.products}</a>}
               <a href={isManifesto ? '/manifesto/' : `${home}#manifesto`} aria-current={isManifesto ? 'page' : undefined}>{technical ? messages.devManifesto : messages.publicManifesto}</a>
               <a href={`${home}#participacao`}>{technical ? messages.devBuild : messages.publicBuildTogether}</a>
             </nav>
@@ -69,7 +70,7 @@ const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).href :
             </nav>
             <div class="navigation-controls">
               <nav class="audience-switch" aria-label={messages.audienceLabel}>
-                <a href="/" aria-current={!technical && !isManifesto ? 'page' : undefined} data-selected={!technical}>{messages.audiencePublic}</a>
+                <a href="/" aria-current={!technical && !isManifesto && Astro.url.pathname === '/' ? 'page' : undefined} data-selected={!technical}>{messages.audiencePublic}</a>
                 <a href="/devs/" aria-current={technical ? 'page' : undefined} data-selected={technical}><span aria-hidden="true">&gt;_ </span>{messages.audienceDevs}</a>
               </nav>
               {!isManifesto && (

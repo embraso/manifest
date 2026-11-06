@@ -1,0 +1,46 @@
+---
+import { getMessages, type Locale } from '../../i18n';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const { catalogue, items } = getMessages(locale).products;
+---
+
+<main id="conteudo" class="container catalogue">
+  <header class="introduction">
+    <h1>{catalogue.title}</h1>
+    <p>{catalogue.description}</p>
+  </header>
+  <div class="product-list">
+    {items.map((product) => (
+      <article class="product">
+        <div>
+          <h2><a href={`/produtos/${product.id}/`}>{product.name}</a></h2>
+          <p class="description">{product.description}</p>
+        </div>
+        <div class="details">
+          <p><strong>{catalogue.availability}</strong><br />{product.availability}</p>
+          <p><strong>{catalogue.status}</strong><br />{catalogue.unknownStatus}</p>
+          <a class="report-link" href={`/produtos/${product.id}/`}>{catalogue.reportLink} <span aria-hidden="true">→</span><span class="sr-only">: {product.name}</span></a>
+        </div>
+      </article>
+    ))}
+  </div>
+</main>
+
+<style>
+  .catalogue { padding-block: clamp(48px, 7vw, 100px) clamp(72px, 9vw, 128px); }
+  .introduction { max-width: 720px; margin-bottom: clamp(48px, 7vw, 88px); }
+  h1 { margin-bottom: 20px; font-size: clamp(3rem, 9vw, 6rem); line-height: .98; letter-spacing: -.035em; }
+  .introduction p { max-width: 48ch; margin: 0; font-size: clamp(1.15rem, 2vw, 1.4rem); }
+  .product { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .8fr); gap: 32px 64px; padding-block: 32px 40px; border-top: 1px solid var(--green); }
+  .product:last-child { border-bottom: 1px solid var(--green); }
+  h2 { margin-bottom: 12px; font-size: clamp(1.8rem, 4vw, 2.75rem); line-height: 1.1; letter-spacing: -.025em; }
+  h2 a { text-decoration: none; }
+  h2 a:hover { text-decoration: underline; }
+  .description { max-width: 42ch; font-size: 1.125rem; }
+  .details p { margin-bottom: 18px; }
+  .details strong { font-size: .875rem; }
+  .report-link { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-weight: 700; }
+  @media (max-width: 700px) { .product { grid-template-columns: 1fr; gap: 8px; } }
+</style>

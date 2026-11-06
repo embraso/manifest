@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import ProductCatalogue from '../../components/products/ProductCatalogue.astro';
+import { defaultLocale, getMessages } from '../../i18n';
+
+const locale = defaultLocale;
+const { catalogue } = getMessages(locale).products;
+---
+
+<SiteLayout locale={locale} title={catalogue.metadataTitle} description={catalogue.metadataDescription}>
+  <ProductCatalogue locale={locale} />
+</SiteLayout>

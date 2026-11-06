@@ -1,0 +1,24 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import ProductReport from '../../../components/products/ProductReport.astro';
+import { defaultLocale, getMessages } from '../../../i18n';
+import { products } from '../../../i18n/messages/pt-BR/products';
+
+export function getStaticPaths() {
+  return products.items.flatMap((product) => products.views
+    .filter((view) => view.id !== 'sobre')
+    .map((view) => ({ params: { product: product.id, view: view.id }, props: { productId: product.id, viewId: view.id } })));
+}
+
+const { productId, viewId } = Astro.props;
+const locale = defaultLocale;
+const { items, views } = getMessages(locale).products;
+const product = items.find((item) => item.id === productId);
+const view = views.find((item) => item.id === viewId);
+if (!product || !view) throw new Error('Unknown product report view');
+const title = `${product.name} — ${view.label} | Embraso`;
+---
+
+<SiteLayout locale={locale} title={title} description={product.description}>
+  <ProductReport locale={locale} productId={productId} viewId={viewId} />
+</SiteLayout>
